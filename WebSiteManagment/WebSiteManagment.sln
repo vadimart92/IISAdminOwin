@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSiteManagment", "WebSiteManagment\WebSiteManagment.csproj", "{E5B27EE6-3589-40E8-BFBC-BBAB8625FD58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteManagmentClient", "WebsiteManagmentClient\WebsiteManagmentClient.csproj", "{99986A1F-9C9D-47EE-A76F-20D5BC0ED394}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5B27EE6-3589-40E8-BFBC-BBAB8625FD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5B27EE6-3589-40E8-BFBC-BBAB8625FD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5B27EE6-3589-40E8-BFBC-BBAB8625FD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B27EE6-3589-40E8-BFBC-BBAB8625FD58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99986A1F-9C9D-47EE-A76F-20D5BC0ED394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99986A1F-9C9D-47EE-A76F-20D5BC0ED394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99986A1F-9C9D-47EE-A76F-20D5BC0ED394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99986A1F-9C9D-47EE-A76F-20D5BC0ED394}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

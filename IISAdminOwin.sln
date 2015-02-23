@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		WebEssentials-Settings.json = WebEssentials-Settings.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSiteManagment.Core", "..\WebSiteManagment\WebSiteManagment\WebSiteManagment.Core.csproj", "{E5B27EE6-3589-40E8-BFBC-BBAB8625FD58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSiteManagment.Core", "WebSiteManagment\WebSiteManagment\WebSiteManagment.Core.csproj", "{E5B27EE6-3589-40E8-BFBC-BBAB8625FD58}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IISAdmin.Interfaces", "Interfaces\IISAdmin.Interfaces.csproj", "{ED483C78-AF2E-42B1-98C2-A977815177FA}"
 EndProject
