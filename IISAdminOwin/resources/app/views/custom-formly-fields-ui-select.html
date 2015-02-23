@@ -1,0 +1,8 @@
+<div>
+    <ui-select ng-model="options.templateOptions.selected" theme="bootstrap" ng-disabled="disabled" style="width: 300px">
+        <ui-select-match placeholder="Select or search a country in the list...">{{$select.selected.name}}</ui-select-match>
+        <ui-select-choices repeat="option in options.templateOptions.options">
+            <span ng-bind-html="option.name | highlight: $select.search"></span>
+        </ui-select-choices>
+    </ui-select>
+</div>

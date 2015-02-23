@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WebSiteManagment.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WebSiteManagment.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfSite">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Site" nillable="true" type="tns:Site" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSite" nillable="true" type="tns:ArrayOfSite" />
+  <xs:complexType name="Site">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Applications" nillable="true" type="tns:ArrayOfApplication" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Bindings" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Redis" nillable="true" type="tns:Redis" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Site" nillable="true" type="tns:Site" />
+  <xs:complexType name="ArrayOfApplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Application" nillable="true" type="tns:Application" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplication" nillable="true" type="tns:ArrayOfApplication" />
+  <xs:complexType name="Application">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Path" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pool" nillable="true" type="tns:AppPool" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Application" nillable="true" type="tns:Application" />
+  <xs:complexType name="AppPool">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AppPool" nillable="true" type="tns:AppPool" />
+  <xs:complexType name="Redis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConnectionString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Db" type="xs:int" />
+      <xs:element minOccurs="0" name="Host" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Port" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Redis" nillable="true" type="tns:Redis" />
+</xs:schema>

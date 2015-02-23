@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebSiteManagementService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetNamedPipeBinding_IWebSiteRepositoryService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WebSiteManagment.Models" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWebSiteRepositoryService_GetAllSites_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSites" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_GetAllSites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_GetSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSite" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_GetSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_FindSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindSite" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_FindSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_StopSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopSite" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_StopSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_StartSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartSite" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_StartSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_RestartSitePool_InputMessage">
+    <wsdl:part name="parameters" element="tns:RestartSitePool" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_RestartSitePool_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RestartSitePoolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_FlushSiteRedis_InputMessage">
+    <wsdl:part name="parameters" element="tns:FlushSiteRedis" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_FlushSiteRedis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FlushSiteRedisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_SetCacheUsage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetCacheUsage" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_SetCacheUsage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetCacheUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_ClearCache_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearCache" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_ClearCache_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearCacheResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWebSiteRepositoryService">
+    <wsdl:operation name="GetAllSites">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/GetAllSites" message="tns:IWebSiteRepositoryService_GetAllSites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/GetAllSitesResponse" message="tns:IWebSiteRepositoryService_GetAllSites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/GetSite" message="tns:IWebSiteRepositoryService_GetSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/GetSiteResponse" message="tns:IWebSiteRepositoryService_GetSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/FindSite" message="tns:IWebSiteRepositoryService_FindSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/FindSiteResponse" message="tns:IWebSiteRepositoryService_FindSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/StopSite" message="tns:IWebSiteRepositoryService_StopSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/StopSiteResponse" message="tns:IWebSiteRepositoryService_StopSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/StartSite" message="tns:IWebSiteRepositoryService_StartSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/StartSiteResponse" message="tns:IWebSiteRepositoryService_StartSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RestartSitePool">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/RestartSitePool" message="tns:IWebSiteRepositoryService_RestartSitePool_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/RestartSitePoolResponse" message="tns:IWebSiteRepositoryService_RestartSitePool_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FlushSiteRedis">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/FlushSiteRedis" message="tns:IWebSiteRepositoryService_FlushSiteRedis_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/FlushSiteRedisResponse" message="tns:IWebSiteRepositoryService_FlushSiteRedis_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCacheUsage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/SetCacheUsage" message="tns:IWebSiteRepositoryService_SetCacheUsage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/SetCacheUsageResponse" message="tns:IWebSiteRepositoryService_SetCacheUsage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearCache">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/ClearCache" message="tns:IWebSiteRepositoryService_ClearCache_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/ClearCacheResponse" message="tns:IWebSiteRepositoryService_ClearCache_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetNamedPipeBinding_IWebSiteRepositoryService" type="tns:IWebSiteRepositoryService">
+    <wsp:PolicyReference URI="#NetNamedPipeBinding_IWebSiteRepositoryService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="GetAllSites">
+      <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/GetAllSites" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSite">
+      <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/GetSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindSite">
+      <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/FindSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopSite">
+      <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/StopSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSite">
+      <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/StartSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestartSitePool">
+      <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/RestartSitePool" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlushSiteRedis">
+      <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/FlushSiteRedis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCacheUsage">
+      <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/SetCacheUsage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearCache">
+      <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/ClearCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebSiteManagementService">
+    <wsdl:port name="NetNamedPipeBinding_IWebSiteRepositoryService" binding="tns:NetNamedPipeBinding_IWebSiteRepositoryService">
+      <soap12:address location="net.pipe://localhost//WebSiteManagementService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://localhost//WebSiteManagementService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

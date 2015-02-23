@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app="IISAdmin">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hello</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="assets/boilerplate/normalize.css">
+    <script src="assets/boilerplate/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap_min.css">
+    <link rel="stylesheet" href="app/components/main.css">
+    <link rel="stylesheet" href="assets/ui-grid/ui-grid-stable.css"/>
+    <link rel="stylesheet" href="assets/toaster/toastr.css"/>
+    <link rel="stylesheet" href="assets/mProgress/mprogress.css"/>
+    <link rel="stylesheet" href="assets/angular/loading-bar.css"/>
+    <link rel="stylesheet" href="assets/ui-select/select.css"/>
+</head>
+<body>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Add your site or application content here -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#home">IIS Admin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Site management<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#siteList">Site list</a></li>
+                            <li><a href="#addSite">Add site</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <section ui-view id="body" class="container"></section>
+    <script src="assets/jquery/jquery.js"></script>
+    <script src="assets/bootstrap/bootstrap.js"></script>
+    <script src="assets/underscore/underscore.js"></script>
+    <script src="assets/signalR/jquery.signalR-2.2.0.js"></script>
+    <script src="assets/toaster/toastr.js"></script>
+    <script src="assets/mProgress/mprogress.js"></script>
+    <script src="assets/q/q.js"></script>
+    <script src="assets/angular/angular.js"></script>
+    <script src="assets/angular/angular-sanitize.js"></script>
+    <script src="assets/angular/ui-formly.js"></script>
+    <script src="assets/angular/angular-formly-templates-bootstrap.js"></script>
+    <script src="assets/angular/angular-animate.js"></script>
+    <script src="assets/angular/angular-resource.js"></script>
+    <script src="assets/angular/angular-ui-router.js"></script>
+    <script src="assets/angular/ui-router-styles.js"></script>
+    <script src="assets/angular/ui-bootstrap.js"></script>
+    <script src="assets/angular/ui-bootstrap-tpls.js"></script>
+    <script src="assets/angular/loading-bar.js"></script>
+    <script src="assets/ui-grid/ui-grid-stable.js"></script>
+    <!--UI select-->
+    <script src="assets/ui-select/select.js"></script>
+    <!--Breeze JS-->
+    <script src="assets/breeze/breeze.debug.js"></script>
+    <script src="assets/breeze/breeze.bridge.angular.js"></script>
+    <script src="assets/breeze/breeze.ajax.angular.js"></script>
+    <script src="assets/breeze/breeze.dataService.webApi.js"></script>
+    <script src="assets/breeze/breeze.savequeuing.js"></script>
+
+    <!--app-->
+    <script src="app/components/app.js"></script>
+    <script src="app/components/home/homeController.js"></script>
+    <script src="app/components/toastr/toastrService.js"></script>
+    <script src="app/components/siteList/siteListController.js"></script>
+    <script src="app/components/common/logger.js"></script>
+    <script src="app/components/common/signalRHub.js"></script>
+    <script src="app/components/common/enums.js"></script>
+    <script src="app/components/dataservice/siteDataService.js"></script>
+    <script src="app/components/siteList/siteUtils.js"></script>
+    <script src="app/components/addSite/addSiteController.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+            function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+    </script>
+</body>
+</html>
