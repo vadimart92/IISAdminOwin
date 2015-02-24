@@ -3,13 +3,19 @@ app.factory 'siteUtils', [
   (Enums) ->
 
     getIsRunning = (site)->
-      return site && site.state == Enums.SiteState.Started.displayValue
+      return site && site.state == Enums.SiteState.Started.value
 
     getRedisString = (site)->
-      return "#{site.redis.db} (#{site.redis.host}:#{site.redis.port || ""})"
+      return if Boolean(site.redis)
+      then "#{site.redis.db} (#{site.redis.host}:#{site.redis.port || ""})"
+      else "can't find"
+
+    getIsRedisFound = (site)->
+      return Boolean(site.redis)
+
     utils =
       isRunning: getIsRunning
       redisName: getRedisString
-
+      redisFound: getIsRedisFound
     utils
 ]

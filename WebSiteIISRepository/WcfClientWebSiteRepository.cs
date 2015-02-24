@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.ServiceModel;
 using IISAdmin.Interfaces;
 using IISAdmin.WCFWebSiteRepository.WebSiteRepositoryService;
@@ -29,9 +31,19 @@ namespace IISAdmin.WCFWebSiteRepository {
 
 		public List<ISite> GetAllSites() {
 			OpenChannel();
-			var res = _repositoryService.GetAllSites().ConvertAll(s=>(ISite) new IisSite(s));
-			CloseChannel();
-			return res;
+			try {
+				var res = _repositoryService.GetAllSites().ConvertAll(s => (ISite) new IisSite(s));
+				return res;
+			}
+			catch (FaultException ex) {
+				if (ex.Reason.GetMatchingTranslation(CultureInfo.CurrentCulture).Text == "AccessDenied") {
+					throw new UnauthorizedAccessException(ex.Message, ex);
+				}
+				throw;
+			}
+			finally {
+				CloseChannel();	
+			}
 		}
 
 		public void StopSite(long siteId) {

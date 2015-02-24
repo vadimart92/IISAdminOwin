@@ -15,8 +15,8 @@ app.constant('Enums', {
   },
   SiteState: {
     Started: {
-      value: 0,
-      displayValue: "Started"
+      value: "Started",
+      displayValue: "Running"
     },
     Restarting: {
       value: 1,

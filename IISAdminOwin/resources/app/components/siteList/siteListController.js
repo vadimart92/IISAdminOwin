@@ -11,6 +11,7 @@ app.controller("siteListController", [
       },
       methods: ['RestartPool', 'StopSite', 'StartSite', 'FlushRedis']
     });
+    vm.siteListLoaded = false;
     getGridData = function() {
       return vm.gridOptions.data;
     };
@@ -25,7 +26,7 @@ app.controller("siteListController", [
     };
     siteStateTemplate = '<div class="btn btn-primary btn-xs glyphicon glyphicon-off" ng-click="getExternalScopes().stopSite(row.entity)" ng-show="getExternalScopes().siteUtils.isRunning(row.entity)"></div>' + '<div class="btn btn-primary btn-xs glyphicon glyphicon-play" ng-click="getExternalScopes().startSite(row.entity)" ng-show="!getExternalScopes().siteUtils.isRunning(row.entity)"></div>' + '<span class="binding-label">{{row.entity.state}}</span>';
     poolTemplate = '<div ng-class="{\'hide\': row.entity.poolRestartInProgress}"><div class="btn btn-primary btn-xs glyphicon glyphicon-refresh" ng-click="getExternalScopes().restartPool(row.entity)"></div>' + '<span>{{getExternalScopes().getSitePool(row.entity)}}</span></div>' + '<div class="mProgressContainerRow-msg">{{row.entity.stateName}}</div><div class="mProgressContainerRow progress-row{{row.entity.id}}" ng-class="{\'hide\': !row.entity.poolRestartInProgress}"></div>';
-    redisTpl = '<div class="btn btn-primary btn-xs glyphicon glyphicon-refresh" ng-click="getExternalScopes().flushRedis(row.entity)" ng-class="{\'hide\': row.redisFlushInProgress}"></div>' + '<span tooltip-placement="left" tooltip="{{getExternalScopes().siteUtils.redisName(row.entity)}}">{{getExternalScopes().siteUtils.redisName(row.entity)}}</span>';
+    redisTpl = '<div ng-show="getExternalScopes().siteUtils.redisFound(row.entity)" class="btn btn-primary btn-xs glyphicon glyphicon-refresh" ng-click="getExternalScopes().flushRedis(row.entity)" ng-class="{\'hide\': row.redisFlushInProgress}"></div>' + '<span tooltip-placement="left" tooltip="{{getExternalScopes().siteUtils.redisName(row.entity)}}">{{getExternalScopes().siteUtils.redisName(row.entity)}}</span>';
     bindingsTpl = '<span ng-repeat="binding in row.entity.bindings" tooltip-placement="left" tooltip="{{binding}}">{{binding}}; </span>';
     vm.gridOptions.columnDefs = [
       {
@@ -79,7 +80,9 @@ app.controller("siteListController", [
       };
       getSitesImpl = function() {
         siteDataService.getSites(querySucceeded, function() {
-          return logger.error('Web sites loading error');
+          logger.error('Web sites loading error');
+        })["finally"](function() {
+          vm.siteListLoaded = true;
         });
       };
       $timeout(getSitesImpl, 0);

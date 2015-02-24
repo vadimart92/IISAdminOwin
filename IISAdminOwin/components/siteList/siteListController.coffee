@@ -19,6 +19,8 @@ app.controller "siteListController", [
       ]
     )
 
+    vm.siteListLoaded = false
+
     getGridData = ()->
       return vm.gridOptions.data
 
@@ -40,7 +42,7 @@ app.controller "siteListController", [
         '<span>{{getExternalScopes().getSitePool(row.entity)}}</span></div>' +
         '<div class="mProgressContainerRow-msg">{{row.entity.stateName}}</div><div class="mProgressContainerRow progress-row{{row.entity.id}}" ng-class="{\'hide\': !row.entity.poolRestartInProgress}"></div>'
       
-    redisTpl = '<div class="btn btn-primary btn-xs glyphicon glyphicon-refresh" ng-click="getExternalScopes().flushRedis(row.entity)" ng-class="{\'hide\': row.redisFlushInProgress}"></div>'+
+    redisTpl = '<div ng-show="getExternalScopes().siteUtils.redisFound(row.entity)" class="btn btn-primary btn-xs glyphicon glyphicon-refresh" ng-click="getExternalScopes().flushRedis(row.entity)" ng-class="{\'hide\': row.redisFlushInProgress}"></div>'+
         '<span tooltip-placement="left" tooltip="{{getExternalScopes().siteUtils.redisName(row.entity)}}">{{getExternalScopes().siteUtils.redisName(row.entity)}}</span>'
 
     bindingsTpl = '<span ng-repeat="binding in row.entity.bindings" tooltip-placement="left" tooltip="{{binding}}">{{binding}}; </span>'
@@ -97,8 +99,12 @@ app.controller "siteListController", [
         return
 
       getSitesImpl = ->
-        siteDataService.getSites querySucceeded, ->
+        siteDataService.getSites querySucceeded, ()->
           logger.error 'Web sites loading error'
+          return
+        .finally ()->
+         vm.siteListLoaded = true
+         return
         return
 
       $timeout getSitesImpl, 0

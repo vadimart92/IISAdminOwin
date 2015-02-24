@@ -1,15 +1,23 @@
 app.factory('siteUtils', [
   'Enums', function(Enums) {
-    var getIsRunning, getRedisString, utils;
+    var getIsRedisFound, getIsRunning, getRedisString, utils;
     getIsRunning = function(site) {
-      return site && site.state === Enums.SiteState.Started.displayValue;
+      return site && site.state === Enums.SiteState.Started.value;
     };
     getRedisString = function(site) {
-      return site.redis.db + " (" + site.redis.host + ":" + (site.redis.port || "") + ")";
+      if (Boolean(site.redis)) {
+        return site.redis.db + " (" + site.redis.host + ":" + (site.redis.port || "") + ")";
+      } else {
+        return "can't find";
+      }
+    };
+    getIsRedisFound = function(site) {
+      return Boolean(site.redis);
     };
     utils = {
       isRunning: getIsRunning,
-      redisName: getRedisString
+      redisName: getRedisString,
+      redisFound: getIsRedisFound
     };
     return utils;
   }

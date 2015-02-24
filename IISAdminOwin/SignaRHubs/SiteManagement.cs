@@ -36,7 +36,7 @@ namespace IISAdmin.Owin.SignaRHubs {
 				return new SiteDataClass {
 					Name = site.Applications.First().Pool.Name
 				};
-			}, "Redis for site {0} flushed.", "While flushing redis for site {0}.");
+			}, "Redis for site {0} flushed.", "While flushing redis for site ({0}).");
 		}
 
 		public void StopSite(long siteId) {

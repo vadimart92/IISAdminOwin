@@ -1,5 +1,5 @@
 ﻿<div class="row">
-    <div class="site-list bottom-top-margin" ng-show="gridOptions.data.length > 0">
+    <div class="site-list bottom-top-margin" ng-show="siteListLoaded && gridOptions.data.length > 0">
         <h2>Site list:</h2>
         <div id="siteListGrid"
              class="site-list-grid"
@@ -9,7 +9,10 @@
              ui-grid-resize-columns
              ui-grid-selection></div>
     </div>
-    <div class="load-error-container" ng-show="!gridOptions.data || gridOptions.data.length == 0">
+    <div class="load-error-container" ng-show="siteListLoaded && (!gridOptions.data || gridOptions.data.length == 0)">
         <h2 > Could not load</h2>
+    </div>
+    <div class="load-error-container" ng-show="!siteListLoaded">
+        <h2 >Loading...</h2>
     </div>
 </div>

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using WebSiteManagment.Models;
 
 namespace WebSiteManagment.Wcf {
@@ -8,8 +10,14 @@ namespace WebSiteManagment.Wcf {
 		private WebSiteManager _siteManager = new WebSiteManager();
 
 		public List<Site> GetAllSites() {
-			var sites = _siteManager.GetWebsites();
-			return sites;
+			try {
+				var sites = _siteManager.GetWebsites();
+				return sites;
+			}
+			catch(UnauthorizedAccessException ex) {
+				throw new FaultException<UnauthorizedAccessException>(ex, "AccessDenied");
+			}
+			
 		}
 
 		public Site GetSite(long id) {
