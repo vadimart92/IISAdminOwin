@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RedisBoost;
+﻿using RedisBoost;
 
-
-namespace WebSiteManagment.Common {
+namespace WebSiteManagment.Core.Common {
 	public static class RedisUtils {
 		public static void FlushRedisDb(string host, int port, int dbIndex) {
 			var connectionTask = RedisClient.ConnectAsync(host, port, dbIndex);

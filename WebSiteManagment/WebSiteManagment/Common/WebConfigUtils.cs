@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Configuration;
-using Microsoft.Web.Administration;
-using SysCon =System.Configuration;
+using WebSiteManagment.Core.Models;
+using Site = Microsoft.Web.Administration.Site;
 
-namespace WebSiteManagment.Common {
+namespace WebSiteManagment.Core.Common {
 	public static class WebConfigUtils {
 		
 		public static string GetRedisConnectionString (Site site) {
@@ -38,6 +34,10 @@ namespace WebSiteManagment.Common {
 				}
 			}
 			return res;
+		}
+
+		public static void SetSiteSettings(Site site, SiteSettings settings) {
+			//todo setup site web.config & webapp/web.cofig
 		}
 	}
 }

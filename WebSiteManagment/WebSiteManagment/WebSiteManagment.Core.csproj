@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\BuildExtractor.cs" />
+    <Compile Include="Common\DatabaseRestoreManager.cs" />
     <Compile Include="Common\ProcessUtils.cs" />
     <Compile Include="Common\RedisUtils.cs" />
     <Compile Include="Common\WebConfigUtils.cs" />

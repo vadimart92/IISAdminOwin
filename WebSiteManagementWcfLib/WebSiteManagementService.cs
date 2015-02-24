@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
-using WebSiteManagment.Models;
+using WebSiteManagment.Core;
+using WebSiteManagment.Core.Models;
 
 namespace WebSiteManagment.Wcf {
 	

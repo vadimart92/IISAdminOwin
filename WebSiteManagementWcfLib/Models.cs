@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
-using WebSiteManagment.Models;
+using WebSiteManagment.Core.Models;
 
 namespace WebSiteManagment.Wcf {
 

@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using WebSiteManagment.Common;
+using WebSiteManagment.Core.Common;
 using MsAdmin = Microsoft.Web.Administration;
 
-namespace WebSiteManagment.Models {
+namespace WebSiteManagment.Core.Models {
 	
 	[DataContract]
     public class Site {
@@ -134,5 +131,11 @@ namespace WebSiteManagment.Models {
 			.Select(t => t.Split(new [] { '=' }, 2))
 			.ToDictionary(t => t[0].Trim(), t => t[1].Trim(), StringComparer.InvariantCultureIgnoreCase);
 		}
+	}
+
+	public class SiteSettings {
+		public Redis Redis { get; set; }
+		public string Server { get; set; }
+		public string Intance { get; set; }
 	}
 }

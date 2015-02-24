@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Web.Administration;
 
-namespace WebSiteManagment.Common {
+namespace WebSiteManagment.Core.Common {
 	class ProcessUtils {
 		public static void RestartPool(ApplicationPool pool, ServerManager srvManager) {
 			StopPool(pool);

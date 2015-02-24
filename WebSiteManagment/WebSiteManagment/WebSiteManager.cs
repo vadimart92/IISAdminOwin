@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Web.Administration;
-using WebSiteManagment.Common;
-using WebSiteManagment.Models;
-using Site = WebSiteManagment.Models.Site;
+using WebSiteManagment.Core.Common;
+using WebSiteManagment.Core.Models;
+using Site = WebSiteManagment.Core.Models.Site;
 
-namespace WebSiteManagment {
+namespace WebSiteManagment.Core {
 	public class WebSiteManager {
 		#region  Members
 
