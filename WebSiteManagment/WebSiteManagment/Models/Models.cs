@@ -21,7 +21,7 @@ namespace WebSiteManagment.Models {
 		    Name = site.Name;
 			State = site.State.ToString();
 			var redisCs = WebConfigUtils.GetRedisConnectionString(site);
-			Redis = new Redis(redisCs);
+			Redis = string.IsNullOrWhiteSpace(redisCs)? null : new Redis(redisCs);
 			Bindings = site.Bindings.ToList().ConvertAll(b => b.BindingInformation);
 			Applications = site.Applications.ToList().ConvertAll(a => 
 				new Application(a, pools.FirstOrDefault(p => 
@@ -90,6 +90,9 @@ namespace WebSiteManagment.Models {
 		private string _connectionString;
 
 		public Redis(string connectionString) {
+		    if (string.IsNullOrWhiteSpace(connectionString)) {
+                throw new ArgumentException("connectionString");
+		    }
 			ConnectionString = connectionString;
 	    }
 

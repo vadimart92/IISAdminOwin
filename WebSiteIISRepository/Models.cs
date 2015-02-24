@@ -103,6 +103,9 @@ namespace IISAdmin.WCFWebSiteRepository {
 	public class RedisInfo:IRedis {
 		
 		public RedisInfo(Redis redis) {
+		    if (redis == null) {
+		        return;
+		    }
 			Db = redis.Db;
 			Host = redis.Host;
 			Port = redis.Port;
