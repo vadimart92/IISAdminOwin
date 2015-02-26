@@ -26,7 +26,6 @@ namespace IISAdmin.Owin.WebApiControllers {
 			try {
 				var sites = _webSiteRepository.GetAllSites()
 					.OrderBy(s => s.Name, StringComparer.OrdinalIgnoreCase);
-				sites.First().Redis = null;
 				return sites;
 			} catch (UnauthorizedAccessException) {
 				Information.ErrorFormat(HttpContext.Current.User, "Error", "Site management service must run in admin mode");

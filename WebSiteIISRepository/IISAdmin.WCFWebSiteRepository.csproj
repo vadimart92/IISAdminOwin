@@ -73,7 +73,7 @@
     <None Include="Service References\WebSiteRepositoryService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WebSiteRepositoryService\WebSiteManagment.Models.xsd">
+    <None Include="Service References\WebSiteRepositoryService\WebSiteManagment.Core.Models.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
