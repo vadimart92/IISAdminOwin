@@ -16,6 +16,7 @@ namespace IISAdmin.Owin.Common {
 			container.RegisterType<WcfClientWebSiteRepository>(new InjectionConstructor("NetNamedPipeBinding_IWebSiteRepositoryService"));
 			container.RegisterType<IWebSiteRepository, WcfClientWebSiteRepository>(new HierarchicalLifetimeManager());
 			container.RegisterType<IReleaseRepository, WorkDbReleaseRepository>(new HierarchicalLifetimeManager());
+			container.RegisterType<ISqlServerInstanceRepository, LocalSqlServerInstanceRepository>(new HierarchicalLifetimeManager());
 		}
 	}
 }

@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9911e397-8e70-4a0b-a0d4-38c5a8b7adf2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagementService/App.config" afterPath="$PROJECT_DIR$/../WebSiteManagementService/App.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Interfaces/IISAdmin.Interfaces.csproj" afterPath="$PROJECT_DIR$/../Interfaces/IISAdmin.Interfaces.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common/ContainerProvider.cs" afterPath="$PROJECT_DIR$/Common/ContainerProvider.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/IISAdmin.Owin.DAL.Common.csproj" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/IISAdmin.Owin.DAL.Common.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteIISRepository/IISAdmin.WCFWebSiteRepository.csproj" afterPath="$PROJECT_DIR$/../WebSiteIISRepository/IISAdmin.WCFWebSiteRepository.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteIISRepository/Service References/WebSiteRepositoryService/Reference.cs" afterPath="$PROJECT_DIR$/../WebSiteIISRepository/Service References/WebSiteRepositoryService/Reference.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebApiControllers/SiteController.cs" afterPath="$PROJECT_DIR$/WebApiControllers/SiteController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SignaRHubs/SiteManagement.cs" afterPath="$PROJECT_DIR$/SignaRHubs/SiteManagement.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteIISRepository/WcfClientWebSiteRepository.cs" afterPath="$PROJECT_DIR$/../WebSiteIISRepository/WcfClientWebSiteRepository.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagementService/WebSiteManagement.Service.csproj" afterPath="$PROJECT_DIR$/../WebSiteManagementService/WebSiteManagement.Service.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagementWcfLib/WebSiteManagementService.cs" afterPath="$PROJECT_DIR$/../WebSiteManagementWcfLib/WebSiteManagementService.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteIISRepository/app.config" afterPath="$PROJECT_DIR$/../WebSiteIISRepository/app.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/common/enums.coffee" afterPath="$PROJECT_DIR$/components/common/enums.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/common/enums.js" afterPath="$PROJECT_DIR$/resources/app/components/common/enums.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/views/siteList.html" afterPath="$PROJECT_DIR$/resources/app/views/siteList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/siteList/siteListController.coffee" afterPath="$PROJECT_DIR$/components/siteList/siteListController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/siteList/siteListController.js" afterPath="$PROJECT_DIR$/resources/app/components/siteList/siteListController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/siteList/siteUtils.coffee" afterPath="$PROJECT_DIR$/components/siteList/siteUtils.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/siteList/siteUtils.js" afterPath="$PROJECT_DIR$/resources/app/components/siteList/siteUtils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SignaRHubs/SiteCreateHub.cs" afterPath="$PROJECT_DIR$/SignaRHubs/SiteCreateHub.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/addSite/addSiteController.coffee" afterPath="$PROJECT_DIR$/components/addSite/addSiteController.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/addSite/addSiteController.js" afterPath="$PROJECT_DIR$/resources/app/components/addSite/addSiteController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html" afterPath="$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IISAdminOwin.iws" />
@@ -58,18 +45,48 @@
       <file leaf-file-name="siteUtils.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/siteList/siteUtils.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="459">
               <caret line="5" column="64" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="enums.coffee" pinned="false" current-in-tab="true">
+      <file leaf-file-name="enums.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/common/enums.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12948857" vertical-offset="0" max-vertical-offset="919">
-              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addSiteController.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/addSite/addSiteController.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1547">
+              <caret line="54" column="11" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom-formly-fields-ui-select.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.05711086" vertical-offset="0" max-vertical-offset="893">
+              <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addSite.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/app/views/addSite.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="289">
+              <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -107,14 +124,14 @@
         <option value="$PROJECT_DIR$/resources/app/views/custom-formly-fields-radioButton.html" />
         <option value="$PROJECT_DIR$/resources/index.html" />
         <option value="$PROJECT_DIR$/components/app.coffee" />
-        <option value="$PROJECT_DIR$/resources/app/views/addSite.html" />
         <option value="$PROJECT_DIR$/components/addSite/addSite.less" />
-        <option value="$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html" />
-        <option value="$PROJECT_DIR$/components/addSite/addSiteController.coffee" />
         <option value="$PROJECT_DIR$/resources/app/views/siteList.html" />
         <option value="$PROJECT_DIR$/components/siteList/siteListController.coffee" />
         <option value="$PROJECT_DIR$/components/siteList/siteUtils.coffee" />
         <option value="$PROJECT_DIR$/components/common/enums.coffee" />
+        <option value="$PROJECT_DIR$/resources/app/views/addSite.html" />
+        <option value="$PROJECT_DIR$/components/addSite/addSiteController.coffee" />
+        <option value="$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html" />
       </list>
     </option>
   </component>
@@ -155,7 +172,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -225,10 +241,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -338,6 +350,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,10 +401,14 @@
       <ConfigurationWrapper RunnerId="Basic" />
       <method />
     </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <method />
     </configuration>
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -399,10 +416,6 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -451,26 +464,26 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -515,7 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1289" max-vertical-offset="1989">
           <caret line="87" column="52" selection-start-line="87" selection-start-column="52" selection-end-line="87" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -573,7 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="255">
           <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -581,7 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,7 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5033113" vertical-offset="4219" max-vertical-offset="111707">
           <caret line="275" column="24" selection-start-line="275" selection-start-column="24" selection-end-line="275" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,7 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15229563" vertical-offset="0" max-vertical-offset="893">
           <caret line="8" column="47" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11422172" vertical-offset="0" max-vertical-offset="893">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,7 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1955">
           <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,15 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22198041" vertical-offset="0" max-vertical-offset="919">
           <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/app/views/addSite.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07614782" vertical-offset="0" max-vertical-offset="893">
-          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -806,25 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26651737" vertical-offset="0" max-vertical-offset="893">
           <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15229563" vertical-offset="0" max-vertical-offset="893">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#ui-select#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/addSite/addSiteController.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53645265" vertical-offset="561" max-vertical-offset="1547">
-          <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,7 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48095757" vertical-offset="204" max-vertical-offset="1819">
           <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,7 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30807248" vertical-offset="0" max-vertical-offset="607">
           <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28555432" vertical-offset="0" max-vertical-offset="893">
           <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -870,8 +845,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/common/enums.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12948857" vertical-offset="0" max-vertical-offset="919">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/app/views/addSite.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="289">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/addSite/addSiteController.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1547">
+          <caret line="54" column="11" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05711086" vertical-offset="0" max-vertical-offset="893">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
           <folding />
         </state>
       </provider>

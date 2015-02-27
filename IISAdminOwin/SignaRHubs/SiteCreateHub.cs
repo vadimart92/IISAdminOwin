@@ -11,10 +11,12 @@ namespace IISAdmin.Owin.SignaRHubs {
 	
 		private IWebSiteRepository _siteRepository;
 		private IReleaseRepository _releaseRepository;
+		private ISqlServerInstanceRepository _serverInstanceRepository;
 		
-		public SiteCreate(IWebSiteRepository siteRepository, IReleaseRepository releaseRepository) {
+		public SiteCreate(IWebSiteRepository siteRepository, IReleaseRepository releaseRepository, ISqlServerInstanceRepository serverInstanceRepository) {
 			_siteRepository = siteRepository;
 			_releaseRepository = releaseRepository;
+			_serverInstanceRepository = serverInstanceRepository;
 		}
 
 		public IRelease GetReleaseInfo(string uri) {
@@ -22,8 +24,10 @@ namespace IISAdmin.Owin.SignaRHubs {
 		}
 
 		public SiteCreationInfo GetStartupInfo() {
+			var sqlInstances = _serverInstanceRepository.GetAllInstances();
 			var res = new SiteCreationInfo {
-				FreeRedisDbNum = GetFreeRedisDb()
+				FreeRedisDbNum = GetFreeRedisDb(),
+				SqlServerInstances = sqlInstances
 			};
 			return res;
 		}
@@ -45,7 +49,8 @@ namespace IISAdmin.Owin.SignaRHubs {
 
 	[JsonObject]
 	public class SiteCreationInfo {
-		public int FreeRedisDbNum { get; set; }	
+		public int FreeRedisDbNum { get; set; }
+		public IList<ISqlServerInstance> SqlServerInstances { get; set; }
 	}
 
 }
