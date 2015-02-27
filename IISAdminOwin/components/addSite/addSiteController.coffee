@@ -47,20 +47,20 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', (
     {
       key: 'db', type: 'uiSelect', templateOptions: {
         label: 'MSSQL Instance'
-        options: [
-          {"name": "TscDistr-MS 2008", id: "option1"}
-          {"name": "TscPSF-MS 2008", id: "option1"}
-          {"name": "TscPSF-MS 2012", id: "option1"}
-          {"name": "TscDistr-MS 2012", id: "option2"}
-        ]
       }
     }
   ]
 
+  vm.setSqlInstances = (list)->
+    vm.site.msSqlInstances = list
+    return
+
   getSiteCreateInfo = ()->
     vm.hub.GetStartupInfo()
     .then (siteInfo)->
-      $scope.$apply ()-> vm.site.redis = siteInfo.freeRedisDbNum
+      $scope.$apply ()->
+        vm.site.redis = siteInfo.freeRedisDbNum
+        vm.setSqlInstances siteInfo.sqlServerInstances
 
   vm.updateReleaseInfo = (uri)->
     vm.hub.GetReleaseInfo uri

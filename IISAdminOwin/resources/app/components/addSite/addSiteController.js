@@ -84,29 +84,18 @@ app.controller("addSiteController", [
         key: 'db',
         type: 'uiSelect',
         templateOptions: {
-          label: 'MSSQL Instance',
-          options: [
-            {
-              "name": "TscDistr-MS 2008",
-              id: "option1"
-            }, {
-              "name": "TscPSF-MS 2008",
-              id: "option1"
-            }, {
-              "name": "TscPSF-MS 2012",
-              id: "option1"
-            }, {
-              "name": "TscDistr-MS 2012",
-              id: "option2"
-            }
-          ]
+          label: 'MSSQL Instance'
         }
       }
     ];
+    vm.setSqlInstances = function(list) {
+      vm.site.msSqlInstances = list;
+    };
     getSiteCreateInfo = function() {
       return vm.hub.GetStartupInfo().then(function(siteInfo) {
         return $scope.$apply(function() {
-          return vm.site.redis = siteInfo.freeRedisDbNum;
+          vm.site.redis = siteInfo.freeRedisDbNum;
+          return vm.setSqlInstances(siteInfo.sqlServerInstances);
         });
       });
     };
