@@ -222,6 +222,7 @@
     <Compile Include="Common\ContainerProvider.cs" />
     <Compile Include="Common\FilteredCamelCasePropertyNamesContractResolver.cs" />
     <Compile Include="Common\UnityHubActivator.cs" />
+    <Compile Include="Models\SiteCreateHubModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignaRHubs\BaseHub.cs" />
     <Compile Include="SignaRHubs\Information.cs" />

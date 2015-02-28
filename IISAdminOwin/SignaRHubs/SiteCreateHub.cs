@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using IISAdmin.Interfaces;
+using IISAdmin.Owin.Models;
 using Newtonsoft.Json;
 
 namespace IISAdmin.Owin.SignaRHubs {
@@ -44,6 +45,10 @@ namespace IISAdmin.Owin.SignaRHubs {
 			} while (!numberFound);
 			return number;
 		}
+
+		public void AddSite(SiteCreateData data) {
+			_siteRepository.CreateSite(data);
+		}
 	}
 
 
@@ -51,6 +56,21 @@ namespace IISAdmin.Owin.SignaRHubs {
 	public class SiteCreationInfo {
 		public int FreeRedisDbNum { get; set; }
 		public IList<ISqlServerInstance> SqlServerInstances { get; set; }
+	}
+
+	[JsonObject]
+	public class SiteCreateData: ISiteCreateData {
+		public string Name { get; set; }
+		public int Redis { get; set; }
+		public SignalrRelease ReleaseInfo { get; set; }
+		public SignalrSqlServerInstance Db { get; set; }
+
+		#region Члены ISiteCreateData
+		
+		IRelease ISiteCreateData.ReleaseInfo  { get { return ReleaseInfo; } }
+		ISqlServerInstance ISiteCreateData.Db  { get { return Db; } }
+
+		#endregion
 	}
 
 }
