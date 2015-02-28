@@ -96,6 +96,10 @@ namespace IISAdmin.WCFWebSiteRepository {
 			CloseChannel();
 		}
 
+		public void CreateSite(ISiteCreateData data) {
+			throw new NotImplementedException();
+		}
+
 		#endregion
 
 	}

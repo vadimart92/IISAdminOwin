@@ -1,4 +1,4 @@
-app.constant('$', $).factory('Hub', [
+app.factory('Hub', [
   '$', 'logger', function($, logger) {
     var getConnection, globalConnections, initNewConnection;
     globalConnections = [];

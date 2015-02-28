@@ -1,5 +1,4 @@
-app.constant('$', $)
-.factory 'Hub', [
+app.factory 'Hub', [
   '$'
   'logger'
   ($, logger) ->

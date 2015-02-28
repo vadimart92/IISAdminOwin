@@ -1,8 +1,18 @@
-<div>
-    <ui-select ng-model="options.templateOptions.selected" theme="bootstrap" ng-disabled="disabled" style="width: 300px">
-        <ui-select-match placeholder="Select or search a country in the list...">{{$select.selected.name}}</ui-select-match>
-        <ui-select-choices repeat="option in options.templateOptions.options">
-            <span ng-bind-html="option.name | highlight: $select.search"></span>
+<div class="form-redis">
+    <label for="formly_1_input_redis_1" class="control-label ng-binding">Redis </label>
+    <input class="form-control ng-pristine ng-untouched ng-valid" ng-model="model[options.templateOptions.redisKey]"
+           id="formly_1_input_redis_1" name="formly_1_input_redis_1" disabled="disabled">
+</div>
+<div class="form-sql-server">
+    <label for="formly_1_input_{{options.key}}_1">{{options.templateOptions.label}}</label>
+    <ui-select name="formly_1_input_{{options.key}}_1" ng-model="model.db" theme="bootstrap" ng-disabled="disabled">
+        <ui-select-match placeholder="Select or search instance">{{$select.selected.name}}</ui-select-match>
+        <ui-select-choices repeat="option in model.msSqlInstances | filter: {name: $select.search} ">
+            <div ng-bind-html="option.name | highlight: $select.search"></div>
+            <span>
+                instance: {{option.instanceName}}<br>
+                version: <span ng-bind-html="option.version"></span>
+            </span>
         </ui-select-choices>
     </ui-select>
 </div>
