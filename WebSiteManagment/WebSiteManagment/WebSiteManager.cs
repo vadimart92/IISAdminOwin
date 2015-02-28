@@ -147,6 +147,10 @@ namespace WebSiteManagment.Core {
 			RedisUtils.FlushRedisDb(site.Redis.Host, site.Redis.Port, site.Redis.Db);
 		}
 
+		public void AddSite(object data) {
+			//todo: issue 9 
+		}
+
 		private const string AppHostConfigPath = @"\inetsrv\config\applicationhost.config";
 
 		#endregion

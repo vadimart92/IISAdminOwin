@@ -95,6 +95,12 @@
   <wsdl:message name="IWebSiteRepositoryService_ClearCache_OutputMessage">
     <wsdl:part name="parameters" element="tns:ClearCacheResponse" />
   </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_AddSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSite" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_AddSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSiteResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebSiteRepositoryService">
     <wsdl:operation name="GetAllSites">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/GetAllSites" message="tns:IWebSiteRepositoryService_GetAllSites_InputMessage" />
@@ -131,6 +137,10 @@
     <wsdl:operation name="ClearCache">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/ClearCache" message="tns:IWebSiteRepositoryService_ClearCache_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/ClearCacheResponse" message="tns:IWebSiteRepositoryService_ClearCache_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/AddSite" message="tns:IWebSiteRepositoryService_AddSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/AddSiteResponse" message="tns:IWebSiteRepositoryService_AddSite_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetNamedPipeBinding_IWebSiteRepositoryService" type="tns:IWebSiteRepositoryService">
@@ -211,6 +221,15 @@
     </wsdl:operation>
     <wsdl:operation name="ClearCache">
       <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/ClearCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSite">
+      <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/AddSite" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
