@@ -38,3 +38,9 @@ SignalR.Transports.TransportHeartBeat Information: 0 : Connection c93e7a6f-24d1-
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(c93e7a6f-24d1-4020-a1e1-c15e9457ebca)
 SignalR.Transports.TransportHeartBeat Verbose: 0 : Connection c93e7a6f-24d1-4020-a1e1-c15e9457ebca exists. Closing previous connection.
 SignalR.Transports.ServerSentEventsTransport Information: 0 : End(c93e7a6f-24d1-4020-a1e1-c15e9457ebca)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 2b38f9d5-322a-42dd-93d7-83162c43bf1e is New.
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(2b38f9d5-322a-42dd-93d7-83162c43bf1e)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(2b38f9d5-322a-42dd-93d7-83162c43bf1e)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(2b38f9d5-322a-42dd-93d7-83162c43bf1e)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(2b38f9d5-322a-42dd-93d7-83162c43bf1e)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(2b38f9d5-322a-42dd-93d7-83162c43bf1e)
