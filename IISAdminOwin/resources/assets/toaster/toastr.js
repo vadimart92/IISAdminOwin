@@ -1,6 +1,6 @@
 /*
  * Toastr
- * Copyright 2012-2014 
+ * Copyright 2012-2014
  * Authors: John Papa, Hans Fjällemark, and Tim Ferrell.
  * All Rights Reserved.
  * Use, reproduction, distribution, and modification of this code is subject to the terms and
@@ -362,7 +362,6 @@
                 }
             }
             //#endregion
-
         })();
     });
 }(typeof define === 'function' && define.amd ? define : function (deps, factory) {
