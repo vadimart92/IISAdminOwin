@@ -50,9 +50,9 @@ namespace IISAdmin.Owin.DAL.Common
 			var res = table.Select("len(ServerName)>0 AND len(InstanceName)>0")
 						   .Where(r => serverNames == null || serverNames.Contains(r[snColumn]))
 						   .Select(row => new SqlServerInstance {
-							   ServerName = (String)row[snColumn],
-							   InstanceName = (String)row[inColumn],
-							   Version = (String)row[vColumn]
+							   ServerName = (string)row[snColumn],
+							   InstanceName = (string)row[inColumn],
+							   Version = (string)row[vColumn]
 						   }).ToList();
 			return res.Count > 0 ? res : GetServerInstancesMock();
 		}

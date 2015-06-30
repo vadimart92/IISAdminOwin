@@ -23,20 +23,9 @@ namespace IISAdmin.Owin.SignaRHubs
 		public IRelease GetReleaseInfo(string uri) {
 			return _releaseRepository.GetByUri(uri);
 		}
-
-		public List<string> GetMsSqlInstancesNames() {
-			SqlDataSourceEnumerator instance = System.Data.Sql.SqlDataSourceEnumerator.Instance;
-			DataTable dataTable = instance.GetDataSources();
-
-			var result = (from row in dataTable.AsEnumerable()
-						  select row[0] + "\\" + row[1]).ToList();
-
-			return result;
-		}
-
+        
 		public SiteCreationInfo GetStartupInfo() {
-			var serverInstancesNames = GetMsSqlInstancesNames();
-			var sqlInstances = _serverInstanceRepository.GetAllInstances(serverInstancesNames);
+			var sqlInstances = _serverInstanceRepository.GetAllInstances();
 			var res = new SiteCreationInfo {
 				FreeRedisDbNum = GetFreeRedisDb(),
 				SqlServerInstances = sqlInstances
