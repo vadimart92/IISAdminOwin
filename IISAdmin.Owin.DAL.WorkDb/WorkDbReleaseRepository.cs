@@ -21,6 +21,13 @@ namespace IISAdmin.Owin.DAL.Common
 		public DateTime CreatedOn { get; set; }
 
 		public string BuildFolderLink { get; set; }
+
+		string ZipFilePath {
+			get {
+				throw new Exception();
+				return string.Format(@"{0}\{1}.zip", BuildFolderLink, Name);
+			}
+		}
 	}
 
 	public class WorkDbReleaseRepository : IReleaseRepository

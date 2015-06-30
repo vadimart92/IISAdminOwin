@@ -41,8 +41,10 @@ namespace IISAdmin.Interfaces
 		bool Release { get; set; }
 
 		string BuildFolderLink { get; set; }
-
+				
 		DateTime CreatedOn { get; set; }
+
+		string ZipFilePath { get; }
 	}
 
 	public interface IReleaseRepository : IRepository<IRelease, Guid>
@@ -78,7 +80,7 @@ namespace IISAdmin.Interfaces
 	{
 		string Name { get; }
 
-		int Redis { get; }
+		string RedisConnectionString { get; }
 
 		IRelease ReleaseInfo { get; }
 

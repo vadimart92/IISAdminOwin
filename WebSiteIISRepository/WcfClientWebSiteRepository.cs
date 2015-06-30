@@ -99,8 +99,13 @@ namespace IISAdmin.WCFWebSiteRepository
 			try {
 				OpenChannel();
 				//todo: issue 9 create info for add site
-				var serializeOBject = JsonConvert.SerializeObject(data);
-				_repositoryService.AddSiteAsync(serializeOBject);
+				_repositoryService.AddSiteAsync(new SiteAddInfo {
+					ZipFilePath = data.ReleaseInfo.ZipFilePath,
+					Name = data.Name,
+					Redis = new Redis {
+						ConnectionString = data.RedisConnectionString
+					}
+				});
 			} finally {
 				CloseChannel();
 			}

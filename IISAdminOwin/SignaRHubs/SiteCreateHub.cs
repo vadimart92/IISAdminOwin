@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Sql;
 using System.Linq;
@@ -64,13 +65,15 @@ namespace IISAdmin.Owin.SignaRHubs
 	{
 		public string Name { get; set; }
 
-		public int Redis { get; set; }
+		public SignalRRedis RedisInfo { get; set; }
 
 		public SignalrRelease ReleaseInfo { get; set; }
 
 		public SignalrSqlServerInstance Db { get; set; }
 
 		#region Члены ISiteCreateData
+
+		public string RedisConnectionString { get { return RedisInfo.ConnectionString; } }
 
 		IRelease ISiteCreateData.ReleaseInfo { get { return ReleaseInfo; } }
 

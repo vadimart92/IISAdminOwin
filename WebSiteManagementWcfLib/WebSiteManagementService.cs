@@ -46,9 +46,9 @@ namespace WebSiteManagment.Wcf
 			_siteManager.ClearCashe();
 		}
 
-		public void AddSite(object siteData) {
+		public void AddSite(SiteAddInfo info) {
 			//todo: issue 9 implement
-			_siteManager.AddSite(siteData);
+			_siteManager.AddSite(info);
 		}
 
 		public Site FindSite(long id) {

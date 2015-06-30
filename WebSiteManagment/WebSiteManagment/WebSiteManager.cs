@@ -150,26 +150,15 @@ namespace WebSiteManagment.Core
 			RedisUtils.FlushRedisDb(site.Redis.Host, site.Redis.Port, site.Redis.Db);
 		}
 
-		public void AddSite(object data) {
+		public void AddSite(SiteAddInfo info) {
 			//todo: issue 9
-
-			var siteInfo = JsonConvert.DeserializeObject<dynamic>(data.ToString());
-			var pathToArchive = siteInfo.ReleaseInfo.BuildFolderLink.Value;
-			var sitenAme = siteInfo.Name.Value;
-			ExtractArchive(pathToArchive, sitenAme);
-		}
-
-		private void ExtractArchive(string pathtoarchive, string siteName) {
-			var archive = ArchiveFactory.Open(pathtoarchive);
-
-			foreach (var entry in archive.Entries) {
-				if (!entry.IsDirectory) {
-					string destinationPath = @"C:\inetpub\wwwroot\" + siteName;
-					entry.WriteToDirectory(destinationPath, ExtractOptions.ExtractFullPath | ExtractOptions.Overwrite);
-				}
-			}
-		}
-
+			var extractionTask = BuildExtractor.ExtractBuildAsync(info.ZipFilePath, info.Name);
+			var restoreTask = DatabaseBackupManager.RestoreDbBackupAsync(info.Name);
+			Task.WaitAll(extractionTask, restoreTask);
+			var appPool = _serverManager.ApplicationPools.Add();
+            WebConfigUtils.SetSiteSettings()
+        }
+		
 		private const string AppHostConfigPath = @"\inetsrv\config\applicationhost.config";
 
 		#endregion Members

@@ -143,6 +143,19 @@ namespace WebSiteManagment.Core.Models
 
 		public string Server { get; set; }
 
-		public string Intance { get; set; }
+		public string Instance { get; set; }
+	}
+
+	[DataContract]
+	public class SiteAddInfo
+	{
+		[DataMember]
+		public string ZipFilePath { get; set; }
+
+		[DataMember]
+		public string Name { get; set; }
+
+		[DataMember]
+		public Redis Redis { get; set; }
 	}
 }
