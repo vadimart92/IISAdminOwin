@@ -4,6 +4,8 @@ app = angular.module("IISAdmin", ["ui.router", "ngResource", "ui.bootstrap", "ui
 
 app.constant('toaster', toastr);
 
+app.constant('$', jQuery);
+
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state("siteList", {
     url: "/siteList",

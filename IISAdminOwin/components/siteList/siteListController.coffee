@@ -2,7 +2,7 @@
 app.controller "siteListController", [
   '$rootScope', '$scope', '$timeout', 'uiGridConstants'
   'toasterService', 'siteDataService'
-  'logger', 'Hub', 'Enums', 'siteUtils', ($rootScope, $scope, $timeout, uiGridConstants, toasterService, siteDataService, logger, Hub, Enums, siteUtils) ->
+  'logger', 'Hub', 'Enums', 'siteUtils', '$', ($rootScope, $scope, $timeout, uiGridConstants, toasterService, siteDataService, logger, Hub, Enums, siteUtils, $) ->
     vm = $scope;
 
     hub = new Hub('SiteManagement',

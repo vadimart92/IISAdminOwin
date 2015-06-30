@@ -1,9 +1,19 @@
 app.controller("addSiteController", [
-  '$rootScope', '$scope', '$timeout', 'Hub', function($rootScope, $scope, $timeout, Hub) {
-    var getSiteCreateInfo, offFunc, vm;
+  '$rootScope', '$scope', '$timeout', 'Hub', '$', function($rootScope, $scope, $timeout, Hub, $) {
+    var Site, getSiteCreateInfo, offFunc, vm;
     vm = $scope;
-    vm.site = {};
-    vm.releaseInfo = {};
+    Site = Class.create({
+      name: null,
+      redis: 0,
+      workUri: null,
+      db: null,
+      msSqlInstances: [],
+      releaseInfo: {},
+      isFormDataValid: function() {
+        return this.name && this.redis && this.workUri && this.db;
+      }
+    });
+    vm.site = new Site();
     vm.hub = new Hub('SiteCreate', {
       listeners: [],
       methods: ['AddSite', 'GetReleaseInfo', 'GetStartupInfo']
@@ -67,42 +77,42 @@ app.controller("addSiteController", [
         },
         watcher: {
           listener: function(field, newValue, oldValue, scope, stopWatching) {
-            vm.releaseInfo = {};
+            vm.site.releaseInfo = {};
             if (newValue) {
               vm.updateReleaseInfo(newValue);
             }
           }
         }
       }, {
-        key: 'redis',
+        key: 'name',
         type: 'input',
         templateOptions: {
-          label: 'Redis',
-          disabled: true
+          label: 'Name'
         }
       }, {
         key: 'db',
         type: 'uiSelect',
         templateOptions: {
+          redisKey: 'redis',
           label: 'MSSQL Instance'
         }
       }
     ];
-    vm.setSqlInstances = function(list) {
-      vm.site.msSqlInstances = list;
+    vm.setSqlInstances = function(sqlInstances) {
+      vm.site.msSqlInstances = sqlInstances;
     };
     getSiteCreateInfo = function() {
       return vm.hub.GetStartupInfo().then(function(siteInfo) {
         return $scope.$apply(function() {
           vm.site.redis = siteInfo.freeRedisDbNum;
-          return vm.setSqlInstances(siteInfo.sqlServerInstances);
+          vm.setSqlInstances(siteInfo.sqlServerInstances);
         });
       });
     };
     vm.updateReleaseInfo = function(uri) {
       vm.hub.GetReleaseInfo(uri).then(function(data) {
         return $scope.$apply(function() {
-          return $.extend(vm.releaseInfo, data);
+          return $.extend(vm.site.releaseInfo, data);
         });
       });
     };
@@ -111,7 +121,7 @@ app.controller("addSiteController", [
     };
     $timeout(function() {
       return getSiteCreateInfo();
-    }, 1000);
+    }, 2000);
     offFunc = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
       var selfDestruct;
       selfDestruct = offFunc;

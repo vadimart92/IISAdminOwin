@@ -17,6 +17,7 @@ app = angular.module("IISAdmin", [
   "formlyBootstrap"
 ])
 app.constant 'toaster', toastr
+app.constant '$', jQuery
 app.config ($stateProvider, $urlRouterProvider) ->
   $stateProvider.state "siteList", 
     url:         "/siteList",

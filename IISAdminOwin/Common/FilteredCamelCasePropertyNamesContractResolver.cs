@@ -1,28 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Web;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace IISAdminOwin.Common {
-	public class FilteredCamelCasePropertyNamesContractResolver : DefaultContractResolver {
-		public HashSet<Assembly> AssembliesToInclude {
-			get;
-			set;
-		}
-		public HashSet<Type> TypesToInclude {
+namespace IISAdminOwin.Common
+{
+	public class FilteredCamelCasePropertyNamesContractResolver : DefaultContractResolver
+	{
+		public HashSet<Assembly> AssembliesToInclude
+		{
 			get;
 			set;
 		}
 
-		public FilteredCamelCasePropertyNamesContractResolver() {
+		public HashSet<Type> TypesToInclude
+		{
+			get;
+			set;
+		}
+
+		public FilteredCamelCasePropertyNamesContractResolver()
+		{
 			AssembliesToInclude = new HashSet<Assembly>();
 			TypesToInclude = new HashSet<Type>();
 		}
 
-		protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization) {
+		protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
+		{
 			var jsonProperty = base.CreateProperty(member, memberSerialization);
 
 			Type declaringType = member.DeclaringType;
@@ -32,7 +37,8 @@ namespace IISAdminOwin.Common {
 			return jsonProperty;
 		}
 
-		string ToCamelCase(string value) {
+		private string ToCamelCase(string value)
+		{
 			if (String.IsNullOrEmpty(value))
 				return value;
 

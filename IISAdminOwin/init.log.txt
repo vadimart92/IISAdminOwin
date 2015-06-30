@@ -1,0 +1,714 @@
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\72f3a5a8\87295ac4\assembly\dl3\852f00e5\94549a41_c048d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Не удается загрузить один или более запрошенных типов. Обратитесь к свойству LoaderExceptions для получения дополнительных сведений.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\72f3a5a8\87295ac4\assembly\dl3\d80e8f3d\22cb1e30_954ad001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Не удается загрузить один или более запрошенных типов. Обратитесь к свойству LoaderExceptions для получения дополнительных сведений.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\72f3a5a8\87295ac4\assembly\dl3\852f00e5\94549a41_c048d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Не удается загрузить один или более запрошенных типов. Обратитесь к свойству LoaderExceptions для получения дополнительных сведений.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\72f3a5a8\87295ac4\assembly\dl3\d80e8f3d\22cb1e30_954ad001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Не удается загрузить один или более запрошенных типов. Обратитесь к свойству LoaderExceptions для получения дополнительных сведений.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\72f3a5a8\87295ac4\assembly\dl3\852f00e5\94549a41_c048d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Не удается загрузить один или более запрошенных типов. Обратитесь к свойству LoaderExceptions для получения дополнительных сведений.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\72f3a5a8\87295ac4\assembly\dl3\d80e8f3d\22cb1e30_954ad001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Не удается загрузить один или более запрошенных типов. Обратитесь к свойству LoaderExceptions для получения дополнительных сведений.
+
+<<<<<<< HEAD
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\72f3a5a8\87295ac4\assembly\dl3\852f00e5\94549a41_c048d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Не удается загрузить один или более запрошенных типов. Обратитесь к свойству LoaderExceptions для получения дополнительных сведений.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\72f3a5a8\87295ac4\assembly\dl3\d80e8f3d\22cb1e30_954ad001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Не удается загрузить один или более запрошенных типов. Обратитесь к свойству LoaderExceptions для получения дополнительных сведений.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Users\Оля і Вадім\AppData\Local\Temp\Temporary ASP.NET Files\root\a7f3b91c\f5bfa459\assembly\dl3\2e427777\22cb1e30_954ad001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Не удается загрузить один или более запрошенных типов. Обратитесь к свойству LoaderExceptions для получения дополнительных сведений.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Users\Оля і Вадім\AppData\Local\Temp\Temporary ASP.NET Files\root\a7f3b91c\f5bfa459\assembly\dl3\533285a5\94549a41_c048d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Не удается загрузить один или более запрошенных типов. Обратитесь к свойству LoaderExceptions для получения дополнительных сведений.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\a7f3b91c\f5bfa459\assembly\dl3\bcf8fae4\94549a41_c048d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Не удается загрузить один или более запрошенных типов. Обратитесь к свойству LoaderExceptions для получения дополнительных сведений.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\a7f3b91c\f5bfa459\assembly\dl3\c71ea366\22cb1e30_954ad001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Не удается загрузить один или более запрошенных типов. Обратитесь к свойству LoaderExceptions для получения дополнительных сведений.
+=======
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\8cab50cd_de80d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\32b251b9_de80d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\69137133_d79bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\4b7ccf30_d79bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\c9e0c112_d89bd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\44edbd10_d89bd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\96ceda26_689dd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\8616a821_689dd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\96ceda26_689dd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\8616a821_689dd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\96ceda26_689dd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\8616a821_689dd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\96ceda26_689dd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\8616a821_689dd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\96ceda26_689dd001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\8616a821_689dd001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\e7473f27_37a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\97ade722_37a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\b74f20a0_3ca1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\577e129e_3ca1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\b74f20a0_3ca1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\577e129e_3ca1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\b74f20a0_3ca1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\577e129e_3ca1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\b74f20a0_3ca1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\577e129e_3ca1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\577e129e_3ca1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\b74f20a0_3ca1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\37f02bb5_41a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\37cbd5b2_41a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\076865d3_42a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\872a5cd1_42a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\d7e67ca5_50a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\071b7fa3_50a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\d7e67ca5_50a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\071b7fa3_50a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\d7e67ca5_50a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\071b7fa3_50a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\d7e67ca5_50a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\071b7fa3_50a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\d7e67ca5_50a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\071b7fa3_50a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\a7523016\d7e67ca5_50a1d001\Microsoft.Practices.Unity.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+
+SignalR.ReflectedHubDescriptorProvider Warning: 0 : Some of the classes from assembly "Microsoft.AspNet.SignalR.Owin, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" could Not be loaded when searching for Hubs. [C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\vs\f0a0b86a\7fc344b8\assembly\dl3\ba4ff212\071b7fa3_50a1d001\Microsoft.AspNet.SignalR.Owin.dll]
+Original exception type: ReflectionTypeLoadException
+Original exception message: Unable to load one or more of the requested types. Retrieve the LoaderExceptions property for more information.
+>>>>>>> pr/14
+

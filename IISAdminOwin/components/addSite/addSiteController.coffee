@@ -1,9 +1,19 @@
 # CoffeeScript
-app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', ($rootScope, $scope, $timeout, Hub) ->
+app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '$', ($rootScope, $scope, $timeout, Hub, $) ->
   vm = $scope
 
-  vm.site = {}
-  vm.releaseInfo = {}
+  Site = Class.create(
+    name: null,
+    redis: 0,
+    workUri: null,
+    db: null,
+    msSqlInstances: [],
+    releaseInfo: {},
+    isFormDataValid: () ->
+      this.name && this.redis && this.workUri && this.db
+  )
+
+  vm.site = new Site();
 
   vm.hub = new Hub('SiteCreate',
     listeners: []
@@ -36,24 +46,25 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', (
           value = modelValue or viewValue
           /{\b[A-F0-9]{8}(?:-[A-F0-9]{4}){3}-[A-F0-9]{12}\b}/.test value
         message: '$viewValue + " is not a valid build URI"'
-
       watcher: listener: (field, newValue, oldValue, scope, stopWatching) ->
-        vm.releaseInfo = {}
+        vm.site.releaseInfo = {}
         if newValue
           vm.updateReleaseInfo newValue
         return
     },
-    { key: 'redis', type: 'input', templateOptions: {label: 'Redis', disabled: on }}
+    { key: 'name', type: 'input', templateOptions: {label: 'Name' }}
     {
-      key: 'db', type: 'uiSelect', templateOptions: {
+      key: 'db', type: 'uiSelect',
+      templateOptions: {
+        redisKey: 'redis',
         label: 'MSSQL Instance'
       }
     }
   ]
 
-  vm.setSqlInstances = (list)->
-    vm.site.msSqlInstances = list
-    return
+  vm.setSqlInstances = (sqlInstances)-> 
+      vm.site.msSqlInstances = sqlInstances
+      return
 
   getSiteCreateInfo = ()->
     vm.hub.GetStartupInfo()
@@ -61,26 +72,32 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', (
       $scope.$apply ()->
         vm.site.redis = siteInfo.freeRedisDbNum
         vm.setSqlInstances siteInfo.sqlServerInstances
+        return
+        
 
   vm.updateReleaseInfo = (uri)->
     vm.hub.GetReleaseInfo uri
-    .then (data)-> $scope.$apply ()-> $.extend vm.releaseInfo, data
+    .then (data)-> $scope.$apply ()-> $.extend vm.site.releaseInfo, data
     return
 
   vm.addSite = ()->
     vm.hub.AddSite vm.site
     return
 
+ 
+
+
   $timeout ()->
     do getSiteCreateInfo
-  ,1000
+    #vm.site.workUri = "{7D53CBC8-E052-4A7A-9419-E7FF5D6AFE7E}"
+  ,2000
 
   offFunc = $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
     selfDestruct = offFunc;
     do vm.hub.disconnect
     do selfDestruct
     hideAllProgressBars true
-    return
+    return  
 
   return
 ]

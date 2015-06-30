@@ -24,11 +24,12 @@ namespace IISAdmin.Interfaces {
 		void SetCacheUsage(bool type);
 
 		void ClearSiteCache();
+
+		void CreateSite(ISiteCreateData data);
 	}
 
 	#endregion
-
-
+	
 	#region IReleaseRepository
 
 	public interface IRelease : IEntity<Guid> {
@@ -48,13 +49,29 @@ namespace IISAdmin.Interfaces {
 	#region ISqlServerInstanceRepository
 
 	public interface ISqlServerInstance {
-		string Name { get; set; }
+		string ServerName { get; set; }
+		string InstanceName { get; set; }
+
+		string Name { get; }
+
 		string Version { get; set; }
 	}
 
 	public interface ISqlServerInstanceRepository {
-		IList<ISqlServerInstance> GetAllInstances();
+		IList<ISqlServerInstance> GetAllInstances(IList<string> serverNameFilter = null);
 	}
 
+	#endregion
+
+	#region ISiteCreateData
+
+    
+	public interface ISiteCreateData {
+		string Name { get; }
+		int Redis { get; }
+		IRelease ReleaseInfo { get; }
+		ISqlServerInstance Db { get; }
+	}
+	
 	#endregion
 }

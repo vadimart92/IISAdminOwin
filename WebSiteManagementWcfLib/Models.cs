@@ -33,6 +33,10 @@ namespace WebSiteManagment.Wcf {
 
 		[OperationContract]
 		void ClearCache();
+
+		[OperationContract]
+		void AddSite(object siteData);
+		//todo: issue 9 create info for add site
 	}
 
 }

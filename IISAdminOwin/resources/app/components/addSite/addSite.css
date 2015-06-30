@@ -33,3 +33,16 @@
 .create-site-btn {
   margin-top: 20px;
 }
+.formly-field .ui-select-placeholder {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.form-sql-server {
+  display: inline-block;
+  width: 70%;
+}
+.form-redis {
+  width: 20%;
+  margin-right: 5px;
+  display: inline-block;
+}
