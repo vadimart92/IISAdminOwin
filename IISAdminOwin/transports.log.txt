@@ -1338,3 +1338,73 @@ SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(d696404f-8604-4d6a-
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6ce836f2-8e89-4acd-b099-9eb7c2ea9ba7)
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(d696404f-8604-4d6a-b117-7ed8347df8de)
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6ce836f2-8e89-4acd-b099-9eb7c2ea9ba7)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection f6f3464d-32bb-43b6-bfe6-eefaec3d186a is New.
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection d25f4fd6-47c0-40c7-898e-54705d05c866 is New.
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(f6f3464d-32bb-43b6-bfe6-eefaec3d186a)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(d25f4fd6-47c0-40c7-898e-54705d05c866)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 6ea4b8ef-9af2-4cdc-b24e-46ebc47e706b is New.
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 4558d670-9a1d-4f3b-b3ae-b7eb6fa200fb is New.
+SignalR.Transports.ServerSentEventsTransport Information: 0 : Abort(6ea4b8ef-9af2-4cdc-b24e-46ebc47e706b)
+SignalR.Transports.TransportHeartBeat Information: 0 : Removing connection 6ea4b8ef-9af2-4cdc-b24e-46ebc47e706b
+SignalR.Transports.ServerSentEventsTransport Information: 0 : End(6ea4b8ef-9af2-4cdc-b24e-46ebc47e706b)
+SignalR.Transports.ServerSentEventsTransport Verbose: 0 : DrainWrites(6ea4b8ef-9af2-4cdc-b24e-46ebc47e706b)
+SignalR.Transports.ServerSentEventsTransport Information: 0 : CompleteRequest (6ea4b8ef-9af2-4cdc-b24e-46ebc47e706b)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection bfd8f843-5c59-4824-a8ff-6782e770ba56 is New.
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(4558d670-9a1d-4f3b-b3ae-b7eb6fa200fb)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(bfd8f843-5c59-4824-a8ff-6782e770ba56)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(4558d670-9a1d-4f3b-b3ae-b7eb6fa200fb)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(bfd8f843-5c59-4824-a8ff-6782e770ba56)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(4558d670-9a1d-4f3b-b3ae-b7eb6fa200fb)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(bfd8f843-5c59-4824-a8ff-6782e770ba56)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(4558d670-9a1d-4f3b-b3ae-b7eb6fa200fb)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(bfd8f843-5c59-4824-a8ff-6782e770ba56)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(4558d670-9a1d-4f3b-b3ae-b7eb6fa200fb)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(bfd8f843-5c59-4824-a8ff-6782e770ba56)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(4558d670-9a1d-4f3b-b3ae-b7eb6fa200fb)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(bfd8f843-5c59-4824-a8ff-6782e770ba56)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(4558d670-9a1d-4f3b-b3ae-b7eb6fa200fb)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(bfd8f843-5c59-4824-a8ff-6782e770ba56)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(4558d670-9a1d-4f3b-b3ae-b7eb6fa200fb)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(bfd8f843-5c59-4824-a8ff-6782e770ba56)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection b372fb93-0283-4729-9e19-5d46a0b32bb5 is New.
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection b03d3531-22ab-47ea-9c0d-f91e210de450 is New.
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 5af0c3bb-8959-4bb2-8a76-a8400a522a29 is New.
+SignalR.Transports.ServerSentEventsTransport Information: 0 : Abort(b03d3531-22ab-47ea-9c0d-f91e210de450)
+SignalR.Transports.TransportHeartBeat Information: 0 : Removing connection b03d3531-22ab-47ea-9c0d-f91e210de450
+SignalR.Transports.ServerSentEventsTransport Information: 0 : End(b03d3531-22ab-47ea-9c0d-f91e210de450)
+SignalR.Transports.ServerSentEventsTransport Verbose: 0 : DrainWrites(b03d3531-22ab-47ea-9c0d-f91e210de450)
+SignalR.Transports.ServerSentEventsTransport Information: 0 : CompleteRequest (b03d3531-22ab-47ea-9c0d-f91e210de450)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection fae47959-caec-4fc2-8419-d3903ab6517b is New.
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(fae47959-caec-4fc2-8419-d3903ab6517b)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(5af0c3bb-8959-4bb2-8a76-a8400a522a29)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 5af0c3bb-8959-4bb2-8a76-a8400a522a29 is New.
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection fae47959-caec-4fc2-8419-d3903ab6517b is New.
+SignalR.Transports.ServerSentEventsTransport Information: 0 : Abort(fae47959-caec-4fc2-8419-d3903ab6517b)
+SignalR.Transports.TransportHeartBeat Information: 0 : Removing connection fae47959-caec-4fc2-8419-d3903ab6517b
+SignalR.Transports.ServerSentEventsTransport Information: 0 : End(fae47959-caec-4fc2-8419-d3903ab6517b)
+SignalR.Transports.ServerSentEventsTransport Information: 0 : Abort(5af0c3bb-8959-4bb2-8a76-a8400a522a29)
+SignalR.Transports.TransportHeartBeat Information: 0 : Removing connection 5af0c3bb-8959-4bb2-8a76-a8400a522a29
+SignalR.Transports.ServerSentEventsTransport Information: 0 : End(5af0c3bb-8959-4bb2-8a76-a8400a522a29)
+SignalR.Transports.ServerSentEventsTransport Verbose: 0 : DrainWrites(5af0c3bb-8959-4bb2-8a76-a8400a522a29)
+SignalR.Transports.ServerSentEventsTransport Information: 0 : CompleteRequest (5af0c3bb-8959-4bb2-8a76-a8400a522a29)
+SignalR.Transports.ServerSentEventsTransport Verbose: 0 : DrainWrites(fae47959-caec-4fc2-8419-d3903ab6517b)
+SignalR.Transports.ServerSentEventsTransport Information: 0 : CompleteRequest (fae47959-caec-4fc2-8419-d3903ab6517b)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 6a277852-2d64-4a49-9fa1-b4e88aa1ce2e is New.
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : Timer handler took longer than current interval
+SignalR.Transports.ServerSentEventsTransport Verbose: 0 : DrainWrites(6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.ServerSentEventsTransport Information: 0 : CompleteRequest (6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : Connection 6a277852-2d64-4a49-9fa1-b4e88aa1ce2e exists. Closing previous connection.
+SignalR.Transports.ServerSentEventsTransport Information: 0 : End(6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.ServerSentEventsTransport Verbose: 0 : Cancel(6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.ServerSentEventsTransport Verbose: 0 : DrainWrites(6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.ServerSentEventsTransport Information: 0 : CompleteRequest (6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 6a277852-2d64-4a49-9fa1-b4e88aa1ce2e is New.
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 5607e655-0c5a-4d60-8884-500425585e49 is New.
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(5607e655-0c5a-4d60-8884-500425585e49)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
