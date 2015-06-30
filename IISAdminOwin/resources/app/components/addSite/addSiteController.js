@@ -98,14 +98,14 @@ app.controller("addSiteController", [
         }
       }
     ];
-    vm.setSqlInstances = function(list) {
-      vm.site.msSqlInstances = list;
+    vm.setSqlInstances = function(sqlInstances) {
+      vm.site.msSqlInstances = sqlInstances;
     };
     getSiteCreateInfo = function() {
       return vm.hub.GetStartupInfo().then(function(siteInfo) {
         return $scope.$apply(function() {
           vm.site.redis = siteInfo.freeRedisDbNum;
-          return vm.setSqlInstances(siteInfo.sqlServerInstances);
+          vm.setSqlInstances(siteInfo.sqlServerInstances);
         });
       });
     };
@@ -120,9 +120,8 @@ app.controller("addSiteController", [
       vm.hub.AddSite(vm.site);
     };
     $timeout(function() {
-      getSiteCreateInfo();
-      return vm.site.workUri = "{7D53CBC8-E052-4A7A-9419-E7FF5D6AFE7E}";
-    }, 1000);
+      return getSiteCreateInfo();
+    }, 2000);
     offFunc = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
       var selfDestruct;
       selfDestruct = offFunc;
