@@ -4,106 +4,134 @@ using System.Globalization;
 using System.ServiceModel;
 using IISAdmin.Interfaces;
 using IISAdmin.WCFWebSiteRepository.WebSiteRepositoryService;
+using Newtonsoft.Json;
 
-namespace IISAdmin.WCFWebSiteRepository {
+namespace IISAdmin.WCFWebSiteRepository
+{
 
-	public class WcfClientWebSiteRepository: IWebSiteRepository {
-		
-		private readonly WebSiteRepositoryServiceClient _siteRepositoryServiceClient;
-		private IWebSiteRepositoryService _repositoryService;
+    public class WcfClientWebSiteRepository : IWebSiteRepository
+    {
 
-		public WcfClientWebSiteRepository(string bindingName) {
-			_siteRepositoryServiceClient = new WebSiteRepositoryServiceClient(bindingName);
-		}
+        private readonly WebSiteRepositoryServiceClient _siteRepositoryServiceClient;
+        private IWebSiteRepositoryService _repositoryService;
 
-		private void OpenChannel() {
-			if (_siteRepositoryServiceClient.InnerChannel.State != CommunicationState.Opened
-				&& _siteRepositoryServiceClient.InnerChannel.State != CommunicationState.Opening) {
-					_repositoryService = _siteRepositoryServiceClient.ChannelFactory.CreateChannel();
-			}
-		}
+        public WcfClientWebSiteRepository(string bindingName)
+        {
+            _siteRepositoryServiceClient = new WebSiteRepositoryServiceClient(bindingName);
+        }
 
-		private void CloseChannel() {
-			_siteRepositoryServiceClient.InnerChannel.Close();
-		}
+        private void OpenChannel()
+        {
+            if (_siteRepositoryServiceClient.InnerChannel.State != CommunicationState.Opened
+                && _siteRepositoryServiceClient.InnerChannel.State != CommunicationState.Opening)
+            {
+                _repositoryService = _siteRepositoryServiceClient.ChannelFactory.CreateChannel();
+            }
+        }
 
-		#region Члены IWebSiteRepository
+        private void CloseChannel()
+        {
+            _siteRepositoryServiceClient.InnerChannel.Close();
+        }
 
-		public List<ISite> GetAllSites() {
-			OpenChannel();
-			try {
-				var res = _repositoryService.GetAllSites().ConvertAll(s => (ISite) new IisSite(s));
-				return res;
-			}
-			catch (FaultException ex) {
-				if (ex.Reason.GetMatchingTranslation(CultureInfo.CurrentCulture).Text == "AccessDenied") {
-					throw new UnauthorizedAccessException(ex.Message, ex);
-				}
-				throw;
-			}
-			finally {
-				CloseChannel();	
-			}
-		}
+        #region Члены IWebSiteRepository
 
-		public void StopSite(long siteId) {
-			OpenChannel();
-			_repositoryService.StopSite(siteId);
-			CloseChannel();
-		}
+        public List<ISite> GetAllSites()
+        {
+            OpenChannel();
+            try
+            {
+                var res = _repositoryService.GetAllSites().ConvertAll(s => (ISite)new IisSite(s));
+                return res;
+            }
+            catch (FaultException ex)
+            {
+                if (ex.Reason.GetMatchingTranslation(CultureInfo.CurrentCulture).Text == "AccessDenied")
+                {
+                    throw new UnauthorizedAccessException(ex.Message, ex);
+                }
+                throw;
+            }
+            finally
+            {
+                CloseChannel();
+            }
+        }
 
-		public void StartSite(long siteId) {
-			OpenChannel();
-			_repositoryService.StartSite(siteId);
-			CloseChannel();
-		}
+        public void StopSite(long siteId)
+        {
+            OpenChannel();
+            _repositoryService.StopSite(siteId);
+            CloseChannel();
+        }
 
-		public ISite GetSite(long id) {
-			OpenChannel();
-			var site = _repositoryService.GetSite(id);
-			CloseChannel();
-			return new IisSite(site);
-		}
+        public void StartSite(long siteId)
+        {
+            OpenChannel();
+            _repositoryService.StartSite(siteId);
+            CloseChannel();
+        }
 
-		public ISite FindSite(long id) {
-			OpenChannel();
-			var site = _repositoryService.FindSite(id);
-			CloseChannel();
-			return new IisSite(site);
-		}
+        public ISite GetSite(long id)
+        {
+            OpenChannel();
+            var site = _repositoryService.GetSite(id);
+            CloseChannel();
+            return new IisSite(site);
+        }
 
-		public void RestartSitePool(long siteId) {
-			OpenChannel();
-			_repositoryService.RestartSitePool(siteId);
-			CloseChannel();
-		}
+        public ISite FindSite(long id)
+        {
+            OpenChannel();
+            var site = _repositoryService.FindSite(id);
+            CloseChannel();
+            return new IisSite(site);
+        }
 
-		public void FlushSiteRedis(long siteId) {
-			OpenChannel();
-			_repositoryService.FlushSiteRedis(siteId);
-			CloseChannel();
-		}
+        public void RestartSitePool(long siteId)
+        {
+            OpenChannel();
+            _repositoryService.RestartSitePool(siteId);
+            CloseChannel();
+        }
 
-		public void SetCacheUsage(bool type) {
-			OpenChannel();
-			_repositoryService.SetCacheUsage(type);
-			CloseChannel();
-		}
+        public void FlushSiteRedis(long siteId)
+        {
+            OpenChannel();
+            _repositoryService.FlushSiteRedis(siteId);
+            CloseChannel();
+        }
 
-		public void ClearSiteCache() {
-			OpenChannel();
-			_repositoryService.ClearCache();
-			CloseChannel();
-		}
+        public void SetCacheUsage(bool type)
+        {
+            OpenChannel();
+            _repositoryService.SetCacheUsage(type);
+            CloseChannel();
+        }
 
-		public void CreateSite(ISiteCreateData data) {
-			OpenChannel();
-			//todo: issue 9 create info for add site
-			_repositoryService.AddSite(data);
-			CloseChannel();
-		}
+        public void ClearSiteCache()
+        {
+            OpenChannel();
+            _repositoryService.ClearCache();
+            CloseChannel();
+        }
 
-		#endregion
+        public void CreateSite(ISiteCreateData data)
+        {
+            try
+            {
+                OpenChannel();
+                //todo: issue 9 create info for add site
+                var serializeOBject = JsonConvert.SerializeObject(data);
+                _repositoryService.AddSiteAsync(serializeOBject);
+            }
+            finally
+            {
+                CloseChannel();
+            }
+        }
 
-	}
+        #endregion
+
+    }
 }

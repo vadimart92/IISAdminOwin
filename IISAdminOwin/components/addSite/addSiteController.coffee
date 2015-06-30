@@ -62,9 +62,9 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '
     }
   ]
 
-  vm.setSqlInstances = (list)->
-    vm.site.msSqlInstances = list
-    return
+  vm.setSqlInstances = (sqlInstances)-> 
+      vm.site.msSqlInstances = sqlInstances
+      return
 
   getSiteCreateInfo = ()->
     vm.hub.GetStartupInfo()
@@ -72,6 +72,8 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '
       $scope.$apply ()->
         vm.site.redis = siteInfo.freeRedisDbNum
         vm.setSqlInstances siteInfo.sqlServerInstances
+        return
+        
 
   vm.updateReleaseInfo = (uri)->
     vm.hub.GetReleaseInfo uri
@@ -82,17 +84,20 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '
     vm.hub.AddSite vm.site
     return
 
+ 
+
+
   $timeout ()->
     do getSiteCreateInfo
-    vm.site.workUri = "{7D53CBC8-E052-4A7A-9419-E7FF5D6AFE7E}"
-  ,1000
+    #vm.site.workUri = "{7D53CBC8-E052-4A7A-9419-E7FF5D6AFE7E}"
+  ,2000
 
   offFunc = $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
     selfDestruct = offFunc;
     do vm.hub.disconnect
     do selfDestruct
     hideAllProgressBars true
-    return
+    return  
 
   return
 ]
