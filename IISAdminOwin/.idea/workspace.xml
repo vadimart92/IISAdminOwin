@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9911e397-8e70-4a0b-a0d4-38c5a8b7adf2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SignaRHubs/BaseHub.cs" afterPath="$PROJECT_DIR$/SignaRHubs/BaseHub.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common/BundlesRegistrator.cs" afterPath="$PROJECT_DIR$/Common/BundlesRegistrator.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common/ContainerProvider.cs" afterPath="$PROJECT_DIR$/Common/ContainerProvider.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common/FilteredCamelCasePropertyNamesContractResolver.cs" afterPath="$PROJECT_DIR$/Common/FilteredCamelCasePropertyNamesContractResolver.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SignaRHubs/Information.cs" afterPath="$PROJECT_DIR$/SignaRHubs/Information.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SignaRHubs/Models.cs" afterPath="$PROJECT_DIR$/SignaRHubs/Models.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebApiControllers/SiteController.cs" afterPath="$PROJECT_DIR$/WebApiControllers/SiteController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SignaRHubs/SiteCreateHub.cs" afterPath="$PROJECT_DIR$/SignaRHubs/SiteCreateHub.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/SiteCreateHubModels.cs" afterPath="$PROJECT_DIR$/Models/SiteCreateHubModels.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SignaRHubs/SiteManagement.cs" afterPath="$PROJECT_DIR$/SignaRHubs/SiteManagement.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Startup.cs" afterPath="$PROJECT_DIR$/Startup.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common/UnityHubActivator.cs" afterPath="$PROJECT_DIR$/Common/UnityHubActivator.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common/UnityResolver.cs" afterPath="$PROJECT_DIR$/Common/UnityResolver.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web.config" afterPath="$PROJECT_DIR$/Web.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App_Start/WebApiConfig.cs" afterPath="$PROJECT_DIR$/App_Start/WebApiConfig.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/addSite/addSite.css" afterPath="$PROJECT_DIR$/resources/app/components/addSite/addSite.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/addSite/addSiteController.js" afterPath="$PROJECT_DIR$/resources/app/components/addSite/addSiteController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/angular/angular-ui-router.js" afterPath="$PROJECT_DIR$/resources/assets/angular/angular-ui-router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/app.js" afterPath="$PROJECT_DIR$/resources/app/components/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/home/home.css" afterPath="$PROJECT_DIR$/resources/app/components/home/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/index.html" afterPath="$PROJECT_DIR$/resources/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init.log.txt" afterPath="$PROJECT_DIR$/init.log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/signalR/jquery.signalR-2.2.0.js" afterPath="$PROJECT_DIR$/resources/assets/signalR/jquery.signalR-2.2.0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/mProgress/mprogress.css" afterPath="$PROJECT_DIR$/resources/assets/mProgress/mprogress.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/mProgress/mprogress.js" afterPath="$PROJECT_DIR$/resources/assets/mProgress/mprogress.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages.config" afterPath="$PROJECT_DIR$/packages.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/views/siteList.site.html" afterPath="$PROJECT_DIR$/resources/app/views/siteList.site.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/siteList/siteListController.coffee" afterPath="$PROJECT_DIR$/components/siteList/siteListController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/siteList/siteListController.js" afterPath="$PROJECT_DIR$/resources/app/components/siteList/siteListController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/toaster/toastr.css" afterPath="$PROJECT_DIR$/resources/assets/toaster/toastr.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/toaster/toastr.js" afterPath="$PROJECT_DIR$/resources/assets/toaster/toastr.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transports.log.txt" afterPath="$PROJECT_DIR$/transports.log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid-stable.css" afterPath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid-stable.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid-stable.js" afterPath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid-stable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/underscore/underscore.js" afterPath="$PROJECT_DIR$/resources/assets/underscore/underscore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IISAdminOwin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,8 +66,8 @@
       <file leaf-file-name="siteListController.coffee" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/siteList/siteListController.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.110990204">
-              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.44396082">
+              <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
               <folding>
                 <element signature="e#2505#3575#0" expanded="false" />
               </folding>
@@ -182,7 +146,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1924" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -397,11 +361,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1797694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17864583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -798,8 +762,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/siteList/siteListController.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.110990204">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.44396082">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
           <folding>
             <element signature="e#2505#3575#0" expanded="false" />
           </folding>
