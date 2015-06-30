@@ -65,6 +65,7 @@ namespace IISAdmin.Interfaces {
 
 	#region ISiteCreateData
 
+    
 	public interface ISiteCreateData {
 		string Name { get; }
 		int Redis { get; }
