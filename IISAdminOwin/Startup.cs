@@ -23,7 +23,7 @@ namespace IISAdmin.Owin {
 
 		public void Configuration(IAppBuilder appBuilder) {
 			var container = ContainerProvider.GetContainer();
-
+            
 			appBuilder.UseErrorPage();
 			appBuilder.UseCors(CorsOptions.AllowAll);
 
@@ -65,7 +65,7 @@ namespace IISAdmin.Owin {
 			var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
 			jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 			config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
-			
+            
 			config.DependencyResolver = new UnityResolver(container);
 
 			return config;
