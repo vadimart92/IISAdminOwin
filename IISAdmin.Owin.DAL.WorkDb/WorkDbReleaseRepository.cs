@@ -26,7 +26,7 @@ namespace IISAdmin.Owin.DAL.Common
 
 	public class WorkDbReleaseRepository : IReleaseRepository
 	{
-        protected IQueryable<IRelease> InternalGetAll() {
+        protected IQueryable<IRelease> GetAllQueryable() {
            using (var releaseContext = new ReleaseContext()) {
                 return (from release in releaseContext.Releases
                         join build in releaseContext.Builds on release.BuildId equals build.Id
@@ -42,29 +42,19 @@ namespace IISAdmin.Owin.DAL.Common
         }
 
 		public void Create(IRelease entity) {
-			//todo IISAdmin.Owin.DAL.Common.WorkDbReleaseRepository
-			//throw new NotImplementedException();
-			/* var archive = ArchiveFactory.Open(entity.BuildFolderLink);
-             foreach (var entry in archive.Entries)
-             {
-                 if (!entry.IsDirectory)
-                 {
-                     Console.WriteLine(entry.FilePath);
-                     entry.WriteToDirectory(@"C:\1", ExtractOptions.ExtractFullPath | ExtractOptions.Overwrite);
-                 }
-             }*/
-		}
+            throw new InvalidOperationException();
+        }
 
 		public IRelease Get(Guid key) {
-            return InternalGetAll().Where(r => r.Id == key).FirstOrDefault();
+            return GetAllQueryable().Where(r => r.Id == key).FirstOrDefault();
 		}
 
 		public IEnumerable<IRelease> GetAll() {
-            return InternalGetAll().ToList();
+            return GetAllQueryable().Take(100).ToList();
 		}
 
 		public IEnumerable<IRelease> GetAll(Expression<Func<IRelease, bool>> expression) {
-            return InternalGetAll().Where(expression);
+            return GetAllQueryable().Where(expression);
         }
 
 		public void Update(IRelease entity) {
