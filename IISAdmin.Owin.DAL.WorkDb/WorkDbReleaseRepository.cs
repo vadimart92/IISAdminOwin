@@ -23,39 +23,38 @@ namespace IISAdmin.Owin.DAL.Common
 		public string BuildFolderLink { get; set; }
 	}
 
-
 	public class WorkDbReleaseRepository : IReleaseRepository
 	{
-        protected IQueryable<IRelease> GetAllQueryable() {
-           using (var releaseContext = new ReleaseContext()) {
-                return (from release in releaseContext.Releases
-                        join build in releaseContext.Builds on release.BuildId equals build.Id
-                        select new WorkDbRelease {
-                            Id = release.Id,
-                            BuildFolderLink = release.BuildFolderLink,
-                            Name = release.Name,
-                            Release = release.IsPublished == 1,
-                            Version = build.Name,
-                            CreatedOn = release.CreatedOn
-                        });
-            }
-        }
+		protected IQueryable<IRelease> GetAllQueryable() {
+			using (var releaseContext = new ReleaseContext()) {
+				return (from release in releaseContext.Releases
+						join build in releaseContext.Builds on release.BuildId equals build.Id
+						select new WorkDbRelease {
+							Id = release.Id,
+							BuildFolderLink = release.BuildFolderLink,
+							Name = release.Name,
+							Release = release.IsPublished == 1,
+							Version = build.Name,
+							CreatedOn = release.CreatedOn
+						});
+			}
+		}
 
 		public void Create(IRelease entity) {
-            throw new InvalidOperationException();
-        }
+			throw new InvalidOperationException();
+		}
 
 		public IRelease Get(Guid key) {
-            return GetAllQueryable().Where(r => r.Id == key).FirstOrDefault();
+			return GetAllQueryable().Where(r => r.Id == key).FirstOrDefault();
 		}
 
 		public IEnumerable<IRelease> GetAll() {
-            return GetAllQueryable().Take(100).ToList();
+			return GetAllQueryable().Take(100).ToList();
 		}
 
 		public IEnumerable<IRelease> GetAll(Expression<Func<IRelease, bool>> expression) {
-            return GetAllQueryable().Where(expression);
-        }
+			return GetAllQueryable().Where(expression);
+		}
 
 		public void Update(IRelease entity) {
 			throw new InvalidOperationException();
