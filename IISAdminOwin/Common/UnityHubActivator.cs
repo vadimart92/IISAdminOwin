@@ -10,16 +10,14 @@ namespace IISAdminOwin.DI
 	{
 		private readonly UnityContainer _container;
 
-		public UnityHubActivator(UnityContainer container)
-		{
+		public UnityHubActivator(UnityContainer container) {
 			Debug.Assert(container != null, "container != null");
 			_container = container;
 		}
 
 		#region Члены IDisposable
 
-		public void Dispose()
-		{
+		public void Dispose() {
 			_container.Dispose();
 		}
 
@@ -27,15 +25,12 @@ namespace IISAdminOwin.DI
 
 		#region Члены IHubActivator
 
-		public IHub Create(HubDescriptor descriptor)
-		{
-			if (descriptor == null)
-			{
+		public IHub Create(HubDescriptor descriptor) {
+			if (descriptor == null) {
 				throw new ArgumentNullException("descriptor");
 			}
 
-			if (descriptor.HubType == null)
-			{
+			if (descriptor.HubType == null) {
 				return null;
 			}
 

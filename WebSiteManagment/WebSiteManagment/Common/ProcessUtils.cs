@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Web.Administration;
 
-namespace WebSiteManagment.Core.Common {
-	class ProcessUtils {
+namespace WebSiteManagment.Core.Common
+{
+	internal class ProcessUtils
+	{
 		public static void RestartPool(ApplicationPool pool, ServerManager srvManager) {
 			StopPool(pool);
 			StartPool(pool);
@@ -14,6 +16,7 @@ namespace WebSiteManagment.Core.Common {
 		public static void StartPool(ApplicationPool pool) {
 			pool.Start();
 		}
+
 		public static void StopPool(ApplicationPool pool, TimeSpan? waitTimeout = null) {
 			var timeout = waitTimeout ?? TimeSpan.FromSeconds(20);
 			if (pool.State == ObjectState.Stopped) {
@@ -27,13 +30,14 @@ namespace WebSiteManagment.Core.Common {
 			}
 			KillWorkerProcesses(pool);
 		}
+
 		private static void KillWorkerProcesses(ApplicationPool pool) {
-			var processUIds = pool.WorkerProcesses.ToList().ConvertAll(p=>p.ProcessId);
+			var processUIds = pool.WorkerProcesses.ToList().ConvertAll(p => p.ProcessId);
 			foreach (var id in processUIds) {
 				try {
 					var process = Process.GetProcessById(id);
 					process.Kill();
-				} catch {}
+				} catch { }
 			}
 		}
 	}

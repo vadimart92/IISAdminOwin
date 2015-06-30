@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace IISAdmin.Interfaces {
-
+namespace IISAdmin.Interfaces
+{
 	#region IWebSiteRepository
 
-	public interface IWebSiteRepository {
-
+	public interface IWebSiteRepository
+	{
 		List<ISite> GetAllSites();
 
 		ISite GetSite(long id);
@@ -28,28 +28,36 @@ namespace IISAdmin.Interfaces {
 		void CreateSite(ISiteCreateData data);
 	}
 
-	#endregion
-	
+	#endregion IWebSiteRepository
+
 	#region IReleaseRepository
 
-	public interface IRelease : IEntity<Guid> {
+	public interface IRelease : IEntity<Guid>
+	{
 		string Name { get; set; }
+
 		string Version { get; set; }
+
 		bool Release { get; set; }
+
 		string BuildFolderLink { get; set; }
+
 		DateTime CreatedOn { get; set; }
 	}
 
-	public interface IReleaseRepository : IRepository<IRelease, Guid> {
+	public interface IReleaseRepository : IRepository<IRelease, Guid>
+	{
 		IRelease GetByUri(string uri);
 	}
 
-	#endregion
+	#endregion IReleaseRepository
 
 	#region ISqlServerInstanceRepository
 
-	public interface ISqlServerInstance {
+	public interface ISqlServerInstance
+	{
 		string ServerName { get; set; }
+
 		string InstanceName { get; set; }
 
 		string Name { get; }
@@ -57,21 +65,25 @@ namespace IISAdmin.Interfaces {
 		string Version { get; set; }
 	}
 
-	public interface ISqlServerInstanceRepository {
+	public interface ISqlServerInstanceRepository
+	{
 		IList<ISqlServerInstance> GetAllInstances(IList<string> serverNameFilter = null);
 	}
 
-	#endregion
+	#endregion ISqlServerInstanceRepository
 
 	#region ISiteCreateData
 
-    
-	public interface ISiteCreateData {
+	public interface ISiteCreateData
+	{
 		string Name { get; }
+
 		int Redis { get; }
+
 		IRelease ReleaseInfo { get; }
+
 		ISqlServerInstance Db { get; }
 	}
-	
-	#endregion
+
+	#endregion ISiteCreateData
 }

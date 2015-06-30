@@ -14,10 +14,8 @@ namespace IISAdmin.Owin.WebApiControllers
 	{
 		private readonly IWebSiteRepository _webSiteRepository;
 
-		public SiteController(IWebSiteRepository webSiteRepository)
-		{
-			if (webSiteRepository == null)
-			{
+		public SiteController(IWebSiteRepository webSiteRepository) {
+			if (webSiteRepository == null) {
 				throw new ArgumentNullException("webSiteRepository");
 			}
 			_webSiteRepository = webSiteRepository;
@@ -25,20 +23,14 @@ namespace IISAdmin.Owin.WebApiControllers
 
 		// GET ~/breeze/Site/SiteList
 		[HttpGet]
-		public IEnumerable<ISite> SiteList()
-		{
-			try
-			{
+		public IEnumerable<ISite> SiteList() {
+			try {
 				var sites = _webSiteRepository.GetAllSites()
 					.OrderBy(s => s.Name, StringComparer.OrdinalIgnoreCase);
 				return sites;
-			}
-			catch (UnauthorizedAccessException)
-			{
+			} catch (UnauthorizedAccessException) {
 				Information.ErrorFormat(HttpContext.Current.User, "Error", "Site management service must run in admin mode");
-			}
-			catch (Exception exception)
-			{
+			} catch (Exception exception) {
 				Information.ErrorFormat(HttpContext.Current.User, "Error", "{0}", exception.Message);
 			}
 			return null;

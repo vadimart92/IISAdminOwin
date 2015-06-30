@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WebSiteManagementService {
-	class Program {
-		static void Main(string[] args) {
+﻿namespace WebSiteManagementService
+{
+	internal class Program
+	{
+		private static void Main(string[] args) {
 		}
 	}
 }

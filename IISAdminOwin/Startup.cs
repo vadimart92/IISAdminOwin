@@ -21,8 +21,7 @@ namespace IISAdmin.Owin
 {
 	public class Startup
 	{
-		public void Configuration(IAppBuilder appBuilder)
-		{
+		public void Configuration(IAppBuilder appBuilder) {
 			var container = ContainerProvider.GetContainer();
 
 			appBuilder.UseErrorPage();
@@ -35,12 +34,10 @@ namespace IISAdmin.Owin
 
 			BundlesRegistrator.RegisterBundles(appBuilder);
 
-			appBuilder.Run(context =>
-			{
+			appBuilder.Run(context => {
 				var indexFileName = @"index.html";
 				var homePath = @"/";
-				if (context.Request.Path.Value == homePath)
-				{
+				if (context.Request.Path.Value == homePath) {
 					return context.Response.WriteAsync(File.ReadAllText(Path.Combine(BundlesRegistrator.GetResourceRootDir(), indexFileName)));
 				}
 				context.Response.ContentType = "text/html";
@@ -49,8 +46,7 @@ namespace IISAdmin.Owin
 			});
 		}
 
-		private HttpConfiguration GetWebApiConfig(UnityContainer container)
-		{
+		private HttpConfiguration GetWebApiConfig(UnityContainer container) {
 			var config = new HttpConfiguration();
 			config.MapHttpAttributeRoutes();
 			config.Routes.MapHttpRoute(
@@ -60,8 +56,7 @@ namespace IISAdmin.Owin
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",
 				routeTemplate: "api/{controller}/{id}",
-				defaults: new
-				{
+				defaults: new {
 					id = RouteParameter.Optional
 				}
 			);
@@ -75,15 +70,12 @@ namespace IISAdmin.Owin
 			return config;
 		}
 
-		private HubConfiguration initSignalRConfiguration(UnityContainer container)
-		{
-			var serializerSettings = new JsonSerializerSettings
-			{
+		private HubConfiguration initSignalRConfiguration(UnityContainer container) {
+			var serializerSettings = new JsonSerializerSettings {
 				ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
 				PreserveReferencesHandling = PreserveReferencesHandling.Objects,
 
-				ContractResolver = new FilteredCamelCasePropertyNamesContractResolver
-				{
+				ContractResolver = new FilteredCamelCasePropertyNamesContractResolver {
 					AssembliesToInclude = { typeof(SiteOperationState).Assembly, typeof(WorkDbRelease).Assembly }
 				}
 			};

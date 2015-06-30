@@ -18,8 +18,7 @@ namespace IISAdmin.Owin.SignaRHubs
 		public long Id { get; set; }
 
 		[JsonProperty]
-		public DateTime OperationTime
-		{
+		public DateTime OperationTime {
 			get { return _operationTime ?? DateTime.UtcNow; }
 			set { _operationTime = value; }
 		}

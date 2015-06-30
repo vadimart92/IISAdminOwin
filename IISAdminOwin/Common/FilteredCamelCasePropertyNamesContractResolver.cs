@@ -8,26 +8,22 @@ namespace IISAdminOwin.Common
 {
 	public class FilteredCamelCasePropertyNamesContractResolver : DefaultContractResolver
 	{
-		public HashSet<Assembly> AssembliesToInclude
-		{
+		public HashSet<Assembly> AssembliesToInclude {
 			get;
 			set;
 		}
 
-		public HashSet<Type> TypesToInclude
-		{
+		public HashSet<Type> TypesToInclude {
 			get;
 			set;
 		}
 
-		public FilteredCamelCasePropertyNamesContractResolver()
-		{
+		public FilteredCamelCasePropertyNamesContractResolver() {
 			AssembliesToInclude = new HashSet<Assembly>();
 			TypesToInclude = new HashSet<Type>();
 		}
 
-		protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
-		{
+		protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization) {
 			var jsonProperty = base.CreateProperty(member, memberSerialization);
 
 			Type declaringType = member.DeclaringType;
@@ -37,8 +33,7 @@ namespace IISAdminOwin.Common
 			return jsonProperty;
 		}
 
-		private string ToCamelCase(string value)
-		{
+		private string ToCamelCase(string value) {
 			if (String.IsNullOrEmpty(value))
 				return value;
 

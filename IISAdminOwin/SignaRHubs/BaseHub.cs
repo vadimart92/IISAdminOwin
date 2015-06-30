@@ -9,16 +9,13 @@ namespace IISAdmin.Owin.SignaRHubs
 	{
 		private static readonly Lazy<IHubContext> LazyHubContext = new Lazy<IHubContext>(() => GlobalHost.ConnectionManager.GetHubContext<T>());
 
-		public static IHubContext HubContext
-		{
-			get
-			{
+		public static IHubContext HubContext {
+			get {
 				return LazyHubContext.Value;
 			}
 		}
 
-		public static dynamic GetClientByUser(IPrincipal user)
-		{
+		public static dynamic GetClientByUser(IPrincipal user) {
 			return HubContext.Clients.User(user.Identity.Name);
 		}
 	}

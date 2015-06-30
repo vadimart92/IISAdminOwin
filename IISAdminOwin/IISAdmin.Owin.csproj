@@ -26,6 +26,7 @@
     <RestorePackages>true</RestorePackages>
     <JSLintSkip>
     </JSLintSkip>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -169,7 +170,6 @@
     <Content Include="components\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
-    <Content Include="npmPlaceholder.txt" />
     <Content Include="packages.config" />
     <Content Include="components\main.css.map">
       <DependentUpon>main.css</DependentUpon>

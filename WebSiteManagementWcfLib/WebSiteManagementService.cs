@@ -5,20 +5,19 @@ using System.ServiceModel;
 using WebSiteManagment.Core;
 using WebSiteManagment.Core.Models;
 
-namespace WebSiteManagment.Wcf {
-	
-	public class WebSiteManagementService : IWebSiteRepositoryService {
+namespace WebSiteManagment.Wcf
+{
+	public class WebSiteManagementService : IWebSiteRepositoryService
+	{
 		private WebSiteManager _siteManager = new WebSiteManager();
 
 		public List<Site> GetAllSites() {
 			try {
 				var sites = _siteManager.GetWebsites();
 				return sites;
-			}
-			catch(UnauthorizedAccessException ex) {
+			} catch (UnauthorizedAccessException ex) {
 				throw new FaultException<UnauthorizedAccessException>(ex, "AccessDenied");
 			}
-			
 		}
 
 		public Site GetSite(long id) {
@@ -60,6 +59,5 @@ namespace WebSiteManagment.Wcf {
 		public void StopSite(long id) {
 			_siteManager.StopSite(id);
 		}
-
 	}
 }

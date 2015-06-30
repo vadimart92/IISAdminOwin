@@ -26,10 +26,8 @@ namespace IISAdmin.Owin.Models
 
 		public string Version { get; set; }
 
-		public string Name
-		{
-			get
-			{
+		public string Name {
+			get {
 				return string.Format("{0}/{1}", ServerName, InstanceName);
 			}
 		}

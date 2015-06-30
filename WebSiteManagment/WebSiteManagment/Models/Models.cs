@@ -5,34 +5,35 @@ using System.Runtime.Serialization;
 using WebSiteManagment.Core.Common;
 using MsAdmin = Microsoft.Web.Administration;
 
-namespace WebSiteManagment.Core.Models {
-	
+namespace WebSiteManagment.Core.Models
+{
 	[DataContract]
-    public class Site {
-	    public Site(long id){
-		    Id = id;
-	    }
+	public class Site
+	{
+		public Site(long id) {
+			Id = id;
+		}
 
 		public Site(MsAdmin.Site site, IList<MsAdmin.ApplicationPool> pools)
 			: this(site.Id) {
-		    Name = site.Name;
+			Name = site.Name;
 			State = site.State.ToString();
 			var redisCs = WebConfigUtils.GetRedisConnectionString(site);
-			Redis = string.IsNullOrWhiteSpace(redisCs)? null : new Redis(redisCs);
+			Redis = string.IsNullOrWhiteSpace(redisCs) ? null : new Redis(redisCs);
 			Bindings = site.Bindings.ToList().ConvertAll(b => b.BindingInformation);
-			Applications = site.Applications.ToList().ConvertAll(a => 
-				new Application(a, pools.FirstOrDefault(p => 
+			Applications = site.Applications.ToList().ConvertAll(a =>
+				new Application(a, pools.FirstOrDefault(p =>
 						string.Equals(p.Name, a.ApplicationPoolName, StringComparison.OrdinalIgnoreCase)
 					)
 				)
 			);
-	    }
+		}
 
 		[DataMember]
-	    public long Id { get; set; }
-		
+		public long Id { get; set; }
+
 		[DataMember]
-        public string Name { get; set; }
+		public string Name { get; set; }
 
 		[DataMember]
 		public string State { get; set; }
@@ -48,59 +49,61 @@ namespace WebSiteManagment.Core.Models {
 
 		[DataMember]
 		public List<Application> Applications { get; set; }
-        
-    }
+	}
 
 	[DataContract]
-    public class Application {
-	    public Application(MsAdmin.Application application, MsAdmin.ApplicationPool pool) {
-		    Path = application.Path;
-		    Pool = new AppPool(pool);
-	    }
+	public class Application
+	{
+		public Application(MsAdmin.Application application, MsAdmin.ApplicationPool pool) {
+			Path = application.Path;
+			Pool = new AppPool(pool);
+		}
 
 		[DataMember]
-        public string Path { get; set; }
+		public string Path { get; set; }
 
 		[DataMember]
 		public AppPool Pool {
 			get;
 			set;
 		}
-    }
+	}
 
 	[DataContract]
-    public class AppPool {
-	    public AppPool(MsAdmin.ApplicationPool pool) {
-		    Name = pool.Name;
-		    State = pool.State.ToString();
-	    }
+	public class AppPool
+	{
+		public AppPool(MsAdmin.ApplicationPool pool) {
+			Name = pool.Name;
+			State = pool.State.ToString();
+		}
 
 		[DataMember]
-        public string Name { get; set; }
+		public string Name { get; set; }
 
 		[DataMember]
-        public string State { get; set; }
-    }
+		public string State { get; set; }
+	}
 
 	[DataContract]
-    public class Redis {
+	public class Redis
+	{
 		private string _connectionString;
 
 		public Redis(string connectionString) {
-		    if (string.IsNullOrWhiteSpace(connectionString)) {
-                throw new ArgumentException("connectionString");
-		    }
+			if (string.IsNullOrWhiteSpace(connectionString)) {
+				throw new ArgumentException("connectionString");
+			}
 			ConnectionString = connectionString;
-	    }
+		}
 
 		[DataMember]
-        public int Db { get; set; }
+		public int Db { get; set; }
 
 		[DataMember]
-        public string Host { get; set; }
+		public string Host { get; set; }
 
 		[DataMember]
-        public int Port { get; set; }
+		public int Port { get; set; }
 
 		[DataMember]
 		public string ConnectionString {
@@ -120,6 +123,7 @@ namespace WebSiteManagment.Core.Models {
 			var success = conectionData.TryGetValue(dataname, out num) && int.TryParse(num, out res);
 			return res;
 		}
+
 		private string GetString(Dictionary<string, string> conectionData) {
 			string res;
 			conectionData.TryGetValue("host", out res);
@@ -128,14 +132,17 @@ namespace WebSiteManagment.Core.Models {
 
 		private Dictionary<string, string> SplitString(string conectionString) {
 			return conectionString.Split(';')
-			.Select(t => t.Split(new [] { '=' }, 2))
+			.Select(t => t.Split(new[] { '=' }, 2))
 			.ToDictionary(t => t[0].Trim(), t => t[1].Trim(), StringComparer.InvariantCultureIgnoreCase);
 		}
 	}
 
-	public class SiteSettings {
+	public class SiteSettings
+	{
 		public Redis Redis { get; set; }
+
 		public string Server { get; set; }
+
 		public string Intance { get; set; }
 	}
 }

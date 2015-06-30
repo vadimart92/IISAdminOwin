@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Sql;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using IISAdmin.Interfaces;
 using Newtonsoft.Json;
 
-namespace IISAdmin.Owin.DAL.Common {
-
-	public class SqlServerInstance : ISqlServerInstance {
+namespace IISAdmin.Owin.DAL.Common
+{
+	public class SqlServerInstance : ISqlServerInstance
+	{
 		public string ServerName { get; set; }
+
 		public string InstanceName { get; set; }
+
 		public string Version { get; set; }
+
 		public string Name {
 			get {
 				return string.Format("{0}/{1}", ServerName, InstanceName);
@@ -22,8 +23,8 @@ namespace IISAdmin.Owin.DAL.Common {
 		}
 	}
 
-	public class LocalSqlServerInstanceRepository : ISqlServerInstanceRepository {
-
+	public class LocalSqlServerInstanceRepository : ISqlServerInstanceRepository
+	{
 		private static readonly Lazy<DataTable> _instanceDataTable = new Lazy<DataTable>(() => SqlDataSourceEnumerator.Instance.GetDataSources());
 
 		private static DataTable InstanceDataTable {
@@ -33,10 +34,10 @@ namespace IISAdmin.Owin.DAL.Common {
 		#region Члены ISqlServerInstanceRepository
 
 		public IList<ISqlServerInstance> GetAllInstances(IList<string> servernameFilter = null) {
-			return GetServerInstances(servernameFilter).ConvertAll(i=>(ISqlServerInstance)i);
+			return GetServerInstances(servernameFilter).ConvertAll(i => (ISqlServerInstance)i);
 		}
 
-		#endregion
+		#endregion Члены ISqlServerInstanceRepository
 
 		private List<SqlServerInstance> GetServerInstances(IList<string> serverNames) {
 #if ServerInstancesMock
@@ -49,11 +50,11 @@ namespace IISAdmin.Owin.DAL.Common {
 			var res = table.Select("len(ServerName)>0 AND len(InstanceName)>0")
 						   .Where(r => serverNames == null || serverNames.Contains(r[snColumn]))
 						   .Select(row => new SqlServerInstance {
-											ServerName = (String) row[snColumn], 
-											InstanceName = (String) row[inColumn], 
-											Version = (String) row[vColumn]
-										 }).ToList();
-			return res.Count> 0? res : GetServerInstancesMock();
+							   ServerName = (String)row[snColumn],
+							   InstanceName = (String)row[inColumn],
+							   Version = (String)row[vColumn]
+						   }).ToList();
+			return res.Count > 0 ? res : GetServerInstancesMock();
 		}
 
 		private List<SqlServerInstance> GetServerInstancesMock() {

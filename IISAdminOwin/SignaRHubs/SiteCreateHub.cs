@@ -1,53 +1,55 @@
 ﻿using System.Collections.Generic;
+using System.Data;
+using System.Data.Sql;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.Threading;
 using IISAdmin.Interfaces;
 using IISAdmin.Owin.Models;
 using Newtonsoft.Json;
-using System.Data.Sql;
-using System.Data;
 
 namespace IISAdmin.Owin.SignaRHubs
 {
-<<<<<<< HEAD
 	public class SiteCreate : BaseHub<SiteManagement>
 	{
 		private IWebSiteRepository _siteRepository;
 		private IReleaseRepository _releaseRepository;
 		private ISqlServerInstanceRepository _serverInstanceRepository;
 
-		public SiteCreate(IWebSiteRepository siteRepository, IReleaseRepository releaseRepository, ISqlServerInstanceRepository serverInstanceRepository)
-		{
+		public SiteCreate(IWebSiteRepository siteRepository, IReleaseRepository releaseRepository, ISqlServerInstanceRepository serverInstanceRepository) {
 			_siteRepository = siteRepository;
 			_releaseRepository = releaseRepository;
 			_serverInstanceRepository = serverInstanceRepository;
 		}
 
-		public IRelease GetReleaseInfo(string uri)
-		{
+		public IRelease GetReleaseInfo(string uri) {
 			return _releaseRepository.GetByUri(uri);
 		}
 
-		public SiteCreationInfo GetStartupInfo()
-		{
-			var sqlInstances = _serverInstanceRepository.GetAllInstances();
-			var res = new SiteCreationInfo
-			{
+		public List<string> GetMsSqlInstancesNames() {
+			SqlDataSourceEnumerator instance = System.Data.Sql.SqlDataSourceEnumerator.Instance;
+			DataTable dataTable = instance.GetDataSources();
+
+			var result = (from row in dataTable.AsEnumerable()
+						  select row[0] + "\\" + row[1]).ToList();
+
+			return result;
+		}
+
+		public SiteCreationInfo GetStartupInfo() {
+			var serverInstancesNames = GetMsSqlInstancesNames();
+			var sqlInstances = _serverInstanceRepository.GetAllInstances(serverInstancesNames);
+			var res = new SiteCreationInfo {
 				FreeRedisDbNum = GetFreeRedisDb(),
 				SqlServerInstances = sqlInstances
 			};
 			return res;
 		}
 
-		private int GetFreeRedisDb()
-		{
+		private int GetFreeRedisDb() {
 			_siteRepository.ClearSiteCache();
 			var sites = _siteRepository.GetAllSites();
 			var numberFound = false;
 			var number = -1;
-			do
-			{
+			do {
 				number++;
 				if (sites.Any(s => s.Redis.Db == number)) continue;
 				numberFound = true;
@@ -55,8 +57,7 @@ namespace IISAdmin.Owin.SignaRHubs
 			return number;
 		}
 
-		public void AddSite(SiteCreateData data)
-		{
+		public void AddSite(SiteCreateData data) {
 			_siteRepository.CreateSite(data);
 		}
 	}
@@ -82,11 +83,9 @@ namespace IISAdmin.Owin.SignaRHubs
 
 		#region Члены ISiteCreateData
 
-		IRelease ISiteCreateData.ReleaseInfo
-		{ get { return ReleaseInfo; } }
+		private IRelease ISiteCreateData.ReleaseInfo { get { return ReleaseInfo; } }
 
-		ISqlServerInstance ISiteCreateData.Db
-		{ get { return Db; } }
+		private ISqlServerInstance ISiteCreateData.Db { get { return Db; } }
 
 		#endregion Члены ISiteCreateData
 	}

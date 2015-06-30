@@ -2,11 +2,11 @@
 using System.ServiceModel;
 using WebSiteManagment.Core.Models;
 
-namespace WebSiteManagment.Wcf {
-
+namespace WebSiteManagment.Wcf
+{
 	[ServiceContract]
-	public interface IWebSiteRepositoryService {
-
+	public interface IWebSiteRepositoryService
+	{
 		[OperationContract]
 		List<Site> GetAllSites();
 
@@ -36,7 +36,7 @@ namespace WebSiteManagment.Wcf {
 
 		[OperationContract]
 		void AddSite(object siteData);
+
 		//todo: issue 9 create info for add site
 	}
-
 }

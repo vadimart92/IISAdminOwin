@@ -3,17 +3,18 @@ using System.Runtime.Serialization;
 using IISAdmin.Interfaces;
 using IISAdmin.WCFWebSiteRepository.WebSiteRepositoryService;
 
-
-namespace IISAdmin.WCFWebSiteRepository {
+namespace IISAdmin.WCFWebSiteRepository
+{
 	[DataContract]
-	public class IisSite : ISite {
-		#region  Members
+	public class IisSite : ISite
+	{
+		#region Members
 
 		public IisSite() {
 			Applications = new List<IApplication>();
 		}
 
-		public IisSite(Site site):this() {
+		public IisSite(Site site) : this() {
 			Id = site.Id;
 			Name = site.Name;
 			State = site.State;
@@ -26,7 +27,7 @@ namespace IISAdmin.WCFWebSiteRepository {
 			return string.Format("Name: {0}, Applications: [{1}]", Name, string.Join(", ", Applications));
 		}
 
-		#endregion
+		#endregion Members
 
 		#region ISite Members
 
@@ -48,12 +49,13 @@ namespace IISAdmin.WCFWebSiteRepository {
 		[DataMember]
 		public List<IApplication> Applications { get; set; }
 
-		#endregion
+		#endregion ISite Members
 	}
 
 	[DataContract]
-	public class WebApplication : IApplication {
-		#region  Members
+	public class WebApplication : IApplication
+	{
+		#region Members
 
 		public WebApplication(Application application) {
 			Name = application.Path;
@@ -64,7 +66,7 @@ namespace IISAdmin.WCFWebSiteRepository {
 			return string.Format("Name: {0}, Pool: {1}", Name, Pool.Name);
 		}
 
-		#endregion
+		#endregion Members
 
 		#region IApplication Members
 
@@ -74,19 +76,20 @@ namespace IISAdmin.WCFWebSiteRepository {
 		[DataMember]
 		public IAppPool Pool { get; set; }
 
-		#endregion
+		#endregion IApplication Members
 	}
 
 	[DataContract]
-	public class IisAppPool : IAppPool {
-		#region  Members
+	public class IisAppPool : IAppPool
+	{
+		#region Members
 
 		public IisAppPool(AppPool pool) {
 			Name = pool.Name;
 			State = pool.State;
 		}
 
-		#endregion
+		#endregion Members
 
 		#region IAppPool Members
 
@@ -96,16 +99,16 @@ namespace IISAdmin.WCFWebSiteRepository {
 		[DataMember]
 		public string State { get; set; }
 
-		#endregion
+		#endregion IAppPool Members
 	}
 
 	[DataContract]
-	public class RedisInfo:IRedis {
-		
+	public class RedisInfo : IRedis
+	{
 		public RedisInfo(Redis redis) {
-		    if (redis == null) {
-		        return;
-		    }
+			if (redis == null) {
+				return;
+			}
 			Db = redis.Db;
 			Host = redis.Host;
 			Port = redis.Port;
@@ -120,7 +123,7 @@ namespace IISAdmin.WCFWebSiteRepository {
 
 		[DataMember]
 		public int Port { get; set; }
-		
+
 		[DataMember]
 		public string ConnectionString { get; set; }
 	}
