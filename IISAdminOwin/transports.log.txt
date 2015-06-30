@@ -1408,3 +1408,6 @@ SignalR.Transports.TransportHeartBeat Information: 0 : Connection 6a277852-2d64-
 SignalR.Transports.TransportHeartBeat Information: 0 : Connection 5607e655-0c5a-4d60-8884-500425585e49 is New.
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(5607e655-0c5a-4d60-8884-500425585e49)
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6a277852-2d64-4a49-9fa1-b4e88aa1ce2e)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection a31f2c2d-25c4-4778-98bc-33f506566149 is New.
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(a31f2c2d-25c4-4778-98bc-33f506566149)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(a31f2c2d-25c4-4778-98bc-33f506566149)
