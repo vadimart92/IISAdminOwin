@@ -1338,3 +1338,7 @@ SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(d696404f-8604-4d6a-
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6ce836f2-8e89-4acd-b099-9eb7c2ea9ba7)
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(d696404f-8604-4d6a-b117-7ed8347df8de)
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6ce836f2-8e89-4acd-b099-9eb7c2ea9ba7)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection f6f3464d-32bb-43b6-bfe6-eefaec3d186a is New.
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection d25f4fd6-47c0-40c7-898e-54705d05c866 is New.
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(f6f3464d-32bb-43b6-bfe6-eefaec3d186a)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(d25f4fd6-47c0-40c7-898e-54705d05c866)

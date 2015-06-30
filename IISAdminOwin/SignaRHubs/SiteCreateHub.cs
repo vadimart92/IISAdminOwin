@@ -83,9 +83,9 @@ namespace IISAdmin.Owin.SignaRHubs
 
 		#region Члены ISiteCreateData
 
-		private IRelease ISiteCreateData.ReleaseInfo { get { return ReleaseInfo; } }
+		IRelease ISiteCreateData.ReleaseInfo { get { return ReleaseInfo; } }
 
-		private ISqlServerInstance ISiteCreateData.Db { get { return Db; } }
+		ISqlServerInstance ISiteCreateData.Db { get { return Db; } }
 
 		#endregion Члены ISiteCreateData
 	}
