@@ -139,11 +139,9 @@ namespace WebSiteManagment.Core.Models
 
 	public class SiteSettings
 	{
-		public Redis Redis { get; set; }
+		public string Name { get; set; }
 
-		public string Server { get; set; }
-
-		public string Instance { get; set; }
+		public string Path { get; set; }
 	}
 
 	[DataContract]

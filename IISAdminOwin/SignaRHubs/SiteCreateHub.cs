@@ -70,8 +70,10 @@ namespace IISAdmin.Owin.SignaRHubs
 		public SignalrRelease ReleaseInfo { get; set; }
 
 		public SignalrSqlServerInstance Db { get; set; }
-
+		
 		#region Члены ISiteCreateData
+
+		public string DestinationPath { get; set; }
 
 		public string RedisConnectionString { get { return RedisInfo.ConnectionString; } }
 
