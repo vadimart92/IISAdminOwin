@@ -51,7 +51,7 @@ namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 		public void AddSite(SiteCreateData data) {
 			var progress = new Progress<ISiteDeployProgress>(info => { Clients.All.updateSiteState(info); });
 			var progressInfo = _siteDeployProvider.GetInitDeployProgress(new[] { new DeployOperationIfo { Info = "Creating Pool/WebApp in IIS" } });
-			_siteDeployProvider.DeployWebApp(data, progress, ref progressInfo);
+			_siteDeployProvider.DeployWebApp(data, progress, progressInfo);
 			progressInfo.SetNextOperation();
 			((IProgress<ISiteDeployProgress>)progress).Report(progressInfo);
 			_siteRepository.CreateSite(data);

@@ -33,6 +33,11 @@ namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 			set;
 		}
 
+		public string DbBackupTempPath {
+			get;
+			private set;
+		}
+
 		public string RedisConnectionString {
 			get {
 				return RedisInfo.ConnectionString;

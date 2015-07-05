@@ -11,31 +11,40 @@ namespace IISAdmin.WebSiteManagmentProvider
     public class SiteDeployProvider : ISiteDeployProvider
     {
 
-	    private Task RestoreBD(ISqlServerInstance sqlServer, string backupPath, string name) {
-			return DatabaseBackupManager.RestoreDbBackupAsync(name);
+		private Task ExtractBuildTask(string zipFile, string destinationPath) {
+			return new Task(() => {
+				ZipExtractor.ExtractBuild(zipFile, destinationPath, new List<string>{".bak"});
+			});
 		}
 
-		private Task ExtractDBBackup(string zipFilePath, string backupPath) {
+	    private Task RestoreBD(ISqlServerInstance sqlServer, string backupPath, string name) {
+			return new Task(() => {
+				DatabaseBackupManager.RestoreDbBackup(backupPath, name, sqlServer.ServerName, sqlServer.InstanceName);
+			});
+		}
 
+		private Task ExtractDBBackup(string zipFilePath, string dbFileDirectory, string dbFileName, string backupPath) {
+			return new Task(() => {
+				ZipExtractor.ExtractFileFromZip(zipFilePath, dbFileDirectory, dbFileName, backupPath);
+			});
 	    }
 
 	    public void DeployWebApp(ISiteCreateData siteCreateData, IProgress<ISiteDeployProgress> progress, ISiteDeployProgress initialProgress) {
-		    var extractionTask = BuildExtractor.ExtractBuildAsync(siteCreateData.DestinationPath, siteCreateData.Name);
-			var extractBakTask = ExtractDBBackup();
-			var restoreTask = RestoreBD();
-		    extractBakTask.ContinueWith((task, o) => {
-			    restoreTask.RunSynchronously();
+			var extractionTask = ExtractBuildTask(siteCreateData.ReleaseInfo.ZipFilePath, siteCreateData.DestinationPath);
+			var backupPath = siteCreateData.DbBackupTempPath + siteCreateData.Name + ".bak";
+			var restoreTask = ExtractDBBackup(siteCreateData.ReleaseInfo.ZipFilePath, "db", @".bak", backupPath).ContinueWith((task, o) => {
+			    RestoreBD(siteCreateData.Db, backupPath, siteCreateData.Name).RunSynchronously();
 		    }, null, TaskContinuationOptions.OnlyOnRanToCompletion);
-		    Action<Task> reportProgress = (task) => {
-			    initialProgress.SetNextOperation();
-			    progress.Report(initialProgress);
-		    };
-			Task.WaitAll(extractionTask.ContinueWith(reportProgress), restoreTask.ContinueWith(reportProgress));
+			restoreTask.Start();
+			extractionTask.Start();
+			Task.WaitAll(restoreTask, extractionTask);
+			initialProgress.SetNextOperation();
+			progress.Report(initialProgress);
 	    }
 		
 	    public ISiteDeployProgress GetInitDeployProgress(IEnumerable<DeployOperationIfo> extraOperations) {
 			var operations = new List<DeployOperationIfo> {
-				new DeployOperationIfo{Info = "Copy files / Restore DB"},
+				new DeployOperationIfo{Info = "Restore DB / Copy files"},
 				new DeployOperationIfo{Info = "Modify configs"}
 			};
 			return new SiteDeployProgress(operations.Concat(extraOperations));
