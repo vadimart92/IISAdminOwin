@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace IISAdmin.Owin.SignaRHubs
+namespace IISAdmin.Owin.SignaRHubs.SiteManagement
 {
 	public enum OperationState
 	{

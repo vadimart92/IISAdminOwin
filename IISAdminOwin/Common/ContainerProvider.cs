@@ -1,6 +1,7 @@
 ﻿using IISAdmin.Interfaces;
 using IISAdmin.Owin.DAL.Common;
 using IISAdmin.WCFWebSiteRepository;
+using IISAdmin.WebSiteManagmentProvider;
 using Microsoft.Practices.Unity;
 
 namespace IISAdmin.Owin.Common
@@ -18,6 +19,7 @@ namespace IISAdmin.Owin.Common
 			container.RegisterType<IWebSiteRepository, WcfClientWebSiteRepository>(new HierarchicalLifetimeManager());
 			container.RegisterType<IReleaseRepository, WorkDbReleaseRepository>(new HierarchicalLifetimeManager());
 			container.RegisterType<ISqlServerInstanceRepository, LocalSqlServerInstanceRepository>(new PerThreadLifetimeManager());
-		}
+            container.RegisterType<ISiteDeployProvider, SiteDeployProvider>();
+        }
 	}
 }

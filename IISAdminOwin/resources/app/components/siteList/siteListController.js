@@ -2,7 +2,7 @@ app.controller("siteListController", [
   '$rootScope', '$scope', '$timeout', 'uiGridConstants', 'toasterService', 'siteDataService', 'logger', 'Hub', 'Enums', 'siteUtils', '$', function($rootScope, $scope, $timeout, uiGridConstants, toasterService, siteDataService, logger, Hub, Enums, siteUtils, $) {
     var bindingsTpl, createRowProgressBar, getGridData, getPoolDisplayName, getSitePool, getSites, hideAllProgressBars, hub, offFunc, poolTemplate, redisTpl, setPoolRestarting, setSiteNewData, setSiteState, siteStateTemplate, stopRowProgressBar, vm;
     vm = $scope;
-    hub = new Hub('SiteManagement', {
+    hub = new Hub('SiteManagementHub', {
       listeners: {
         'updateSiteState': function(siteData) {
           setSiteState(siteData);
