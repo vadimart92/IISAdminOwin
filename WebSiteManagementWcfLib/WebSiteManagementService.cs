@@ -9,7 +9,7 @@ namespace WebSiteManagment.Wcf
 {
 	public class WebSiteManagementService : IWebSiteRepositoryService
 	{
-		private WebSiteManager _siteManager = new WebSiteManager();
+		private readonly WebSiteManager _siteManager = new WebSiteManager();
 
 		public List<Site> GetAllSites() {
 			try {

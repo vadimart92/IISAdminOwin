@@ -152,11 +152,7 @@ namespace WebSiteManagment.Core
 
 		public void AddSite(SiteAddInfo info) {
 			//todo: issue 9
-			var extractionTask = BuildExtractor.ExtractBuildAsync(info.ZipFilePath, info.Name);
-			var restoreTask = DatabaseBackupManager.RestoreDbBackupAsync(info.Name);
-			Task.WaitAll(extractionTask, restoreTask);
-			var appPool = _serverManager.ApplicationPools.Add();
-            WebConfigUtils.SetSiteSettings()
+			
         }
 		
 		private const string AppHostConfigPath = @"\inetsrv\config\applicationhost.config";

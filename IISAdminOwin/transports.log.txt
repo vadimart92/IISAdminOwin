@@ -1411,3 +1411,19 @@ SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6a277852-2d64-4a49-
 SignalR.Transports.TransportHeartBeat Information: 0 : Connection a31f2c2d-25c4-4778-98bc-33f506566149 is New.
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(a31f2c2d-25c4-4778-98bc-33f506566149)
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(a31f2c2d-25c4-4778-98bc-33f506566149)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 3d29d886-71ae-4580-bc1f-f0fd7c68e429 is New.
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 9542dcbe-762d-4b28-84da-b019bc597d11 is New.
+SignalR.Transports.ServerSentEventsTransport Information: 0 : Abort(3d29d886-71ae-4580-bc1f-f0fd7c68e429)
+SignalR.Transports.TransportHeartBeat Information: 0 : Removing connection 3d29d886-71ae-4580-bc1f-f0fd7c68e429
+SignalR.Transports.ServerSentEventsTransport Information: 0 : End(3d29d886-71ae-4580-bc1f-f0fd7c68e429)
+SignalR.Transports.ServerSentEventsTransport Information: 0 : Abort(9542dcbe-762d-4b28-84da-b019bc597d11)
+SignalR.Transports.TransportHeartBeat Information: 0 : Removing connection 9542dcbe-762d-4b28-84da-b019bc597d11
+SignalR.Transports.ServerSentEventsTransport Information: 0 : End(9542dcbe-762d-4b28-84da-b019bc597d11)
+SignalR.Transports.ServerSentEventsTransport Verbose: 0 : DrainWrites(9542dcbe-762d-4b28-84da-b019bc597d11)
+SignalR.Transports.ServerSentEventsTransport Verbose: 0 : DrainWrites(9542dcbe-762d-4b28-84da-b019bc597d11)
+SignalR.Transports.ServerSentEventsTransport Verbose: 0 : DrainWrites(3d29d886-71ae-4580-bc1f-f0fd7c68e429)
+SignalR.Transports.ServerSentEventsTransport Verbose: 0 : DrainWrites(3d29d886-71ae-4580-bc1f-f0fd7c68e429)
+SignalR.Transports.ServerSentEventsTransport Information: 0 : CompleteRequest (3d29d886-71ae-4580-bc1f-f0fd7c68e429)
+SignalR.Transports.ServerSentEventsTransport Information: 0 : CompleteRequest (9542dcbe-762d-4b28-84da-b019bc597d11)
+SignalR.Transports.ServerSentEventsTransport Information: 0 : CompleteRequest (3d29d886-71ae-4580-bc1f-f0fd7c68e429)
+SignalR.Transports.ServerSentEventsTransport Information: 0 : CompleteRequest (9542dcbe-762d-4b28-84da-b019bc597d11)

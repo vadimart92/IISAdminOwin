@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading;
 using IISAdmin.Interfaces;
 
-namespace IISAdmin.Owin.SignaRHubs
+namespace IISAdmin.Owin.SignaRHubs.SiteManagement
 {
-	public class SiteManagement : BaseHub<SiteManagement>
+	public partial class SiteManagementHub : BaseHub<SiteManagementHub>
 	{
-		private IWebSiteRepository _siteRepository;
+		private readonly IWebSiteRepository _siteRepository;
 
-		public SiteManagement(IWebSiteRepository siteRepository) {
+		public SiteManagementHub(IWebSiteRepository siteRepository) {
 			_siteRepository = siteRepository;
 		}
 
@@ -81,17 +81,6 @@ namespace IISAdmin.Owin.SignaRHubs
 				Id = siteId,
 				NewData = newData
 			});
-		}
-
-		private class SiteDataClass
-		{
-			public SiteDataClass() {
-				Data = new Dictionary<string, object>();
-			}
-
-			public string Name { get; set; }
-
-			public Dictionary<string, object> Data { get; set; }
 		}
 	}
 }

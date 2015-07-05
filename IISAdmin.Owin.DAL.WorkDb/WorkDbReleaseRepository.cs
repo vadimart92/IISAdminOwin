@@ -22,7 +22,7 @@ namespace IISAdmin.Owin.DAL.Common
 
 		public string BuildFolderLink { get; set; }
 
-		string ZipFilePath {
+		public string ZipFilePath {
 			get {
 				throw new Exception();
 				return string.Format(@"{0}\{1}.zip", BuildFolderLink, Name);

@@ -254,9 +254,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignaRHubs\BaseHub.cs" />
     <Compile Include="SignaRHubs\Information.cs" />
-    <Compile Include="SignaRHubs\Models.cs" />
-    <Compile Include="SignaRHubs\SiteCreateHub.cs" />
-    <Compile Include="SignaRHubs\SiteManagement.cs" />
+    <Compile Include="SignaRHubs\SiteManagement\SiteOperationState.cs" />
+    <Compile Include="SignaRHubs\SiteCreate\SiteCreateData.cs" />
+    <Compile Include="SignaRHubs\SiteCreate\SiteCreateHub.cs" />
+    <Compile Include="SignaRHubs\SiteCreate\SiteCreationInfo.cs" />
+    <Compile Include="SignaRHubs\SiteManagement\SiteDataClass.cs" />
+    <Compile Include="SignaRHubs\SiteManagement\SiteManagementHub.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Common\UnityResolver.cs" />
     <Compile Include="WebApiControllers\SiteController.cs" />
@@ -269,6 +272,10 @@
     <ProjectReference Include="..\IISAdmin.Owin.DAL.WorkDb\IISAdmin.Owin.DAL.Common.csproj">
       <Project>{b69f3e12-0081-4ea3-a8cc-dd3890b01ea6}</Project>
       <Name>IISAdmin.Owin.DAL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IISAdmin.WebSiteManagmentProvider\IISAdmin.WebSiteManagmentProvider.csproj">
+      <Project>{daf6b3cc-073d-4843-9a11-b81683302239}</Project>
+      <Name>IISAdmin.WebSiteManagmentProvider</Name>
     </ProjectReference>
     <ProjectReference Include="..\Interfaces\IISAdmin.Interfaces.csproj">
       <Project>{ed483c78-af2e-42b1-98c2-a977815177fa}</Project>

@@ -1,7 +1,7 @@
 app.factory('Hub', [
   '$rootScope', 'Hub', 'logger', function($rootScope, Hub, logger) {
     var getState, hub;
-    hub = new Hub('SiteManagement', {
+    hub = new Hub('SiteManagementHub', {
       listeners: {
         'updateSiteState': function(siteData) {
           debugger;

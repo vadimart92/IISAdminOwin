@@ -14,7 +14,7 @@ app.controller("addSiteController", [
       }
     });
     vm.site = new Site();
-    vm.hub = new Hub('SiteCreate', {
+    vm.hub = new Hub('SiteCreateHub', {
       listeners: [],
       methods: ['AddSite', 'GetReleaseInfo', 'GetStartupInfo']
     });
