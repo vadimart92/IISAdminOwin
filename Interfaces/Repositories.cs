@@ -73,19 +73,5 @@ namespace IISAdmin.Interfaces
 	}
 
 	#endregion ISqlServerInstanceRepository
-
-	#region ISiteCreateData
-
-	public interface ISiteCreateData
-	{
-		string Name { get; }
-
-		string RedisConnectionString { get; }
-
-		IRelease ReleaseInfo { get; }
-
-		ISqlServerInstance Db { get; }
-	}
-
-	#endregion ISiteCreateData
+	
 }
