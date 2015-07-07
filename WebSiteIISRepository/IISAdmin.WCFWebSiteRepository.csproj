@@ -139,10 +139,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DomainClasses\DomainClasses.csproj">
-      <Project>{12e1080f-6d21-424b-8d5f-583b4cf9e9a9}</Project>
-      <Name>DomainClasses</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Interfaces\IISAdmin.Interfaces.csproj">
       <Project>{ed483c78-af2e-42b1-98c2-a977815177fa}</Project>
       <Name>IISAdmin.Interfaces</Name>

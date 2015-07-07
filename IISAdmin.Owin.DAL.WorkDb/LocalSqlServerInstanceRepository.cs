@@ -6,7 +6,7 @@ using System.Linq;
 using IISAdmin.Interfaces;
 using Newtonsoft.Json;
 
-namespace IISAdmin.Owin.DAL.Common
+namespace IISAdmin.Owin.DAL
 {
 	public class SqlServerInstance : ISqlServerInstance
 	{

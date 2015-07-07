@@ -39,8 +39,6 @@ namespace IISAdmin.Interfaces
 		string Version { get; set; }
 
 		bool Release { get; set; }
-
-		string BuildFolderLink { get; set; }
 				
 		DateTime CreatedOn { get; set; }
 
