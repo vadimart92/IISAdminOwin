@@ -20,13 +20,13 @@ namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository {
 			_connectionProvider = connectionProvider;
 		}
 
-		protected IEnumerable<IRelease> GetAll(Expression<Func<WorkDbRelease, object>> expression = null) {
-			var mainSelect = @"SELECT TOP 10 vr.ID, 
-										  vr.Name, 
-										  tb.Name as [Version], 
-										  vr.IsPublished as Release, 
-										  vr.CreatedOn as CreatedOn, 
-										  vr.BuildFolderLink as ZipFilePath
+		protected IEnumerable<IRelease> GetMainSelect(Expression<Func<WorkDbRelease, object>> expression = null) {
+			var mainSelect = @"SELECT vr.ID, 
+									vr.Name, 
+									tb.Name as [Version], 
+									vr.IsPublished as Release, 
+									vr.CreatedOn as CreatedOn, 
+									vr.BuildFolderLink as ZipFilePath
 							FROM vw_Release vr
 							LEFT JOIN dbo.tbl_Build tb ON tb.ID = vr.BuildID";
 			_connectionProvider.ExecuteAction((connection) => {
@@ -54,15 +54,15 @@ namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository {
 		}
 
 		public IRelease Get(Guid key) {
-			return GetAll(r => r.Id == key).FirstOrDefault();
+			return null;//GetAll(r => r.Id == key).FirstOrDefault();
 		}
 
 		public IEnumerable<IRelease> GetTopThousand() {
-			return GetAll().Take(1000).ToList();
+			return null;//return GetAll().Take(1000).ToList();
 		}
 
 		public IEnumerable<IRelease> GetTopThousand(Expression<Func<IRelease, bool>> expression) {
-			return GetAll(expression);
+			return null;//return GetAll(expression);
 		}
 
 		public void Update(IRelease entity) {
