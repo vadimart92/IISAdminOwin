@@ -4,6 +4,7 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
+using Dapper;
 using DeclarativeSql;
 using IISAdmin.Interfaces;
 using IISAdmin.Owin.DAL.WorkDbReleaseRepository.Models;
@@ -20,33 +21,16 @@ namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository {
 			_connectionProvider = connectionProvider;
 		}
 
-		protected IEnumerable<IRelease> GetMainSelect(Expression<Func<WorkDbRelease, object>> expression = null) {
-			var mainSelect = @"SELECT vr.ID, 
-									vr.Name, 
-									tb.Name as [Version], 
-									vr.IsPublished as Release, 
-									vr.CreatedOn as CreatedOn, 
-									vr.BuildFolderLink as ZipFilePath
-							FROM vw_Release vr
-							LEFT JOIN dbo.tbl_Build tb ON tb.ID = vr.BuildID";
-			_connectionProvider.ExecuteAction((connection) => {
-				
-			});
-			return null;
-			/*
-			 using (var releaseContext = new ReleaseContext()) {
-				return (from release in releaseContext.Releases
-						join build in releaseContext.Builds on release.BuildId equals build.Id
-						select new WorkDbRelease {
-							Id = release.Id,
-							BuildFolderLink = release.BuildFolderLink,
-							Name = release.Name,
-							Release = release.IsPublished == 1,
-							Version = build.Name,
-							CreatedOn = release.CreatedOn
-						});
-			}
-			 */
+		protected Select GetMainSelect() {
+			return new Select().Top(1)
+				.Columns(@"vr.ID, 
+						vr.Name, 
+						tb.Name as [Version], 
+						vr.IsPublished as Release, 
+						vr.CreatedOn as CreatedOn, 
+						vr.BuildFolderLink as ZipFilePath")
+				.From(@"vw_Release vr
+						LEFT JOIN dbo.tbl_Build tb ON tb.ID = vr.BuildID");
 		}
 
 		public void Create(IRelease entity) {
@@ -54,15 +38,22 @@ namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository {
 		}
 
 		public IRelease Get(Guid key) {
-			return null;//GetAll(r => r.Id == key).FirstOrDefault();
+			var query = GetMainSelect()
+				.Where("vr.ID = @releaseId");
+			return _connectionProvider.ExecuteAction((connection) => {
+				return connection.Query<IRelease>(query, new {
+					releaseId = key
+				});
+			}).FirstOrDefault();
 		}
 
 		public IEnumerable<IRelease> GetTopThousand() {
-			return null;//return GetAll().Take(1000).ToList();
+			var query = GetMainSelect().Top(1000);
+			return _connectionProvider.ExecuteAction((connection) => connection.Query<WorkDbRelease>(query));
 		}
 
 		public IEnumerable<IRelease> GetTopThousand(Expression<Func<IRelease, bool>> expression) {
-			return null;//return GetAll(expression);
+			throw new InvalidOperationException();
 		}
 
 		public void Update(IRelease entity) {

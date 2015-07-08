@@ -9,7 +9,7 @@ using DeclarativeSql.Dapper;
 
 namespace IISAdmin.Owin.DAL.Test {
 	[TestClass]
-	public class UnitTest1 {
+	public class WorkSqlConnectionProviderTest {
 		[TestMethod]
 		public void TestMethod1() {
 			ISqlConnectionProvider connectionProvider = new WorkSqlConnectionProvider(@"Server=ArtemchukPC;Integrated Security=SSPI;");

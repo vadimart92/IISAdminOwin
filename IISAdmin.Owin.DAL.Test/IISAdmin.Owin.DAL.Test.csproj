@@ -47,6 +47,12 @@
       <HintPath>..\packages\DeclarativeSql.Dapper.0.1.10\lib\net45\DeclarativeSql.Dapper.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.Contrib.0.3\lib\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq.Contrib">
+      <HintPath>..\packages\Moq.Contrib.0.3\lib\Moq.Contrib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
   </ItemGroup>
@@ -64,12 +70,13 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Select_Test.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="WorkSqlConnectionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <Compile Include="WorkDbReleaseRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IISAdmin.Owin.DAL.WorkDb\IISAdmin.Owin.DAL.csproj">
