@@ -41,15 +41,18 @@ namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository {
 			var query = GetMainSelect()
 				.Where("vr.ID = @releaseId");
 			return _connectionProvider.ExecuteAction((connection) => {
-				return connection.Query<IRelease>(query, new {
-					releaseId = key
-				});
-			}).FirstOrDefault();
+				return connection.Query<WorkDbRelease>(query, new { releaseId = key }).FirstOrDefault();
+			});
 		}
 
 		public IEnumerable<IRelease> GetTopThousand() {
 			var query = GetMainSelect().Top(1000);
 			return _connectionProvider.ExecuteAction((connection) => connection.Query<WorkDbRelease>(query));
+		}
+
+		public IEnumerable<IRelease> GetTopThousand(string nameLike) {
+			var query = GetMainSelect().Top(1000).Where(@"vr.Name LIKE @releaseName");
+			return _connectionProvider.ExecuteAction((connection) => connection.Query<WorkDbRelease>(query, new {releaseName = nameLike}));
 		}
 
 		public IEnumerable<IRelease> GetTopThousand(Expression<Func<IRelease, bool>> expression) {
@@ -70,13 +73,17 @@ namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository {
 		}
 
 		private Guid GetIdByUri(string uri) {
+			Guid res;
+			if (Guid.TryParse(uri, out res)) {
+				return res;
+			}
 			var rg = new Regex(@"{\b[A-F0-9]{8}(?:-[A-F0-9]{4}){3}-[A-F0-9]{12}\b}");
 			var m = rg.Match(uri);
 			if (m.Captures.Count == 0) {
 				throw new ArgumentOutOfRangeException("uri");
 			}
 			var id = m.Captures[0].Value;
-			var res = new Guid(id);
+			res = new Guid(id);
 			return res;
 		}
 	}

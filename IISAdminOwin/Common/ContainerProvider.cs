@@ -17,20 +17,13 @@ namespace IISAdmin.Owin.Common
 		}
 
 		private static void ConfigurateContainer(UnityContainer container) {
-			var hierarchicalLifeManager = new HierarchicalLifetimeManager();
 			container.RegisterType<WcfClientWebSiteRepository>(new InjectionConstructor("NetNamedPipeBinding_IWebSiteRepositoryService"));
-			container.RegisterType<IWebSiteRepository, WcfClientWebSiteRepository>(hierarchicalLifeManager);
-			var sqlConnectionConstructor = new InjectionConstructor(ConfigurationManager.ConnectionStrings["WorkDbContext"]);
+			container.RegisterType<IWebSiteRepository, WcfClientWebSiteRepository>(new HierarchicalLifetimeManager());
+			var sqlConnectionConstructor = new InjectionConstructor(ConfigurationManager.ConnectionStrings["WorkDbContext"].ConnectionString);
 			container.RegisterType<ISqlConnectionProvider, WorkSqlConnectionProvider>("WorkSqlConnectionProvider", sqlConnectionConstructor);
-			container.RegisterType<IReleaseRepository, WorkDbReleaseRepository>(hierarchicalLifeManager, SqlConnectionProviderFactory.GetFactory("WorkSqlConnectionProvider"));
+			container.RegisterType<IReleaseRepository, WorkDbReleaseRepository>(new HierarchicalLifetimeManager(), new InjectionConstructor(container.Resolve<ISqlConnectionProvider>("WorkSqlConnectionProvider")));
 			container.RegisterType<ISqlServerInstanceRepository, LocalSqlServerInstanceRepository>(new PerThreadLifetimeManager());
             container.RegisterType<ISiteDeployProvider, SiteDeployProvider>();
         }
-	}
-
-	public static class SqlConnectionProviderFactory {
-		public static InjectionFactory GetFactory(string sqlConnectionProviderAlias) {
-			return new InjectionFactory(c => c.Resolve<ISqlConnectionProvider>(sqlConnectionProviderAlias));
-		}
 	}
 }

@@ -77,6 +77,9 @@
     <None Include="app.config" />
     <None Include="packages.config" />
     <Compile Include="WorkDbReleaseRepositoryTest.cs" />
+    <None Include="terrasoft_work30.bak">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IISAdmin.Owin.DAL.WorkDb\IISAdmin.Owin.DAL.csproj">
@@ -86,6 +89,10 @@
     <ProjectReference Include="..\Interfaces\IISAdmin.Interfaces.csproj">
       <Project>{ED483C78-AF2E-42B1-98C2-A977815177FA}</Project>
       <Name>IISAdmin.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebSiteManagment\WebSiteManagment\WebSiteManagment.Core.csproj">
+      <Project>{e5b27ee6-3589-40e8-bfbc-bbab8625fd58}</Project>
+      <Name>WebSiteManagment.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

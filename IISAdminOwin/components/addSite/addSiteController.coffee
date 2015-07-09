@@ -15,7 +15,7 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '
 
   vm.site = new Site();
 
-  vm.hub = new Hub('SiteCreate',
+  vm.hub = new Hub('SiteCreateHub',
     listeners: []
     methods: [
       'AddSite'
@@ -27,7 +27,7 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '
   vm.releaseInfoFields = [
     { key: 'createdOn', type: 'input', templateOptions: {label: 'Created on', disabled: on }}
     { key: 'name', type: 'input', templateOptions: {label: 'Build name', disabled: on }}
-    { key: 'buildFolderLink', type: 'input', templateOptions: {label: 'Build file link', disabled: on }}
+    { key: 'zipFilePath', type: 'input', templateOptions: {label: 'Zip file path', disabled: on }}
     { key: 'version', type: 'input', templateOptions: {label: 'Version', disabled: on }}
     { key: 'release', type: 'checkbox', templateOptions: {label: 'Release', disabled: on }}
   ]
@@ -44,7 +44,7 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '
       validators: uri:
         expression: (viewValue, modelValue) ->
           value = modelValue or viewValue
-          /{\b[A-F0-9]{8}(?:-[A-F0-9]{4}){3}-[A-F0-9]{12}\b}/.test value
+          /\b[A-F0-9]{8}(?:-[A-F0-9]{4}){3}-[A-F0-9]{12}\b/.test value
         message: '$viewValue + " is not a valid build URI"'
       watcher: listener: (field, newValue, oldValue, scope, stopWatching) ->
         vm.site.releaseInfo = {}
@@ -69,7 +69,7 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '
   getSiteCreateInfo = ()->
     vm.hub.GetStartupInfo()
     .then (siteInfo)->
-      $scope.$apply ()->
+      vm.$apply ()->
         vm.site.redis = siteInfo.freeRedisDbNum
         vm.setSqlInstances siteInfo.sqlServerInstances
         return
@@ -77,7 +77,10 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '
 
   vm.updateReleaseInfo = (uri)->
     vm.hub.GetReleaseInfo uri
-    .then (data)-> $scope.$apply ()-> $.extend vm.site.releaseInfo, data
+    .then (data)-> vm.$apply ()->
+      $.extend vm.site.releaseInfo, data
+      vm.site.name = vm.site.releaseInfo.name
+      return
     return
 
   vm.addSite = ()->
