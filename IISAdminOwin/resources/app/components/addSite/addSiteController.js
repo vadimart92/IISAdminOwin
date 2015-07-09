@@ -34,10 +34,10 @@ app.controller("addSiteController", [
           disabled: true
         }
       }, {
-        key: 'buildFolderLink',
+        key: 'zipFilePath',
         type: 'input',
         templateOptions: {
-          label: 'Build file link',
+          label: 'Zip file path',
           disabled: true
         }
       }, {
@@ -70,7 +70,7 @@ app.controller("addSiteController", [
             expression: function(viewValue, modelValue) {
               var value;
               value = modelValue || viewValue;
-              return /{\b[A-F0-9]{8}(?:-[A-F0-9]{4}){3}-[A-F0-9]{12}\b}/.test(value);
+              return /\b[A-F0-9]{8}(?:-[A-F0-9]{4}){3}-[A-F0-9]{12}\b/.test(value);
             },
             message: '$viewValue + " is not a valid build URI"'
           }
@@ -103,7 +103,7 @@ app.controller("addSiteController", [
     };
     getSiteCreateInfo = function() {
       return vm.hub.GetStartupInfo().then(function(siteInfo) {
-        return $scope.$apply(function() {
+        return vm.$apply(function() {
           vm.site.redis = siteInfo.freeRedisDbNum;
           vm.setSqlInstances(siteInfo.sqlServerInstances);
         });
@@ -111,8 +111,9 @@ app.controller("addSiteController", [
     };
     vm.updateReleaseInfo = function(uri) {
       vm.hub.GetReleaseInfo(uri).then(function(data) {
-        return $scope.$apply(function() {
-          return $.extend(vm.site.releaseInfo, data);
+        return vm.$apply(function() {
+          $.extend(vm.site.releaseInfo, data);
+          vm.site.name = vm.site.releaseInfo.name;
         });
       });
     };

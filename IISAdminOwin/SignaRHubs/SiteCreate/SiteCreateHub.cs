@@ -23,7 +23,8 @@ namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 		}
 
 		public IRelease GetReleaseInfo(string uri) {
-			return _releaseRepository.GetByUri(uri);
+			var result = _releaseRepository.GetByUri(uri);
+			return result;
 		}
 
 		public SiteCreationInfo GetStartupInfo() {

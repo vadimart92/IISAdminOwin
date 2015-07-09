@@ -1,5 +1,7 @@
-﻿using IISAdmin.Interfaces;
-using IISAdmin.Owin.DAL.Common;
+﻿using System.Configuration;
+using IISAdmin.Interfaces;
+using IISAdmin.Owin.DAL;
+using IISAdmin.Owin.DAL.WorkDbReleaseRepository;
 using IISAdmin.WCFWebSiteRepository;
 using IISAdmin.WebSiteManagmentProvider;
 using Microsoft.Practices.Unity;
@@ -17,7 +19,9 @@ namespace IISAdmin.Owin.Common
 		private static void ConfigurateContainer(UnityContainer container) {
 			container.RegisterType<WcfClientWebSiteRepository>(new InjectionConstructor("NetNamedPipeBinding_IWebSiteRepositoryService"));
 			container.RegisterType<IWebSiteRepository, WcfClientWebSiteRepository>(new HierarchicalLifetimeManager());
-			container.RegisterType<IReleaseRepository, WorkDbReleaseRepository>(new HierarchicalLifetimeManager());
+			var sqlConnectionConstructor = new InjectionConstructor(ConfigurationManager.ConnectionStrings["WorkDbContext"].ConnectionString);
+			container.RegisterType<ISqlConnectionProvider, WorkSqlConnectionProvider>("WorkSqlConnectionProvider", sqlConnectionConstructor);
+			container.RegisterType<IReleaseRepository, WorkDbReleaseRepository>(new HierarchicalLifetimeManager(), new InjectionConstructor(container.Resolve<ISqlConnectionProvider>("WorkSqlConnectionProvider")));
 			container.RegisterType<ISqlServerInstanceRepository, LocalSqlServerInstanceRepository>(new PerThreadLifetimeManager());
             container.RegisterType<ISiteDeployProvider, SiteDeployProvider>();
         }

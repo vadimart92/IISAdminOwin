@@ -39,8 +39,6 @@ namespace IISAdmin.Interfaces
 		string Version { get; set; }
 
 		bool Release { get; set; }
-
-		string BuildFolderLink { get; set; }
 				
 		DateTime CreatedOn { get; set; }
 
@@ -50,6 +48,7 @@ namespace IISAdmin.Interfaces
 	public interface IReleaseRepository : IRepository<IRelease, Guid>
 	{
 		IRelease GetByUri(string uri);
+		IEnumerable<IRelease> GetTopThousand(string nameLike);
 	}
 
 	#endregion IReleaseRepository

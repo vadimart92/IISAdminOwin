@@ -29,13 +29,42 @@ namespace WebSiteManagment.Core.Common
 				});
 			}
 			restoreDb.Devices.AddDevice(backupFileName, DeviceType.File);
-			using (var connection = new SqlConnection(String.Format(@"Server={0}\{1};Integrated Security=SSPI;Database=master", serverName, instanceName))) {
+			using (var connection = GetConnection(serverName, instanceName)) {
 				connection.Open();
 				var server = new Server(new ServerConnection(connection));
 				var relocateFiles = GetRelocateFiles(connection, backupFileName, destinationDbName, server.DefaultFile, server.DefaultLog);
 				restoreDb.RelocateFiles.AddRange(relocateFiles);
 				restoreDb.SqlRestore(server);
 			}
+		}
+
+		private static SqlConnection GetConnection(string serverName, string instanceName) {
+			return
+				new SqlConnection(String.Format(@"Server={0}\{1};Integrated Security=SSPI;Database=master", serverName, instanceName));
+		}
+
+		public static bool DropDatabase(string name, string serverName, string instanceName, bool dropBackupHistory = true) {
+			using (var connection = GetConnection(serverName, instanceName)) {
+				connection.Open();
+				var server = new Server(new ServerConnection(connection));
+				if (server.Databases.Contains(name)) {
+					var db = server.Databases[name];
+					try {
+						if (dropBackupHistory) {
+							db.DropBackupHistory();
+						}
+						db.Drop();
+					}
+					catch (Exception) {
+						var cmd = connection.CreateCommand();
+						cmd.Connection = connection;
+						cmd.CommandText = String.Format(@"USE master; ALTER DATABASE [{0}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE [{0}];", name);
+						cmd.ExecuteNonQuery();
+					}
+					return true;
+				}
+			}
+			return false;
 		}
 
 		private static List<RelocateFile> GetRelocateFiles(SqlConnection connection, string backupFileName, string name, string defaultFile, string defaultLog) {
