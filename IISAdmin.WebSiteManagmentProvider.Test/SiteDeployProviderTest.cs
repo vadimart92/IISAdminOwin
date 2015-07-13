@@ -6,8 +6,8 @@ namespace IISAdmin.WebSiteManagmentProvider.Test {
 	public class SiteDeployProviderTest {
 		[TestMethod]
 		public void RestoreBD_DbExists() {
-			var deployProvider = new SiteDeployProvider();
-			deployProvider.DeployWebApp();
+			//var deployProvider = new SiteDeployProvider(new SiteDeployProviderWebConfig());
+			//deployProvider.DeployWebApp();
 		}
 	}
 }

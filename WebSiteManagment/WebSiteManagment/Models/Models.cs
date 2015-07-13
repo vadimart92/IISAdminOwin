@@ -18,7 +18,8 @@ namespace WebSiteManagment.Core.Models
 			: this(site.Id) {
 			Name = site.Name;
 			State = site.State.ToString();
-			var redisCs = WebConfigUtils.GetRedisConnectionString(site);
+			DbConnectionString = WebConfigUtils.GetConnectionString(site, "db");
+			var redisCs = WebConfigUtils.GetConnectionString(site, "redis");
 			Redis = string.IsNullOrWhiteSpace(redisCs) ? null : new Redis(redisCs);
 			Bindings = site.Bindings.ToList().ConvertAll(b => b.BindingInformation);
 			Applications = site.Applications.ToList().ConvertAll(a =>
@@ -49,6 +50,9 @@ namespace WebSiteManagment.Core.Models
 
 		[DataMember]
 		public List<Application> Applications { get; set; }
+
+		[DataMember]
+		public string DbConnectionString  { get; set; }
 	}
 
 	[DataContract]
@@ -143,17 +147,43 @@ namespace WebSiteManagment.Core.Models
 
 		public string Path { get; set; }
 	}
-
+	
 	[DataContract]
-	public class SiteAddInfo
-	{
+	public class SiteInfo {
 		[DataMember]
-		public string ZipFilePath { get; set; }
+		public string WebAppDir {
+			get;
+			set;
+		}
 
 		[DataMember]
-		public string Name { get; set; }
+		public string Name {
+			get;
+			set;
+		}
 
 		[DataMember]
-		public Redis Redis { get; set; }
+		public int AppCount {
+			get;
+			set;
+		}
+
+		[DataMember]
+		public int? Port {
+			get;
+			set;
+		}
+
+		[DataMember]
+		public string SiteName {
+			get;
+			set;
+		}
+
+		[DataMember]
+		public bool CreateNewSite {
+			get;
+			set;
+		}
 	}
 }

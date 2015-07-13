@@ -25,7 +25,12 @@ namespace IISAdmin.Interfaces
 
 		void ClearSiteCache();
 
-		void CreateSite(ISiteCreateData data);
+		long CreateSite(ISiteCreateData data, int appCount);
+
+		void ModifyConnectionStrings(long siteId, Dictionary<string, string> config);
+
+		int GetFreePortNumber();
+
 	}
 
 	#endregion IWebSiteRepository
@@ -71,6 +76,24 @@ namespace IISAdmin.Interfaces
 		IList<ISqlServerInstance> GetAllInstances(IList<string> serverNameFilter = null);
 	}
 
+	public class SqlServerInstanceComparer:IEqualityComparer<ISqlServerInstance> {
+
+		public static readonly SqlServerInstanceComparer Instance = new SqlServerInstanceComparer();
+
+		public bool Equals(ISqlServerInstance x, ISqlServerInstance y) {
+			return CompareNames (x,y) == 0;
+		}
+
+		private int CompareNames(ISqlServerInstance x, ISqlServerInstance y) {
+			return string.Compare(x.ServerName, y.ServerName, StringComparison.OrdinalIgnoreCase)
+				+ string.Compare(x.InstanceName, y.InstanceName, StringComparison.OrdinalIgnoreCase)
+				+ string.Compare(x.Version, y.Version, StringComparison.OrdinalIgnoreCase);
+		}
+
+		public int GetHashCode(ISqlServerInstance obj) {
+			return obj.ServerName.GetHashCode() + obj.InstanceName.GetHashCode() + obj.Version.GetHashCode();
+		}
+	}
 	#endregion ISqlServerInstanceRepository
 	
 }

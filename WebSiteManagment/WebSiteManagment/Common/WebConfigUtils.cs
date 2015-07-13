@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Web.Configuration;
 using WebSiteManagment.Core.Models;
@@ -8,8 +10,17 @@ namespace WebSiteManagment.Core.Common
 {
 	public static class WebConfigUtils
 	{
-		public static string GetRedisConnectionString(Site site) {
+		public static string GetConnectionString(Site site, string name) {
 			var siteRoot = GetSiteRoot(site);
+			var config = OpenConfig(siteRoot);
+			var cs = config != null ? config.ConnectionStrings.ConnectionStrings[name] : null;
+			if (cs == null) {
+				return string.Empty;
+			}
+			return cs.ConnectionString;
+		}
+
+		private static Configuration OpenConfig(string siteRoot) {
 			var configFileName = Path.Combine(siteRoot, "web.config");
 			if (!File.Exists(configFileName)) {
 				return null;
@@ -17,15 +28,11 @@ namespace WebSiteManagment.Core.Common
 			var vdm = new VirtualDirectoryMapping(siteRoot, true);
 			var wcfm = new WebConfigurationFileMap();
 			wcfm.VirtualDirectories.Add("/", vdm);
-
-			var config = System.Web.Configuration.WebConfigurationManager.OpenMappedWebConfiguration(wcfm, @"/");
-			var cs = config.ConnectionStrings.ConnectionStrings["redis"];
-
-			if (cs == null) {
-				return string.Empty;
+			var config = WebConfigurationManager.OpenMappedWebConfiguration(wcfm, @"/");
+			if (config.FilePath != configFileName) {
+				return null;
 			}
-
-			return cs.ConnectionString;
+			return config;
 		}
 
 		public static string GetSiteRoot(Site site) {
@@ -44,6 +51,28 @@ namespace WebSiteManagment.Core.Common
 
 		public static void SetSiteSettings(Site site, SiteSettings settings) {
 			//todo setup site web.config & webapp/web.cofig
+		}
+
+		public static void SetConnectionString(string siteRoot, string csName, string newValue) {
+			var config = OpenConfig(siteRoot);
+			if (config == null) {
+				return;
+			}
+			var cs = config.ConnectionStrings.ConnectionStrings[csName];
+			if (cs == null) {
+				return;
+			}
+			cs.ConnectionString = newValue;
+			config.Save(ConfigurationSaveMode.Modified);
+		}
+		public static void SetConnectionString(Site site, string csName, string newValue) {
+			var root = GetSiteRoot(site);
+			if ( root != null && Directory.Exists(root)) {
+				SetConnectionString(root, csName, newValue);
+				if (csName == "db") {
+					SetConnectionString(root, "reports", newValue);
+				}
+			}
 		}
 	}
 }

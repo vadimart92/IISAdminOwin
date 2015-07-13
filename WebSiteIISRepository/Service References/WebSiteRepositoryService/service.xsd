@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.datacontract.org/2004/07/WebSiteManagment.Core.Models" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="GetAllSites">
     <xs:complexType>
       <xs:sequence />
@@ -114,13 +115,40 @@
   <xs:element name="AddSite">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WebSiteManagment.Core.Models" minOccurs="0" name="siteInfo" nillable="true" type="q4:SiteAddInfo" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WebSiteManagment.Core.Models" minOccurs="0" name="siteInformation" nillable="true" type="q4:SiteInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddSiteResponse">
     <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddSiteResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyConnectionStrings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:long" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="config" nillable="true" type="q5:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyConnectionStringsResponse">
+    <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNexFreePort">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNexFreePortResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNexFreePortResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

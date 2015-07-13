@@ -15,12 +15,19 @@ namespace IISAdmin.Owin.Models
 
 		public DateTime CreatedOn { get; set; }
 
-		public string BuildFolderLink { get; set; }
+		public string ZipFilePath { get; set; }
 
-		public string ZipFilePath {
-			get {
-				throw new NotImplementedException();
-			}
+		public SignalrRelease(IRelease release) {
+			Id = release.Id;
+			Name = release.Name;
+			CreatedOn = release.CreatedOn;
+			Release = release.Release;
+			Version = release.Version;
+			ZipFilePath = release.ZipFilePath;
+		}
+
+		public SignalrRelease() {
+			
 		}
 	}
 
@@ -32,20 +39,7 @@ namespace IISAdmin.Owin.Models
 
 		public string Version { get; set; }
 
-		public string Name {
-			get {
-				return string.Format("{0}/{1}", ServerName, InstanceName);
-			}
-		}
+		public string Name { get; set; }
 	}
-	public class SignalRRedis : IRedis
-	{
-		public string ConnectionString {get;set;}
 
-		public int Db { get; set; }
-
-		public string Host { get; set; }
-
-		public int Port { get; set; }
-	}
 }

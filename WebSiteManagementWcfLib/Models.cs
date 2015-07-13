@@ -35,6 +35,13 @@ namespace WebSiteManagment.Wcf
 		void ClearCache();
 
 		[OperationContract]
-		void AddSite(SiteAddInfo siteInfo);
+		long AddSite(SiteInfo siteInformation);
+
+		[OperationContract]
+		void ModifyConnectionStrings(long siteId, Dictionary<string, string> config);
+
+		[OperationContract]
+		int GetNexFreePort();
 	}
+
 }

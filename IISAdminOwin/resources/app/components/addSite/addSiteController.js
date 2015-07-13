@@ -1,20 +1,20 @@
 app.controller("addSiteController", [
-  '$rootScope', '$scope', '$timeout', 'Hub', '$', function($rootScope, $scope, $timeout, Hub, $) {
+  '$rootScope', '$scope', '$timeout', 'Hub', '$', 'utils', function($rootScope, $scope, $timeout, Hub, $, utils) {
     var Site, getSiteCreateInfo, offFunc, vm;
     vm = $scope;
     Site = Class.create({
       name: null,
-      redis: 0,
       workUri: null,
       db: null,
       msSqlInstances: [],
       releaseInfo: {},
       isFormDataValid: function() {
-        return this.name && this.redis && this.workUri && this.db;
+        return this.name && this.workUri && this.db;
       }
     });
     vm.site = new Site();
     vm.hub = new Hub('SiteCreateHub', {
+      logging: true,
       listeners: [],
       methods: ['AddSite', 'GetReleaseInfo', 'GetStartupInfo']
     });
@@ -61,16 +61,14 @@ app.controller("addSiteController", [
         key: 'workUri',
         type: 'input',
         templateOptions: {
-          label: 'Build uri',
+          label: 'Build uri/id',
           placeholder: 'Paste product build uri here',
           required: true
         },
         validators: {
           uri: {
             expression: function(viewValue, modelValue) {
-              var value;
-              value = modelValue || viewValue;
-              return /\b[A-F0-9]{8}(?:-[A-F0-9]{4}){3}-[A-F0-9]{12}\b/.test(value);
+              return utils.containsGUID(modelValue || viewValue);
             },
             message: '$viewValue + " is not a valid build URI"'
           }
@@ -90,10 +88,15 @@ app.controller("addSiteController", [
           label: 'Name'
         }
       }, {
+        key: 'webAppDir',
+        type: 'input',
+        templateOptions: {
+          label: 'Web app directory'
+        }
+      }, {
         key: 'db',
         type: 'uiSelect',
         templateOptions: {
-          redisKey: 'redis',
           label: 'MSSQL Instance'
         }
       }
@@ -104,7 +107,6 @@ app.controller("addSiteController", [
     getSiteCreateInfo = function() {
       return vm.hub.GetStartupInfo().then(function(siteInfo) {
         return vm.$apply(function() {
-          vm.site.redis = siteInfo.freeRedisDbNum;
           vm.setSqlInstances(siteInfo.sqlServerInstances);
         });
       });
@@ -112,8 +114,9 @@ app.controller("addSiteController", [
     vm.updateReleaseInfo = function(uri) {
       vm.hub.GetReleaseInfo(uri).then(function(data) {
         return vm.$apply(function() {
-          $.extend(vm.site.releaseInfo, data);
-          vm.site.name = vm.site.releaseInfo.name;
+          $.extend(vm.site.releaseInfo, data.release);
+          vm.site.name = data.webAppName;
+          vm.site.webAppDir = data.webAppDir;
         });
       });
     };
@@ -122,7 +125,7 @@ app.controller("addSiteController", [
     };
     $timeout(function() {
       return getSiteCreateInfo();
-    }, 2000);
+    }, 1000);
     offFunc = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
       var selfDestruct;
       selfDestruct = offFunc;

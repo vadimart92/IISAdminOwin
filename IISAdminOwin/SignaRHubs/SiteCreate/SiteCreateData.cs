@@ -6,12 +6,15 @@ namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 
 	[JsonObject]
 	public class SiteCreateData : ISiteCreateData {
+		
 		public string Name {
 			get;
 			set;
 		}
 
-		public SignalRRedis RedisInfo {
+		public string WebAppName { get; set; }
+
+		public Redis RedisInfo {
 			get;
 			set;
 		}
@@ -28,21 +31,16 @@ namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 
 		#region Члены ISiteCreateData
 
-		public string DestinationPath {
+		public string DestinationWebAppRoot {
 			get;
 			set;
 		}
 
-		public string DbBackupTempPath {
-			get;
-			private set;
-		}
+		public bool SeparateFolder { get; set; }
 
-		public string RedisConnectionString {
-			get {
-				return RedisInfo.ConnectionString;
-			}
-		}
+		public string UserName { get; set; }
+		
+		public bool CreateNewSite { get; set; }
 
 		IRelease ISiteCreateData.ReleaseInfo {
 			get {
@@ -58,4 +56,13 @@ namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 
 		#endregion Члены ISiteCreateData
 	}
+
+	[JsonObject]
+	public class ReleaseInfo {
+		
+		public IRelease Release { get; set; }
+		public string WebAppName { get; set; }
+		public string WebAppDir { get; set; }
+	}
+
 }

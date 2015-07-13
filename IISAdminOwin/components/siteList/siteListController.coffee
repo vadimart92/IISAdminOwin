@@ -39,9 +39,14 @@ app.controller "siteListController", [
 			'<div class="btn btn-primary btn-xs glyphicon glyphicon-play" ng-click="getExternalScopes().startSite(row.entity)" ng-show="!getExternalScopes().siteUtils.isRunning(row.entity)"></div>' +
 			'<span class="binding-label">{{row.entity.state}}</span>'
 
-		poolTemplate = '<div ng-class="{\'hide\': row.entity.poolRestartInProgress}"><div class="btn btn-primary btn-xs glyphicon glyphicon-refresh" ng-click="getExternalScopes().restartPool(row.entity)"></div>' +
-			'<span>{{getExternalScopes().getSitePool(row.entity)}}</span></div>' +
-			'<div class="mProgressContainerRow-msg">{{row.entity.stateName}}</div><div class="mProgressContainerRow progress-row{{row.entity.id}}" ng-class="{\'hide\': !row.entity.poolRestartInProgress}"></div>'
+		poolTemplate = [
+			'<div ng-class="{\'hide\': row.entity.poolRestartInProgress}" class="ui-grid-cell-contents pool-name" tooltip-placement="left" tooltip="{{getExternalScopes().getSitePool(row.entity)}}" tooltip-class="large-tooltip">'
+				'<div class="btn btn-primary btn-xs glyphicon glyphicon-refresh" ng-click="getExternalScopes().restartPool(row.entity)"></div>'
+				'<span>{{getExternalScopes().getSitePool(row.entity)}}</span>'
+			'</div>'
+			'<div class="mProgressContainerRow-msg">{{row.entity.stateName}}</div>'
+			'<div class="mProgressContainerRow progress-row{{row.entity.id}}" ng-class="{\'hide\': !row.entity.poolRestartInProgress}"></div>'
+			].join('')
 
 		redisTpl = '<div ng-show="getExternalScopes().siteUtils.redisFound(row.entity)" class="btn btn-primary btn-xs glyphicon glyphicon-refresh" ng-click="getExternalScopes().flushRedis(row.entity)" ng-class="{\'hide\': row.redisFlushInProgress}"></div>' +
 			'<span tooltip-placement="left" tooltip="{{getExternalScopes().siteUtils.redisName(row.entity)}}">{{getExternalScopes().siteUtils.redisName(row.entity)}}</span>'

@@ -6,10 +6,6 @@ namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 
 	[JsonObject]
 	public class SiteCreationInfo {
-		public int FreeRedisDbNum {
-			get;
-			set;
-		}
 
 		public IList<ISqlServerInstance> SqlServerInstances {
 			get;
