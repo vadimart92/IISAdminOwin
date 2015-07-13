@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Web.Administration;
@@ -150,11 +151,60 @@ namespace WebSiteManagment.Core
 			RedisUtils.FlushRedisDb(site.Redis.Host, site.Redis.Port, site.Redis.Db);
 		}
 
-		public void AddSite(SiteAddInfo info) {
-			//todo: issue 9
-			
-        }
-		
+		public long AddSite(SiteInfo info) {
+			var pool = _serverManager.ApplicationPools.Add(info.Name);
+			Microsoft.Web.Administration.Site site;
+			if (info.CreateNewSite) {
+				var port = CommonUtils.SafeGetFreeTcpPort();
+				site = _serverManager.Sites.Add(info.Name, info.WebAppDir, port);
+				site.ApplicationDefaults.ApplicationPoolName = pool.Name;
+			} else {
+				site =
+					_serverManager.Sites.FirstOrDefault(
+						s => string.Compare(s.Name, info.SiteName, StringComparison.OrdinalIgnoreCase) == 0);
+			}
+			if (site == null) {
+				return -1;
+			}
+			for (int i = 0; i < info.AppCount; i++) {
+				var app = site.Applications.Add(String.Format(@"/{0}", i), Path.Combine(info.WebAppDir, "Terrasoft.WebApp"));
+				app.ApplicationPoolName = pool.Name;
+			}
+			_serverManager.CommitChanges();
+			return site.Id;
+		}
+
+		public void RemoveSite(string siteName, bool stopPools = true, bool removePools = true) {
+			var site = _serverManager.Sites[siteName];
+			if (site != null) {
+				var appList = site.Applications.ToList();
+				var poolList = appList.ConvertAll(app => _serverManager.ApplicationPools[app.ApplicationPoolName]).Where(p => p != null).ToList();
+				if (removePools || stopPools) {
+					poolList.ConvertAll(p => p.Name).ForEach(StopPool);
+				}
+				appList.ForEach(site.Applications.Remove);
+				site.Stop();
+				_serverManager.Sites.Remove(site);
+				if (removePools) {
+					poolList.ForEach(_serverManager.ApplicationPools.Remove);
+				}
+				_serverManager.CommitChanges();
+				Site res;
+				_siteCache.TryRemove(site.Id, out res);
+			}
+		}
+
+		public void ModifyConnectionStrings(long siteId, Dictionary<string, string> config) {
+			var site = _serverManager.Sites.FirstOrDefault(s => s.Id == siteId);
+			if (site != null) {
+				foreach (var item in config) {
+					WebConfigUtils.SetConnectionString(site, item.Key, item.Value);
+				}
+			}
+			Site res;
+			_siteCache.TryRemove(siteId, out res);
+		}
+
 		private const string AppHostConfigPath = @"\inetsrv\config\applicationhost.config";
 
 		#endregion Members

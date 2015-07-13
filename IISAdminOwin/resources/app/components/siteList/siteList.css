@@ -26,3 +26,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.pool-name {
+  padding: 0;
+}

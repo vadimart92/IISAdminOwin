@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.ServiceModel;
+using System.ServiceModel.Channels;
 using IISAdmin.Interfaces;
 using IISAdmin.WCFWebSiteRepository.WebSiteRepositoryService;
-using Newtonsoft.Json;
+using WebSiteManagment.Core.Models;
 
 namespace IISAdmin.WCFWebSiteRepository
 {
@@ -15,6 +16,10 @@ namespace IISAdmin.WCFWebSiteRepository
 
 		public WcfClientWebSiteRepository(string bindingName) {
 			_siteRepositoryServiceClient = new WebSiteRepositoryServiceClient(bindingName);
+		}
+
+		public WcfClientWebSiteRepository(Binding binding, EndpointAddress remoteAddress) {
+			_siteRepositoryServiceClient = new WebSiteRepositoryServiceClient(binding, remoteAddress);
 		}
 
 		private void OpenChannel() {
@@ -95,20 +100,33 @@ namespace IISAdmin.WCFWebSiteRepository
 			CloseChannel();
 		}
 
-		public void CreateSite(ISiteCreateData data) {
+		public long CreateSite(ISiteCreateData data, int appCount) {
 			try {
+				SiteInfo param = new SiteInfo {
+					Name = data.WebAppName,
+					WebAppDir = data.DestinationWebAppRoot,
+					AppCount = appCount,
+					CreateNewSite = data.CreateNewSite,
+					SiteName = data.WebAppName
+				};
 				OpenChannel();
-				//todo: issue 9 create info for add site
-				_repositoryService.AddSiteAsync(new SiteAddInfo {
-					ZipFilePath = data.ReleaseInfo.ZipFilePath,
-					Name = data.Name,
-					Redis = new Redis {
-						ConnectionString = data.RedisConnectionString
-					}
-				});
+				return _repositoryService.AddSite(param);
 			} finally {
 				CloseChannel();
 			}
+		}
+
+		public void ModifyConnectionStrings(long siteId, Dictionary<string, string> config) {
+			OpenChannel();
+			_repositoryService.ModifyConnectionStrings(siteId, config);
+			CloseChannel();
+		}
+
+		public int GetFreePortNumber() {
+			OpenChannel();
+			var res = _repositoryService.GetNexFreePort();
+			CloseChannel();
+			return res;
 		}
 
 		#endregion Члены IWebSiteRepository

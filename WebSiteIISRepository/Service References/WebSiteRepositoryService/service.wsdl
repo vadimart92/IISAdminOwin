@@ -101,6 +101,18 @@
   <wsdl:message name="IWebSiteRepositoryService_AddSite_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddSiteResponse" />
   </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_ModifyConnectionStrings_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyConnectionStrings" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_ModifyConnectionStrings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyConnectionStringsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_GetNexFreePort_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNexFreePort" />
+  </wsdl:message>
+  <wsdl:message name="IWebSiteRepositoryService_GetNexFreePort_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNexFreePortResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebSiteRepositoryService">
     <wsdl:operation name="GetAllSites">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/GetAllSites" message="tns:IWebSiteRepositoryService_GetAllSites_InputMessage" />
@@ -141,6 +153,14 @@
     <wsdl:operation name="AddSite">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/AddSite" message="tns:IWebSiteRepositoryService_AddSite_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/AddSiteResponse" message="tns:IWebSiteRepositoryService_AddSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyConnectionStrings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/ModifyConnectionStrings" message="tns:IWebSiteRepositoryService_ModifyConnectionStrings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/ModifyConnectionStringsResponse" message="tns:IWebSiteRepositoryService_ModifyConnectionStrings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNexFreePort">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/GetNexFreePort" message="tns:IWebSiteRepositoryService_GetNexFreePort_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebSiteRepositoryService/GetNexFreePortResponse" message="tns:IWebSiteRepositoryService_GetNexFreePort_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetNamedPipeBinding_IWebSiteRepositoryService" type="tns:IWebSiteRepositoryService">
@@ -230,6 +250,24 @@
     </wsdl:operation>
     <wsdl:operation name="AddSite">
       <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/AddSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyConnectionStrings">
+      <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/ModifyConnectionStrings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNexFreePort">
+      <soap12:operation soapAction="http://tempuri.org/IWebSiteRepositoryService/GetNexFreePort" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

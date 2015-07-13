@@ -1,21 +1,21 @@
 # CoffeeScript
-app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '$', ($rootScope, $scope, $timeout, Hub, $) ->
+app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '$' , 'utils', ($rootScope, $scope, $timeout, Hub, $, utils) ->
   vm = $scope
 
   Site = Class.create(
     name: null,
-    redis: 0,
     workUri: null,
     db: null,
     msSqlInstances: [],
     releaseInfo: {},
     isFormDataValid: () ->
-      this.name && this.redis && this.workUri && this.db
+      this.name && this.workUri && this.db
   )
 
   vm.site = new Site();
 
   vm.hub = new Hub('SiteCreateHub',
+    logging: on
     listeners: []
     methods: [
       'AddSite'
@@ -37,14 +37,13 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '
       key: 'workUri',
       type: 'input',
       templateOptions: {
-        label: 'Build uri',
+        label: 'Build uri/id',
         placeholder: 'Paste product build uri here'
         required: true
       }
       validators: uri:
         expression: (viewValue, modelValue) ->
-          value = modelValue or viewValue
-          /\b[A-F0-9]{8}(?:-[A-F0-9]{4}){3}-[A-F0-9]{12}\b/.test value
+          utils.containsGUID modelValue or viewValue
         message: '$viewValue + " is not a valid build URI"'
       watcher: listener: (field, newValue, oldValue, scope, stopWatching) ->
         vm.site.releaseInfo = {}
@@ -53,10 +52,10 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '
         return
     },
     { key: 'name', type: 'input', templateOptions: {label: 'Name' }}
+    { key: 'webAppDir', type: 'input', templateOptions: {label: 'Web app directory' }}
     {
       key: 'db', type: 'uiSelect',
       templateOptions: {
-        redisKey: 'redis',
         label: 'MSSQL Instance'
       }
     }
@@ -70,16 +69,15 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '
     vm.hub.GetStartupInfo()
     .then (siteInfo)->
       vm.$apply ()->
-        vm.site.redis = siteInfo.freeRedisDbNum
         vm.setSqlInstances siteInfo.sqlServerInstances
         return
-        
 
   vm.updateReleaseInfo = (uri)->
     vm.hub.GetReleaseInfo uri
     .then (data)-> vm.$apply ()->
-      $.extend vm.site.releaseInfo, data
-      vm.site.name = vm.site.releaseInfo.name
+      $.extend vm.site.releaseInfo, data.release
+      vm.site.name = data.webAppName
+      vm.site.webAppDir = data.webAppDir
       return
     return
 
@@ -87,13 +85,9 @@ app.controller "addSiteController",['$rootScope', '$scope', '$timeout', 'Hub', '
     vm.hub.AddSite vm.site
     return
 
- 
-
-
   $timeout ()->
     do getSiteCreateInfo
-    #vm.site.workUri = "{7D53CBC8-E052-4A7A-9419-E7FF5D6AFE7E}"
-  ,2000
+  ,1000
 
   offFunc = $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
     selfDestruct = offFunc;

@@ -143,16 +143,18 @@
       <Project>{ed483c78-af2e-42b1-98c2-a977815177fa}</Project>
       <Name>IISAdmin.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebSiteManagment\WebSiteManagment\WebSiteManagment.Core.csproj">
+      <Project>{e5b27ee6-3589-40e8-bfbc-bbab8625fd58}</Project>
+      <Name>WebSiteManagment.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\WebSiteManagment.Core.Models.Site.datasource" />
     <None Include="Properties\DataSources\WebSiteManagment.Models.Site.datasource" />
     <None Include="Service References\WebSiteRepositoryService\Arrays.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WebSiteRepositoryService\IISAdmin.WCFWebSiteRepository.WebSiteRepositoryService.Site.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\WebSiteRepositoryService\service.wsdl" />
     <None Include="Service References\WebSiteRepositoryService\service.xsd">

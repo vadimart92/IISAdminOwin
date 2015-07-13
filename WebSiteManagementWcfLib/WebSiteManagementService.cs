@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using WebSiteManagment.Core;
+using WebSiteManagment.Core.Common;
 using WebSiteManagment.Core.Models;
 
 namespace WebSiteManagment.Wcf
 {
+	[ServiceBehavior(IncludeExceptionDetailInFaults = true)]
 	public class WebSiteManagementService : IWebSiteRepositoryService
 	{
 		private readonly WebSiteManager _siteManager = new WebSiteManager();
@@ -45,10 +47,17 @@ namespace WebSiteManagment.Wcf
 		public void ClearCache() {
 			_siteManager.ClearCashe();
 		}
+		
+		public long AddSite(SiteInfo information) {
+			return _siteManager.AddSite(information);
+		}
 
-		public void AddSite(SiteAddInfo info) {
-			//todo: issue 9 implement
-			_siteManager.AddSite(info);
+		public void ModifyConnectionStrings(long siteName, Dictionary<string, string> config) {
+			_siteManager.ModifyConnectionStrings(siteName, config);
+		}
+
+		public int GetNexFreePort() {
+			return CommonUtils.SafeGetFreeTcpPort();
 		}
 
 		public Site FindSite(long id) {

@@ -2,6 +2,7 @@
 using System.Runtime.Serialization;
 using IISAdmin.Interfaces;
 using IISAdmin.WCFWebSiteRepository.WebSiteRepositoryService;
+using Redis = IISAdmin.Interfaces.Redis;
 
 namespace IISAdmin.WCFWebSiteRepository
 {
@@ -14,12 +15,14 @@ namespace IISAdmin.WCFWebSiteRepository
 			Applications = new List<IApplication>();
 		}
 
-		public IisSite(Site site) : this() {
+		public IisSite(WebSiteManagment.Core.Models.Site site)
+			: this() {
 			Id = site.Id;
 			Name = site.Name;
 			State = site.State;
 			Bindings = site.Bindings;
 			Redis = new RedisInfo(site.Redis);
+			DbConnectionString = site.DbConnectionString;
 			Applications.AddRange(site.Applications.ConvertAll(a => new WebApplication(a)));
 		}
 
@@ -41,7 +44,10 @@ namespace IISAdmin.WCFWebSiteRepository
 		public string State { get; set; }
 
 		[DataMember]
-		public IRedis Redis { get; set; }
+		public Redis Redis { get; set; }
+
+		[DataMember]
+		public string DbConnectionString { get; set; }
 
 		[DataMember]
 		public List<string> Bindings { get; set; }
@@ -57,7 +63,7 @@ namespace IISAdmin.WCFWebSiteRepository
 	{
 		#region Members
 
-		public WebApplication(Application application) {
+		public WebApplication(WebSiteManagment.Core.Models.Application application) {
 			Name = application.Path;
 			Pool = new IisAppPool(application.Pool);
 		}
@@ -84,7 +90,7 @@ namespace IISAdmin.WCFWebSiteRepository
 	{
 		#region Members
 
-		public IisAppPool(AppPool pool) {
+		public IisAppPool(WebSiteManagment.Core.Models.AppPool pool) {
 			Name = pool.Name;
 			State = pool.State;
 		}
@@ -103,28 +109,24 @@ namespace IISAdmin.WCFWebSiteRepository
 	}
 
 	[DataContract]
-	public class RedisInfo : IRedis
+	public class RedisInfo : Redis
 	{
-		public RedisInfo(Redis redis) {
+		public RedisInfo(WebSiteManagment.Core.Models.Redis redis) {
 			if (redis == null) {
 				return;
 			}
 			Db = redis.Db;
 			Host = redis.Host;
 			Port = redis.Port;
-			ConnectionString = redis.ConnectionString;
 		}
 
 		[DataMember]
-		public int Db { get; set; }
+		public override int Db { get; set; }
 
 		[DataMember]
-		public string Host { get; set; }
+		public override string Host { get; set; }
 
 		[DataMember]
-		public int Port { get; set; }
-
-		[DataMember]
-		public string ConnectionString { get; set; }
+		public override int Port { get; set; }
 	}
 }

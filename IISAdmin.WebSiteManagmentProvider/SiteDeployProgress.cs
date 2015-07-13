@@ -18,6 +18,10 @@ namespace IISAdmin.WebSiteManagmentProvider {
 
 		private readonly List<DeployOperationIfo> _operations;
 
+		private IProgress<ISiteDeployProgress> _progress;
+
+		private bool _progressSetFlag;
+
 		#endregion
 
 		#region ISiteDeployProgress Members
@@ -34,7 +38,11 @@ namespace IISAdmin.WebSiteManagmentProvider {
 		[DataMember]
 		public decimal Percentage
 		{
-			get { return TotalOperationsCount == 0 ? 0 : Math.Round(CurrentOperationNumber - 1*100m/TotalOperationsCount, 2); }
+			get
+			{
+				var value = TotalOperationsCount == 0 ? 0 : Math.Round(CurrentOperationNumber - 1*100m/TotalOperationsCount, 2);
+				return value < 0? 0 : value;
+			}
 		}
 
 		#region Methods:Public
@@ -42,7 +50,15 @@ namespace IISAdmin.WebSiteManagmentProvider {
 		public bool SetNextOperation() {
 			if (TotalOperationsCount <= CurrentOperationNumber) return false;
 			CurrentOperationNumber++;
+			if (_progressSetFlag) {
+				_progress.Report(this);
+			}
 			return true;
+		}
+
+		public void SetIProgress(IProgress<ISiteDeployProgress> iProgress) {
+			_progress = iProgress;
+			_progressSetFlag = true;
 		}
 
 		#endregion

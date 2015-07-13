@@ -4,10 +4,10 @@ using System.Runtime.Serialization;
 
 namespace IISAdmin.Interfaces
 {
-	public interface ISiteDeployProvider
-	{
-		void DeployWebApp(ISiteCreateData siteCreateData, IProgress<ISiteDeployProgress> progress, ISiteDeployProgress initialProgress);
+	public interface ISiteDeployProvider {
+		void DeployWebApp(ISiteCreateData siteCreateData, ISiteDeployProgress initialProgress);
 		ISiteDeployProgress GetInitDeployProgress(IEnumerable<DeployOperationIfo> extraOperations);
+		void InitDeployInfo(ISiteCreateData siteCreateData);
 	}
 
 	public class DeployOperationIfo {
@@ -27,5 +27,7 @@ namespace IISAdmin.Interfaces
 		/// If current operation is last returns false.
 		/// </returns>
 		bool SetNextOperation();
+
+		void SetIProgress(IProgress<ISiteDeployProgress> iProgress);
 	}
 }

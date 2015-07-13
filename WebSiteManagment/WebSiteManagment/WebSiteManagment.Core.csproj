@@ -160,6 +160,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\CommonUtils.cs" />
     <Compile Include="Common\ZipExtractor.cs" />
     <Compile Include="Common\DatabaseBackupManager.cs" />
     <Compile Include="Common\ProcessUtils.cs" />

@@ -23,6 +23,7 @@ namespace IISAdmin.Owin.Common
 			container.RegisterType<ISqlConnectionProvider, WorkSqlConnectionProvider>("WorkSqlConnectionProvider", sqlConnectionConstructor);
 			container.RegisterType<IReleaseRepository, WorkDbReleaseRepository>(new HierarchicalLifetimeManager(), new InjectionConstructor(container.Resolve<ISqlConnectionProvider>("WorkSqlConnectionProvider")));
 			container.RegisterType<ISqlServerInstanceRepository, LocalSqlServerInstanceRepository>(new PerThreadLifetimeManager());
+			container.RegisterType<ISiteDeployProviderWebConfig, SiteDeployProviderWebConfig>();
             container.RegisterType<ISiteDeployProvider, SiteDeployProvider>();
         }
 	}

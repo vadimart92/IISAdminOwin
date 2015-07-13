@@ -1,61 +1,54 @@
 ﻿using System;
 using System.Diagnostics.Contracts;
-using System.Linq;
 using IISAdmin.Interfaces;
+using IISAdmin.Owin.Models;
 
 namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 	public class SiteCreateHub : BaseHub<SiteCreateHub> {
 		private readonly IReleaseRepository _releaseRepository;
 		private readonly ISqlServerInstanceRepository _serverInstanceRepository;
 		private readonly ISiteDeployProvider _siteDeployProvider;
-		private readonly IWebSiteRepository _siteRepository;
 
-		public SiteCreateHub(IWebSiteRepository siteRepository, IReleaseRepository releaseRepository,
-			ISqlServerInstanceRepository serverInstanceRepository, ISiteDeployProvider siteDeployProvider) {
-			Contract.Assert(siteRepository != null);
+		public SiteCreateHub(IReleaseRepository releaseRepository, ISqlServerInstanceRepository serverInstanceRepository, 
+			ISiteDeployProvider siteDeployProvider) {
 			Contract.Assert(releaseRepository != null);
 			Contract.Assert(serverInstanceRepository != null);
 			Contract.Assert(siteDeployProvider != null);
-			_siteRepository = siteRepository;
 			_releaseRepository = releaseRepository;
 			_serverInstanceRepository = serverInstanceRepository;
 			_siteDeployProvider = siteDeployProvider;
 		}
 
-		public IRelease GetReleaseInfo(string uri) {
+		public ReleaseInfo GetReleaseInfo(string uri) {
 			var result = _releaseRepository.GetByUri(uri);
-			return result;
+			var siteCreateData = new SiteCreateData {
+				ReleaseInfo = new SignalrRelease(result),
+				Name = result.Name,
+				UserName = Context.User.Identity.Name
+			};
+			_siteDeployProvider.InitDeployInfo(siteCreateData);
+			return new ReleaseInfo {
+				Release = result,
+				WebAppName = siteCreateData.WebAppName,
+				WebAppDir = siteCreateData.DestinationWebAppRoot
+			};
 		}
 
 		public SiteCreationInfo GetStartupInfo() {
 			var sqlInstances = _serverInstanceRepository.GetAllInstances();
 			var res = new SiteCreationInfo {
-				FreeRedisDbNum = GetFreeRedisDb(),
 				SqlServerInstances = sqlInstances
 			};
 			return res;
 		}
-
-		private int GetFreeRedisDb() {
-			_siteRepository.ClearSiteCache();
-			var sites = _siteRepository.GetAllSites();
-			var numberFound = false;
-			var number = -1;
-			do {
-				number++;
-				if (sites.Any(s => s.Redis.Db == number)) continue;
-				numberFound = true;
-			} while (!numberFound);
-			return number;
-		}
-
+		
 		public void AddSite(SiteCreateData data) {
-			var progress = new Progress<ISiteDeployProgress>(info => { Clients.All.updateSiteState(info); });
-			var progressInfo = _siteDeployProvider.GetInitDeployProgress(new[] { new DeployOperationIfo { Info = "Creating Pool/WebApp in IIS" } });
-			_siteDeployProvider.DeployWebApp(data, progress, progressInfo);
-			progressInfo.SetNextOperation();
-			((IProgress<ISiteDeployProgress>)progress).Report(progressInfo);
-			_siteRepository.CreateSite(data);
+			data.UserName = Context.User.Identity.Name;
+			var progressInfo = _siteDeployProvider.GetInitDeployProgress(new[] { new DeployOperationIfo { Info = "Creating Pool/WebApp in IIS" }, new DeployOperationIfo { Info = "Modify configs" } });
+			progressInfo.SetIProgress(new Progress<ISiteDeployProgress>(info => {
+				Clients.All.updateSiteState(info);
+			}));
+			_siteDeployProvider.DeployWebApp(data, progressInfo);
 		}
 	}
 }
