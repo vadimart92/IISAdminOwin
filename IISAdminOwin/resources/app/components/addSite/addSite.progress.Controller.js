@@ -1,7 +1,7 @@
-define(["./module", "Hub", "$", "utils", "jsFace"], function(controllers, Hub, $, utils) {
-  var controller;
-  controller = function($rootScope, $scope, $timeout) {
+app.controller("addSite.progress.Controller", [
+  '$rootScope', '$scope', '$timeout', 'Hub', '$', 'utils', function($rootScope, $scope, $timeout, Hub, $, utils) {
     var Site, getSiteCreateInfo, offFunc, vm;
+    vm = $scope;
     Site = Class.create({
       name: null,
       workUri: null,
@@ -12,58 +12,57 @@ define(["./module", "Hub", "$", "utils", "jsFace"], function(controllers, Hub, $
         return this.name && this.workUri && this.db;
       }
     });
-    vm = $scope;
     vm.site = new Site();
-    vm.hub = new Hub("SiteCreateHub", {
+    vm.hub = new Hub('SiteCreateHub', {
       logging: true,
       listeners: [],
-      methods: ["AddSite", "GetReleaseInfo", "GetStartupInfo"]
+      methods: ['AddSite', 'GetReleaseInfo', 'GetStartupInfo']
     });
     vm.releaseInfoFields = [
       {
-        key: "createdOn",
-        type: "input",
+        key: 'createdOn',
+        type: 'input',
         templateOptions: {
-          label: "Created on",
+          label: 'Created on',
           disabled: true
         }
       }, {
-        key: "name",
-        type: "input",
+        key: 'name',
+        type: 'input',
         templateOptions: {
-          label: "Build name",
+          label: 'Build name',
           disabled: true
         }
       }, {
-        key: "zipFilePath",
-        type: "input",
+        key: 'zipFilePath',
+        type: 'input',
         templateOptions: {
-          label: "Zip file path",
+          label: 'Zip file path',
           disabled: true
         }
       }, {
-        key: "version",
-        type: "input",
+        key: 'version',
+        type: 'input',
         templateOptions: {
-          label: "Version",
+          label: 'Version',
           disabled: true
         }
       }, {
-        key: "release",
-        type: "checkbox",
+        key: 'release',
+        type: 'checkbox',
         templateOptions: {
-          label: "Release",
+          label: 'Release',
           disabled: true
         }
       }
     ];
     vm.siteFields = [
       {
-        key: "workUri",
-        type: "input",
+        key: 'workUri',
+        type: 'input',
         templateOptions: {
-          label: "Build uri/id",
-          placeholder: "Paste product build uri here",
+          label: 'Build uri/id',
+          placeholder: 'Paste product build uri here',
           required: true
         },
         validators: {
@@ -83,22 +82,22 @@ define(["./module", "Hub", "$", "utils", "jsFace"], function(controllers, Hub, $
           }
         }
       }, {
-        key: "name",
-        type: "input",
+        key: 'name',
+        type: 'input',
         templateOptions: {
-          label: "Name"
+          label: 'Name'
         }
       }, {
-        key: "webAppDir",
-        type: "input",
+        key: 'webAppDir',
+        type: 'input',
         templateOptions: {
-          label: "Web app directory"
+          label: 'Web app directory'
         }
       }, {
-        key: "db",
-        type: "uiSelect",
+        key: 'db',
+        type: 'uiSelect',
         templateOptions: {
-          label: "MSSQL Instance"
+          label: 'MSSQL Instance'
         }
       }
     ];
@@ -128,14 +127,12 @@ define(["./module", "Hub", "$", "utils", "jsFace"], function(controllers, Hub, $
       getSiteCreateInfo();
       return vm.site.workUri = "f63e0379-c338-4fe0-846e-ca088acdbb5d";
     }, 1000);
-    offFunc = $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
+    offFunc = $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
       var selfDestruct;
       selfDestruct = offFunc;
       vm.hub.disconnect();
       selfDestruct();
       hideAllProgressBars(true);
     });
-  };
-  controller.$inject = ["$rootScope", "$scope", "$timeout"];
-  controllers.controller("addSiteController", [controller]);
-});
+  }
+]);

@@ -5261,3 +5261,7 @@ SignalR.Transports.ServerSentEventsTransport Information: 0 : End(36d59c4e-0059-
 SignalR.Transports.ServerSentEventsTransport Information: 0 : CompleteRequest (3a73e569-430e-44ea-bf99-96546bf0934a)
 SignalR.Transports.ServerSentEventsTransport Verbose: 0 : DrainWrites(36d59c4e-0059-4527-bc67-247e13f07556)
 SignalR.Transports.ServerSentEventsTransport Information: 0 : CompleteRequest (36d59c4e-0059-4527-bc67-247e13f07556)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 9293a9c5-8536-4b69-a669-b952ac7ea916 is New.
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(9293a9c5-8536-4b69-a669-b952ac7ea916)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(9293a9c5-8536-4b69-a669-b952ac7ea916)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(9293a9c5-8536-4b69-a669-b952ac7ea916)

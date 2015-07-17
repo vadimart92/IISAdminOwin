@@ -10,9 +10,6 @@ namespace IISAdmin.Owin.SignaRHubs
 
 	public class Information : BaseHub<Information>
 	{
-		public void GetDate() {
-			InnerFormat(HubContext.Clients.All, InformationType.Success, "hi {0} time: {1}", "title", Context.ConnectionId, DateTime.UtcNow.ToLongTimeString());
-		}
 
 		public static void InfoFormat(string title, string format, params object[] values) {
 			InnerFormat(HubContext.Clients.All, InformationType.Info, format, title, values);

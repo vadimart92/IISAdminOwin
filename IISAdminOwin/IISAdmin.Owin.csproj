@@ -240,7 +240,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Common\BundlesRegistrator.cs" />
-    <Compile Include="Common\ContainerProvider.cs" />
+    <Compile Include="Common\ContainerConfig.cs" />
     <Compile Include="Common\FilteredCamelCasePropertyNamesContractResolver.cs" />
     <Compile Include="Common\UnityHubActivator.cs" />
     <Compile Include="Models\SiteCreateHubModels.cs" />
@@ -265,6 +265,10 @@
     <ProjectReference Include="..\IISAdmin.Owin.DAL.WorkDb\IISAdmin.Owin.DAL.csproj">
       <Project>{b69f3e12-0081-4ea3-a8cc-dd3890b01ea6}</Project>
       <Name>IISAdmin.Owin.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IISAdmin.Owin.Mock\IISAdmin.Owin.Mock.csproj">
+      <Project>{e8ebd329-720b-4456-a0de-9699f57cc42e}</Project>
+      <Name>IISAdmin.Owin.Mock</Name>
     </ProjectReference>
     <ProjectReference Include="..\IISAdmin.WebSiteManagmentProvider\IISAdmin.WebSiteManagmentProvider.csproj">
       <Project>{daf6b3cc-073d-4843-9a11-b81683302239}</Project>
