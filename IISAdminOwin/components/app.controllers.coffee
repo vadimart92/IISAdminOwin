@@ -1,2 +1,2 @@
-require ["app", "angular"], (app, ng)->
+require ["angular"], (ng)->
 	return ng.module "app.controllers", []

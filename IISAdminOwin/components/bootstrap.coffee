@@ -2,17 +2,19 @@ require.config
 	paths:
 		jsFace:  "../../assets/jsface/jsface"
 		angular: "../../assets/angular/angular"
+		angularAMD: "../../assets/angular/angularAMD"
+		ngload: "../../assets/angular/ngload"
 		bootstrap: "../../assets/bootstrap/bootstrap"
 		underscore: "../../assets/underscore/underscore"
 		signalR: "../../assets/signalR/jquery.signalR-2.2.0"
 		toaster: "../../assets/toaster/toastr"
 		mProgress: "../../assets/mProgress/mprogress"
 		q: "../../assets/q/q"
-		angular_sanitize: "../../assets/angular/angular-sanitize"
+		ngSanitize: "../../assets/angular/angular-sanitize"
 		ui_formly: "../../assets/angular/ui-formly"
 		angular_formly_templates: "../../assets/angular/angular-formly-templates-bootstrap"
-		angular_animate: "../../assets/angular/angular-animate"
-		angular_resource: "../../assets/angular/angular-resource"
+		ngAnimate: "../../assets/angular/angular-animate"
+		ngResource: "../../assets/angular/angular-resource"
 		ui_router: "../../assets/angular/angular-ui-router"
 		ui_router_styles: "../../assets/angular/ui-router-styles"
 		ui_bootstrap: "../../assets/angular/ui-bootstrap"
@@ -26,19 +28,23 @@ require.config
 		breeze_dataService_webApi: "../../assets/breeze/breeze.dataService.webApi"
 		breeze_savequeuing: "../../assets/breeze/breeze.savequeuing"
 		jquery: "../../assets/jquery/jquery"
+		hub: "common/signalRHub"
 	shim:
-		jsFace: exports: "jsFace"
+		jsFace:
+			exports: "jsFace"
 		underscore: {
 			exports: '_'
 		}
 		angular:
 			exports: "angular"
 			deps: [ "jquery" ]
-		angular_sanitize: deps: [ "angular" ]
+		angularAMD: ["angular"],
+		ngload: ["angularAMD"]
+		ngSanitize: deps: [ "angular" ]
 		ui_formly: deps: [ "angular" ]
 		angular_formly_templates: deps: [ "angular" ]
-		angular_animate: deps: [ "angular" ]
-		angular_resource: deps: [ "angular" ]
+		ngAnimate: deps: [ "angular" ]
+		ngResource: deps: [ "angular" ]
 		ui_router: deps: [ "angular" ]
 		ui_router_styles: deps: [ "angular" ]
 		ui_bootstrap: deps: [ "angular" ]
@@ -49,21 +55,5 @@ require.config
 		breeze_ajax_angular: deps: ["breeze"]
 		breeze_dataService_webApi: deps: ["breeze"]
 		breeze_savequeuing: deps: ["breeze"]
-		breeze_bridge_angular: deps: ["breeze", "breeze_ajax_angular", "breeze_dataService_webApi", "breeze_savequeuing"]
-
-define [
-	"require"
-	"angular"
-	"jsFace"
-	"bootstrap"
-	"underscore"
-	"angular_animate"
-	"angular_resource"
-	"angular_sanitize"
-	"app"
-	"routes"
-], (require, ng) ->
-	require [ "domReady!" ], (document) ->
-		ng.bootstrap document, [ 'app' ]
-		return
-	return
+		breeze_ng: deps: ["breeze", "breeze_ajax_angular", "breeze_dataService_webApi", "breeze_savequeuing"]
+	deps: ["app"]

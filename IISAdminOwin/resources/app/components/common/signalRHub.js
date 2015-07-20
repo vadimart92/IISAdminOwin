@@ -1,8 +1,8 @@
-app.factory('Hub', [
-  '$', 'logger', function($, logger) {
-    var getConnection, globalConnections, initNewConnection;
-    globalConnections = [];
-    initNewConnection = function(options) {
+define(["jquery", "app", "common", "underscore", "signalR"], function($, app, common) {
+  var Hub;
+  Hub = Class({
+    globalConnections: [],
+    initNewConnection: function(options) {
       var connection;
       connection = null;
       if (options && options.rootPath) {
@@ -14,64 +14,65 @@ app.factory('Hub', [
       }
       connection.logging = options && options.logging ? true : false;
       return connection;
-    };
-    getConnection = function(options) {
+    },
+    getConnection: function(options) {
       var useSharedConnection;
       useSharedConnection = !(options && options.useSharedConnection === false);
       if (useSharedConnection) {
-        if (typeof globalConnections[options.rootPath] === 'undefined') {
-          return globalConnections[options.rootPath] = initNewConnection(options);
+        if (typeof this.globalConnections[options.rootPath] === "undefined") {
+          return this.globalConnections[options.rootPath] = this.initNewConnection(options);
         } else {
-          return globalConnections[options.rootPath];
+          return this.globalConnections[options.rootPath];
         }
       } else {
         return initNewConnection(options);
       }
-    };
-    return function(hubName, options) {
-      var Hub;
-      Hub = this;
-      Hub.connection = getConnection(options);
-      Hub.proxy = Hub.connection.createHubProxy(hubName);
-      Hub.on = function(event, fn) {
-        Hub.proxy.on(event, fn);
-      };
-      Hub.invoke = function(method, args) {
-        return Hub.proxy.invoke.apply(Hub.proxy, arguments);
-      };
-      Hub.disconnect = function() {
-        Hub.connection.stop();
-      };
-      Hub.connect = function() {
-        var transport;
-        transport = options.transport || (Boolean(window.chrome) ? [$.signalR.transports.serverSentEvents.name, $.signalR.transports.longPolling.name] : null);
-        return Hub.connection.start(transport ? {
-          transport: transport
-        } : null);
-      };
+    },
+    on: function(event, fn) {
+      this.proxy.on(event, fn);
+    },
+    invoke: function(method, args) {
+      return this.proxy.invoke.apply(this.proxy, arguments);
+    },
+    disconnect: function() {
+      this.connection.stop();
+    },
+    connect: function(callback) {
+      var transport;
+      transport = this.options.transport || (Boolean(window.chrome) ? {
+        transport: [$.signalR.transports.serverSentEvents.name, $.signalR.transports.longPolling.name]
+      } : null);
+      return this.connection.start(transport, callback);
+    },
+    promise: function() {
+      return this.connect();
+    },
+    constructor: function(hubName, options) {
+      this.options = options;
+      this.connection = this.getConnection(options);
+      this.proxy = this.connection.createHubProxy(hubName);
       if (options && options.listeners) {
-        angular.forEach(options.listeners, function(fn, event) {
-          Hub.on(event, fn);
-        });
+        _.each(options.listeners, (function(fn, event) {
+          return this.on(event, fn);
+        }), this);
       }
       if (options && options.methods) {
-        angular.forEach(options.methods, function(method) {
-          Hub[method] = function() {
+        _.each(options.methods, (function(method) {
+          this[method] = function() {
             var args;
             args = $.makeArray(arguments);
             args.unshift(method);
-            return Hub.invoke.apply(Hub, args);
+            return this.invoke.apply(this, args);
           };
-        });
+        }), this);
       }
       if (options && options.queryParams) {
-        Hub.connection.qs = options.queryParams;
+        this.connection.qs = options.queryParams;
       }
       if (options && options.errorHandler) {
-        Hub.connection.error(logger.error);
+        return this.connection.error(common.logger.error);
       }
-      Hub.promise = Hub.connect();
-      return Hub;
-    };
-  }
-]);
+    }
+  });
+  return Hub;
+});

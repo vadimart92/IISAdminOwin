@@ -1,44 +1,41 @@
-define(["app", "ui_router", "ui_router_styles"], function(app) {
-  app.config(function($stateProvider, $urlRouterProvider) {
-    $stateProvider.state("siteList", {
-      url: "/siteList",
-      templateUrl: "/app/views/siteList.html",
-      controller: "siteListController",
-      data: {
-        css: "app/components/siteList/siteList.css"
-      }
-    });
-    $stateProvider.state("addSite", {
-      url: "/addSite",
-      templateUrl: "/app/views/addSite.html",
-      controller: "addSiteController",
-      data: {
-        css: "app/components/addSite/addSite.css"
-      }
-    });
-    $stateProvider.state("addSite.progress", {
-      url: "/addSite",
-      templateUrl: "/app/views/addSite.progress.html",
-      controller: "addSite.progress.Controller",
-      data: {
-        css: "app/components/addSite/addSite.progress.css"
-      }
-    });
-    $stateProvider.state("home", {
-      url: "/home",
-      templateUrl: "/app/views/home.html",
-      controller: "homeController",
-      data: {
-        css: "app/components/home/home.css"
-      }
-    });
-    $urlRouterProvider.otherwise('/home');
-  });
-  app.run(function(formlyConfig) {
-    return formlyConfig.setType({
-      name: 'uiSelect',
-      templateUrl: 'app/views/custom-formly-fields-ui-select.html'
-    });
-  });
-  return app;
+define(["angularAMD", "ui_router", "ui_router_styles"], function(angularAMD) {
+  return {
+    config: function(app) {
+      return app.config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider.state("siteList", angularAMD.route({
+          url: "/siteList",
+          templateUrl: "/app/views/siteList.html",
+          controllerUrl: 'siteList/siteListController',
+          data: {
+            css: "app/components/siteList/siteList.css"
+          }
+        }));
+        $stateProvider.state("addSite", angularAMD.route({
+          url: "/addSite",
+          templateUrl: "/app/views/addSite.html",
+          controllerUrl: "addSite/addSiteController",
+          data: {
+            css: "app/components/addSite/addSite.css"
+          }
+        }));
+        $stateProvider.state("addSite.progress", angularAMD.route({
+          url: "/addSite",
+          templateUrl: "/app/views/addSite.progress.html",
+          controllerUrl: "addSite/addSite.progress.Controller",
+          data: {
+            css: "app/components/addSite/addSite.progress.css"
+          }
+        }));
+        $stateProvider.state("home", angularAMD.route({
+          url: "/home",
+          templateUrl: "/app/views/home.html",
+          controllerUrl: "home/homeController",
+          data: {
+            css: "app/components/home/home.css"
+          }
+        }));
+        return $urlRouterProvider.otherwise('/home');
+      });
+    }
+  };
 });

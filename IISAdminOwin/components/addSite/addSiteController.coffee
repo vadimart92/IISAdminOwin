@@ -1,100 +1,101 @@
-define ["./module", "Hub", "$" , "utils", "jsFace"], (controllers, Hub, $, utils) ->
-	controller = ($rootScope, $scope, $timeout) ->
-		Site = Class.create(
-			name: null,
-			workUri: null,
-			db: null,
-			msSqlInstances: [],
-			releaseInfo: {},
-			isFormDataValid: () ->
-				this.name && this.workUri && this.db
-		)
-		vm = $scope
-		vm.site = new Site();
-
-		vm.hub = new Hub("SiteCreateHub",
-			logging: on
-			listeners: []
-			methods: [
-				"AddSite"
-				"GetReleaseInfo"
-				"GetStartupInfo"
-			]
-		)
-
-		vm.releaseInfoFields = [
-			{ key: "createdOn", type: "input", templateOptions: {label: "Created on", disabled: on }}
-			{ key: "name", type: "input", templateOptions: {label: "Build name", disabled: on }}
-			{ key: "zipFilePath", type: "input", templateOptions: {label: "Zip file path", disabled: on }}
-			{ key: "version", type: "input", templateOptions: {label: "Version", disabled: on }}
-			{ key: "release", type: "checkbox", templateOptions: {label: "Release", disabled: on }}
-		]
-
-		vm.siteFields = [
-			{
-				key: "workUri",
-				type: "input",
-				templateOptions: {
-					label: "Build uri/id",
-					placeholder: "Paste product build uri here"
-					required: true
-				}
-				validators: uri:
-					expression: (viewValue, modelValue) ->
-						utils.containsGUID modelValue or viewValue
-					message: '$viewValue + " is not a valid build URI"'
-				watcher: listener: (field, newValue, oldValue, scope, stopWatching) ->
-					vm.site.releaseInfo = {}
-					if newValue
-						vm.updateReleaseInfo newValue
-					return
-			},
-			{ key: "name", type: "input", templateOptions: {label: "Name" }}
-		{ key: "webAppDir", type: "input", templateOptions: {label: "Web app directory" }}
-		{
-		key: "db", type: "uiSelect",
-		templateOptions: {
-			label: "MSSQL Instance"
-		}
-		}
-		]
-
-		vm.setSqlInstances = (sqlInstances)->
-			vm.site.msSqlInstances = sqlInstances
+define ["app", "hub", "jquery" , "common"], (app, Hub, $, common)->
+	Site = Class(
+		name: null,
+		workUri: null,
+		db: null,
+		msSqlInstances: [],
+		releaseInfo: {},
+		isFormDataValid: () ->
+			this.name && this.workUri && this.db
+	)
+	AddSite = Class(common.class.StateFullController, {
+		$rootScope: null
+		$timeout: null
+		site: new Site()
+		hub: null
+		constructor: ($rootScope, $scope, $timeout)->
+			AddSite.$super.call(this, $scope, $rootScope)
+			do this.initHub
+		initHub: ()->
+			this.hub = new Hub("SiteCreateHub",
+				logging: on
+				listeners: []
+				methods: [
+					"AddSite"
+					"GetReleaseInfo"
+					"GetStartupInfo"
+				]
+			)
+			this.hub.connect (->
+				do this.getSiteCreateInfo
+				this.site.workUri = "f63e0379-c338-4fe0-846e-ca088acdbb5d"
+			).bind(this)
 			return
-
-		getSiteCreateInfo = ()->
-			vm.hub.GetStartupInfo()
+		onWorkUriChange: (field, newValue) ->
+			this.site.releaseInfo = {}
+			if newValue
+				this.updateReleaseInfo newValue
+			return
+		apply: ->
+			do this.$scope.$apply
+		defineScope: ()->
+			AddSite.$superp.defineScope.call(this)
+			do this.initSiteFields
+			do this.initReleaseInfoFields
+			this.$scope.site = this.site
+		onStateChangeStart: ()->
+			AddSite.$superp.onStateChangeStart.call(this)
+			do this.hub.disconnect
+			this.$scope.hideAllProgressBars = true
+		setSqlInstances: (sqlInstances)->
+			this.site.msSqlInstances = sqlInstances
+			return
+		getSiteCreateInfo: ()->
+			me = this
+			this.hub.GetStartupInfo()
 			.then (siteInfo)->
-				vm.$apply ()->
-					vm.setSqlInstances siteInfo.sqlServerInstances
+				me.$scope.$apply ()->
+					me.setSqlInstances siteInfo.sqlServerInstances
 					return
-
-		vm.updateReleaseInfo = (uri)->
-			vm.hub.GetReleaseInfo uri
-			.then (data)-> vm.$apply ()->
-				$.extend vm.site.releaseInfo, data.release
-				vm.site.name = data.webAppName
-				vm.site.webAppDir = data.webAppDir
-				return
+		updateReleaseInfo: (uri)->
+			me = this
+			this.hub.GetReleaseInfo uri
+			.then (data)->
+				$.extend me.site.releaseInfo, data.release
+				me.site.name = data.webAppName
+				me.site.webAppDir = data.webAppDir
+				do me.apply
 			return
-
-		vm.addSite = ()->
-			vm.hub.AddSite vm.site
+		addSite: ->
+			this.hub.AddSite this.site
 			return
-
-		$timeout ()->
-			do getSiteCreateInfo
-			vm.site.workUri = "f63e0379-c338-4fe0-846e-ca088acdbb5d"
-		,1000
-
-		offFunc = $rootScope.$on "$stateChangeStart", (event, toState, toParams, fromState, fromParams) ->
-			selfDestruct = offFunc;
-			do vm.hub.disconnect
-			do selfDestruct
-			hideAllProgressBars true
+		initSiteFields: ->
+			this.$scope.siteFields = [
+				{
+					key: "workUri",
+					type: "input",
+					templateOptions: {
+						label: "Build uri/id",
+						placeholder: "Paste product build uri here"
+						required: true
+					}
+					validators: uri:
+						expression: (viewValue, modelValue) -> common.utils.containsGUID modelValue or viewValue
+						message: '$viewValue + " is not a valid build URI"'
+					watcher: listener: this.onWorkUriChange.bind this
+				},
+				{ key: "name", type: "input", templateOptions: {label: "Name" }}
+				{ key: "webAppDir", type: "input", templateOptions: {label: "Web app directory" }}
+				{ key: "db",  type: "uiSelect", templateOptions: { label: "MSSQL Instance" } }
+			]
 			return
-		return
-	controller.$inject = ["$rootScope", "$scope", "$timeout"]
-	controllers.controller "addSiteController", [controller]
-	return
+		initReleaseInfoFields: ->
+			this.$scope.releaseInfoFields = [
+				{ key: "createdOn", type: "input", templateOptions: {label: "Created on", disabled: on }}
+				{ key: "name", type: "input", templateOptions: {label: "Build name", disabled: on }}
+				{ key: "zipFilePath", type: "input", templateOptions: {label: "Zip file path", disabled: on }}
+				{ key: "version", type: "input", templateOptions: {label: "Version", disabled: on }}
+				{ key: "release", type: "checkbox", templateOptions: {label: "Release", disabled: on }}
+			]
+	})
+	["$rootScope", "$scope", "$timeout", ($rootScope, $scope, $timeout)-> return new AddSite($rootScope, $scope, $timeout)]

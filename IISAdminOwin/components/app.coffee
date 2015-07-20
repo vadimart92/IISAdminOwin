@@ -1,5 +1,12 @@
 ﻿# CoffeeScript
-define ["angular"
+define ["require"
+				"angular"
+				"routes"
+				"angularAMD"
+				"jsFace"
+				"ngResource"
+				"ngAnimate"
+				"ngSanitize"
 				"ui_bootstrap"
 				"ui_bootstrap_tpls"
 				"ui_grid"
@@ -7,10 +14,8 @@ define ["angular"
 				"loading_bar"
 				"ui_formly"
 				"angular_formly_templates"
-				"app.services"
-				"app.factories"
-				"app.controllers"
-], (angular)->
+], (require, angular, routes, angularAMD)->
+	#require [ "domReady!" ], (document) ->
 	app = angular.module("IISAdmin", [
 		"ui.router"
 		"ngResource"
@@ -26,13 +31,11 @@ define ["angular"
 		"ngSanitize"
 		"formly"
 		"formlyBootstrap"
-		"app.services"
-		"app.factories"
-		"app.controllers"
 	])
+	routes.config(app);
 	app.run (formlyConfig)->
 		formlyConfig.setType {
 			name: "uiSelect",
 			templateUrl: "app/views/custom-formly-fields-ui-select.html"
 		}
-	return app
+	return angularAMD.bootstrap app

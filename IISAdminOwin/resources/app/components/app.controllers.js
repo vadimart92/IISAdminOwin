@@ -1,3 +1,3 @@
-require(["app", "angular"], function(app, ng) {
+require(["angular"], function(ng) {
   return ng.module("app.controllers", []);
 });
