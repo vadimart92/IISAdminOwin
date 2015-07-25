@@ -23,7 +23,7 @@ namespace IISAdmin.Owin
 	public class Startup
 	{
 		public void Configuration(IAppBuilder appBuilder) {
-			var container = ContainerProvider.GetContainer();
+			var container = ContainerConfig.GetContainer();
 
 			appBuilder.UseErrorPage();
 			appBuilder.UseCors(CorsOptions.AllowAll);

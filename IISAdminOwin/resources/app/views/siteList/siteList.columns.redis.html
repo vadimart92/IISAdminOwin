@@ -1,0 +1,7 @@
+<div ng-show="getExternalScopes().siteUtils.redisFound(row.entity)"
+	 class="btn btn-primary btn-xs glyphicon glyphicon-refresh"
+	 ng-click="getExternalScopes().flushRedis(row.entity)"
+	 ng-class="{'hide': row.redisFlushInProgress}"></div>
+<span tooltip-placement="left"
+	  tooltip="{{getExternalScopes().siteUtils.redisName(row.entity)}}"
+		>{{getExternalScopes().siteUtils.redisName(row.entity)}}</span>

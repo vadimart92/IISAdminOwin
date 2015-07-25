@@ -1,11 +1,7 @@
-app.factory 'Hub', [
-	'$'
-	'logger'
-	($, logger) ->
-	#This will allow same connection to be used for all Hubs
-	#It also keeps connection as singleton.
-		globalConnections = []
-		initNewConnection = (options) ->
+define ["jquery", "app", "common", "underscore", "signalR"], ($, app, common)->
+	Hub = Class({
+		globalConnections: []
+		initNewConnection:(options) ->
 			connection = null
 			if options and options.rootPath
 				connection = $.hubConnection(options.rootPath, useDefaultPath: false)
@@ -13,54 +9,43 @@ app.factory 'Hub', [
 				connection = $.hubConnection()
 			connection.logging = if options and options.logging then true else false
 			connection
-
-		getConnection = (options) ->
+		getConnection: (options) ->
 			useSharedConnection = !(options and options.useSharedConnection == false)
 			if useSharedConnection
-				if typeof globalConnections[options.rootPath] == 'undefined' then (globalConnections[options.rootPath] = initNewConnection(options)) else globalConnections[options.rootPath]
+				if typeof this.globalConnections[options.rootPath] == "undefined" then (this.globalConnections[options.rootPath] = this.initNewConnection(options)) else this.globalConnections[options.rootPath]
 			else
 				initNewConnection options
-
-		(hubName, options) ->
-			Hub = this
-			Hub.connection = getConnection(options)
-			Hub.proxy = Hub.connection.createHubProxy(hubName)
-
-			Hub.on = (event, fn) ->
-				Hub.proxy.on event, fn
-				return
-
-			Hub.invoke = (method, args) ->
-				Hub.proxy.invoke.apply Hub.proxy, arguments
-
-			Hub.disconnect = ->
-				Hub.connection.stop()
-				return
-
-			Hub.connect = ->
-				transport = options.transport || if Boolean(window.chrome) then [
-					$.signalR.transports.serverSentEvents.name
-					$.signalR.transports.longPolling.name
-				] else null
-				Hub.connection.start if transport then transport: transport else null
-
+		on: (event, fn) ->
+			this.proxy.on event, fn
+			return
+		invoke: (method, args) ->
+			this.proxy.invoke.apply this.proxy, arguments
+		disconnect: ->
+			this.connection.stop()
+			return
+		connect: (callback) ->
+			transport = this.options.transport || if Boolean(window.chrome) then transport: [
+				$.signalR.transports.serverSentEvents.name
+				$.signalR.transports.longPolling.name
+			] else null
+			this.connection.start(transport, callback)
+		promise: -> this.connect()
+		constructor: (hubName, options)->
+			this.options = options
+			this.connection = this.getConnection(options)
+			this.proxy = this.connection.createHubProxy(hubName)
 			if options and options.listeners
-				angular.forEach options.listeners, (fn, event) ->
-					Hub.on event, fn
-					return
+				_.each options.listeners, ((fn, event) -> this.on(event, fn)), this
 			if options and options.methods
-				angular.forEach options.methods, (method) ->
-					Hub[method] = ->
+				_.each options.methods, ((method) ->
+					this[method] = ->
 						args = $.makeArray(arguments)
 						args.unshift method
-						Hub.invoke.apply Hub, args
-
-					return
+						this.invoke.apply this, args
+					return), this
 			if options and options.queryParams
-				Hub.connection.qs = options.queryParams
+				this.connection.qs = options.queryParams
 			if options and options.errorHandler
-				Hub.connection.error logger.error
-			#Adding additional property of promise allows to access it in rest of the application.
-			Hub.promise = Hub.connect()
-			Hub
-]
+				this.connection.error common.logger.error
+	})
+	Hub

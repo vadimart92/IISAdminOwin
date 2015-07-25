@@ -230,3 +230,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 test/7.7.0.30_SalesOmnichannel_Softkey_MSSQL_RUS.zip
+IISAdminOwin/init.log.txt
+IISAdminOwin/init.log.txt
+IISAdminOwin/transports.log.txt

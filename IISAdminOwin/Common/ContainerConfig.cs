@@ -2,13 +2,14 @@
 using IISAdmin.Interfaces;
 using IISAdmin.Owin.DAL;
 using IISAdmin.Owin.DAL.WorkDbReleaseRepository;
+using IISAdmin.Owin.Mock;
 using IISAdmin.WCFWebSiteRepository;
 using IISAdmin.WebSiteManagmentProvider;
 using Microsoft.Practices.Unity;
 
 namespace IISAdmin.Owin.Common
 {
-	public class ContainerProvider
+	public class ContainerConfig
 	{
 		public static UnityContainer GetContainer() {
 			var container = new UnityContainer();
@@ -24,7 +25,7 @@ namespace IISAdmin.Owin.Common
 			container.RegisterType<IReleaseRepository, WorkDbReleaseRepository>(new HierarchicalLifetimeManager(), new InjectionConstructor(container.Resolve<ISqlConnectionProvider>("WorkSqlConnectionProvider")));
 			container.RegisterType<ISqlServerInstanceRepository, LocalSqlServerInstanceRepository>(new PerThreadLifetimeManager());
 			container.RegisterType<ISiteDeployProviderWebConfig, SiteDeployProviderWebConfig>();
-            container.RegisterType<ISiteDeployProvider, SiteDeployProvider>();
+            container.RegisterType<ISiteDeployProvider, SiteDeployProviderMock>();
         }
 	}
 }

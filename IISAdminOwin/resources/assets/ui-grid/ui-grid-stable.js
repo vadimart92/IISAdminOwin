@@ -6495,7 +6495,7 @@ module.service('rowSearcher', ['$log', 'uiGridConstants', function ($log, uiGrid
         });
       });
 
-      grid.api.core.raise.rowsVisibleChanged();
+      grid.api.core.raise.rowsVisibleChanged? grid.api.core.raise.rowsVisibleChanged() : null;
 
       // rows.forEach(function (row) {
       //   var matchesAllColumns = true;

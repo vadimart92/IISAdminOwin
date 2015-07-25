@@ -153,21 +153,16 @@ namespace WebSiteManagment.Core
 
 		public long AddSite(SiteInfo info) {
 			var pool = _serverManager.ApplicationPools.Add(info.Name);
-			Microsoft.Web.Administration.Site site;
-			if (info.CreateNewSite) {
+		    var site = _serverManager.Sites.FirstOrDefault(s => string.Compare(s.Name, info.SiteName, StringComparison.OrdinalIgnoreCase) == 0);
+            if (info.CreateNewSite || site == null) {
 				var port = CommonUtils.SafeGetFreeTcpPort();
 				site = _serverManager.Sites.Add(info.Name, info.WebAppDir, port);
 				site.ApplicationDefaults.ApplicationPoolName = pool.Name;
 			} else {
-				site =
-					_serverManager.Sites.FirstOrDefault(
-						s => string.Compare(s.Name, info.SiteName, StringComparison.OrdinalIgnoreCase) == 0);
-			}
-			if (site == null) {
-				return -1;
-			}
+                return -1;
+            }
 			for (int i = 0; i < info.AppCount; i++) {
-				var app = site.Applications.Add(String.Format(@"/{0}", i), Path.Combine(info.WebAppDir, "Terrasoft.WebApp"));
+				var app = site.Applications.Add($@"/{i}", Path.Combine(info.WebAppDir, "Terrasoft.WebApp"));
 				app.ApplicationPoolName = pool.Name;
 			}
 			_serverManager.CommitChanges();

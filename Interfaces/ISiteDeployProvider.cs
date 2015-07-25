@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace IISAdmin.Interfaces
 {
 	public interface ISiteDeployProvider {
-		void DeployWebApp(ISiteCreateData siteCreateData, ISiteDeployProgress initialProgress);
+		void DeployWebApp(ISiteCreateData siteCreateData, ISiteDeployProgress progressInfo);
 		ISiteDeployProgress GetInitDeployProgress(IEnumerable<DeployOperationIfo> extraOperations);
 		void InitDeployInfo(ISiteCreateData siteCreateData);
 	}

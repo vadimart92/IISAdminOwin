@@ -13,12 +13,12 @@ namespace IISAdmin.Owin.DAL.Test
     {
 		[TestInitialize]
 		public void Init() {
-			DatabaseBackupManager.RestoreDbBackup("terrasoft_work30.bak", "terrasoft_work30", "ArtemchukPC", "");
+			DatabaseBackupManager.RestoreDbBackup("terrasoft_work30.bak", "test_terrasoft_work30", "ArtemchukPC", "");
 		}
 
 		[TestCleanup]
 		public void TearDown() {
-			DatabaseBackupManager.DropDatabase("terrasoft_work30", "ArtemchukPC", "");
+			DatabaseBackupManager.DropDatabase("test_terrasoft_work30", "ArtemchukPC", "");
 		}
 
 		[TestMethod]
