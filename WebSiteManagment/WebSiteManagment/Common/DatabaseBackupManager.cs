@@ -11,8 +11,7 @@ namespace WebSiteManagment.Core.Common
 {
 	public class DatabaseBackupManager
 	{
-		public static void RestoreDbBackup(string backupFileName, string destinationDbName, string serverName, string instanceName,
-				IProgress<RestoreProgress> progress = null) {
+		public static void RestoreDbBackup(string backupFileName, string destinationDbName, string serverName, string instanceName) {
 			Contract.Ensures(File.Exists(backupFileName), "File.Exists(backupFileName)");
 			var restoreDb = new Restore {
 				Database = destinationDbName,
@@ -20,14 +19,6 @@ namespace WebSiteManagment.Core.Common
 				ReplaceDatabase = true,
 				NoRecovery = false
 			};
-			if (progress != null) {
-				restoreDb.PercentComplete += (sender, args) => progress.Report(new RestoreProgress {
-					Percent = args.Percent, Message = args.Message
-				});
-				restoreDb.Complete += (sender, args) => progress.Report(new RestoreProgress {
-					Percent = 100, Message = args.ToString(), SqlError = args.Error
-				});
-			}
 			restoreDb.Devices.AddDevice(backupFileName, DeviceType.File);
 			using (var connection = GetConnection(serverName, instanceName)) {
 				connection.Open();
@@ -40,7 +31,7 @@ namespace WebSiteManagment.Core.Common
 
 		private static SqlConnection GetConnection(string serverName, string instanceName) {
 			return
-				new SqlConnection(String.Format(@"Server={0}\{1};Integrated Security=SSPI;Database=master", serverName, instanceName));
+				new SqlConnection($@"Server={serverName}\{instanceName};Integrated Security=SSPI;Database=master");
 		}
 
 		public static bool DropDatabase(string name, string serverName, string instanceName, bool dropBackupHistory = true) {
@@ -58,7 +49,7 @@ namespace WebSiteManagment.Core.Common
 					catch (Exception) {
 						var cmd = connection.CreateCommand();
 						cmd.Connection = connection;
-						cmd.CommandText = String.Format(@"USE master; ALTER DATABASE [{0}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE [{0}];", name);
+						cmd.CommandText = string.Format(@"USE master; ALTER DATABASE [{0}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE [{0}];", name);
 						cmd.ExecuteNonQuery();
 					}
 					return true;

@@ -1,202 +1,230 @@
-﻿# CoffeeScript
-app.controller "siteListController", [
-	'$rootScope', '$scope', '$timeout', 'uiGridConstants'
-	'toasterService', 'siteDataService'
-	'logger', 'Hub', 'Enums', 'siteUtils', '$',
-	($rootScope, $scope, $timeout, uiGridConstants, toasterService, siteDataService, logger, Hub, Enums, siteUtils, $) ->
-		vm = $scope;
+﻿define [
+	"app"
+	"../dataService/siteDataService"
+	"common"
+	"hub"
+	"siteList/siteUtils"
+	"toaster"
+	"jquery"
+	"mProgress"
+	"text!templates/siteList/siteList.columns.siteState.html"
+	"text!templates/siteList/siteList.columns.pool.html"
+	"text!templates/siteList/siteList.columns.redis.html"
+	"text!templates/siteList/siteList.columns.bindings.html"
+], (app, SiteDataService, common, Hub, siteUtils, toaster, $, Mprogress, siteStateTpl, poolTpl, redisTpl, bindingsTpl)->
+		SiteList = Class(common.class.StateFullController,
 
-		hub = new Hub('SiteManagementHub',
-			listeners:
-				'updateSiteState': (siteData) ->
-					setSiteState(siteData);
-					$scope.$apply()
+			uiGridConstants: null
+
+			$timeout: null
+
+			siteListData: [],
+
+			hub: null
+
+			initHub: ()->
+				this.hub = new Hub("SiteManagementHub",
+					listeners:
+						"updateSiteState": (siteData) =>
+							this.setSiteState(siteData);
+							this.$scope.$apply()
+					methods: [
+						"RestartPool"
+						"StopSite"
+						"StartSite"
+						"FlushRedis"
+					]
+				)
+				do this.hub.connect
+
+			siteDataService: null
+
+			initSiteDataService: ->
+				this.siteDataService = new SiteDataService();
+				do this.getSites
+
+			constructor: ($rootScope, $scope, $timeout, uiGridConstants) ->
+				do this.initHub
+				this.uiGridConstants = uiGridConstants
+				this.$timeout = $timeout
+				SiteList.$super.call(this, $scope, $rootScope)
+				do this.initClickHandler
+				do this.initSiteDataService
+				return
+
+			defineScope: ->
+				SiteList.$superp.defineScope.call this
+				do this.initGridOptions
+				do this.initScope
+				return
+
+			initScope: ->
+				this.siteListLoaded false
+				return
+
+			apply: ->
+				do this.$scope.$apply
+			onStateChangeStart: ()->
+				SiteList.$superp.onStateChangeStart.call(this)
+				do this.hub.disconnect
+				this.$scope.hideAllProgressBars = true
+				return
+
+			siteListLoaded: (value)->
+				if this.$scope.siteListLoaded != value
+					this.$scope.siteListLoaded = value
+
+			getGridData: ()->
+				return this.siteListData
+
+			getSites: ->
+				querySucceeded = (data) =>
+					gridData = do this.getGridData
+					_.each data, (row)->gridData.push row
 					return
-			methods: [
-				'RestartPool'
-				'StopSite'
-				'StartSite'
-				'FlushRedis'
-			]
-		)
+				this.$timeout =>
+					this.siteDataService.getSites this.bind querySucceeded, ->
+						common.logger.error "Web sites loading error"
+						return
+					.finally =>
+						this.siteListLoaded true
+						return
+					return
+				, 0
+				return
 
-		vm.siteListLoaded = false
+			setPoolRestarting: (row)->
+				if (row.poolRestartInProgress)
+					return
+				row.poolRestartInProgress = on
+				row.stateName = "Restarting..."
+				this.createRowProgressBar row
+				return
 
-		getGridData = ()->
-			return vm.gridOptions.data
+			setSiteState: (siteData)->
+				data = this.getGridData();
+				site = _.find(data, (row)->
+					row.id == siteData.id
+				)
+				if (site)
+					this.setSiteNewData site, siteData.newData
+					if (siteData.newData.poolRestartState == common.enums.PoolState.Restarting.value)
+						this.setPoolRestarting site
+					else
+						site.poolRestartInProgress = off
+						this.stopRowProgressBar site
+				return
 
-		vm.gridOptions = {
-			enableScrollbars: 0,
-			enableColumnResizing: on,
-			enableRowSelection: off,
-			enableRowHeaderSelection: off,
-			multiSelect: off,
-			enableFiltering: on,
-			enableGridMenu: on
-		}
+			setSiteNewData: (site, newData)->
+				$.extend(site, newData)
+				return
 
-		siteStateTemplate = '<div class="btn btn-primary btn-xs glyphicon glyphicon-off" ng-click="getExternalScopes().stopSite(row.entity)" ng-show="getExternalScopes().siteUtils.isRunning(row.entity)"></div>' +
-			'<div class="btn btn-primary btn-xs glyphicon glyphicon-play" ng-click="getExternalScopes().startSite(row.entity)" ng-show="!getExternalScopes().siteUtils.isRunning(row.entity)"></div>' +
-			'<span class="binding-label">{{row.entity.state}}</span>'
+			createRowProgressBar: (row)->
+				this.hideAllProgressBars true
+				mProgress = row.progressBar || new Mprogress(
+					template: 3
+					parent: ".mProgressContainerRow.progress-row" + row.id)
+				do mProgress.start
+				row.progressBar = mProgress
+				return
 
-		poolTemplate = [
-			'<div ng-class="{\'hide\': row.entity.poolRestartInProgress}" class="ui-grid-cell-contents pool-name" tooltip-placement="left" tooltip="{{getExternalScopes().getSitePool(row.entity)}}" tooltip-class="large-tooltip">'
-				'<div class="btn btn-primary btn-xs glyphicon glyphicon-refresh" ng-click="getExternalScopes().restartPool(row.entity)"></div>'
-				'<span>{{getExternalScopes().getSitePool(row.entity)}}</span>'
-			'</div>'
-			'<div class="mProgressContainerRow-msg">{{row.entity.stateName}}</div>'
-			'<div class="mProgressContainerRow progress-row{{row.entity.id}}" ng-class="{\'hide\': !row.entity.poolRestartInProgress}"></div>'
-			].join('')
+			stopRowProgressBar: (row, force)->
+				if (row && row.progressBar && row.progressBar.status)
+					row.progressBar.end force
+				return
 
-		redisTpl = '<div ng-show="getExternalScopes().siteUtils.redisFound(row.entity)" class="btn btn-primary btn-xs glyphicon glyphicon-refresh" ng-click="getExternalScopes().flushRedis(row.entity)" ng-class="{\'hide\': row.redisFlushInProgress}"></div>' +
-			'<span tooltip-placement="left" tooltip="{{getExternalScopes().siteUtils.redisName(row.entity)}}">{{getExternalScopes().siteUtils.redisName(row.entity)}}</span>'
+			hideAllProgressBars: (force)->
+				data = do this.getGridData
+				_.each data, (row)=>
+					this.stopRowProgressBar row, force
+				return
 
-		bindingsTpl = '<span ng-repeat="binding in row.entity.bindings" tooltip-placement="left" tooltip="{{binding}}">{{binding}}; </span>'
+			getSitePool: (site)->
+				firstApp = site.applications[0]
+				firstApp && firstApp.pool
+				return
 
-		vm.gridOptions.columnDefs = [
-			{field: "id", displayName: "Id", width: "1", enableFiltering: false},
-			{
-				field: 'name',
-				displayName: 'Name',
-				minWidth: 50,
-				width: "20%",
-				filter: {
-					condition: uiGridConstants.filter.CONTAINS,
-					placeholder: 'contains'
+			getPoolDisplayName: (pool)->
+				return pool && ("#{pool.name} (#{pool.state})")
+
+			initClickHandler: ->
+				this.$scope.clickHandler =
+					flushRedis: (row)=>
+						this.hub.FlushRedis row.id
+						return false
+					getSitePool: (row)=>
+						pool = this.getSitePool row
+						this.getPoolDisplayName pool
+						return
+					startSite: (row)=>
+						this.hub.StartSite row.id
+						return
+					stopSite: (row)=>
+						this.hub.StopSite row.id
+						return
+					restartPool: (row)=>
+						this.setPoolRestarting row
+						this.hub.RestartPool row.id
+						return false
+					siteUtils: siteUtils
+
+			initGridOptions: ->
+				this.$scope.gridOptions = {
+					data: this.siteListData
+					enableScrollbars: 0
+					enableColumnResizing: on
+					enableRowSelection: off
+					enableRowHeaderSelection: off
+					multiSelect: off
+					enableFiltering: on
+					enableGridMenu: on
+					columnDefs: [
+						{field: "id", displayName: "Id", width: "1", enableFiltering: false}
+						{
+							field: "name"
+							displayName: "Name"
+							minWidth: 50
+							width: "20%"
+							filter: {
+								condition: this.uiGridConstants.filter.CONTAINS
+								placeholder: "contains"
+							}
+						},
+						{
+							field: "bindings"
+							displayName: "Bindings"
+							minWidth: 50
+							width: "5%"
+							cellTemplate: bindingsTpl
+							filter: {
+								condition: this.uiGridConstants.filter.CONTAINS
+								placeholder: "contains"
+							}
+						},
+						{
+							field: "state"
+							displayName: "State"
+							width: "30"
+							enableFiltering: false
+							cellTemplate: siteStateTpl
+						},
+						{
+							field: "pool"
+							displayName: "First app pool"
+							width: "10%"
+							cellTemplate: poolTpl
+							enableFiltering: false
+						},
+						{
+							field: "redis"
+							displayName: "Redis"
+							width: "10%"
+							cellTemplate: redisTpl
+							enableFiltering: false
+						}
+					]
 				}
-			},
-			{
-				field: 'bindings',
-				displayName: 'Bindings',
-				minWidth: 50,
-				width: "5%",
-				cellTemplate: bindingsTpl,
-				filter: {
-					condition: uiGridConstants.filter.CONTAINS,
-					placeholder: 'contains'
-				}
-			},
-			{
-				field: 'state',
-				displayName: 'State',
-				width: "30",
-				enableFiltering: false,
-				cellTemplate: siteStateTemplate
-			},
-			{
-				field: 'pool',
-				displayName: 'First app pool',
-				width: "10%",
-				cellTemplate: poolTemplate,
-				enableFiltering: false
-			},
-			{
-				field: 'redis',
-				displayName: 'Redis',
-				width: "10%",
-				cellTemplate: redisTpl,
-				enableFiltering: false
-			}
+		);
+		["$rootScope", "$scope", "$timeout", "uiGridConstants", ($rootScope, $scope, $timeout, uiGridConstants)->
+			return new SiteList($rootScope, $scope, $timeout, uiGridConstants)
 		]
-
-		getSites = ->
-			querySucceeded = (data) ->
-				vm.gridOptions.data = data
-				return
-
-			getSitesImpl = ->
-				siteDataService.getSites querySucceeded, ()->
-					logger.error 'Web sites loading error'
-					return
-				.finally ()->
-					vm.siteListLoaded = true
-					return
-				return
-
-			$timeout getSitesImpl, 0
-			return
-
-		setPoolRestarting = (row)->
-			if (row.poolRestartInProgress)
-				return
-			row.poolRestartInProgress = on
-			row.stateName = "Restarting..."
-			createRowProgressBar row
-			return
-
-		setSiteState = (siteData)->
-			data = getGridData();
-			site = _.find(data, (row)->
-				row.id == siteData.id
-			)
-			if (site)
-				setSiteNewData site, siteData.newData
-				if (siteData.newData.poolRestartState == Enums.PoolState.Restarting.value)
-					setPoolRestarting site
-				else
-					site.poolRestartInProgress = off
-					stopRowProgressBar site
-			return
-
-		setSiteNewData = (site, newData)->
-			$.extend(site, newData)
-			return
-
-		createRowProgressBar = (row)->
-			hideAllProgressBars true
-			mProgress = row.progressBar || new Mprogress(
-				template: 3
-				parent: '.mProgressContainerRow.progress-row' + row.id)
-			do mProgress.start
-			row.progressBar = mProgress
-			return
-
-		stopRowProgressBar = (row, force)->
-			if (row && row.progressBar && row.progressBar.status)
-				row.progressBar.end force
-			return
-
-		hideAllProgressBars = (force)->
-			data = do getGridData
-			_.each data, (row)->
-				stopRowProgressBar row, force
-
-		getSitePool = (site)->
-			firstApp = site.applications[0]
-			firstApp && firstApp.pool
-
-		getPoolDisplayName = (pool)->
-			return pool && ("#{pool.name} (#{pool.state})")
-
-		getSites()
-
-		vm.clickHandler = {
-			flushRedis: (row)->
-				hub.FlushRedis row.id
-				return false
-			getSitePool: (row)->
-				pool = getSitePool row
-				getPoolDisplayName pool
-			startSite: (row)->
-				hub.StartSite row.id
-				return
-			stopSite: (row)->
-				hub.StopSite row.id
-				return
-			restartPool: (row)->
-				setPoolRestarting row
-				hub.RestartPool row.id
-				return false
-			siteUtils: siteUtils
-		}
-
-		offFunc = $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
-			selfDestruct = offFunc;
-			do hub.disconnect
-			do selfDestruct
-			hideAllProgressBars true
-			return
-
-
-		return
-]

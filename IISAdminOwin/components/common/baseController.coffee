@@ -1,5 +1,5 @@
-define [], ()->
-	BaseController = Class(
+define ["./baseClass"], (BaseClass)->
+	BaseController = Class(BaseClass,
 		$scope: null
 		listeners: []
 		constructor: ($scope) ->
@@ -8,7 +8,7 @@ define [], ()->
 			do this.defineScope
 			return
 		defineListeners: ->
-			this.$scope.$on "$destroy", this.destroy.bind(this)
+			this.$scope.$on "$destroy", this.bind this.destroy
 			return
 		defineScope: ->
 			#OVERRIDE : Create all scope properties here to keep track of them.

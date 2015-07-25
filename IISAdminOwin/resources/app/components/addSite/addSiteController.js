@@ -11,7 +11,6 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
     }
   });
   AddSite = Class(common["class"].StateFullController, {
-    $rootScope: null,
     $timeout: null,
     site: new Site(),
     hub: null,
@@ -25,10 +24,10 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
         listeners: [],
         methods: ["AddSite", "GetReleaseInfo", "GetStartupInfo"]
       });
-      this.hub.connect((function() {
+      this.hub.connect(this.bind(function() {
         this.getSiteCreateInfo();
         return this.site.workUri = "f63e0379-c338-4fe0-846e-ca088acdbb5d";
-      }).bind(this));
+      }));
     },
     onWorkUriChange: function(field, newValue) {
       this.site.releaseInfo = {};
@@ -63,14 +62,12 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
       });
     },
     updateReleaseInfo: function(uri) {
-      var me;
-      me = this;
-      this.hub.GetReleaseInfo(uri).then(function(data) {
-        $.extend(me.site.releaseInfo, data.release);
-        me.site.name = data.webAppName;
-        me.site.webAppDir = data.webAppDir;
-        return me.apply();
-      });
+      this.hub.GetReleaseInfo(uri).then(this.bind(function(data) {
+        $.extend(this.site.releaseInfo, data.release);
+        this.site.name = data.webAppName;
+        this.site.webAppDir = data.webAppDir;
+        return this.apply();
+      }));
     },
     addSite: function() {
       this.hub.AddSite(this.site);

@@ -1,0 +1,3 @@
+<div class="btn btn-primary btn-xs glyphicon glyphicon-off" ng-click="getExternalScopes().stopSite(row.entity)" ng-show="getExternalScopes().siteUtils.isRunning(row.entity)"></div>
+<div class="btn btn-primary btn-xs glyphicon glyphicon-play" ng-click="getExternalScopes().startSite(row.entity)" ng-show="!getExternalScopes().siteUtils.isRunning(row.entity)"></div>
+<span class="binding-label">{{row.entity.state}}</span>

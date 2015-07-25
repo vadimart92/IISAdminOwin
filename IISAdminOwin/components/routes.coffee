@@ -8,7 +8,7 @@ define [
 		app.config ($stateProvider, $urlRouterProvider) ->
 			$stateProvider.state "siteList", angularAMD.route
 				url: "/siteList",
-				templateUrl: "/app/views/siteList.html"
+				templateUrl: "/app/views/siteList/siteList.html"
 				controllerUrl: 'siteList/siteListController'
 				data: css: "app/components/siteList/siteList.css"
 			$stateProvider.state "addSite", angularAMD.route

@@ -1,6 +1,6 @@
-define([], function() {
+define(["./baseClass"], function(BaseClass) {
   var BaseController;
-  BaseController = Class({
+  BaseController = Class(BaseClass, {
     $scope: null,
     listeners: [],
     constructor: function($scope) {
@@ -9,7 +9,7 @@ define([], function() {
       this.defineScope();
     },
     defineListeners: function() {
-      this.$scope.$on("$destroy", this.destroy.bind(this));
+      this.$scope.$on("$destroy", this.bind(this.destroy));
     },
     defineScope: function() {},
     destroy: function(event) {}
