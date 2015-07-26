@@ -16,7 +16,7 @@ namespace IISAdmin.Owin.WebApiControllers
 
 		public SiteController(IWebSiteRepository webSiteRepository) {
 			if (webSiteRepository == null) {
-				throw new ArgumentNullException("webSiteRepository");
+				throw new ArgumentNullException(nameof(webSiteRepository));
 			}
 			_webSiteRepository = webSiteRepository;
 		}

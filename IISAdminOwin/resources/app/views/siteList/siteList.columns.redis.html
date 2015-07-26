@@ -1,7 +1,7 @@
-<div ng-show="getExternalScopes().siteUtils.redisFound(row.entity)"
+<div ng-show="row.entity.redisFound"
 	 class="btn btn-primary btn-xs glyphicon glyphicon-refresh"
-	 ng-click="getExternalScopes().flushRedis(row.entity)"
+	 ng-click="row.entity.flushRedis()"
 	 ng-class="{'hide': row.redisFlushInProgress}"></div>
 <span tooltip-placement="left"
-	  tooltip="{{getExternalScopes().siteUtils.redisName(row.entity)}}"
-		>{{getExternalScopes().siteUtils.redisName(row.entity)}}</span>
+	  tooltip="{{row.entity.redisName}}"
+		>{{row.entity.redisName}}</span>

@@ -20,11 +20,11 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
     },
     initHub: function() {
       this.hub = new Hub("SiteCreateHub", {
+        useSharedConnection: false,
         logging: true,
         listeners: [],
         methods: ["AddSite", "GetReleaseInfo", "GetStartupInfo"]
-      });
-      this.hub.connect(this.bind(function() {
+      }, this.bind(function() {
         this.getSiteCreateInfo();
         return this.site.workUri = "f63e0379-c338-4fe0-846e-ca088acdbb5d";
       }));

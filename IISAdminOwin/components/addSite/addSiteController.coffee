@@ -22,17 +22,18 @@ define ["app", "hub", "jquery" , "common"], (app, Hub, $, common)->
 
 		initHub: ()->
 			this.hub = new Hub("SiteCreateHub",
+				useSharedConnection: off
 				logging: on
 				listeners: []
 				methods: [
 					"AddSite"
 					"GetReleaseInfo"
 					"GetStartupInfo"
-				]
+				],
+				this.bind ->
+					do this.getSiteCreateInfo
+					this.site.workUri = "f63e0379-c338-4fe0-846e-ca088acdbb5d"
 			)
-			this.hub.connect this.bind ->
-				do this.getSiteCreateInfo
-				this.site.workUri = "f63e0379-c338-4fe0-846e-ca088acdbb5d"
 			return
 
 		onWorkUriChange: (field, newValue) ->

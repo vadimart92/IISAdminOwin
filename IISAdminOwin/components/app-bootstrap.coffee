@@ -1,6 +1,7 @@
 require.config
 	paths:
 		jsFace:  "../../assets/jsface/jsface"
+		jsFaceProps:  "../../assets/jsface/props.plugin"
 		angular: "../../assets/angular/angular"
 		angularAMD: "../../assets/angular/angularAMD"
 		ngload: "../../assets/angular/ngload"
@@ -33,6 +34,7 @@ require.config
 	shim:
 		jsFace:
 			exports: "jsFace"
+		jsFaceProps: deps:["jsFace"]
 		underscore: {
 			exports: '_'
 		}
@@ -60,4 +62,4 @@ require.config
 		breeze_dataService_webApi: deps: ["breeze"]
 		breeze_savequeuing: deps: ["breeze"]
 		breeze_ng: deps: ["breeze", "breeze_ajax_angular", "breeze_dataService_webApi", "breeze_savequeuing"]
-	deps: ["text", "app"]
+	deps: ["bootstrap", "text", "jsFaceProps", "app"]

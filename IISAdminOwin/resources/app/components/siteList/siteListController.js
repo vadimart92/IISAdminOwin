@@ -1,4 +1,4 @@
-define(["app", "../dataService/siteDataService", "common", "hub", "siteList/siteUtils", "toaster", "jquery", "mProgress", "text!templates/siteList/siteList.columns.siteState.html", "text!templates/siteList/siteList.columns.pool.html", "text!templates/siteList/siteList.columns.redis.html", "text!templates/siteList/siteList.columns.bindings.html"], function(app, SiteDataService, common, Hub, siteUtils, toaster, $, Mprogress, siteStateTpl, poolTpl, redisTpl, bindingsTpl) {
+define(["app", "../dataService/siteDataService", "common", "hub", "siteList/site", "toaster", "jquery", "text!templates/siteList/siteList.columns.siteState.html", "text!templates/siteList/siteList.columns.pool.html", "text!templates/siteList/siteList.columns.redis.html", "text!templates/siteList/siteList.columns.bindings.html"], function(app, SiteDataService, common, Hub, Site, toaster, $, siteStateTpl, poolTpl, redisTpl, bindingsTpl) {
   var SiteList;
   SiteList = Class(common["class"].StateFullController, {
     uiGridConstants: null,
@@ -6,7 +6,7 @@ define(["app", "../dataService/siteDataService", "common", "hub", "siteList/site
     siteListData: [],
     hub: null,
     initHub: function() {
-      this.hub = new Hub("SiteManagementHub", {
+      return this.hub = new Hub("SiteManagementHub", {
         listeners: {
           "updateSiteState": (function(_this) {
             return function(siteData) {
@@ -17,7 +17,6 @@ define(["app", "../dataService/siteDataService", "common", "hub", "siteList/site
         },
         methods: ["RestartPool", "StopSite", "StartSite", "FlushRedis"]
       });
-      return this.hub.connect();
     },
     siteDataService: null,
     initSiteDataService: function() {
@@ -29,7 +28,6 @@ define(["app", "../dataService/siteDataService", "common", "hub", "siteList/site
       this.uiGridConstants = uiGridConstants;
       this.$timeout = $timeout;
       SiteList.$super.call(this, $scope, $rootScope);
-      this.initClickHandler();
       this.initSiteDataService();
     },
     defineScope: function() {
@@ -56,15 +54,17 @@ define(["app", "../dataService/siteDataService", "common", "hub", "siteList/site
     getGridData: function() {
       return this.siteListData;
     },
+    setGridData: function(data) {
+      this.siteListData = data;
+      return this.$scope.gridOptions.data = this.siteListData;
+    },
     getSites: function() {
       var querySucceeded;
       querySucceeded = (function(_this) {
         return function(data) {
-          var gridData;
-          gridData = _this.getGridData();
-          _.each(data, function(row) {
-            return gridData.push(row);
-          });
+          _this.setGridData(_.map(data, function(row) {
+            return new Site(row, _this.hub, _this);
+          }));
         };
       })(this);
       this.$timeout((function(_this) {
@@ -77,14 +77,6 @@ define(["app", "../dataService/siteDataService", "common", "hub", "siteList/site
         };
       })(this), 0);
     },
-    setPoolRestarting: function(row) {
-      if (row.poolRestartInProgress) {
-        return;
-      }
-      row.poolRestartInProgress = true;
-      row.stateName = "Restarting...";
-      this.createRowProgressBar(row);
-    },
     setSiteState: function(siteData) {
       var data, site;
       data = this.getGridData();
@@ -92,31 +84,7 @@ define(["app", "../dataService/siteDataService", "common", "hub", "siteList/site
         return row.id === siteData.id;
       });
       if (site) {
-        this.setSiteNewData(site, siteData.newData);
-        if (siteData.newData.poolRestartState === common.enums.PoolState.Restarting.value) {
-          this.setPoolRestarting(site);
-        } else {
-          site.poolRestartInProgress = false;
-          this.stopRowProgressBar(site);
-        }
-      }
-    },
-    setSiteNewData: function(site, newData) {
-      $.extend(site, newData);
-    },
-    createRowProgressBar: function(row) {
-      var mProgress;
-      this.hideAllProgressBars(true);
-      mProgress = row.progressBar || new Mprogress({
-        template: 3,
-        parent: ".mProgressContainerRow.progress-row" + row.id
-      });
-      mProgress.start();
-      row.progressBar = mProgress;
-    },
-    stopRowProgressBar: function(row, force) {
-      if (row && row.progressBar && row.progressBar.status) {
-        row.progressBar.end(force);
+        return site.setState(siteData.newData);
       }
     },
     hideAllProgressBars: function(force) {
@@ -128,52 +96,8 @@ define(["app", "../dataService/siteDataService", "common", "hub", "siteList/site
         };
       })(this));
     },
-    getSitePool: function(site) {
-      var firstApp;
-      firstApp = site.applications[0];
-      firstApp && firstApp.pool;
-    },
-    getPoolDisplayName: function(pool) {
-      return pool && (pool.name + " (" + pool.state + ")");
-    },
-    initClickHandler: function() {
-      return this.$scope.clickHandler = {
-        flushRedis: (function(_this) {
-          return function(row) {
-            _this.hub.FlushRedis(row.id);
-            return false;
-          };
-        })(this),
-        getSitePool: (function(_this) {
-          return function(row) {
-            var pool;
-            pool = _this.getSitePool(row);
-            _this.getPoolDisplayName(pool);
-          };
-        })(this),
-        startSite: (function(_this) {
-          return function(row) {
-            _this.hub.StartSite(row.id);
-          };
-        })(this),
-        stopSite: (function(_this) {
-          return function(row) {
-            _this.hub.StopSite(row.id);
-          };
-        })(this),
-        restartPool: (function(_this) {
-          return function(row) {
-            _this.setPoolRestarting(row);
-            _this.hub.RestartPool(row.id);
-            return false;
-          };
-        })(this),
-        siteUtils: siteUtils
-      };
-    },
     initGridOptions: function() {
-      return this.$scope.gridOptions = {
-        data: this.siteListData,
+      this.$scope.gridOptions = {
         enableScrollbars: 0,
         enableColumnResizing: true,
         enableRowSelection: false,
@@ -227,6 +151,7 @@ define(["app", "../dataService/siteDataService", "common", "hub", "siteList/site
           }
         ]
       };
+      return this.setGridData([]);
     }
   });
   return [

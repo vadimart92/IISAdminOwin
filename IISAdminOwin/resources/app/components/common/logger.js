@@ -4,6 +4,7 @@ define(["toaster", "app", "angular"], function(toaster, app, angular) {
     toaster: null,
     $log: null,
     constructor: function($log, toaster) {
+      this.$log = $log;
       this.toaster = toaster;
       this.initToaster();
     },

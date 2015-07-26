@@ -3,6 +3,7 @@ define ["toaster", "app", "angular"], (toaster, app, angular)->
 		toaster: null
 		$log: null
 		constructor: ($log, toaster)->
+			this.$log = $log
 			this.toaster = toaster
 			do this.initToaster
 			return

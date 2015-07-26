@@ -101,5 +101,5 @@ require.config({
       deps: ["breeze", "breeze_ajax_angular", "breeze_dataService_webApi", "breeze_savequeuing"]
     }
   },
-  deps: ["text", "jsFaceProps", "app"]
+  deps: ["bootstrap", "text", "jsFaceProps", "app"]
 });

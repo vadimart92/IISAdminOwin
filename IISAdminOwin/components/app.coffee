@@ -14,6 +14,7 @@ define ["require"
 				"loading_bar"
 				"ui_formly"
 				"angular_formly_templates"
+				"./common/informationHub"
 ], (require, angular, routes, angularAMD)->
 	#require [ "domReady!" ], (document) ->
 	app = angular.module("IISAdmin", [

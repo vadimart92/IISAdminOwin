@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using IISAdmin.Interfaces;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 using Microsoft.Owin.Cors;
@@ -30,7 +31,10 @@ namespace IISAdmin.Owin
 
 			appBuilder.MapSignalR(initSignalRConfiguration(container));
 
-			var config = GetWebApiConfig(container);
+		    var backgroundWorker = container.Resolve<IBackgroundWorker>();
+            backgroundWorker.Init(appBuilder);
+
+            var config = GetWebApiConfig(container);
 			appBuilder.UseWebApi(config);
 
 			BundlesRegistrator.RegisterBundles(appBuilder);

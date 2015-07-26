@@ -2,49 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9911e397-8e70-4a0b-a0d4-38c5a8b7adf2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/common/baseClass.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/common/breezeDataService.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.bindings.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.pool.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.redis.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.siteState.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/app/components/text.js" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\components\app.factories — копия.js" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\components\app.services — копия.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagment/WebSiteManagment/Common/DatabaseBackupManager.cs" afterPath="$PROJECT_DIR$/../WebSiteManagment/WebSiteManagment/Common/DatabaseBackupManager.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagment.Core.Test/DatabaseBackupManagerTest.cs" afterPath="$PROJECT_DIR$/../WebSiteManagment.Core.Test/DatabaseBackupManagerTest.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.WebSiteManagmentProvider/IISAdmin.WebSiteManagmentProvider.csproj" afterPath="$PROJECT_DIR$/../IISAdmin.WebSiteManagmentProvider/IISAdmin.WebSiteManagmentProvider.csproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/common/informationHub.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/jsface/props.plugin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/siteList/site.coffee" />
+      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\components\siteList\siteUtils.coffee" afterPath="" />
+      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\assets\fonts\glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common/ContainerConfig.cs" afterPath="$PROJECT_DIR$/Common/ContainerConfig.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Interfaces/IISAdmin.Interfaces.csproj" afterPath="$PROJECT_DIR$/../Interfaces/IISAdmin.Interfaces.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IISAdmin.Owin.csproj" afterPath="$PROJECT_DIR$/IISAdmin.Owin.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdminOwin.sln" afterPath="$PROJECT_DIR$/../IISAdminOwin.sln" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebApiControllers/SiteController.cs" afterPath="$PROJECT_DIR$/WebApiControllers/SiteController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Startup.cs" afterPath="$PROJECT_DIR$/Startup.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web.config" afterPath="$PROJECT_DIR$/Web.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagment/WebSiteManagment/WebSiteManager.cs" afterPath="$PROJECT_DIR$/../WebSiteManagment/WebSiteManagment/WebSiteManager.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.Test/WorkDbReleaseRepositoryTest.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.Test/WorkDbReleaseRepositoryTest.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.Test/WorkSqlConnectionProvider.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.Test/WorkSqlConnectionProvider.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/addSite/addSiteController.coffee" afterPath="$PROJECT_DIR$/components/addSite/addSiteController.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/addSite/addSiteController.js" afterPath="$PROJECT_DIR$/resources/app/components/addSite/addSiteController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/common/baseController.coffee" afterPath="$PROJECT_DIR$/components/common/baseController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/common/baseController.js" afterPath="$PROJECT_DIR$/resources/app/components/common/baseController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/bootstrap.coffee" afterPath="$PROJECT_DIR$/components/bootstrap.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/app.coffee" afterPath="$PROJECT_DIR$/components/app.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/app.js" afterPath="$PROJECT_DIR$/resources/app/components/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/common/baseClass.coffee" afterPath="$PROJECT_DIR$/components/common/baseClass.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/common/baseClass.js" afterPath="$PROJECT_DIR$/resources/app/components/common/baseClass.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/bootstrap/bootstrap.css" afterPath="$PROJECT_DIR$/resources/assets/bootstrap/bootstrap.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/bootstrap.js" afterPath="$PROJECT_DIR$/resources/app/components/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/breeze/breeze.dataService.webApi.js" afterPath="$PROJECT_DIR$/resources/assets/breeze/breeze.dataService.webApi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/bootstrap/bootstrap_min.css" afterPath="$PROJECT_DIR$/resources/assets/bootstrap/bootstrap_min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/common.coffee" afterPath="$PROJECT_DIR$/components/common.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/common.js" afterPath="$PROJECT_DIR$/resources/app/components/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/resources/assets/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/index.html" afterPath="$PROJECT_DIR$/resources/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init.log.txt" afterPath="$PROJECT_DIR$/init.log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/routes.coffee" afterPath="$PROJECT_DIR$/components/routes.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/routes.js" afterPath="$PROJECT_DIR$/resources/app/components/routes.js" />
-      <change type="MODIFICATION" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\components\dataService\siteDataService.coffee" afterPath="$PROJECT_DIR$/components/dataService/siteDataService.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/dataservice/siteDataService.js" afterPath="$PROJECT_DIR$/resources/app/components/dataservice/siteDataService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/common/logger.coffee" afterPath="$PROJECT_DIR$/components/common/logger.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/common/logger.js" afterPath="$PROJECT_DIR$/resources/app/components/common/logger.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/mProgress/mprogress.css" afterPath="$PROJECT_DIR$/resources/assets/mProgress/mprogress.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/mProgress/mprogress.js" afterPath="$PROJECT_DIR$/resources/assets/mProgress/mprogress.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages.config" afterPath="$PROJECT_DIR$/packages.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/common/signalRHub.coffee" afterPath="$PROJECT_DIR$/components/common/signalRHub.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/common/signalRHub.js" afterPath="$PROJECT_DIR$/resources/app/components/common/signalRHub.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.bindings.html" afterPath="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.bindings.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.pool.html" afterPath="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.pool.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.redis.html" afterPath="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.redis.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.siteState.html" afterPath="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.siteState.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/siteList/siteList.css" afterPath="$PROJECT_DIR$/resources/app/components/siteList/siteList.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/siteList/siteList.less" afterPath="$PROJECT_DIR$/components/siteList/siteList.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/siteList/siteListController.coffee" afterPath="$PROJECT_DIR$/components/siteList/siteListController.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/siteList/siteListController.js" afterPath="$PROJECT_DIR$/resources/app/components/siteList/siteListController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/siteList/siteUtils.coffee" afterPath="$PROJECT_DIR$/components/siteList/siteUtils.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/siteList/siteUtils.js" afterPath="$PROJECT_DIR$/resources/app/components/siteList/siteUtils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transports.log.txt" afterPath="$PROJECT_DIR$/transports.log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap-tpls.js" afterPath="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap-tpls.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap.js" afterPath="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid-stable.js" afterPath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid-stable.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\siteList.html" afterPath="$PROJECT_DIR$/resources/app/views/siteList/siteList.html" />
-      <change type="MOVED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\siteList.site.html" afterPath="$PROJECT_DIR$/resources/app/views/siteList/siteList.site.html" />
+      <change type="MOVED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\components\bootstrap.coffee" afterPath="$PROJECT_DIR$/components/app-bootstrap.coffee" />
     </list>
     <ignored path="IISAdminOwin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,31 +67,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="siteList.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.html">
+      <file leaf-file-name="siteListController.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/siteList/siteListController.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769">
-              <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="142" column="27" selection-start-line="142" selection-start-column="22" selection-end-line="142" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ui-grid-stable.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/ui-grid/ui-grid-stable.js">
+      <file leaf-file-name="common.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/common.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.96">
-              <caret line="6497" column="44" selection-start-line="6497" selection-start-column="44" selection-end-line="6497" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="18" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addSite.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/app/views/addSite.html">
+      <file leaf-file-name="site.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/siteList/site.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.461538">
+              <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="siteList.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/siteList/siteList.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6607774">
+              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/routes.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="36" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -98,48 +130,8 @@
       <file leaf-file-name="siteList.columns.redis.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.redis.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769">
-              <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="siteList.columns.pool.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.pool.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537">
-              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="siteList.columns.siteState.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.siteState.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3076923">
-              <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="siteListController.coffee" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/components/siteList/siteListController.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.060390763">
-              <caret line="115" column="14" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addSiteController.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/addSite/addSiteController.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="24" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="24" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="35" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -152,6 +144,7 @@
       <list>
         <option value="Html5" />
         <option value="CoffeeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -169,16 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tmp/tmp.js" />
-        <option value="$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html" />
-        <option value="$PROJECT_DIR$/components/siteList/siteList.less" />
-        <option value="$PROJECT_DIR$/resources/assets/bootstrap/bootstrap.css" />
-        <option value="$PROJECT_DIR$/resources/assets/bootstrap/bootstrap_min.css" />
-        <option value="$PROJECT_DIR$/components/addSite/addSite.less" />
-        <option value="$PROJECT_DIR$/resources/app/views/addSite.progress.html" />
-        <option value="$PROJECT_DIR$/components/addSite/addSite.progress.Controller.coffee" />
-        <option value="$PROJECT_DIR$/gulpfile.coffee" />
-        <option value="$PROJECT_DIR$/components/toastr/toastrService.coffee" />
         <option value="$PROJECT_DIR$/resources/app/components/routes.js" />
         <option value="$PROJECT_DIR$/components/app.factories.coffee" />
         <option value="$PROJECT_DIR$/components/app.controllers.coffee" />
@@ -186,7 +169,6 @@
         <option value="$PROJECT_DIR$/components/app.controllers.index.coffee" />
         <option value="$PROJECT_DIR$/components/app.services.index.coffee" />
         <option value="$PROJECT_DIR$/components/addSite/index.coffee" />
-        <option value="$PROJECT_DIR$/resources/index.html" />
         <option value="$PROJECT_DIR$/components/common/common.coffee" />
         <option value="$PROJECT_DIR$/components/common/baseController" />
         <option value="$PROJECT_DIR$/components/common/enums.coffee" />
@@ -194,32 +176,43 @@
         <option value="$PROJECT_DIR$/resources/assets/angular/angular.js" />
         <option value="$PROJECT_DIR$/components/home/homeController.coffee" />
         <option value="$PROJECT_DIR$/components/common/utils.coffee" />
-        <option value="$PROJECT_DIR$/components/app.coffee" />
-        <option value="$PROJECT_DIR$/components/common/logger.coffee" />
         <option value="$PROJECT_DIR$/components/common/statefullController.coffee" />
-        <option value="$PROJECT_DIR$/components/common/signalRHub.coffee" />
         <option value="$PROJECT_DIR$/components/common/stateFullController.coffee" />
         <option value="$PROJECT_DIR$/components/common/baseDataService.coffee" />
         <option value="$PROJECT_DIR$/components/routes.coffee" />
-        <option value="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.siteState.html" />
-        <option value="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.redis.html" />
-        <option value="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.bindings.html" />
         <option value="$PROJECT_DIR$/components/dataservice/siteDataService.coffee" />
-        <option value="$PROJECT_DIR$/components/siteList/siteUtils.coffee" />
-        <option value="$PROJECT_DIR$/components/common/baseClass.coffee" />
-        <option value="$PROJECT_DIR$/components/addSite/addSiteController.coffee" />
         <option value="$PROJECT_DIR$/components/common/baseController.coffee" />
-        <option value="$PROJECT_DIR$/components/common.coffee" />
         <option value="$PROJECT_DIR$/resources/assets/breeze/breeze.dataService.webApi.js" />
         <option value="$PROJECT_DIR$/components/dataService/siteDataService.coffee" />
         <option value="$PROJECT_DIR$/components/common/breezeDataService.coffee" />
-        <option value="$PROJECT_DIR$/components/bootstrap.coffee" />
         <option value="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap-tpls.js" />
         <option value="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap.js" />
         <option value="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid-stable.js" />
         <option value="$PROJECT_DIR$/resources/app/views/siteList/siteList.html" />
+        <option value="$PROJECT_DIR$/components/common.coffee" />
+        <option value="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.bindings.html" />
         <option value="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.pool.html" />
+        <option value="$PROJECT_DIR$/components/common/logger.coffee" />
+        <option value="$PROJECT_DIR$/components/app.coffee" />
+        <option value="$PROJECT_DIR$/components/addSite/addSiteController.coffee" />
+        <option value="$PROJECT_DIR$/components/common/informationHub.coffee" />
+        <option value="$PROJECT_DIR$/components/common/signalRHub.coffee" />
+        <option value="$PROJECT_DIR$/resources/assets/mProgress/mprogress.js" />
+        <option value="$PROJECT_DIR$/resources/assets/mProgress/mprogress.css" />
+        <option value="$PROJECT_DIR$/resources/assets/bootstrap/bootstrap.css" />
+        <option value="$PROJECT_DIR$/resources/assets/bootstrap/bootstrap_min.css" />
         <option value="$PROJECT_DIR$/components/siteList/siteListController.coffee" />
+        <option value="$PROJECT_DIR$/resources/assets/jsface/jsface.js" />
+        <option value="$PROJECT_DIR$/components/bootstrap.coffee" />
+        <option value="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.siteState.html" />
+        <option value="$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.redis.html" />
+        <option value="$PROJECT_DIR$/components/common/baseClass.coffee" />
+        <option value="$PROJECT_DIR$/resources/assets/jsface/props.plugin.js" />
+        <option value="$PROJECT_DIR$/components/siteList/siteUtils.coffee" />
+        <option value="$PROJECT_DIR$/components/siteList/site.coffee" />
+        <option value="$PROJECT_DIR$/components/app-bootstrap.coffee" />
+        <option value="$PROJECT_DIR$/resources/index.html" />
+        <option value="$PROJECT_DIR$/components/siteList/siteList.less" />
       </list>
     </option>
   </component>
@@ -299,7 +292,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -369,7 +361,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
+              <option name="myItemId" value="jsface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IISAdminOwin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IISAdminOwin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -563,6 +577,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -576,7 +591,7 @@
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="LayoutCode.rearrangeEntriesJavaScript 1.5" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Linters.JSLint" />
     <property name="settings.editor.splitter.proportion" value="0.22113504" />
   </component>
   <component name="RecentsManager">
@@ -707,16 +722,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18071654" sideWeight="0.5241935" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18071654" sideWeight="0.47580644" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18071654" sideWeight="0.53064513" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18071654" sideWeight="0.46935484" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -749,70 +764,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/components/app.services.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.056013178">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/app.controllers.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.056013178">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38554215">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/addSite/index.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/angular/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3545" column="0" selection-start-line="3545" selection-start-column="0" selection-end-line="3545" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/angular/angularAMD.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44481054">
-          <caret line="137" column="21" selection-start-line="137" selection-start-column="21" selection-end-line="137" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/angular/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4398682">
-          <caret line="4101" column="40" selection-start-line="4101" selection-start-column="40" selection-end-line="4101" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/home/homeController.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="26" selection-start-line="5" selection-start-column="6" selection-end-line="6" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/common/enums.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -845,19 +796,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33277026">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/app/components/common/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -875,23 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/app.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/routes.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43074325">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -899,9 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.4932432">
           <caret line="182" column="13" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -913,43 +835,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/common/logger.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19594595">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/signalR/jquery.signalR-2.2.0.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33277026">
-          <caret line="2875" column="4" selection-start-line="2875" selection-start-column="4" selection-end-line="2875" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/common/signalRHub.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/common/baseClass.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.028716216">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/common/baseController.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,14 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22972973">
           <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/common.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3733108">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -977,19 +858,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/siteList/siteUtils.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2845982">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/common/stateFullController.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -997,15 +869,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="221" selection-start-line="0" selection-start-column="221" selection-end-line="0" selection-end-column="221" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/bootstrap.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3794643">
-          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,14 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/bootstrap/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33277026">
-          <caret line="270" column="21" selection-start-line="270" selection-start-column="21" selection-end-line="270" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/dataService/siteDataService.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45945945">
@@ -1045,7 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1057,35 +911,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/addSite/addSiteController.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="24" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.redis.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.siteState.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923">
-          <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1093,9 +922,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12734082">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <marker date="1437857779048" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1107,17 +934,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.bindings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="42" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/app/views/addSite.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
+        <state vertical-scroll-proportion="0.0">
           <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
           <folding />
         </state>
@@ -1125,7 +944,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/ui-grid/ui-grid-stable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.96">
+        <state vertical-scroll-proportion="0.0">
           <caret line="6497" column="44" selection-start-line="6497" selection-start-column="44" selection-end-line="6497" selection-end-column="44" />
           <folding />
         </state>
@@ -1133,24 +952,218 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769">
+        <state vertical-scroll-proportion="0.0">
           <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/app/components/common/signalRHub.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/app.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/addSite/addSiteController.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40202704">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/signalR/jquery.signalR-2.2.0.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33952704">
+          <caret line="2883" column="0" selection-start-line="2883" selection-start-column="0" selection-end-line="2883" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/common/logger.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0050675673">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/common/informationHub.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14358108">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/common/signalRHub.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/mProgress/mprogress.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7956081">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/bootstrap/bootstrap_min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33271375">
+          <caret line="6" column="3264" selection-start-line="6" selection-start-column="3264" selection-end-line="6" selection-end-column="3264" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/bootstrap/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45293072">
+          <caret line="270" column="11" selection-start-line="270" selection-start-column="11" selection-end-line="270" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.pool.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537">
+        <state vertical-scroll-proportion="0.36042404">
           <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/mProgress/mprogress.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.2668919">
+          <caret line="181" column="21" selection-start-line="181" selection-start-column="21" selection-end-line="181" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.bindings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33277026">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/common.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/jsface/jsface.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.060390763">
+          <caret line="162" column="13" selection-start-line="162" selection-start-column="8" selection-end-line="162" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.siteState.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/common/baseClass.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25844595">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/jsface/props.plugin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43074325">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.columns.redis.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="35" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/siteList/siteListController.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.060390763">
-          <caret line="115" column="14" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="142" column="27" selection-start-line="142" selection-start-column="22" selection-end-line="142" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/routes.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/app-bootstrap.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8277027">
+          <caret line="64" column="45" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/siteList/site.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/siteList/siteList.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6607774">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
           <folding />
         </state>
       </provider>
