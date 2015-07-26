@@ -1,6 +1,7 @@
 define ["jquery", "app", "common", "underscore", "signalR"], ($, app, common)->
 	Hub = Class({
-		globalConnections: []
+		$static:
+			globalConnections: {}
 		initNewConnection:(options) ->
 			connection = null
 			if options and options.rootPath
@@ -9,28 +10,42 @@ define ["jquery", "app", "common", "underscore", "signalR"], ($, app, common)->
 				connection = $.hubConnection()
 			connection.logging = if options and options.logging then true else false
 			connection
-		getConnection: (options) ->
+
+		getConnection: (options, callback) ->
+			connectionName = options.rootPath || options.connectionName || "default";
 			useSharedConnection = !(options and options.useSharedConnection == false)
 			if useSharedConnection
-				if typeof this.globalConnections[options.rootPath] == "undefined" then (this.globalConnections[options.rootPath] = this.initNewConnection(options)) else this.globalConnections[options.rootPath]
+				if typeof Hub.globalConnections[connectionName] == "undefined"
+					connection = this.initNewConnection(options)
+					Hub.globalConnections[connectionName] = connection
+					connection
+				else
+					Hub.globalConnections[connectionName]
 			else
-				initNewConnection options
+				this.initNewConnection options
+
 		on: (event, fn) ->
 			this.proxy.on event, fn
 			return
+
 		invoke: (method, args) ->
 			this.proxy.invoke.apply this.proxy, arguments
+
 		disconnect: ->
 			this.connection.stop()
 			return
-		connect: (callback) ->
+
+		connect: (callback)->
 			transport = this.options.transport || if Boolean(window.chrome) then transport: [
 				$.signalR.transports.serverSentEvents.name
 				$.signalR.transports.longPolling.name
 			] else null
 			this.connection.start(transport, callback)
+
 		promise: -> this.connect()
-		constructor: (hubName, options)->
+
+		constructor: (hubName, options, callback)->
+			callback = callback || ->
 			this.options = options
 			this.connection = this.getConnection(options)
 			this.proxy = this.connection.createHubProxy(hubName)
@@ -47,5 +62,9 @@ define ["jquery", "app", "common", "underscore", "signalR"], ($, app, common)->
 				this.connection.qs = options.queryParams
 			if options and options.errorHandler
 				this.connection.error common.logger.error
+			if this.connection.state != 1
+				this.connect callback
+			else do callback
+			return
 	})
 	Hub

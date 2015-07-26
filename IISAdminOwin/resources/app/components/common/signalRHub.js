@@ -1,7 +1,9 @@
 define(["jquery", "app", "common", "underscore", "signalR"], function($, app, common) {
   var Hub;
   Hub = Class({
-    globalConnections: [],
+    $static: {
+      globalConnections: {}
+    },
     initNewConnection: function(options) {
       var connection;
       connection = null;
@@ -15,17 +17,20 @@ define(["jquery", "app", "common", "underscore", "signalR"], function($, app, co
       connection.logging = options && options.logging ? true : false;
       return connection;
     },
-    getConnection: function(options) {
-      var useSharedConnection;
+    getConnection: function(options, callback) {
+      var connection, connectionName, useSharedConnection;
+      connectionName = options.rootPath || options.connectionName || "default";
       useSharedConnection = !(options && options.useSharedConnection === false);
       if (useSharedConnection) {
-        if (typeof this.globalConnections[options.rootPath] === "undefined") {
-          return this.globalConnections[options.rootPath] = this.initNewConnection(options);
+        if (typeof Hub.globalConnections[connectionName] === "undefined") {
+          connection = this.initNewConnection(options);
+          Hub.globalConnections[connectionName] = connection;
+          return connection;
         } else {
-          return this.globalConnections[options.rootPath];
+          return Hub.globalConnections[connectionName];
         }
       } else {
-        return initNewConnection(options);
+        return this.initNewConnection(options);
       }
     },
     on: function(event, fn) {
@@ -47,7 +52,8 @@ define(["jquery", "app", "common", "underscore", "signalR"], function($, app, co
     promise: function() {
       return this.connect();
     },
-    constructor: function(hubName, options) {
+    constructor: function(hubName, options, callback) {
+      callback = callback || function() {};
       this.options = options;
       this.connection = this.getConnection(options);
       this.proxy = this.connection.createHubProxy(hubName);
@@ -70,7 +76,12 @@ define(["jquery", "app", "common", "underscore", "signalR"], function($, app, co
         this.connection.qs = options.queryParams;
       }
       if (options && options.errorHandler) {
-        return this.connection.error(common.logger.error);
+        this.connection.error(common.logger.error);
+      }
+      if (this.connection.state !== 1) {
+        this.connect(callback);
+      } else {
+        callback();
       }
     }
   });

@@ -1,11 +1,11 @@
 <div ng-class="{'hide': row.entity.poolRestartInProgress}"
 	 class="ui-grid-cell-contents pool-name"
 	 tooltip-placement="left"
-	 tooltip="{{getExternalScopes().getSitePool(row.entity)}}"
+	 tooltip="{{row.entity.poolName}}"
 	 tooltip-class="large-tooltip">
 	<div class="btn btn-primary btn-xs glyphicon glyphicon-refresh"
-		 ng-click="getExternalScopes().restartPool(row.entity)"></div>
-	<span>{{getExternalScopes().getSitePool(row.entity)}}</span>
+		 ng-click="row.entity.restartPool()"></div>
+	<span>{{row.entity.poolName}}</span>
 </div>
 <div class="mProgressContainerRow-msg">{{row.entity.stateName}}</div>
 <div class="mProgressContainerRow progress-row{{row.entity.id}}"

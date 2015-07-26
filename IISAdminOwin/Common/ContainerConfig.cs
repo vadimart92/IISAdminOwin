@@ -1,4 +1,5 @@
 ﻿using System.Configuration;
+using IISAdmin.Hangfire;
 using IISAdmin.Interfaces;
 using IISAdmin.Owin.DAL;
 using IISAdmin.Owin.DAL.WorkDbReleaseRepository;
@@ -26,6 +27,7 @@ namespace IISAdmin.Owin.Common
 			container.RegisterType<ISqlServerInstanceRepository, LocalSqlServerInstanceRepository>(new PerThreadLifetimeManager());
 			container.RegisterType<ISiteDeployProviderWebConfig, SiteDeployProviderWebConfig>();
             container.RegisterType<ISiteDeployProvider, SiteDeployProviderMock>();
+            container.RegisterType<IBackgroundWorker, HangfireWorker>(new InjectionConstructor(ConfigurationManager.ConnectionStrings["mainDb"].ConnectionString));
         }
 	}
 }

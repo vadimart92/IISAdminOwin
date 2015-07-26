@@ -3,15 +3,14 @@
 	"../dataService/siteDataService"
 	"common"
 	"hub"
-	"siteList/siteUtils"
+	"siteList/site"
 	"toaster"
 	"jquery"
-	"mProgress"
 	"text!templates/siteList/siteList.columns.siteState.html"
 	"text!templates/siteList/siteList.columns.pool.html"
 	"text!templates/siteList/siteList.columns.redis.html"
 	"text!templates/siteList/siteList.columns.bindings.html"
-], (app, SiteDataService, common, Hub, siteUtils, toaster, $, Mprogress, siteStateTpl, poolTpl, redisTpl, bindingsTpl)->
+], (app, SiteDataService, common, Hub, Site, toaster, $, siteStateTpl, poolTpl, redisTpl, bindingsTpl)->
 		SiteList = Class(common.class.StateFullController,
 
 			uiGridConstants: null
@@ -35,7 +34,6 @@
 						"FlushRedis"
 					]
 				)
-				do this.hub.connect
 
 			siteDataService: null
 
@@ -48,7 +46,6 @@
 				this.uiGridConstants = uiGridConstants
 				this.$timeout = $timeout
 				SiteList.$super.call(this, $scope, $rootScope)
-				do this.initClickHandler
 				do this.initSiteDataService
 				return
 
@@ -64,6 +61,7 @@
 
 			apply: ->
 				do this.$scope.$apply
+
 			onStateChangeStart: ()->
 				SiteList.$superp.onStateChangeStart.call(this)
 				do this.hub.disconnect
@@ -77,10 +75,13 @@
 			getGridData: ()->
 				return this.siteListData
 
+			setGridData: (data)->
+				this.siteListData = data
+				this.$scope.gridOptions.data = this.siteListData
+
 			getSites: ->
 				querySucceeded = (data) =>
-					gridData = do this.getGridData
-					_.each data, (row)->gridData.push row
+					this.setGridData _.map data, (row)=> new Site row, this.hub, this
 					return
 				this.$timeout =>
 					this.siteDataService.getSites this.bind querySucceeded, ->
@@ -93,84 +94,21 @@
 				, 0
 				return
 
-			setPoolRestarting: (row)->
-				if (row.poolRestartInProgress)
-					return
-				row.poolRestartInProgress = on
-				row.stateName = "Restarting..."
-				this.createRowProgressBar row
-				return
-
 			setSiteState: (siteData)->
 				data = this.getGridData();
-				site = _.find(data, (row)->
-					row.id == siteData.id
-				)
+				site = _.find data, (row)-> row.id == siteData.id
 				if (site)
-					this.setSiteNewData site, siteData.newData
-					if (siteData.newData.poolRestartState == common.enums.PoolState.Restarting.value)
-						this.setPoolRestarting site
-					else
-						site.poolRestartInProgress = off
-						this.stopRowProgressBar site
-				return
+					site.setState siteData.newData
 
-			setSiteNewData: (site, newData)->
-				$.extend(site, newData)
-				return
-
-			createRowProgressBar: (row)->
-				this.hideAllProgressBars true
-				mProgress = row.progressBar || new Mprogress(
-					template: 3
-					parent: ".mProgressContainerRow.progress-row" + row.id)
-				do mProgress.start
-				row.progressBar = mProgress
-				return
-
-			stopRowProgressBar: (row, force)->
-				if (row && row.progressBar && row.progressBar.status)
-					row.progressBar.end force
-				return
-
+			#obsolete
 			hideAllProgressBars: (force)->
 				data = do this.getGridData
 				_.each data, (row)=>
 					this.stopRowProgressBar row, force
 				return
 
-			getSitePool: (site)->
-				firstApp = site.applications[0]
-				firstApp && firstApp.pool
-				return
-
-			getPoolDisplayName: (pool)->
-				return pool && ("#{pool.name} (#{pool.state})")
-
-			initClickHandler: ->
-				this.$scope.clickHandler =
-					flushRedis: (row)=>
-						this.hub.FlushRedis row.id
-						return false
-					getSitePool: (row)=>
-						pool = this.getSitePool row
-						this.getPoolDisplayName pool
-						return
-					startSite: (row)=>
-						this.hub.StartSite row.id
-						return
-					stopSite: (row)=>
-						this.hub.StopSite row.id
-						return
-					restartPool: (row)=>
-						this.setPoolRestarting row
-						this.hub.RestartPool row.id
-						return false
-					siteUtils: siteUtils
-
 			initGridOptions: ->
 				this.$scope.gridOptions = {
-					data: this.siteListData
 					enableScrollbars: 0
 					enableColumnResizing: on
 					enableRowSelection: off
@@ -224,6 +162,7 @@
 						}
 					]
 				}
+				this.setGridData []
 		);
 		["$rootScope", "$scope", "$timeout", "uiGridConstants", ($rootScope, $scope, $timeout, uiGridConstants)->
 			return new SiteList($rootScope, $scope, $timeout, uiGridConstants)

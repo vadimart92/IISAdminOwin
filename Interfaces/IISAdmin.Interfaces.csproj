@@ -123,6 +123,7 @@
   <ItemGroup>
     <Compile Include="Common.cs" />
     <Compile Include="Data.cs" />
+    <Compile Include="IBackgroundWorker.cs" />
     <Compile Include="ISiteDeployProvider.cs" />
     <Compile Include="IWebSiteModels.cs" />
     <Compile Include="Repositories.cs" />
