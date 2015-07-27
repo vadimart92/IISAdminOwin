@@ -36,8 +36,22 @@ define(["jquery", "app", "common", "underscore", "signalR"], function($, app, co
     on: function(event, fn) {
       this.proxy.on(event, fn);
     },
-    invoke: function(method, args) {
-      return this.proxy.invoke.apply(this.proxy, arguments);
+    invoke: function(method, params) {
+      var args, def;
+      args = arguments;
+      if (this.connection.state === $.signalR.connectionState.connected) {
+        return this.proxy.invoke.apply(this.proxy, args);
+      } else {
+        def = $.Deferred();
+        this.connection.start().done((function(_this) {
+          return function() {
+            var innerDef;
+            innerDef = _this.proxy.invoke.apply(_this.proxy, args);
+            return innerDef.then(def.resolve).fail(def.reject);
+          };
+        })(this));
+        return def.promise();
+      }
     },
     disconnect: function() {
       this.connection.stop();

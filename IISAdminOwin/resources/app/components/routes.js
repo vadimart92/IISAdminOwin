@@ -18,12 +18,12 @@ define(["angularAMD", "ui_router", "ui_router_styles"], function(angularAMD) {
             css: "app/components/addSite/addSite.css"
           }
         }));
-        $stateProvider.state("addSite.progress", angularAMD.route({
-          url: "/addSite",
-          templateUrl: "/app/views/addSite.progress.html",
-          controllerUrl: "addSite/addSite.progress.Controller",
+        $stateProvider.state("addSiteProgress", angularAMD.route({
+          url: "/addSiteProgress",
+          templateUrl: "/app/views/addSiteProgress/addSiteProgress.html",
+          controllerUrl: "addSite/addSiteProgress/addSiteProgressController",
           data: {
-            css: "app/components/addSite/addSite.progress.css"
+            css: "app/components/addSite/addSiteProgress/addSiteProgress.css"
           }
         }));
         $stateProvider.state("home", angularAMD.route({

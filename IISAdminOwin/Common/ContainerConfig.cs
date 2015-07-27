@@ -19,7 +19,8 @@ namespace IISAdmin.Owin.Common
 		}
 
 		private static void ConfigurateContainer(UnityContainer container) {
-			container.RegisterType<WcfClientWebSiteRepository>(new InjectionConstructor("NetNamedPipeBinding_IWebSiteRepositoryService"));
+			container.RegisterInstance(typeof(IUnityContainer), container);
+            container.RegisterType<WcfClientWebSiteRepository>(new InjectionConstructor("NetNamedPipeBinding_IWebSiteRepositoryService"));
 			container.RegisterType<IWebSiteRepository, WcfClientWebSiteRepository>(new HierarchicalLifetimeManager());
 			var sqlConnectionConstructor = new InjectionConstructor(ConfigurationManager.ConnectionStrings["WorkDbContext"].ConnectionString);
 			container.RegisterType<ISqlConnectionProvider, WorkSqlConnectionProvider>("WorkSqlConnectionProvider", sqlConnectionConstructor);
@@ -27,7 +28,7 @@ namespace IISAdmin.Owin.Common
 			container.RegisterType<ISqlServerInstanceRepository, LocalSqlServerInstanceRepository>(new PerThreadLifetimeManager());
 			container.RegisterType<ISiteDeployProviderWebConfig, SiteDeployProviderWebConfig>();
             container.RegisterType<ISiteDeployProvider, SiteDeployProviderMock>();
-            container.RegisterType<IBackgroundWorker, HangfireWorker>(new InjectionConstructor(ConfigurationManager.ConnectionStrings["mainDb"].ConnectionString));
+            container.RegisterType<IBackgroundWorker, HangfireWorker>(new InjectionConstructor(ConfigurationManager.ConnectionStrings["mainDb"].ConnectionString, new ResolvedParameter<IUnityContainer>()));
         }
 	}
 }

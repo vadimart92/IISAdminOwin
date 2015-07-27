@@ -2,7 +2,7 @@ require.config({
   paths: {
     jsFace: "../../assets/jsface/jsface",
     jsFaceProps: "../../assets/jsface/props.plugin",
-    angular: "../../assets/angular/angular",
+    angular: "../../assets/angular/angular.1.4.3",
     angularAMD: "../../assets/angular/angularAMD",
     ngload: "../../assets/angular/ngload",
     bootstrap: "../../assets/bootstrap/bootstrap",

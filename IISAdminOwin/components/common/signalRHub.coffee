@@ -28,8 +28,16 @@ define ["jquery", "app", "common", "underscore", "signalR"], ($, app, common)->
 			this.proxy.on event, fn
 			return
 
-		invoke: (method, args) ->
-			this.proxy.invoke.apply this.proxy, arguments
+		invoke: (method, params) ->
+			args = arguments;
+			if this.connection.state == $.signalR.connectionState.connected
+				this.proxy.invoke.apply this.proxy, args
+			else
+				def = do $.Deferred
+				this.connection.start().done =>
+					innerDef = this.proxy.invoke.apply this.proxy, args
+					innerDef.then(def.resolve).fail(def.reject)
+				do def.promise
 
 		disconnect: ->
 			this.connection.stop()

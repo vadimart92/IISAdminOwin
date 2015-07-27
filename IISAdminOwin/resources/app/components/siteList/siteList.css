@@ -1,3 +1,6 @@
+.site-list-grid-container {
+  overflow: hidden;
+}
 .site-list-grid {
   width: auto;
   height: 500px;

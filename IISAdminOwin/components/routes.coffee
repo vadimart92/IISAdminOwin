@@ -16,11 +16,11 @@ define [
 				templateUrl: "/app/views/addSite.html"
 				controllerUrl: "addSite/addSiteController"
 				data: {css: "app/components/addSite/addSite.css"}
-			$stateProvider.state "addSite.progress", angularAMD.route
-				url: "/addSite",
-				templateUrl: "/app/views/addSite.progress.html"
-				controllerUrl: "addSite/addSite.progress.Controller"
-				data: {css: "app/components/addSite/addSite.progress.css"}
+			$stateProvider.state "addSiteProgress", angularAMD.route
+				url: "/addSiteProgress",
+				templateUrl: "/app/views/addSiteProgress/addSiteProgress.html"
+				controllerUrl: "addSite/addSiteProgress/addSiteProgressController"
+				data: {css: "app/components/addSite/addSiteProgress/addSiteProgress.css"}
 			$stateProvider.state "home", angularAMD.route
 				url: "/home",
 				templateUrl: "/app/views/home.html"
