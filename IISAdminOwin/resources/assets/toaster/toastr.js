@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Toastr
  * Copyright 2012-2014
  * Authors: John Papa, Hans Fjällemark, and Tim Ferrell.
@@ -141,7 +141,7 @@
 
             function createContainer(options) {
                 $container = $('<div/>')
-                    .attr('id', options.containerId)
+                    .attr('key', options.containerId)
                     .addClass(options.positionClass)
                     .attr('aria-live', 'polite')
                     .attr('role', 'alert');

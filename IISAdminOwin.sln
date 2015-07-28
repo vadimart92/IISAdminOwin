@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSiteManagement.Service",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSiteManagment.Wcf", "WebSiteManagementWcfLib\WebSiteManagment.Wcf.csproj", "{2A33C20E-662E-4CC5-8036-8D0A995D1D4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IISAdmin.Owin.DAL", "IISAdmin.Owin.DAL.WorkDb\IISAdmin.Owin.DAL.csproj", "{B69F3E12-0081-4EA3-A8CC-DD3890B01EA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IISAdmin.Owin.DAL.Dapper", "IISAdmin.Owin.DAL.WorkDb\IISAdmin.Owin.DAL.Dapper.csproj", "{B69F3E12-0081-4EA3-A8CC-DD3890B01EA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D8BC9D71-A5D6-4BAC-A457-ACF7CE75094C}"
 	ProjectSection(SolutionItems) = preProject
@@ -42,7 +42,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IISAdmin.Owin.DAL.Test", "I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IISAdmin.Owin.Mock", "IISAdmin.Owin.Mock\IISAdmin.Owin.Mock.csproj", "{E8EBD329-720B-4456-A0DE-9699F57CC42E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IISAdmin.Hangfire", "IISAdmin.Hangfire\IISAdmin.Hangfire.csproj", "{650A9A9E-96D6-44BE-A300-79B1E2079318}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IISAdmin.BackgroundWorker", "IISAdmin.Hangfire\IISAdmin.BackgroundWorker.csproj", "{650A9A9E-96D6-44BE-A300-79B1E2079318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IISAdmin.Owin.DAL.EF", "IISAdmin.Owin.DAL.EF\IISAdmin.Owin.DAL.EF.csproj", "{71853546-ACA9-48CD-A10A-3E784FD4ECAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -102,6 +104,10 @@ Global
 		{650A9A9E-96D6-44BE-A300-79B1E2079318}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{650A9A9E-96D6-44BE-A300-79B1E2079318}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{650A9A9E-96D6-44BE-A300-79B1E2079318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71853546-ACA9-48CD-A10A-3E784FD4ECAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71853546-ACA9-48CD-A10A-3E784FD4ECAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71853546-ACA9-48CD-A10A-3E784FD4ECAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71853546-ACA9-48CD-A10A-3E784FD4ECAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

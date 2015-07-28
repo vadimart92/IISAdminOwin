@@ -1,73 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9911e397-8e70-4a0b-a0d4-38c5a8b7adf2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/addSiteProgress/addSiteProgressController.coffee" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\components\addSite\addSite.progress.Controller.coffee" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\accordion\accordion-group.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\accordion\accordion.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\alert\alert.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\carousel\carousel.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\carousel\slide.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\datepicker\datepicker.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\datepicker\day.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\datepicker\month.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\datepicker\popup.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\datepicker\year.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\modal\backdrop.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\modal\window.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\pagination\pager.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\pagination\pagination.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\popover\popover-template.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\popover\popover.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\progressbar\bar.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\progressbar\progress.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\progressbar\progressbar.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\rating\rating.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\tabs\tab.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\tabs\tabset.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\timepicker\timepicker.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\tooltip\tooltip-html-popup.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\tooltip\tooltip-html-unsafe-popup.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\tooltip\tooltip-popup.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\tooltip\tooltip-template-popup.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\typeahead\typeahead-match.html" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\template\typeahead\typeahead-popup.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.ttf" afterPath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.woff" afterPath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common/ContainerConfig.cs" afterPath="$PROJECT_DIR$/Common/ContainerConfig.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Hangfire/HangfireWorker.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Hangfire/HangfireWorker.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Interfaces/IBackgroundWorker.cs" afterPath="$PROJECT_DIR$/../Interfaces/IBackgroundWorker.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Hangfire/IISAdmin.Hangfire.csproj" afterPath="$PROJECT_DIR$/../IISAdmin.Hangfire/IISAdmin.Hangfire.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Interfaces/IISAdmin.Interfaces.csproj" afterPath="$PROJECT_DIR$/../Interfaces/IISAdmin.Interfaces.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common/UnityResolver.cs" afterPath="$PROJECT_DIR$/Common/UnityResolver.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/addSite/addSiteController.coffee" afterPath="$PROJECT_DIR$/components/addSite/addSiteController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/addSite/addSiteController.js" afterPath="$PROJECT_DIR$/resources/app/components/addSite/addSiteController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/angular/angular-animate.js" afterPath="$PROJECT_DIR$/resources/assets/angular/angular-animate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/angular/angular-resource.js" afterPath="$PROJECT_DIR$/resources/assets/angular/angular-resource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/angular/angular-sanitize.js" afterPath="$PROJECT_DIR$/resources/assets/angular/angular-sanitize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/angular/angular-ui-router.js" afterPath="$PROJECT_DIR$/resources/assets/angular/angular-ui-router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/app-bootstrap.coffee" afterPath="$PROJECT_DIR$/components/app-bootstrap.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/app-bootstrap.js" afterPath="$PROJECT_DIR$/resources/app/components/app-bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/views/home.html" afterPath="$PROJECT_DIR$/resources/app/views/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init.log.txt" afterPath="$PROJECT_DIR$/init.log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Hangfire/packages.config" afterPath="$PROJECT_DIR$/../IISAdmin.Hangfire/packages.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/routes.coffee" afterPath="$PROJECT_DIR$/components/routes.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/routes.js" afterPath="$PROJECT_DIR$/resources/app/components/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/common/signalRHub.coffee" afterPath="$PROJECT_DIR$/components/common/signalRHub.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/common/signalRHub.js" afterPath="$PROJECT_DIR$/resources/app/components/common/signalRHub.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/siteList/siteList.css" afterPath="$PROJECT_DIR$/resources/app/components/siteList/siteList.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/views/siteList/siteList.html" afterPath="$PROJECT_DIR$/resources/app/views/siteList/siteList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/siteList/siteList.less" afterPath="$PROJECT_DIR$/components/siteList/siteList.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transports.log.txt" afterPath="$PROJECT_DIR$/transports.log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap-tpls.js" afterPath="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap-tpls.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap.js" afterPath="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.svg" afterPath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/angular/ui-select.css" afterPath="$PROJECT_DIR$/resources/assets/angular/ui-select.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/angular/ui-select.js" afterPath="$PROJECT_DIR$/resources/assets/angular/ui-select.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\views\addSite.progress.html" afterPath="$PROJECT_DIR$/resources/app/views/addSiteProgress/addSiteProgress.html" />
-    </list>
+    <list default="true" id="9911e397-8e70-4a0b-a0d4-38c5a8b7adf2" name="Default" comment="" />
     <ignored path="IISAdminOwin.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -120,8 +54,8 @@
       <file leaf-file-name="addSiteController.coffee" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/addSite/addSiteController.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3902027">
-              <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.3169643">
+              <caret line="77" column="40" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -130,7 +64,7 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/app/views/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
               <folding />
             </state>
@@ -140,7 +74,7 @@
       <file leaf-file-name="siteList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
               <folding />
             </state>
@@ -150,7 +84,7 @@
       <file leaf-file-name="siteList.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/siteList/siteList.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3076923">
+            <state vertical-scroll-proportion="0.0">
               <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
               <folding />
             </state>
@@ -160,7 +94,7 @@
       <file leaf-file-name="addSiteProgress.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/app/views/addSiteProgress/addSiteProgress.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
               <folding />
             </state>
@@ -743,21 +677,21 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -992,7 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53125">
           <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,7 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1328125">
           <caret line="340" column="14" selection-start-line="340" selection-start-column="9" selection-end-line="340" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,7 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5050676">
           <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,7 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5456081">
           <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,7 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2646" column="32" selection-start-line="2646" selection-start-column="20" selection-end-line="2646" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1032,7 +961,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.448276">
           <caret line="3182" column="18" selection-start-line="3182" selection-start-column="18" selection-end-line="3182" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1040,7 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43074325">
           <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1048,7 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11486486">
           <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,13 +990,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33277026">
           <caret line="283" column="1" selection-start-line="283" selection-start-column="1" selection-end-line="283" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/app/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
           <folding />
         </state>
@@ -1078,7 +1003,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/app/views/siteList/siteList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
           <folding />
         </state>
@@ -1086,7 +1011,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/siteList/siteList.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
           <folding />
         </state>
@@ -1096,7 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25844595">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1104,7 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20101352">
           <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1120,7 +1043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.44256756">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1150,8 +1072,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/addSite/addSiteController.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3902027">
-          <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.3169643">
+          <caret line="77" column="40" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
           <folding />
         </state>
       </provider>

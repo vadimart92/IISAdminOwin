@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
 using IISAdmin.Interfaces;
-using IISAdmin.Owin.DAL.WorkDbReleaseRepository.Models;
+using IISAdmin.Owin.DAL.Dapper.WorkDbReleaseRepository;
+using IISAdmin.Owin.DAL.Dapper.WorkDbReleaseRepository.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using WebSiteManagment.Core.Common;
@@ -27,7 +28,7 @@ namespace IISAdmin.Owin.DAL.Test
 			var sqlConn = new SqlConnection(@"Server=ArtemchukPC;Integrated Security=SSPI;Database=terrasoft_work30");
 			mock.Setup((prov) => prov.ExecuteAction(It.IsAny<Func<SqlConnection, WorkDbRelease>>(), It.IsAny<SqlCredential>()))
 				.Returns((Func<SqlConnection, WorkDbRelease> action, SqlCredential credential) => action(sqlConn));
-			IReleaseRepository releaseRepository = new WorkDbReleaseRepository.WorkDbReleaseRepository(mock.Object);
+			IReleaseRepository releaseRepository = new WorkDbReleaseRepository(mock.Object);
 			var release = releaseRepository.Get(new Guid("DD5AD0ED-4ABF-44AF-A851-5127A1389FD8"));
 			sqlConn.Dispose();
 			Assert.IsNotNull(release);

@@ -1,33 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-
-namespace IISAdmin.Interfaces
+﻿namespace IISAdmin.Interfaces
 {
-	public interface ISiteDeployProvider {
-		void DeployWebApp(ISiteCreateData siteCreateData, ISiteDeployProgress progressInfo);
-		ISiteDeployProgress GetInitDeployProgress(IEnumerable<DeployOperationIfo> extraOperations);
+    public interface ISiteDeployProvider {
+		void DeployWebApp(ISiteCreateData siteCreateData, OperationInfoBase deploySiteInfo);
 		void InitDeployInfo(ISiteCreateData siteCreateData);
+	    OperationInfoBase GetOperationsInfo(IJobInfoRepository jobInfoRepository);
 	}
 
 	public class DeployOperationIfo {
 		public string Info { get; set; }
 	}
 
-	public interface ISiteDeployProgress {
-		int TotalOperationsCount { get; }
-		int CurrentOperationNumber { get; }
-		DeployOperationIfo CurrentOperation { get; }
-		decimal Percentage { get; }
-		
-		/// <summary>
-		/// Set next operation as Active.
-		/// </summary>
-		/// <returns>True if next operation was set.
-		/// If current operation is last returns false.
-		/// </returns>
-		bool SetNextOperation();
-
-		void SetIProgress(IProgress<ISiteDeployProgress> iProgress);
-	}
+    public interface IDeploySiteInfo
+    {
+        OperationStageState RestoreDbCopyFiles { get; set; }
+        OperationStageState CreateWebApp { get; set; }
+        OperationStageState ModifyConfigs { get; set; }
+    }
 }

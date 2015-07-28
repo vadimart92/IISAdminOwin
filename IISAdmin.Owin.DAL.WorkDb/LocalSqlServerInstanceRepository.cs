@@ -7,7 +7,7 @@ using IISAdmin.Interfaces;
 using Microsoft.SqlServer.Management.Smo;
 using Newtonsoft.Json;
 
-namespace IISAdmin.Owin.DAL
+namespace IISAdmin.Owin.DAL.Dapper
 {
 	public class SqlServerInstance : ISqlServerInstance {
 		public string ServerName { get; set; }

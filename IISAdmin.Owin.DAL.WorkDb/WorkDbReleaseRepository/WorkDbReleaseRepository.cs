@@ -5,11 +5,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using Dapper;
-using DeclarativeSql;
 using IISAdmin.Interfaces;
-using IISAdmin.Owin.DAL.WorkDbReleaseRepository.Models;
+using IISAdmin.Owin.DAL.Dapper.WorkDbReleaseRepository.Models;
 
-namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository {
+namespace IISAdmin.Owin.DAL.Dapper.WorkDbReleaseRepository {
 	public class WorkDbReleaseRepository : IReleaseRepository {
 		#region Fields: Private
 
@@ -55,15 +54,15 @@ namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository {
 			return _connectionProvider.ExecuteAction((connection) => connection.Query<WorkDbRelease>(query, new {releaseName = nameLike}));
 		}
 
-		public IEnumerable<IRelease> GetTopThousand(Expression<Func<IRelease, bool>> expression) {
+		public IEnumerable<IRelease> Get(Expression<Func<IRelease, bool>> expression) {
 			throw new InvalidOperationException();
 		}
 
-		public void Update(IRelease entity) {
-			throw new InvalidOperationException();
-		}
-
-		public void Delete(Guid id) {
+	    public void Update(Guid key, Action<IRelease> action) {
+	        throw new NotImplementedException();
+	    }
+        
+		public void Delete(Guid key) {
 			throw new InvalidOperationException();
 		}
 

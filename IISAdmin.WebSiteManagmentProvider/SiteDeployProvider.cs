@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,8 +15,9 @@ namespace IISAdmin.WebSiteManagmentProvider
 
 	    private readonly ISiteDeployProviderWebConfig _config;
 		private readonly IWebSiteRepository _siteRepository;
+        private DeploySiteInfo _deploySiteInfo;
 
-	    public SiteDeployProvider(ISiteDeployProviderWebConfig config, IWebSiteRepository siteRepository) {
+        public SiteDeployProvider(ISiteDeployProviderWebConfig config, IWebSiteRepository siteRepository) {
 		    _config = config;
 		    _siteRepository = siteRepository;
 	    }
@@ -31,22 +34,33 @@ namespace IISAdmin.WebSiteManagmentProvider
 			});
 	    }
 
-		public void DeployWebApp(ISiteCreateData siteCreateData, ISiteDeployProgress progressInfo) {
-			progressInfo.SetNextOperation();
-			InitDeployInfo(siteCreateData);
+
+        public OperationInfoBase GetOperationsInfo(IJobInfoRepository jobInfoRepository)
+        {
+            _deploySiteInfo = new DeploySiteInfo(jobInfoRepository);
+            return _deploySiteInfo;
+        }
+
+        public void DeployWebApp(ISiteCreateData siteCreateData, OperationInfoBase deploySiteInfo) {
+            Contract.Requires(_deploySiteInfo == deploySiteInfo);
+            var deployInfo = deploySiteInfo as DeploySiteInfo;
+            Contract.Assert(deployInfo != null, "deployInfo != null");
+            InitDeployInfo(siteCreateData);
 			ExtractBinaries(siteCreateData);
-			progressInfo.SetNextOperation();
-			if (_config.NewSiteForBuild) {
+		    deployInfo.RestoreDbCopyFiles = OperationStageState.Completed;
+            if (_config.NewSiteForBuild) {
 				siteCreateData.CreateNewSite = true;
 			}
 			var siteId = _siteRepository.CreateSite(siteCreateData, 1);
+            deployInfo.CreateWebApp = OperationStageState.Completed;
 			var site = _siteRepository.GetSite(siteId);
 			InitRedisInfo(siteCreateData, site);
 			_siteRepository.ModifyConnectionStrings(siteId, new Dictionary<string, string> {
 				{"redis", siteCreateData.RedisInfo.ConnectionString},
 				{"db", GetDbConnectionString(siteCreateData, site.DbConnectionString)}
 			});
-	    }
+            deployInfo.ModifyConfigs = OperationStageState.Completed;
+        }
 
 		private void ExtractBinaries(ISiteCreateData siteCreateData) {
 			var extractionTask = ExtractBuildTask(siteCreateData);
@@ -61,20 +75,13 @@ namespace IISAdmin.WebSiteManagmentProvider
 			Task.WaitAll(restoreTask, extractionTask);
 		}
 
-	    public ISiteDeployProgress GetInitDeployProgress(IEnumerable<DeployOperationIfo> extraOperations) {
-			var operations = new List<DeployOperationIfo> {
-				new DeployOperationIfo{Info = "Restore DB / Copy files"}
-			};
-			return new SiteDeployProgress(operations.Concat(extraOperations));
-	    }
-
 		public void InitDeployInfo(ISiteCreateData siteCreateData) {
 			var info = SiteDeployNamesHelper.GetDeployNamesInfo(siteCreateData, _config.WebAppRoot);
 			siteCreateData.WebAppName = info.WebAppName;
 			siteCreateData.DestinationWebAppRoot = siteCreateData.SeparateFolder? Path.Combine(_config.WebAppRoot, info.ShortVersion, info.ProductName) : _config.WebAppRoot + "\\" + info.WebAppName;
 		}
-
-	    public void InitRedisInfo(ISiteCreateData siteCreateData, ISite siteData) {
+        
+        public void InitRedisInfo(ISiteCreateData siteCreateData, ISite siteData) {
 		    siteCreateData.RedisInfo = string.IsNullOrWhiteSpace(_config.RedisTypicalConnectionString)
 			    ? new Redis(siteData.Redis.ConnectionString)
 			    : new Redis(_config.RedisTypicalConnectionString);

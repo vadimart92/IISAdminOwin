@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license AngularJS v1.4.3
  * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
@@ -95,7 +95,7 @@ function shallowClearAndCopy(src, dst) {
  *   `http://example.com:8080/api`), it will be respected.
  *
  *   If you are using a url with a suffix, just add the suffix, like this:
- *   `$resource('http://example.com/resource.json')` or `$resource('http://example.com/:id.json')`
+ *   `$resource('http://example.com/resource.json')` or `$resource('http://example.com/:key.json')`
  *   or even `$resource('http://example.com/resource/:resource_id.:format')`
  *   If the parameter before the suffix is empty, :resource_id in this case, then the `/.` will be
  *   collapsed down to a single `.`.  If you need this sequence to appear and not collapse then you
@@ -191,7 +191,7 @@ function shallowClearAndCopy(src, dst) {
  *   as  methods with the `$` prefix. This allows you to easily perform CRUD operations (create,
  *   read, update, delete) on server-side data like this:
  *   ```js
- *   var User = $resource('/user/:userId', {userId:'@id'});
+ *   var User = $resource('/user/:userId', {userId:'@key'});
  *   var user = User.get({userId:123}, function() {
  *     user.abc = true;
  *     user.$save();
@@ -248,14 +248,14 @@ function shallowClearAndCopy(src, dst) {
  * ```js
      // Define CreditCard class
      var CreditCard = $resource('/user/:userId/card/:cardId',
-      {userId:123, cardId:'@id'}, {
+      {userId:123, cardId:'@key'}, {
        charge: {method:'POST', params:{charge:true}}
       });
 
      // We can retrieve a collection from the server
      var cards = CreditCard.query(function() {
        // GET: /user/123/card
-       // server returns: [ {id:456, number:'1234', name:'Smith'} ];
+       // server returns: [ {key:456, number:'1234', name:'Smith'} ];
 
        var card = cards[0];
        // each item is an instance of CreditCard
@@ -263,12 +263,12 @@ function shallowClearAndCopy(src, dst) {
        card.name = "J. Smith";
        // non GET methods are mapped onto the instances
        card.$save();
-       // POST: /user/123/card/456 {id:456, number:'1234', name:'J. Smith'}
-       // server returns: {id:456, number:'1234', name: 'J. Smith'};
+       // POST: /user/123/card/456 {key:456, number:'1234', name:'J. Smith'}
+       // server returns: {key:456, number:'1234', name: 'J. Smith'};
 
        // our custom method is mapped as well.
        card.$charge({amount:9.99});
-       // POST: /user/123/card/456?amount=9.99&charge=true {id:456, number:'1234', name:'J. Smith'}
+       // POST: /user/123/card/456?amount=9.99&charge=true {key:456, number:'1234', name:'J. Smith'}
      });
 
      // we can create an instance as well
@@ -276,8 +276,8 @@ function shallowClearAndCopy(src, dst) {
      newCard.name = "Mike Smith";
      newCard.$save();
      // POST: /user/123/card {number:'0123', name:'Mike Smith'}
-     // server returns: {id:789, number:'0123', name: 'Mike Smith'};
-     expect(newCard.id).toEqual(789);
+     // server returns: {key:789, number:'0123', name: 'Mike Smith'};
+     expect(newCard.key).toEqual(789);
  * ```
  *
  * The object returned from this function execution is a resource "class" which has "static" method
@@ -290,7 +290,7 @@ function shallowClearAndCopy(src, dst) {
  * operations (create, read, update, delete) on server-side data.
 
    ```js
-     var User = $resource('/user/:userId', {userId:'@id'});
+     var User = $resource('/user/:userId', {userId:'@key'});
      User.get({userId:123}, function(user) {
        user.abc = true;
        user.$save();
@@ -302,7 +302,7 @@ function shallowClearAndCopy(src, dst) {
  * could rewrite the above example and get access to http headers as:
  *
    ```js
-     var User = $resource('/user/:userId', {userId:'@id'});
+     var User = $resource('/user/:userId', {userId:'@key'});
      User.get({userId:123}, function(u, getResponseHeaders){
        u.abc = true;
        u.$save(function(u, putResponseHeaders) {
@@ -315,7 +315,7 @@ function shallowClearAndCopy(src, dst) {
  * You can also access the raw `$http` promise via the `$promise` property on the object returned
  *
    ```
-     var User = $resource('/user/:userId', {userId:'@id'});
+     var User = $resource('/user/:userId', {userId:'@key'});
      User.get({userId:123})
          .$promise.then(function(user) {
            $scope.user = user;
@@ -330,7 +330,7 @@ function shallowClearAndCopy(src, dst) {
  *    // Some APIs expect a PUT request in the format URL/object/ID
  *    // Here we are creating an 'update' method
  *    app.factory('Notes', ['$resource', function($resource) {
- *    return $resource('/notes/:id', null,
+ *    return $resource('/notes/:key', null,
  *        {
  *            'update': { method:'PUT' }
  *        });
@@ -341,11 +341,11 @@ function shallowClearAndCopy(src, dst) {
  *    app.controller('NotesCtrl', ['$scope', '$routeParams', 'Notes',
                                       function($scope, $routeParams, Notes) {
  *    // First get a note object from the factory
- *    var note = Notes.get({ id:$routeParams.id });
- *    $id = note.id;
+ *    var note = Notes.get({ key:$routeParams.key });
+ *    $key = note.key;
  *
  *    // Now call update passing in the ID first then the object you are updating
- *    Notes.update({ id:$id }, note);
+ *    Notes.update({ key:$key }, note);
  *
  *    // This will PUT /notes/ID with the note object in the request payload
  *    }]);
@@ -467,7 +467,7 @@ angular.module('ngResource', ['ng']).
           }
 
           // then replace collapse `/.` if found in the last URL path segment before the query
-          // E.g. `http://url.com/id./format?q=x` becomes `http://url.com/id.format?q=x`
+          // E.g. `http://url.com/key./format?q=x` becomes `http://url.com/key.format?q=x`
           url = url.replace(/\/\.(?=\w+($|\?))/, '.');
           // replace escaped `/\.` with `/.`
           config.url = url.replace(/\/\\\./, '/.');

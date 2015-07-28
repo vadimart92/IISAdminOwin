@@ -107,7 +107,7 @@ define(["app", "../dataService/siteDataService", "common", "hub", "siteList/site
         enableGridMenu: true,
         columnDefs: [
           {
-            field: "id",
+            field: "key",
             displayName: "Id",
             width: "1",
             enableFiltering: false

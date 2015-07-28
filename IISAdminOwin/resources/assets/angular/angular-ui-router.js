@@ -700,11 +700,11 @@ var $$UMFP; // reference to $UrlMatcherFactoryProvider
  *
  * * `'/hello/'` - Matches only if the path is exactly '/hello/'. There is no special treatment for
  *   trailing slashes, and patterns have to match the entire path, not just a prefix.
- * * `'/user/:id'` - Matches '/user/bob' or '/user/1234!!!' or even '/user/' but not '/user' or
- *   '/user/bob/details'. The second path segment will be captured as the parameter 'id'.
- * * `'/user/{id}'` - Same as the previous example, but using curly brace syntax.
- * * `'/user/{id:[^/]*}'` - Same as the previous example.
- * * `'/user/{id:[0-9a-fA-F]{1,8}}'` - Similar to the previous example, but only matches if the id
+ * * `'/user/:key'` - Matches '/user/bob' or '/user/1234!!!' or even '/user/' but not '/user' or
+ *   '/user/bob/details'. The second path segment will be captured as the parameter 'key'.
+ * * `'/user/{key}'` - Same as the previous example, but using curly brace syntax.
+ * * `'/user/{key:[^/]*}'` - Same as the previous example.
+ * * `'/user/{key:[0-9a-fA-F]{1,8}}'` - Similar to the previous example, but only matches if the key
  *   parameter consists of 1 to 8 hex digits.
  * * `'/files/{path:.*}'` - Matches any URL starting with '/files/' and captures the rest of the
  *   path into the parameter 'path'.
@@ -851,8 +851,8 @@ function UrlMatcher(pattern, config, parentMatcher) {
  * @example
  * The following two matchers are equivalent:
  * <pre>
- * new UrlMatcher('/user/{id}?q').concat('/details?date');
- * new UrlMatcher('/user/{id}/details?q&date');
+ * new UrlMatcher('/user/{key}?q').concat('/details?date');
+ * new UrlMatcher('/user/{key}/details?q&date');
  * </pre>
  *
  * @param {string} pattern  The pattern to append.
@@ -889,10 +889,10 @@ UrlMatcher.prototype.toString = function () {
  *
  * @example
  * <pre>
- * new UrlMatcher('/user/{id}?q&r').exec('/user/bob', {
+ * new UrlMatcher('/user/{key}?q&r').exec('/user/bob', {
  *   x: '1', q: 'hello'
  * });
- * // returns { id: 'bob', q: 'hello', r: null }
+ * // returns { key: 'bob', q: 'hello', r: null }
  * </pre>
  *
  * @param {string} path  The URL path to match, e.g. `$location.path()`.
@@ -982,7 +982,7 @@ UrlMatcher.prototype.validates = function (params) {
  *
  * @example
  * <pre>
- * new UrlMatcher('/user/{id}?q').format({ id:'bob', q:'yes' });
+ * new UrlMatcher('/user/{key}?q').format({ key:'bob', q:'yes' });
  * // returns '/user/bob?q=yes'
  * </pre>
  *
@@ -1487,7 +1487,7 @@ function $UrlMatcherFactory() {
    *   return {
    *     encode: function(object) {
    *       // Represent the object in the URL using its unique ID
-   *       return object.id;
+   *       return object.key;
    *     },
    *     decode: function(value, key) {
    *       // Look up the object by ID, using the parameter
@@ -1496,12 +1496,12 @@ function $UrlMatcherFactory() {
    *     },
    *     is: function(object, key) {
    *       // Check that object is a valid dbObject
-   *       return angular.isObject(object) && object.id && services[key];
+   *       return angular.isObject(object) && object.key && services[key];
    *     }
    *     equals: function(a, b) {
    *       // Check the equality of decoded objects by comparing
    *       // their unique IDs
-   *       return a.id === b.id;
+   *       return a.key === b.key;
    *     }
    *   };
    * });
@@ -2520,7 +2520,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * To create a parent/child state use a dot, e.g. "about.sales", "home.newest".
    * @param {object} stateConfig State configuration object.
    * @param {string|function=} stateConfig.template
-   * <a id='template'></a>
+   * <a key='template'></a>
    *   html template as a string or a function that returns
    *   an html template as a string which should be used by the uiView directives. This property 
    *   takes precedence over templateUrl.
@@ -2538,7 +2538,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * </div>
    *
    * @param {string|function=} stateConfig.templateUrl
-   * <a id='templateUrl'></a>
+   * <a key='templateUrl'></a>
    *
    *   path or function that returns a path to an html
    *   template that should be used by uiView.
@@ -2553,7 +2553,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    *     return myTemplates[params.pageId]; }</pre>
    *
    * @param {function=} stateConfig.templateProvider
-   * <a id='templateProvider'></a>
+   * <a key='templateProvider'></a>
    *    Provider function that returns HTML content string.
    * <pre> templateProvider:
    *       function(MyTemplateService, params) {
@@ -2561,7 +2561,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    *       }</pre>
    *
    * @param {string|function=} stateConfig.controller
-   * <a id='controller'></a>
+   * <a key='controller'></a>
    *
    *  Controller fn that should be associated with newly
    *   related scope or the name of a registered controller if passed as a string.
@@ -2573,7 +2573,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    *     $scope.data = MyService.getData(); }</pre>
    *
    * @param {function=} stateConfig.controllerProvider
-   * <a id='controllerProvider'></a>
+   * <a key='controllerProvider'></a>
    *
    * Injectable provider function that returns the actual controller or string.
    * <pre>controllerProvider:
@@ -2588,21 +2588,21 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    *   }</pre>
    *
    * @param {string=} stateConfig.controllerAs
-   * <a id='controllerAs'></a>
+   * <a key='controllerAs'></a>
    * 
    * A controller alias name. If present the controller will be
    *   published to scope under the controllerAs name.
    * <pre>controllerAs: "myCtrl"</pre>
    *
    * @param {string|object=} stateConfig.parent
-   * <a id='parent'></a>
+   * <a key='parent'></a>
    * Optionally specifies the parent state of this state.
    *
    * <pre>parent: 'parentState'</pre>
    * <pre>parent: parentState // JS variable</pre>
    *
    * @param {object=} stateConfig.resolve
-   * <a id='resolve'></a>
+   * <a key='resolve'></a>
    *
    * An optional map&lt;string, function&gt; of dependencies which
    *   should be injected into the controller. If any of these dependencies are promises, 
@@ -2626,7 +2626,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    *     }</pre>
    *
    * @param {string=} stateConfig.url
-   * <a id='url'></a>
+   * <a key='url'></a>
    *
    *   A url fragment with optional parameters. When a state is navigated or
    *   transitioned to, the `$stateParams` service will be populated with any 
@@ -2647,7 +2647,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * </pre>
    *
    * @param {object=} stateConfig.views
-   * <a id='views'></a>
+   * <a key='views'></a>
    * an optional map&lt;string, object&gt; which defined multiple views, or targets views
    * manually/explicitly.
    *
@@ -2679,13 +2679,13 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    *   }</pre>
    *
    * @param {boolean=} [stateConfig.abstract=false]
-   * <a id='abstract'></a>
+   * <a key='abstract'></a>
    * An abstract state will never be directly activated,
    *   but can provide inherited properties to its common children states.
    * <pre>abstract: true</pre>
    *
    * @param {function=} stateConfig.onEnter
-   * <a id='onEnter'></a>
+   * <a key='onEnter'></a>
    *
    * Callback function for when a state is entered. Good way
    *   to trigger an action or dispatch an event, such as opening a dialog.
@@ -2697,7 +2697,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * }</pre>
    *
    * @param {function=} stateConfig.onExit
-   * <a id='onExit'></a>
+   * <a key='onExit'></a>
    *
    * Callback function for when a state is exited. Good way to
    *   trigger an action or dispatch an event, such as opening a dialog.
@@ -2709,7 +2709,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * }</pre>
    *
    * @param {boolean=} [stateConfig.reloadOnSearch=true]
-   * <a id='reloadOnSearch'></a>
+   * <a key='reloadOnSearch'></a>
    *
    * If `false`, will not retrigger the same state
    *   just because a search/query parameter has changed (via $location.search() or $location.hash()). 
@@ -2717,7 +2717,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * <pre>reloadOnSearch: false</pre>
    *
    * @param {object=} stateConfig.data
-   * <a id='data'></a>
+   * <a key='data'></a>
    *
    * Arbitrary data object, useful for custom configuration.  The parent state's `data` is
    *   prototypally inherited.  In other words, adding a data property to a state adds it to
@@ -2728,7 +2728,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * } </pre>
    *
    * @param {object=} stateConfig.params
-   * <a id='params'></a>
+   * <a key='params'></a>
    *
    * A map which optionally configures parameters declared in the `url`, or
    *   defines additional non-url parameters.  For each parameter being
@@ -2847,7 +2847,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * @requires ui.router.state.$stateParams
    * @requires ui.router.router.$urlRouter
    *
-   * @property {object} params A param object, e.g. {sectionId: section.id)}, that 
+   * @property {object} params A param object, e.g. {sectionId: section.key)}, that 
    * you'd like to test against the current active state.
    * @property {object} current A reference to the state's config object. However 
    * you passed it in. Useful for accessing custom data.
@@ -3372,7 +3372,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      * </pre>
      *
      * @param {string|object} stateOrName The state name (absolute or relative) or state object you'd like to check.
-     * @param {object=} params A param object, e.g. `{sectionId: section.id}`, that you'd like
+     * @param {object=} params A param object, e.g. `{sectionId: section.key}`, that you'd like
      * to test against the current active state.
      * @param {object=} options An options object.  The options are:
      *
@@ -3432,7 +3432,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      *
      * @param {string} stateOrName A partial name, relative name, or glob pattern
      * to be searched for within the current state name.
-     * @param {object=} params A param object, e.g. `{sectionId: section.id}`,
+     * @param {object=} params A param object, e.g. `{sectionId: section.key}`,
      * that you'd like to test against the current active state.
      * @param {object=} options An options object.  The options are:
      *
@@ -4093,7 +4093,7 @@ function stateContext(el) {
  * 
  * <ul>
  *     <li ng-repeat="contact in contacts">
- *         <a ui-sref="contacts.detail({ id: contact.id })">{{ contact.name }}</a>
+ *         <a ui-sref="contacts.detail({ key: contact.key })">{{ contact.name }}</a>
  *     </li>
  * </ul>
  * </pre>
@@ -4104,13 +4104,13 @@ function stateContext(el) {
  * 
  * <ul>
  *     <li ng-repeat="contact in contacts">
- *         <a href="#/contacts/1" ui-sref="contacts.detail({ id: contact.id })">Joe</a>
+ *         <a href="#/contacts/1" ui-sref="contacts.detail({ key: contact.key })">Joe</a>
  *     </li>
  *     <li ng-repeat="contact in contacts">
- *         <a href="#/contacts/2" ui-sref="contacts.detail({ id: contact.id })">Alice</a>
+ *         <a href="#/contacts/2" ui-sref="contacts.detail({ key: contact.key })">Alice</a>
  *     </li>
  *     <li ng-repeat="contact in contacts">
- *         <a href="#/contacts/3" ui-sref="contacts.detail({ id: contact.id })">Bob</a>
+ *         <a href="#/contacts/3" ui-sref="contacts.detail({ key: contact.key })">Bob</a>
  *     </li>
  * </ul>
  *

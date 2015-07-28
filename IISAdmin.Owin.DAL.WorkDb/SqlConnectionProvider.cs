@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Diagnostics.Contracts;
 using IISAdmin.Interfaces;
 
-namespace IISAdmin.Owin.DAL {
+namespace IISAdmin.Owin.DAL.Dapper {
 
 	public abstract class SqlConnectionProvider : ISqlConnectionProvider {
 

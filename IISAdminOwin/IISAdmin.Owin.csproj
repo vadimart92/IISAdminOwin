@@ -263,13 +263,17 @@
     <Folder Include="resources\app\components\toastr\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IISAdmin.Hangfire\IISAdmin.Hangfire.csproj">
+    <ProjectReference Include="..\IISAdmin.Hangfire\IISAdmin.BackgroundWorker.csproj">
       <Project>{650a9a9e-96d6-44be-a300-79b1e2079318}</Project>
-      <Name>IISAdmin.Hangfire</Name>
+      <Name>IISAdmin.BackgroundWorker</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IISAdmin.Owin.DAL.WorkDb\IISAdmin.Owin.DAL.csproj">
+    <ProjectReference Include="..\IISAdmin.Owin.DAL.EF\IISAdmin.Owin.DAL.EF.csproj">
+      <Project>{71853546-aca9-48cd-a10a-3e784fd4ecaf}</Project>
+      <Name>IISAdmin.Owin.DAL.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IISAdmin.Owin.DAL.WorkDb\IISAdmin.Owin.DAL.Dapper.csproj">
       <Project>{b69f3e12-0081-4ea3-a8cc-dd3890b01ea6}</Project>
-      <Name>IISAdmin.Owin.DAL</Name>
+      <Name>IISAdmin.Owin.DAL.Dapper</Name>
     </ProjectReference>
     <ProjectReference Include="..\IISAdmin.Owin.Mock\IISAdmin.Owin.Mock.csproj">
       <Project>{e8ebd329-720b-4456-a0de-9699f57cc42e}</Project>

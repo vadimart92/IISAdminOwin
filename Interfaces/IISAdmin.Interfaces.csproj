@@ -128,8 +128,10 @@
     <Compile Include="Common.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="IBackgroundWorker.cs" />
+    <Compile Include="IJobInfoProvider.cs" />
     <Compile Include="ISiteDeployProvider.cs" />
     <Compile Include="IWebSiteModels.cs" />
+    <Compile Include="OperationInfoBase.cs" />
     <Compile Include="Repositories.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

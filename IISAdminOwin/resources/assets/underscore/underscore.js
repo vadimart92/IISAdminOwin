@@ -1,4 +1,4 @@
-//     Underscore.js 1.7.0
+﻿//     Underscore.js 1.7.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 //     Underscore may be freely distributed under the MIT license.
@@ -972,7 +972,7 @@
   // Internal recursive comparison function for `isEqual`.
   var eq = function(a, b, aStack, bStack) {
     // Identical objects are equal. `0 === -0`, but they aren't identical.
-    // See the [Harmony `egal` proposal](http://wiki.ecmascript.org/doku.php?id=harmony:egal).
+    // See the [Harmony `egal` proposal](http://wiki.ecmascript.org/doku.php?key=harmony:egal).
     if (a === b) return a !== 0 || 1 / a === 1 / b;
     // A strict comparison is necessary because `null == undefined`.
     if (a == null || b == null) return a === b;
@@ -1245,7 +1245,7 @@
     return _.isFunction(value) ? object[property]() : value;
   };
 
-  // Generate a unique integer id (unique within the entire client session).
+  // Generate a unique integer key (unique within the entire client session).
   // Useful for temporary DOM ids.
   var idCounter = 0;
   _.uniqueId = function(prefix) {

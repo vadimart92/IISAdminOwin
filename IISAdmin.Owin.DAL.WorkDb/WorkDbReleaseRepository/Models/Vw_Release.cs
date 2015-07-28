@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using IISAdmin.Interfaces;
 
-namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository.Models
+namespace IISAdmin.Owin.DAL.Dapper.WorkDbReleaseRepository.Models
 {
 	[Table("Vw_Release", Schema = "dbo")]
 	public class WorkDbRelease : IRelease {

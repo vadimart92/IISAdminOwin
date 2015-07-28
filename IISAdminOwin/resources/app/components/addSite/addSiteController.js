@@ -85,7 +85,7 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
           key: "workUri",
           type: "input",
           templateOptions: {
-            label: "Build uri/id",
+            label: "Build uri/key",
             placeholder: "Paste product build uri here",
             required: true
           },

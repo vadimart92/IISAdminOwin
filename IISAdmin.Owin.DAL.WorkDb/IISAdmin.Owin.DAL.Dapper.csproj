@@ -7,8 +7,8 @@
     <ProjectGuid>{B69F3E12-0081-4EA3-A8CC-DD3890B01EA6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IISAdmin.Owin.DAL</RootNamespace>
-    <AssemblyName>IISAdmin.Owin.DAL</AssemblyName>
+    <RootNamespace>IISAdmin.Owin.DAL.Dapper</RootNamespace>
+    <AssemblyName>IISAdmin.Owin.DAL.Dapper</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

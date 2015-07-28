@@ -281,7 +281,7 @@
       <soap12:address location="net.pipe://localhost//WebSiteManagementService" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.pipe://localhost//WebSiteManagementService</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingkeyentity">
           <Dns>localhost</Dns>
         </Identity>
       </wsa10:EndpointReference>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository.Models
+namespace IISAdmin.Owin.DAL.Dapper.WorkDbReleaseRepository.Models
 {
 	public class TblBuild
 	{

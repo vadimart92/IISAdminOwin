@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Hangfire;
 using Microsoft.Practices.Unity;
 
-namespace IISAdmin.Hangfire
+namespace IISAdmin.BackgroundWorker
 {
     public class UnityJobActivator : JobActivator
     {

@@ -806,12 +806,12 @@ function Sizzle( selector, context, results, seed ) {
 			if ( nodeType === 1 && context.nodeName.toLowerCase() !== "object" ) {
 				groups = tokenize( selector );
 
-				if ( (old = context.getAttribute("id")) ) {
+				if ( (old = context.getAttribute("key")) ) {
 					nid = old.replace( rescape, "\\$&" );
 				} else {
-					context.setAttribute( "id", nid );
+					context.setAttribute( "key", nid );
 				}
-				nid = "[id='" + nid + "'] ";
+				nid = "[key='" + nid + "'] ";
 
 				i = groups.length;
 				while ( i-- ) {
@@ -830,7 +830,7 @@ function Sizzle( selector, context, results, seed ) {
 				} catch(qsaError) {
 				} finally {
 					if ( !old ) {
-						context.removeAttribute("id");
+						context.removeAttribute("key");
 					}
 				}
 			}
@@ -1083,7 +1083,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		Expr.filter["ID"] = function( id ) {
 			var attrId = id.replace( runescape, funescape );
 			return function( elem ) {
-				return elem.getAttribute("id") === attrId;
+				return elem.getAttribute("key") === attrId;
 			};
 		};
 	} else {
@@ -1094,7 +1094,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		Expr.filter["ID"] =  function( id ) {
 			var attrId = id.replace( runescape, funescape );
 			return function( elem ) {
-				var node = typeof elem.getAttributeNode !== "undefined" && elem.getAttributeNode("id");
+				var node = typeof elem.getAttributeNode !== "undefined" && elem.getAttributeNode("key");
 				return node && node.value === attrId;
 			};
 		};
@@ -1163,8 +1163,8 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// setting a boolean content attribute,
 			// since its presence should be enough
 			// http://bugs.jquery.com/ticket/12359
-			docElem.appendChild( div ).innerHTML = "<a id='" + expando + "'></a>" +
-				"<select id='" + expando + "-\f]' msallowcapture=''>" +
+			docElem.appendChild( div ).innerHTML = "<a key='" + expando + "'></a>" +
+				"<select key='" + expando + "-\f]' msallowcapture=''>" +
 				"<option selected=''></option></select>";
 
 			// Support: IE8, Opera 11-12.16
@@ -1182,7 +1182,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			}
 
 			// Support: Chrome<29, Android<4.2+, Safari<7.0+, iOS<7.0+, PhantomJS<1.9.7+
-			if ( !div.querySelectorAll( "[id~=" + expando + "-]" ).length ) {
+			if ( !div.querySelectorAll( "[key~=" + expando + "-]" ).length ) {
 				rbuggyQSA.push("~=");
 			}
 
@@ -1194,8 +1194,8 @@ setDocument = Sizzle.setDocument = function( node ) {
 			}
 
 			// Support: Safari 8+, iOS 8+
-			// https://bugs.webkit.org/show_bug.cgi?id=136851
-			// In-page `selector#id sibing-combinator selector` fails
+			// https://bugs.webkit.org/show_bug.cgi?key=136851
+			// In-page `selector#key sibing-combinator selector` fails
 			if ( !div.querySelectorAll( "a#" + expando + "+*" ).length ) {
 				rbuggyQSA.push(".#.+[+~]");
 			}
@@ -2330,7 +2330,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 			// Add elements passing elementMatchers directly to results
 			// Keep `i` a string if there are no elements so `matchedCount` will be "00" below
 			// Support: IE<9, Safari
-			// Tolerate NodeList properties (IE: "length"; Safari: <number>) matching elements by id
+			// Tolerate NodeList properties (IE: "length"; Safari: <number>) matching elements by key
 			for ( ; i !== len && (elem = elems[i]) != null; i++ ) {
 				if ( byElement && elem ) {
 					j = 0;
@@ -2685,7 +2685,7 @@ jQuery.fn.extend({
 var rootjQuery,
 
 	// A simple way to check for HTML strings
-	// Prioritize #id over <tag> to avoid XSS via location.hash (#9521)
+	// Prioritize #key over <tag> to avoid XSS via location.hash (#9521)
 	// Strict HTML recognition (#11290: must start with <)
 	rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,
 
@@ -2706,7 +2706,7 @@ var rootjQuery,
 				match = rquickExpr.exec( selector );
 			}
 
-			// Match html or make sure no context is specified for #id
+			// Match html or make sure no context is specified for #key
 			if ( match && (match[1] || !context) ) {
 				// HANDLE: $(html) -> $(array)
 				if ( match[1] ) {
@@ -2736,7 +2736,7 @@ var rootjQuery,
 
 					return this;
 
-				// HANDLE: $(#id)
+				// HANDLE: $(#key)
 				} else {
 					elem = document.getElementById( match[2] );
 
@@ -5703,8 +5703,8 @@ function getWidthOrHeight( elem, name, extra ) {
 		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
 
 	// Some non-html elements return undefined for offsetWidth, so check for null/undefined
-	// svg - https://bugzilla.mozilla.org/show_bug.cgi?id=649285
-	// MathML - https://bugzilla.mozilla.org/show_bug.cgi?id=491668
+	// svg - https://bugzilla.mozilla.org/show_bug.cgi?key=649285
+	// MathML - https://bugzilla.mozilla.org/show_bug.cgi?key=491668
 	if ( val <= 0 || val == null ) {
 		// Fall back to computed then uncomputed css if necessary
 		val = curCSS( elem, name, styles );
@@ -8863,8 +8863,8 @@ jQuery.each( { scrollLeft: "pageXOffset", scrollTop: "pageYOffset" }, function( 
 
 // Support: Safari<7+, Chrome<37+
 // Add the top/left cssHooks using jQuery.fn.position
-// Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=29084
-// Blink bug: https://code.google.com/p/chromium/issues/detail?id=229280
+// Webkit bug: https://bugs.webkit.org/show_bug.cgi?key=29084
+// Blink bug: https://code.google.com/p/chromium/issues/detail?key=229280
 // getComputedStyle returns percent when specified for top/left/bottom/right;
 // rather than make the css module depend on the offset module, just check for it here
 jQuery.each( [ "top", "left" ], function( i, prop ) {

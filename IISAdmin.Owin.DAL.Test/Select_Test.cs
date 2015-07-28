@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IISAdmin.Owin.DAL.Dapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace IISAdmin.Owin.DAL.Test {

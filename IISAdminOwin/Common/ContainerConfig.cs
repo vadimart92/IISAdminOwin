@@ -1,8 +1,10 @@
 ﻿using System.Configuration;
-using IISAdmin.Hangfire;
+using IISAdmin.BackgroundWorker;
 using IISAdmin.Interfaces;
 using IISAdmin.Owin.DAL;
-using IISAdmin.Owin.DAL.WorkDbReleaseRepository;
+using IISAdmin.Owin.DAL.Dapper;
+using IISAdmin.Owin.DAL.Dapper.WorkDbReleaseRepository;
+using IISAdmin.Owin.DAL.EF;
 using IISAdmin.Owin.Mock;
 using IISAdmin.WCFWebSiteRepository;
 using IISAdmin.WebSiteManagmentProvider;
@@ -28,7 +30,8 @@ namespace IISAdmin.Owin.Common
 			container.RegisterType<ISqlServerInstanceRepository, LocalSqlServerInstanceRepository>(new PerThreadLifetimeManager());
 			container.RegisterType<ISiteDeployProviderWebConfig, SiteDeployProviderWebConfig>();
             container.RegisterType<ISiteDeployProvider, SiteDeployProviderMock>();
-            container.RegisterType<IBackgroundWorker, HangfireWorker>(new InjectionConstructor(ConfigurationManager.ConnectionStrings["mainDb"].ConnectionString, new ResolvedParameter<IUnityContainer>()));
+            container.RegisterType<IBackgroundWorker, HangfireWorker>(new InjectionConstructor(ConfigurationManager.ConnectionStrings["mainDb"].ConnectionString, new ResolvedParameter<IJobInfoRepository>(), new ResolvedParameter<IUnityContainer>()));
+            container.RegisterType<IJobInfoRepository, JobInfoRepository>(new InjectionConstructor(ConfigurationManager.ConnectionStrings["mainDb"].ConnectionString));
         }
 	}
 }

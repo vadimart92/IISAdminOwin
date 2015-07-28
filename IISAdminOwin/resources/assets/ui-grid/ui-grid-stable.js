@@ -1,4 +1,4 @@
-/*! ui-grid - v3.0.0-rc.3 - 2014-09-25
+﻿/*! ui-grid - v3.0.0-rc.3 - 2014-09-25
 * Copyright (c) 2014 ; License: MIT */
 (function () {
   'use strict';
@@ -889,7 +889,7 @@ angular.module('ui.grid').directive('uiGridColumnMenu', ['$log', '$timeout', '$w
               var columnCache = containerCtrl.colContainer.visibleColumnCache;
 
               columnCache.forEach(function(column, i) {
-                // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + i + ' { width: ' + equalWidth + 'px; left: ' + left + 'px; }';
+                // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + i + ' { width: ' + equalWidth + 'px; left: ' + left + 'px; }';
                 //var colWidth = (typeof(c.width) !== 'undefined' && c.width !== undefined) ? c.width : equalWidth;
 
                 // Skip hidden columns
@@ -917,7 +917,7 @@ angular.module('ui.grid').directive('uiGridColumnMenu', ['$log', '$timeout', '$w
 
                   column.drawnWidth = column.width;
 
-                  // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + column.width + 'px; }';
+                  // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + column.width + 'px; }';
                 }
               });
 
@@ -943,7 +943,7 @@ angular.module('ui.grid').directive('uiGridColumnMenu', ['$log', '$timeout', '$w
                     canvasWidth += colWidth;
                     column.drawnWidth = colWidth;
 
-                    // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
+                    // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
 
                     // Remove this element from the percent array so it's not processed below
                     percentArray.splice(i, 1);
@@ -956,7 +956,7 @@ angular.module('ui.grid').directive('uiGridColumnMenu', ['$log', '$timeout', '$w
                     canvasWidth += colWidth;
                     column.drawnWidth = colWidth;
 
-                    // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
+                    // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
 
                     // Remove this element from the percent array so it's not processed below
                     percentArray.splice(i, 1);
@@ -971,7 +971,7 @@ angular.module('ui.grid').directive('uiGridColumnMenu', ['$log', '$timeout', '$w
 
                   column.drawnWidth = colWidth;
 
-                  // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
+                  // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
                 });
               }
 
@@ -993,7 +993,7 @@ angular.module('ui.grid').directive('uiGridColumnMenu', ['$log', '$timeout', '$w
                     canvasWidth += colWidth;
                     column.drawnWidth = colWidth;
 
-                    // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
+                    // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
 
                     lastColumn = column;
 
@@ -1009,7 +1009,7 @@ angular.module('ui.grid').directive('uiGridColumnMenu', ['$log', '$timeout', '$w
                     canvasWidth += colWidth;
                     column.drawnWidth = colWidth;
 
-                    // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
+                    // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
 
                     // Remove this element from the percent array so it's not processed below
                     asterisksArray.splice(i, 1);
@@ -1026,7 +1026,7 @@ angular.module('ui.grid').directive('uiGridColumnMenu', ['$log', '$timeout', '$w
 
                   column.drawnWidth = colWidth;
 
-                  // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
+                  // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
                 });
               }
 
@@ -1368,7 +1368,7 @@ angular.module('ui.grid')
 
           // $log.debug('headerHeight in scrollbar', headerHeight);
 
-          // var ret = '.grid' + uiGridCtrl.grid.id + ' .ui-grid-native-scrollbar.vertical .contents { height: ' + h + 'px; }';
+          // var ret = '.grid' + uiGridCtrl.grid.key + ' .ui-grid-native-scrollbar.vertical .contents { height: ' + h + 'px; }';
           var ret = '.grid' + grid.id + ' .ui-grid-render-container-' + containerCtrl.containerId + ' .ui-grid-native-scrollbar.vertical .contents { height: ' + contentHeight + 'px; }';
           ret += '\n .grid' + grid.id + ' .ui-grid-render-container-' + containerCtrl.containerId + ' .ui-grid-native-scrollbar.vertical { height: ' + height + 'px; top: ' + headerHeight + 'px}';
 
@@ -2382,7 +2382,7 @@ angular.module('ui.grid').directive('uiGrid',
                 }
 
                 //todo: remove this code.  it was commented out after moving from pinning because body is already float:left
-//                var bodyContainer = angular.element($elm[0].querySelectorAll('[container-id="body"]'));
+//                var bodyContainer = angular.element($elm[0].querySelectorAll('[container-key="body"]'));
 //                if (newValue){
 //                  bodyContainer.attr('style', 'float: left; position: inherit');
 //                }
@@ -2430,7 +2430,7 @@ angular.module('ui.grid').directive('uiGrid',
     return {
       restrict: 'EA',
       replace: true,
-      template: '<div class="ui-grid-pinned-container"><div ui-grid-render-container container-id="side" row-container-name="\'body\'" col-container-name="side" bind-scroll-vertical="true" class="{{ side }} ui-grid-render-container-{{ side }}"></div></div>',
+      template: '<div class="ui-grid-pinned-container"><div ui-grid-render-container container-key="side" row-container-name="\'body\'" col-container-name="side" bind-scroll-vertical="true" class="{{ side }} ui-grid-render-container-{{ side }}"></div></div>',
       scope: {
         side: '=uiGridPinnedContainer'
       },
@@ -2509,14 +2509,14 @@ angular.module('ui.grid')
    * @name ui.grid.class:Grid
    * @description Grid is the main viewModel.  Any properties or methods needed to maintain state are defined in
  * * this prototype.  One instance of Grid is created per Grid directive instance.
-   * @param {object} options Object map of options to pass into the grid. An 'id' property is expected.
+   * @param {object} options Object map of options to pass into the grid. An 'key' property is expected.
    */
   var Grid = function Grid(options) {
     var self = this;
-  // Get the id out of the options, then remove it
+  // Get the key out of the options, then remove it
   if (options !== undefined && typeof(options.id) !== 'undefined' && options.id) {
     if (!/^[_a-zA-Z0-9-]+$/.test(options.id)) {
-      throw new Error("Grid id '" + options.id + '" is invalid. It must follow CSS selector syntax rules.');
+      throw new Error("Grid key '" + options.id + '" is invalid. It must follow CSS selector syntax rules.');
     }
   }
   else {
@@ -4515,7 +4515,7 @@ angular.module('ui.grid')
     *     {
     *       title: 'Grid ID',
     *       action: function() {
-    *         alert('Grid ID: ' + this.grid.id);
+    *         alert('Grid ID: ' + this.grid.key);
     *       }
     *     }
     *   ] }]; </pre>
@@ -4855,7 +4855,7 @@ angular.module('ui.grid')
    *    $provide.decorator('GridOptions',function($delegate){
    *      return function(){
    *        var defaultOptions = new $delegate();
-   *        defaultOptions.excludeProperties = ['id' ,'$$hashKey'];
+   *        defaultOptions.excludeProperties = ['key' ,'$$hashKey'];
    *        return defaultOptions;
    *      };
    *    })
@@ -5048,7 +5048,7 @@ angular.module('ui.grid')
      * <pre>  $scope.gridOptions.headerTemplate = 'header_template.html';</pre>
      * inline html
      * <pre>  $scope.gridOptions.headerTemplate = '<div class="ui-grid-top-panel" style="text-align: center">I am a Custom Grid Header</div>'</pre>
-     * or the id of a precompiled template (TBD how to use this).
+     * or the key of a precompiled template (TBD how to use this).
      * </br>Refer to the custom header tutorial for more information.
      * If you want no header at all, you can set to an empty div:
      * <pre>  $scope.gridOptions.headerTemplate = '<div></div>';</pre>
@@ -5066,7 +5066,7 @@ angular.module('ui.grid')
      * @propertyOf ui.grid.class:GridOptions
      * @description (optional) Null by default. When provided, this setting uses a custom footer
      * template. Can be set to either the name of a template file 'footer_template.html', inline html
-     * <pre>'<div class="ui-grid-bottom-panel" style="text-align: center">I am a Custom Grid Footer</div>'</pre>, or the id
+     * <pre>'<div class="ui-grid-bottom-panel" style="text-align: center">I am a Custom Grid Footer</div>'</pre>, or the key
      * of a precompiled template (TBD how to use this).  Refer to the custom footer tutorial for more information.
      */
     this.footerTemplate = null;
@@ -5080,7 +5080,7 @@ angular.module('ui.grid')
      * <pre> $scope.gridOptions.rowTemplate = 'row_template.html';</pre>
      * inline html
      * <pre>  $scope.gridOptions.rowTemplate = '<div style="background-color: aquamarine" ng-click="getExternalScopes().fnOne(row)" ng-repeat="col in colContainer.renderedColumns track by col.colDef.name" class="ui-grid-cell" ui-grid-cell></div>';</pre>
-     * or the id of a precompiled template (TBD how to use this) can be provided.
+     * or the key of a precompiled template (TBD how to use this) can be provided.
      * </br>Refer to the custom row template tutorial for more information.
      */
     this.rowTemplate = 'ui-grid/ui-grid-row';
@@ -5560,7 +5560,7 @@ angular.module('ui.grid')
     var columnCache = self.visibleColumnCache;
 
     columnCache.forEach(function(column, i) {
-      // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + i + ' { width: ' + equalWidth + 'px; left: ' + left + 'px; }';
+      // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + i + ' { width: ' + equalWidth + 'px; left: ' + left + 'px; }';
       //var colWidth = (typeof(c.width) !== 'undefined' && c.width !== undefined) ? c.width : equalWidth;
 
       // Skip hidden columns
@@ -5588,7 +5588,7 @@ angular.module('ui.grid')
 
         column.drawnWidth = column.width;
 
-        // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + column.width + 'px; }';
+        // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + column.width + 'px; }';
       }
     });
 
@@ -5614,7 +5614,7 @@ angular.module('ui.grid')
           canvasWidth += colWidth;
           column.drawnWidth = colWidth;
 
-          // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
+          // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
 
           // Remove this element from the percent array so it's not processed below
           percentArray.splice(i, 1);
@@ -5627,7 +5627,7 @@ angular.module('ui.grid')
           canvasWidth += colWidth;
           column.drawnWidth = colWidth;
 
-          // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
+          // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
 
           // Remove this element from the percent array so it's not processed below
           percentArray.splice(i, 1);
@@ -5642,7 +5642,7 @@ angular.module('ui.grid')
 
         column.drawnWidth = colWidth;
 
-        // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
+        // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
       });
     }
 
@@ -5664,7 +5664,7 @@ angular.module('ui.grid')
           canvasWidth += colWidth;
           column.drawnWidth = colWidth;
 
-          // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
+          // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
 
           lastColumn = column;
 
@@ -5680,7 +5680,7 @@ angular.module('ui.grid')
           canvasWidth += colWidth;
           column.drawnWidth = colWidth;
 
-          // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
+          // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
 
           // Remove this element from the percent array so it's not processed below
           asterisksArray.splice(i, 1);
@@ -5697,7 +5697,7 @@ angular.module('ui.grid')
 
         column.drawnWidth = colWidth;
 
-        // ret = ret + ' .grid' + uiGridCtrl.grid.id + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
+        // ret = ret + ' .grid' + uiGridCtrl.grid.key + ' .col' + column.index + ' { width: ' + colWidth + 'px; }';
       });
     }
 
@@ -5983,7 +5983,7 @@ angular.module('ui.grid')
          * @ngdoc method
          * @name createGrid
          * @methodOf ui.grid.service:gridClassFactory
-         * @description Creates a new grid instance. Each instance will have a unique id
+         * @description Creates a new grid instance. Each instance will have a unique key
          * @param {object} options An object map of options to pass into the created grid instance.
          * @returns {Grid} grid
          */
@@ -6914,8 +6914,8 @@ function getWidthOrHeight( elem, name, extra ) {
           isBorderBox = styles['boxSizing'] === 'border-box';
 
   // some non-html elements return undefined for offsetWidth, so check for null/undefined
-  // svg - https://bugzilla.mozilla.org/show_bug.cgi?id=649285
-  // MathML - https://bugzilla.mozilla.org/show_bug.cgi?id=491668
+  // svg - https://bugzilla.mozilla.org/show_bug.cgi?key=649285
+  // MathML - https://bugzilla.mozilla.org/show_bug.cgi?key=491668
   if ( val <= 0 || val == null ) {
     // Fall back to computed then uncomputed css if necessary
     val = styles[name];
@@ -7100,7 +7100,7 @@ module.service('gridUtil', ['$log', '$window', '$document', '$http', '$templateC
      *
      * @example
        <pre>
-        var id = GridUtil.newId();
+        var key = GridUtil.newId();
 
         # 1387305700482;
        </pre>
@@ -7118,7 +7118,7 @@ module.service('gridUtil', ['$log', '$window', '$document', '$http', '$templateC
      * @methodOf ui.grid.service:GridUtil
      * @description Get's template from cache / element / url
      *
-     * @param {string|element|promise} Either a string representing the template id, a string representing the template url,
+     * @param {string|element|promise} Either a string representing the template key, a string representing the template url,
      *   an jQuery/Angualr element, or a promise that returns the template contents to use.
      * @returns {object} a promise resolving to template contents
      *
@@ -9480,7 +9480,7 @@ return $delegate;
              *  @name editDropdownOptionsArray
              *  @propertyOf ui.grid.edit.api:ColumnDef
              *  @description an array of values in the format
-             *  [ {id: xxx, value: xxx} ], which is populated
+             *  [ {key: xxx, value: xxx} ], which is populated
              *  into the edit dropdown
              *
              */
@@ -9488,9 +9488,9 @@ return $delegate;
              *  @ngdoc property
              *  @name editDropdownIdLabel
              *  @propertyOf ui.grid.edit.api:ColumnDef
-             *  @description the label for the "id" field
+             *  @description the label for the "key" field
              *  in the editDropdownOptionsArray.  Defaults
-             *  to 'id'
+             *  to 'key'
              *  @example
              *  <pre>
              *    $scope.gridOptions = {
@@ -9567,7 +9567,7 @@ return $delegate;
               }
 
               $scope.editDropdownOptionsArray = $scope.col.colDef.editDropdownOptionsArray;
-              $scope.editDropdownIdLabel = $scope.col.colDef.editDropdownIdLabel ? $scope.col.colDef.editDropdownIdLabel : 'id';
+              $scope.editDropdownIdLabel = $scope.col.colDef.editDropdownIdLabel ? $scope.col.colDef.editDropdownIdLabel : 'key';
               $scope.editDropdownValueLabel = $scope.col.colDef.editDropdownValueLabel ? $scope.col.colDef.editDropdownValueLabel : 'value';
 
               var cellElement;
@@ -12656,15 +12656,15 @@ angular.module('ui.grid').run(['$templateCache', function($templateCache) {
   );
 
   $templateCache.put('ui-grid/ui-grid',
-    "<div ui-i18n=\"en\" class=\"ui-grid\"><!-- TODO (c0bra): add \"scoped\" attr here, eventually? --><style ui-grid-style>.grid{{ grid.id }} {\n" +
+    "<div ui-i18n=\"en\" class=\"ui-grid\"><!-- TODO (c0bra): add \"scoped\" attr here, eventually? --><style ui-grid-style>.grid{{ grid.key }} {\n" +
     "      /* Styles for the grid */\n" +
     "    }\n" +
     "\n" +
-    "    .grid{{ grid.id }} .ui-grid-row, .grid{{ grid.id }} .ui-grid-cell, .grid{{ grid.id }} .ui-grid-cell .ui-grid-vertical-bar {\n" +
+    "    .grid{{ grid.key }} .ui-grid-row, .grid{{ grid.key }} .ui-grid-cell, .grid{{ grid.key }} .ui-grid-cell .ui-grid-vertical-bar {\n" +
     "      height: {{ grid.options.rowHeight }}px;\n" +
     "    }\n" +
     "\n" +
-    "    .grid{{ grid.id }} .ui-grid-row:last-child .ui-grid-cell {\n" +
+    "    .grid{{ grid.key }} .ui-grid-row:last-child .ui-grid-cell {\n" +
     "      border-bottom-width: {{ ((grid.getTotalRowHeight() < grid.getViewportHeight()) && '1') || '0' }}px;\n" +
     "    }\n" +
     "\n" +
@@ -12675,7 +12675,7 @@ angular.module('ui.grid').run(['$templateCache', function($templateCache) {
     "      padding-left: {{ grid.verticalScrollbarWidth }}px;\n" +
     "    }\n" +
     "\n" +
-    "    {{ grid.customStyles }}</style><div ui-grid-render-container container-id=\"'body'\" col-container-name=\"'body'\" row-container-name=\"'body'\" bind-scroll-horizontal=\"true\" bind-scroll-vertical=\"true\" enable-scrollbars=\"grid.options.enableScrollbars\"></div><div ui-grid-column-menu ng-if=\"grid.options.enableColumnMenu\"></div><div ng-transclude></div></div>"
+    "    {{ grid.customStyles }}</style><div ui-grid-render-container container-key=\"'body'\" col-container-name=\"'body'\" row-container-name=\"'body'\" bind-scroll-horizontal=\"true\" bind-scroll-vertical=\"true\" enable-scrollbars=\"grid.options.enableScrollbars\"></div><div ui-grid-column-menu ng-if=\"grid.options.enableColumnMenu\"></div><div ng-transclude></div></div>"
   );
 
   $templateCache.put('ui-grid/uiGridCell',
