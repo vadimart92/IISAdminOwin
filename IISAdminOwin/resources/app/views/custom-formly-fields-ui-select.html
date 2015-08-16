@@ -1,12 +1,12 @@
 <div class="form-sql-server">
-    <label for="formly_1_input_{{options.key}}_1">{{options.templateOptions.label}}</label>
-    <ui-select name="formly_1_input_{{options.key}}_1" ng-model="model.db" theme="bootstrap" ng-disabled="disabled">
-        <ui-select-match placeholder="Select or search instance">{{$select.selected.name}}</ui-select-match>
-        <ui-select-choices repeat="option in model.msSqlInstances | filter: {name: $select.search} ">
+    <label for="formly_1_uiSelect_{{options.key}}_3">{{to.label}}</label>
+    <ui-select name="ui_select_{{options.key}}" ng-model="model[options.key]" theme="bootstrap" ng-disabled="disabled" reset-search-input="false">
+        <ui-select-match placeholder="{{to.placeholder}}">{{$select.selected.Name}}</ui-select-match>
+        <ui-select-choices repeat="option in model.msSqlInstances | filter: {Name: $select.search}">
             <div ng-bind-html="option.name | highlight: $select.search"></div>
             <span>
-                instance: {{option.instanceName}}<br>
-                version: <span ng-bind-html="option.version"></span>
+                name: {{option.Name}}<br>
+                version: <span ng-bind-html="option.Version"></span>
             </span>
         </ui-select-choices>
     </ui-select>

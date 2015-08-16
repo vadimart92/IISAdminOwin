@@ -100,7 +100,7 @@ namespace IISAdmin.WCFWebSiteRepository
 			CloseChannel();
 		}
 
-		public long CreateSite(ISiteCreateData data, int appCount) {
+		public long CreateSite(SiteCreateData data, int appCount) {
 			try {
 				SiteInfo param = new SiteInfo {
 					Name = data.WebAppName,

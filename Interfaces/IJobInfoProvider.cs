@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace IISAdmin.Interfaces
 {
-    public interface IJobInfo:IEntity<Guid> {
-        int JobId { get; set; }
-        string SerializedInfo { get; set; }
-    }
 
-    public interface IJobInfoRepository : IRepository<IJobInfo, Guid>, IQueryableRepository<IJobInfo, Guid> {
-        IJobInfo Get(int jobKey);
+    public interface IJobInfoRepository : IRepository<OperationInfoBase, Guid>, IQueryableRepository<OperationInfoBase, Guid> {
+        OperationInfoBase Get(string jobKey);
     }
 }

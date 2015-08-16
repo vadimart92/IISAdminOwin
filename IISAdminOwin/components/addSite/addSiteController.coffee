@@ -61,6 +61,7 @@ define ["app", "hub", "jquery" , "common"], (app, Hub, $, common)->
 
 		setSqlInstances: (sqlInstances)->
 			this.site.msSqlInstances = sqlInstances
+			this.site.db = do sqlInstances.pop
 			return
 
 		getSiteCreateInfo: ()->
@@ -101,7 +102,7 @@ define ["app", "hub", "jquery" , "common"], (app, Hub, $, common)->
 				},
 				{ key: "name", type: "input", templateOptions: {label: "Name" }}
 				{ key: "webAppDir", type: "input", templateOptions: {label: "Web app directory" }}
-				{ key: "db",  type: "uiSelect", templateOptions: { label: "MSSQL Instance" } }
+				{ key: "db",  type: "uiSelect", templateOptions: { label: "MSSQL Instance", placeholder: "Select or search instance" } }
 			]
 			return
 

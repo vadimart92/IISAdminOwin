@@ -7,10 +7,12 @@ namespace IISAdmin.Owin.DAL.EF.Migrations
     {
         public override void Up()
         {
+            AddColumn("dbo.JobInfoes", "SignarRHubName", c => c.String());
         }
         
         public override void Down()
         {
+            DropColumn("dbo.JobInfoes", "SignarRHubName");
         }
     }
 }

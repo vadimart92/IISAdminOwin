@@ -3322,7 +3322,7 @@ function ($animate ,  $sce ,  $compile ,  $templateRequest) {
     restrict: 'EA',
     replace: true,
     scope: { content: '@', placement: '@', popupClass: '@', animation: '&', isOpen: '&' },
-    templateUrl: 'template/tooltip/tooltip-popup.html'
+    templateUrl: 'assets/bootstrap/template/tooltip/tooltip-popup.html'
   };
 })
 

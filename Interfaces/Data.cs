@@ -1,28 +1,21 @@
-﻿
+﻿using System;
+
 namespace IISAdmin.Interfaces
 {
-	#region ISiteCreateData
+    #region SiteCreateData
 
-	public interface ISiteCreateData {
+    [Serializable]
+    public class SiteCreateData {
+        public virtual string Name { get; set; }
+        public virtual string WebAppName { get; set; }
+        public virtual Release ReleaseInfo { get; set; }
+        public virtual SqlServerInstance Db { get; set; }
+        public virtual Redis RedisInfo { get; set; }
+        public virtual string DestinationWebAppRoot { get; set; }
+        public virtual bool SeparateFolder { get; set; }
+        public virtual string UserName { get; set; }
+        public virtual bool CreateNewSite { get; set; }
+    }
 
-		string Name { get; }
-
-		string WebAppName { get; set; }
-
-		IRelease ReleaseInfo { get; }
-
-		ISqlServerInstance Db { get; }
-
-		Redis RedisInfo { get; set; }
-
-		string DestinationWebAppRoot { get; set; }
-		
-		bool SeparateFolder  { get; }
-
-		string UserName { get; set; }
-
-		bool CreateNewSite { get; set; }
-	}
-
-	#endregion ISiteCreateData
+    #endregion SiteCreateData
 }

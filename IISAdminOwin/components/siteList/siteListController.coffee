@@ -122,7 +122,7 @@
 							field: "name"
 							displayName: "Name"
 							minWidth: 50
-							width: "20%"
+							width: "30%"
 							filter: {
 								condition: this.uiGridConstants.filter.CONTAINS
 								placeholder: "contains"
@@ -132,7 +132,7 @@
 							field: "bindings"
 							displayName: "Bindings"
 							minWidth: 50
-							width: "5%"
+							width: "20%"
 							cellTemplate: bindingsTpl
 							filter: {
 								condition: this.uiGridConstants.filter.CONTAINS
@@ -142,14 +142,14 @@
 						{
 							field: "state"
 							displayName: "State"
-							width: "30"
+							width: "10%"
 							enableFiltering: false
 							cellTemplate: siteStateTpl
 						},
 						{
 							field: "pool"
 							displayName: "First app pool"
-							width: "10%"
+							width: "30%"
 							cellTemplate: poolTpl
 							enableFiltering: false
 						},

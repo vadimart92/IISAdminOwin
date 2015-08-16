@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using IISAdmin.Interfaces;
 
 namespace IISAdmin.WebSiteManagmentProvider {
+
 	public static class SiteDeployNamesHelper {
 
 		public class DeployNamesInfo {
@@ -28,7 +29,7 @@ namespace IISAdmin.WebSiteManagmentProvider {
 
 		}
 
-		public static DeployNamesInfo GetDeployNamesInfo(ISiteCreateData inputData, string webAppRoot) {
+		public static DeployNamesInfo GetDeployNamesInfo(SiteCreateData inputData, string webAppRoot) {
 			var res = new DeployNamesInfo();
 			Version version;
 			var vstr = GetShortVersion(inputData, out version);
@@ -46,7 +47,7 @@ namespace IISAdmin.WebSiteManagmentProvider {
 			return res;
 		}
 
-		public static string GetShortVersion(ISiteCreateData inputData, out  Version version) {
+		public static string GetShortVersion(SiteCreateData inputData, out  Version version) {
 			var vstr = inputData.ReleaseInfo.Version ?? "0.0.0.0";
 			Version.TryParse(vstr, out version);
 			if (version == null) {

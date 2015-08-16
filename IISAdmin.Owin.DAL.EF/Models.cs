@@ -10,7 +10,7 @@ using IISAdmin.Interfaces;
 
 namespace IISAdmin.Owin.DAL.EF
 {
-    public class JobInfo: IJobInfo {
+    public class JobInfo {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
@@ -18,6 +18,7 @@ namespace IISAdmin.Owin.DAL.EF
         [ForeignKey("JobId")]
         public Job Job { get; set; }
         public string SerializedInfo { get; set; }
+        public string SignarRHubName { get; set; }
     }
 
     [Table("Job", Schema = "HangFire")]

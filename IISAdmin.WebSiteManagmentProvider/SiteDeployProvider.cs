@@ -15,14 +15,17 @@ namespace IISAdmin.WebSiteManagmentProvider
 
 	    private readonly ISiteDeployProviderWebConfig _config;
 		private readonly IWebSiteRepository _siteRepository;
-        private DeploySiteInfo _deploySiteInfo;
+        private readonly IJobInfoRepository _jobInfoRepository;
+        private readonly IHubContextProvider _hubContextProvider;
 
-        public SiteDeployProvider(ISiteDeployProviderWebConfig config, IWebSiteRepository siteRepository) {
+        public SiteDeployProvider(ISiteDeployProviderWebConfig config, IWebSiteRepository siteRepository, IJobInfoRepository jobInfoRepository, IHubContextProvider hubContextProvider) {
 		    _config = config;
 		    _siteRepository = siteRepository;
-	    }
+            _jobInfoRepository = jobInfoRepository;
+            _hubContextProvider = hubContextProvider;
+        }
 
-	    private Task ExtractBuildTask(ISiteCreateData siteCreateData) {
+	    private Task ExtractBuildTask(SiteCreateData siteCreateData) {
 			return new Task(() => {
 				ZipExtractor.ExtractBuild(siteCreateData.ReleaseInfo.ZipFilePath, siteCreateData.DestinationWebAppRoot, new List<string> { ".bak" });
 			});
@@ -33,18 +36,15 @@ namespace IISAdmin.WebSiteManagmentProvider
 				ZipExtractor.ExtractFileFromZip(zipFilePath, dbFileDirectory, dbFileName, backupPath);
 			});
 	    }
-
-
-        public OperationInfoBase GetOperationsInfo(IJobInfoRepository jobInfoRepository)
-        {
-            _deploySiteInfo = new DeploySiteInfo(jobInfoRepository);
-            return _deploySiteInfo;
+        
+        public OperationInfoBase GetOperationsInfo() {
+            var info = new DeploySiteInfo(_jobInfoRepository, _hubContextProvider);
+            return info.Instance;
         }
 
-        public void DeployWebApp(ISiteCreateData siteCreateData, OperationInfoBase deploySiteInfo) {
-            Contract.Requires(_deploySiteInfo == deploySiteInfo);
-            var deployInfo = deploySiteInfo as DeploySiteInfo;
-            Contract.Assert(deployInfo != null, "deployInfo != null");
+        public void DeployWebApp(SiteCreateData siteCreateData, Guid jobInfoId) {
+            Contract.Requires(jobInfoId != Guid.Empty, "jobInfoId != Guid.Empty");
+            var deployInfo = new DeploySiteInfo(_jobInfoRepository, _hubContextProvider, jobInfoId);
             InitDeployInfo(siteCreateData);
 			ExtractBinaries(siteCreateData);
 		    deployInfo.RestoreDbCopyFiles = OperationStageState.Completed;
@@ -62,7 +62,7 @@ namespace IISAdmin.WebSiteManagmentProvider
             deployInfo.ModifyConfigs = OperationStageState.Completed;
         }
 
-		private void ExtractBinaries(ISiteCreateData siteCreateData) {
+		private void ExtractBinaries(SiteCreateData siteCreateData) {
 			var extractionTask = ExtractBuildTask(siteCreateData);
 			var backupPath = _config.DbBackupTempPath + "\\" + siteCreateData.WebAppName + ".bak";
 			var extractDbBackup = ExtractDBBackup(siteCreateData.ReleaseInfo.ZipFilePath, "db", ".bak", backupPath);
@@ -74,21 +74,21 @@ namespace IISAdmin.WebSiteManagmentProvider
 			extractionTask.Start();
 			Task.WaitAll(restoreTask, extractionTask);
 		}
-
-		public void InitDeployInfo(ISiteCreateData siteCreateData) {
+        
+        public void InitDeployInfo(SiteCreateData siteCreateData) {
 			var info = SiteDeployNamesHelper.GetDeployNamesInfo(siteCreateData, _config.WebAppRoot);
 			siteCreateData.WebAppName = info.WebAppName;
 			siteCreateData.DestinationWebAppRoot = siteCreateData.SeparateFolder? Path.Combine(_config.WebAppRoot, info.ShortVersion, info.ProductName) : _config.WebAppRoot + "\\" + info.WebAppName;
 		}
         
-        public void InitRedisInfo(ISiteCreateData siteCreateData, ISite siteData) {
+        public void InitRedisInfo(SiteCreateData siteCreateData, ISite siteData) {
 		    siteCreateData.RedisInfo = string.IsNullOrWhiteSpace(_config.RedisTypicalConnectionString)
 			    ? new Redis(siteData.Redis.ConnectionString)
 			    : new Redis(_config.RedisTypicalConnectionString);
 			siteCreateData.RedisInfo.Db = GetFreeRedisDb(siteCreateData.RedisInfo.Host);
 	    }
 
-	    private string GetDbConnectionString(ISiteCreateData siteCreateData, string oldValue) {
+	    private string GetDbConnectionString(SiteCreateData siteCreateData, string oldValue) {
 		    SqlConnectionStringBuilder builder;
 		    try {
 			    builder = new SqlConnectionStringBuilder(oldValue);

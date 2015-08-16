@@ -21,7 +21,7 @@ require.config
 		ui_bootstrap: "../../assets/angular/ui-bootstrap"
 		ui_bootstrap_tpls: "../../assets/angular/ui-bootstrap-tpls"
 		loading_bar: "../../assets/angular/loading-bar"
-		ui_grid: "../../assets/ui-grid/ui-grid-stable"
+		ui_grid: "../../assets/ui-grid/ui-grid"
 		ui_select: "../../assets/ui-select/select"
 		breeze: "../../assets/breeze/breeze.debug"
 		breeze_ng: "../../assets/breeze/breeze.bridge.angular"
@@ -48,12 +48,12 @@ require.config
 		angular_formly_templates: deps: [ "angular" ]
 		ngAnimate: deps: [ "angular" ]
 		ngResource: deps: [ "angular" ]
-		ui_router: deps: [ "angular" ]
+		ui_router: deps: [ "angular", "ui_router_styles"]
 		ui_router_styles: deps: [ "angular" ]
-		ui_bootstrap: deps: [ "angular" ]
+		ui_bootstrap: deps: [ "angular" ,"ui_bootstrap_tpls"]
 		ui_bootstrap_tpls: deps: [ "angular" ]
 		loading_bar: deps: [ "angular" ]
-		ui_grid: deps: [ "angular" ]
+		ui_grid: deps: [ "angular", "css!../../assets/ui-grid/ui-grid"]
 		ui_select: deps: [ "angular" ]
 		breeze:
 			exports: "breeze"
@@ -62,4 +62,4 @@ require.config
 		breeze_dataService_webApi: deps: ["breeze"]
 		breeze_savequeuing: deps: ["breeze"]
 		breeze_ng: deps: ["breeze", "breeze_ajax_angular", "breeze_dataService_webApi", "breeze_savequeuing"]
-	deps: ["bootstrap", "text", "jsFaceProps", "app"]
+	deps: ["bootstrap", "ui_bootstrap", "text", "css", "jsFaceProps", "app"]

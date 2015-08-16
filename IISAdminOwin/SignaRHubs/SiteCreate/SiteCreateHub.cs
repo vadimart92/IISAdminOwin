@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Diagnostics.Contracts;
 using IISAdmin.Interfaces;
-using IISAdmin.Owin.Models;
 using IISAdmin.WebSiteManagmentProvider;
+using Microsoft.AspNet.SignalR;
 using Newtonsoft.Json;
 
 namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
@@ -11,23 +11,26 @@ namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 		private readonly ISqlServerInstanceRepository _serverInstanceRepository;
 		private readonly ISiteDeployProvider _siteDeployProvider;
 	    private readonly IJobInfoRepository _jobInfoRepository;
+	    private readonly IBackgroundWorker _backgroundWorker;
 
 		public SiteCreateHub(IReleaseRepository releaseRepository, ISqlServerInstanceRepository serverInstanceRepository, 
-			ISiteDeployProvider siteDeployProvider, IJobInfoRepository jobInfoRepository) {
+			ISiteDeployProvider siteDeployProvider, IJobInfoRepository jobInfoRepository, IBackgroundWorker backgroundWorker) {
 			Contract.Assert(releaseRepository != null);
 			Contract.Assert(serverInstanceRepository != null);
 			Contract.Assert(siteDeployProvider != null);
 			Contract.Assert(jobInfoRepository != null);
+			Contract.Assert(backgroundWorker != null);
 			_releaseRepository = releaseRepository;
 			_serverInstanceRepository = serverInstanceRepository;
 			_siteDeployProvider = siteDeployProvider;
 		    _jobInfoRepository = jobInfoRepository;
+		    _backgroundWorker = backgroundWorker;
 		}
 
 		public ReleaseInfo GetReleaseInfo(string uri) {
 			var result = _releaseRepository.GetByUri(uri);
 			var siteCreateData = new SiteCreateData {
-				ReleaseInfo = new SignalrRelease(result),
+				ReleaseInfo = result,
 				Name = result.Name,
 				UserName = Context.User.Identity.Name
 			};
@@ -46,14 +49,17 @@ namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 			};
 			return res;
 		}
-		
+        
 		public void AddSite(SiteCreateData data) {
 			data.UserName = Context.User.Identity.Name;
-		    var progressInfo = _siteDeployProvider.GetOperationsInfo(_jobInfoRepository);
-		    progressInfo.OnStateChanged += info => {
-                Clients.All.updateSiteState(JsonConvert.SerializeObject(info));
+		    OperationInfoBase progressInfo = _siteDeployProvider.GetOperationsInfo();
+		    progressInfo.SignarRHubName = GetType().Name;
+		    progressInfo.OnStateChanged += (hub, info) => {
+                var dataStr = JsonConvert.SerializeObject(info);
+                hub.Clients.All.updateSiteState(dataStr);
             };
-			_siteDeployProvider.DeployWebApp(data, progressInfo);
+		    var progressJobId = progressInfo.Id;
+            _backgroundWorker.AddJob<ISiteDeployProvider>(siteDeployProvider => siteDeployProvider.DeployWebApp(data, progressJobId), progressInfo);
 		}
 	}
 }

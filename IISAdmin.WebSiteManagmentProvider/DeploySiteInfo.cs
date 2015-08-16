@@ -1,14 +1,28 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using IISAdmin.Interfaces;
 
 namespace IISAdmin.WebSiteManagmentProvider {
 
-    public class DeploySiteInfo: OperationInfoBase, IDeploySiteInfo {
+    public class DeploySiteInfo {
         private OperationStageState _restoreDbCopyFiles;
         private OperationStageState _createWebApp;
         private OperationStageState _modifyConfigs;
 
-        public DeploySiteInfo(IJobInfoRepository jobInfoRepository) : base(jobInfoRepository) {}
+        private readonly OperationInfoBase _operationInfo;
+
+        public DeploySiteInfo(IJobInfoRepository jobInfoRepository, IHubContextProvider hubContextProvider, Guid? id = null, string jobId = null) {
+            if (id == null) {
+                _operationInfo = new OperationInfoBase(jobInfoRepository, jobId);
+                _operationInfo.InitStageInfos(GetOperationStageInfos());
+            } else {
+                _operationInfo = jobInfoRepository.Get(id.Value);
+            }
+            _operationInfo.SetDependencies(jobInfoRepository, hubContextProvider);
+        }
+
+        public OperationInfoBase Instance => _operationInfo;
 
         public OperationStageState RestoreDbCopyFiles
         {
@@ -36,8 +50,12 @@ namespace IISAdmin.WebSiteManagmentProvider {
             }
         }
 
-        protected override Dictionary<string, OperationStageInfo> GetOperationStageInfos() {
-            var baseInfos = base.GetOperationStageInfos();
+        void UpdateState(OperationStageState newValue, [CallerMemberName]string propertyName = null) {
+            _operationInfo.UpdateState(newValue, propertyName);
+        }
+
+        private Dictionary<string, OperationStageInfo> GetOperationStageInfos() {
+            var baseInfos = new Dictionary<string, OperationStageInfo>();
             baseInfos["RestoreDbCopyFiles"] = new OperationStageInfo {
                 Number = 1,
                 Name = "Restore DB / Copy files",

@@ -7,7 +7,7 @@ namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 	[JsonObject]
 	public class SiteCreationInfo {
 
-		public IList<ISqlServerInstance> SqlServerInstances {
+		public IList<SqlServerInstance> SqlServerInstances {
 			get;
 			set;
 		}

@@ -33,7 +33,8 @@ namespace WebSiteManagment.Wcf
 
 		public void RestartSitePool(long siteId) {
 			var site = _siteManager.GetSite(siteId);
-			_siteManager.RestartPool(site.Applications.First().Pool.Name);
+		    var app = site.Applications[0];
+            _siteManager.RestartPool(app.Pool.Name);
 		}
 
 		public void FlushSiteRedis(long siteId) {

@@ -54,6 +54,7 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
     },
     setSqlInstances: function(sqlInstances) {
       this.site.msSqlInstances = sqlInstances;
+      this.site.db = sqlInstances.pop();
     },
     getSiteCreateInfo: function() {
       var me;
@@ -85,7 +86,7 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
           key: "workUri",
           type: "input",
           templateOptions: {
-            label: "Build uri/key",
+            label: "Build uri/id",
             placeholder: "Paste product build uri here",
             required: true
           },
@@ -116,7 +117,8 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
           key: "db",
           type: "uiSelect",
           templateOptions: {
-            label: "MSSQL Instance"
+            label: "MSSQL Instance",
+            placeholder: "Select or search instance"
           }
         }
       ];

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.Contracts;
+using System.Linq.Expressions;
 using Hangfire;
 using IISAdmin.Interfaces;
 using Microsoft.Practices.Unity;
@@ -20,6 +21,11 @@ namespace IISAdmin.BackgroundWorker
             appBuilder.UseHangfireServer();
             appBuilder.UseHangfireDashboard();
         }
-        
+
+        public void AddJob<T>(Expression<Action<T>> expreissonJob, OperationInfoBase operationInfo) {
+            var jobId = BackgroundJob.Enqueue(expreissonJob);
+            operationInfo.JobId = jobId;
+            operationInfo.Save();
+        }
     }
 }

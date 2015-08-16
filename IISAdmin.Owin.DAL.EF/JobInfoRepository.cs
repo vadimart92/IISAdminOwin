@@ -10,7 +10,7 @@ namespace IISAdmin.Owin.DAL.EF
     public class JobInfoRepository: IJobInfoRepository {
 
         static JobInfoRepository() {
-            Mapper.CreateMap<IJobInfo, JobInfo>();
+            Mapper.CreateMap<OperationInfoBase, JobInfo>();
         }
 
         private readonly JobQueueConext _conext;
@@ -18,27 +18,30 @@ namespace IISAdmin.Owin.DAL.EF
         public JobInfoRepository(string connectionString) {
             _conext = new JobQueueConext(connectionString);
         }
-        public void Create(IJobInfo entity) {
+        public void Create(OperationInfoBase entity) {
             var row = Mapper.Map<JobInfo>(entity);
             _conext.JobInfos.Add(row);
             _conext.SaveChanges();
         }
 
-        public IJobInfo Get(Guid key) {
+        public OperationInfoBase Get(Guid key) {
             var row = _conext.JobInfos.SingleOrDefault(r => r.Id == key);
-            return row;
+            return Mapper.Map<OperationInfoBase>(row);
         }
 
-        public IEnumerable<IJobInfo> GetTopThousand() {
-            return _conext.JobInfos.Take(1000);
+        public IEnumerable<OperationInfoBase> GetTopThousand() {
+            return _conext.JobInfos.Take(1000).ToList().ConvertAll(Mapper.Map<OperationInfoBase>);
         }
 
-        public IEnumerable<IJobInfo> Get(Expression<Func<IJobInfo, bool>> expression) {
-            return _conext.JobInfos.Where(expression);
+        public IEnumerable<OperationInfoBase> Get(Expression<Func<OperationInfoBase, bool>> expression) {
+            return _conext.JobInfos.Select(r=> Mapper.Map<OperationInfoBase>(r)).Where(expression);
         }
 
-        public void Update(Guid id, Action<IJobInfo> action) {
+        public void Update(Guid id, Action<OperationInfoBase> action) {
             var row = Get(id);
+            if (row == null) {
+                throw new ArgumentOutOfRangeException(nameof(id));
+            }
             action(row);
             _conext.SaveChanges();
         }
@@ -48,12 +51,12 @@ namespace IISAdmin.Owin.DAL.EF
             _conext.JobInfos.Remove(row);
         }
 
-        IQueryable IQueryableRepository<IJobInfo, Guid>.Get() {
+        IQueryable IQueryableRepository<OperationInfoBase, Guid>.Get() {
             return _conext.JobInfos;
         }
 
-        public IJobInfo Get(int jobKey) {
-            var row = _conext.JobInfos.SingleOrDefault(r => r.JobId == jobKey);
+        public OperationInfoBase Get(string jobKey) {
+            var row = _conext.JobInfos.Select(Mapper.Map<OperationInfoBase>).SingleOrDefault(r => r.JobId == jobKey);
             return row;
         }
     }

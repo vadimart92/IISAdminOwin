@@ -1,19 +1,15 @@
-﻿namespace IISAdmin.Interfaces
+﻿using System;
+
+namespace IISAdmin.Interfaces
 {
     public interface ISiteDeployProvider {
-		void DeployWebApp(ISiteCreateData siteCreateData, OperationInfoBase deploySiteInfo);
-		void InitDeployInfo(ISiteCreateData siteCreateData);
-	    OperationInfoBase GetOperationsInfo(IJobInfoRepository jobInfoRepository);
+		void DeployWebApp(SiteCreateData siteCreateData, Guid jobInfoId);
+		void InitDeployInfo(SiteCreateData siteCreateData);
+	    OperationInfoBase GetOperationsInfo();
 	}
 
 	public class DeployOperationIfo {
 		public string Info { get; set; }
 	}
-
-    public interface IDeploySiteInfo
-    {
-        OperationStageState RestoreDbCopyFiles { get; set; }
-        OperationStageState CreateWebApp { get; set; }
-        OperationStageState ModifyConfigs { get; set; }
-    }
+    
 }

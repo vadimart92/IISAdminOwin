@@ -1,21 +1,16 @@
 ﻿<div class="row">
-    <div class="site-list bottom-top-margin" ng-show="siteListLoaded && gridOptions.data.length > 0">
-        <h2>Site list:</h2>
-        <div class="site-list-grid-container">
-            <div id="siteListGrid"
-                 class="site-list-grid"
-                 ui-grid="gridOptions"
-                 external-scopes="clickHandler"
-                 ui-grid-auto-resize
-                 ui-grid-resize-columns
-                 ui-grid-selection></div>
-        </div>
-
-    </div>
-    <div class="load-error-container" ng-show="siteListLoaded && (!gridOptions.data || gridOptions.data.length == 0)">
-        <h2 > Could not load</h2>
-    </div>
-    <div class="load-error-container" ng-show="!siteListLoaded">
-        <h2 >Loading...</h2>
-    </div>
+	<div class="site-list bottom-top-margin" ng-show="siteListLoaded && gridOptions.data.length > 0">
+		<h2>Site list:</h2>
+		<div class="site-list-grid-container">
+			<div id="siteListGrid"
+				 class="site-list-grid"
+				 ui-grid="gridOptions" ui-grid-auto-resize ui-grid-resize-columns  ui-grid-selection></div>
+		</div>
+	</div>
+	<div class="load-error-container" ng-show="siteListLoaded && (!gridOptions.data || gridOptions.data.length == 0)">
+		<h2 > Could not load</h2>
+	</div>
+	<div class="load-error-container" ng-show="!siteListLoaded">
+		<h2 >Loading...</h2>
+	</div>
 </div>
