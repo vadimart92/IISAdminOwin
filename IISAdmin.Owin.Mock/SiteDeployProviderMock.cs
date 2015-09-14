@@ -25,11 +25,13 @@ namespace IISAdmin.Owin.Mock
             InitDeployInfo(siteCreateData);
 			var wait = 3;
 			Thread.Sleep(TimeSpan.FromSeconds(wait));
+            deployInfo.RestoreDbCopyFiles = OperationStageState.Completed;
+            Thread.Sleep(TimeSpan.FromSeconds(wait));
             //ExtractBinaries(siteCreateData);
             deployInfo.CreateWebApp = OperationStageState.Completed;
             Thread.Sleep(TimeSpan.FromSeconds(wait));
             //ModifyConnectionStrings
-            deployInfo.RestoreDbCopyFiles = OperationStageState.Completed;
+            deployInfo.ModifyConfigs = OperationStageState.Completed;
         }
         
 	    public void InitDeployInfo(SiteCreateData siteCreateData) {

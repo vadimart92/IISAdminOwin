@@ -21,7 +21,7 @@ define(["angularAMD", "ui_router", "ui_router_styles"], function(angularAMD) {
         $stateProvider.state("addSiteProgress", angularAMD.route({
           url: "/addSiteProgress",
           templateUrl: "/app/views/addSiteProgress/addSiteProgress.html",
-          controllerUrl: "addSite/addSiteProgress/addSiteProgressController",
+          controllerUrl: "addSiteProgress/addSiteProgressController",
           data: {
             css: "app/components/addSite/addSiteProgress/addSiteProgress.css"
           }

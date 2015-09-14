@@ -97,6 +97,10 @@
       <Project>{E8EBD329-720B-4456-A0DE-9699F57CC42E}</Project>
       <Name>IISAdmin.Owin.Mock</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IISAdmin.WebSiteManagmentProvider\IISAdmin.WebSiteManagmentProvider.csproj">
+      <Project>{DAF6B3CC-073D-4843-9A11-B81683302239}</Project>
+      <Name>IISAdmin.WebSiteManagmentProvider</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IISAdminOwin\IISAdmin.Owin.csproj">
       <Project>{8EB4C6A2-9529-4171-81D7-48EF6ACE4D30}</Project>
       <Name>IISAdmin.Owin</Name>

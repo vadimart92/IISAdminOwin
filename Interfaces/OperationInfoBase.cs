@@ -18,7 +18,7 @@ namespace IISAdmin.Interfaces
         private IHubContextProvider _hubContextProvider;
 
         public OperationInfoBase() {
-            
+            InitStageInfos();
         }
 
         public virtual void Save() {
@@ -74,6 +74,8 @@ namespace IISAdmin.Interfaces
         protected virtual Dictionary<string, OperationStageInfo> GetOperationStageInfos() {
              return new Dictionary<string, OperationStageInfo>();
         }
+
+        public OperationStageInfo this[string propertyName] => _stageInfos[propertyName];
 
         public virtual void UpdateState(OperationStageState newValue, [CallerMemberName]string propertyName = null) {
             if (propertyName!=null && _stageInfos.ContainsKey(propertyName)) {

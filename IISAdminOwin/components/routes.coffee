@@ -19,7 +19,7 @@ define [
 			$stateProvider.state "addSiteProgress", angularAMD.route
 				url: "/addSiteProgress",
 				templateUrl: "/app/views/addSiteProgress/addSiteProgress.html"
-				controllerUrl: "addSite/addSiteProgress/addSiteProgressController"
+				controllerUrl: "addSiteProgress/addSiteProgressController"
 				data: {css: "app/components/addSite/addSiteProgress/addSiteProgress.css"}
 			$stateProvider.state "home", angularAMD.route
 				url: "/home",

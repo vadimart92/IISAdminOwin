@@ -6,6 +6,7 @@ using IISAdmin.Interfaces;
 namespace IISAdmin.WebSiteManagmentProvider {
 
     public class DeploySiteInfo {
+        private readonly IJobInfoRepository _jobInfoRepository;
         private OperationStageState _restoreDbCopyFiles;
         private OperationStageState _createWebApp;
         private OperationStageState _modifyConfigs;
@@ -13,6 +14,7 @@ namespace IISAdmin.WebSiteManagmentProvider {
         private readonly OperationInfoBase _operationInfo;
 
         public DeploySiteInfo(IJobInfoRepository jobInfoRepository, IHubContextProvider hubContextProvider, Guid? id = null, string jobId = null) {
+            _jobInfoRepository = jobInfoRepository;
             if (id == null) {
                 _operationInfo = new OperationInfoBase(jobInfoRepository, jobId);
                 _operationInfo.InitStageInfos(GetOperationStageInfos());
@@ -26,7 +28,7 @@ namespace IISAdmin.WebSiteManagmentProvider {
 
         public OperationStageState RestoreDbCopyFiles
         {
-            get { return _restoreDbCopyFiles; }
+            get { return GetState(); }
             set {
                 _restoreDbCopyFiles = value;
                 UpdateState(value);
@@ -34,7 +36,7 @@ namespace IISAdmin.WebSiteManagmentProvider {
         }
         public OperationStageState CreateWebApp
         {
-            get { return _createWebApp; }
+            get { return GetState(); }
             set {
                 _createWebApp = value;
                 UpdateState(value);
@@ -43,11 +45,16 @@ namespace IISAdmin.WebSiteManagmentProvider {
 
         public OperationStageState ModifyConfigs
         {
-            get { return _modifyConfigs; }
+            get { return GetState(); }
             set {
                 _modifyConfigs = value;
                 UpdateState(value);
             }
+        }
+
+        OperationStageState GetState([CallerMemberName]string propertyName = null) {
+            var info = _operationInfo[propertyName];
+            return info?.State ?? OperationStageState.Pending;
         }
 
         void UpdateState(OperationStageState newValue, [CallerMemberName]string propertyName = null) {

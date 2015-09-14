@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JobInfoRepositoryMock.cs" />
     <Compile Include="SiteDeployProviderMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -18,7 +18,7 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
         useSharedConnection: false,
         logging: true,
         listeners: {
-          "refreshDeployStatus": this.bind(this.refreshDeployStatus)
+          "updateSiteState": this.bind(this.updateSiteState)
         },
         methods: ["CancelDeploy"]
       }, this.bind(function() {
@@ -35,7 +35,7 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
       AddSiteProgress.$superp.onStateChangeStart.call(this);
       return this.hub.disconnect();
     },
-    refreshDeployStatus: function(data) {
+    updateSiteState: function(data) {
       return alert(data);
     }
   });

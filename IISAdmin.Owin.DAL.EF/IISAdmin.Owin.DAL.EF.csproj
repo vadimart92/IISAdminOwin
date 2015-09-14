@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201507281708436_Current.Designer.cs">
       <DependentUpon>201507281708436_Current.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509141938250_Current1.cs" />
+    <Compile Include="Migrations\201509141938250_Current1.Designer.cs">
+      <DependentUpon>201509141938250_Current1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507281708436_Current.resx">
       <DependentUpon>201507281708436_Current.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509141938250_Current1.resx">
+      <DependentUpon>201509141938250_Current1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

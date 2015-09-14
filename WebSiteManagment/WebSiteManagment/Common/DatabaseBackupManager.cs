@@ -68,13 +68,13 @@ namespace WebSiteManagment.Core.Common
 					string newName;
 					switch (type) {
 						case "D":
-							newName = defaultFile + name + "_" + type + (type == "D" ? ".mdf" : ".ldf");
+							newName = defaultFile + @"\" + name + "_" + type + (type == "D" ? ".mdf" : ".ldf");
 							break;
 						case "L":
-							newName = defaultLog + name + "_" + type + (type == "D" ? ".mdf" : ".ldf");
+							newName = defaultLog + @"\" + name + "_" + type + (type == "D" ? ".mdf" : ".ldf");
 							break;
 						default:
-							newName = defaultFile + name + "_" + type + Path.GetRandomFileName()+ (type == "D" ? ".mdf" : ".ldf");
+							newName = defaultFile + @"\" + name + "_" + type + Path.GetRandomFileName()+ (type == "D" ? ".mdf" : ".ldf");
 							break;
 					}
 					

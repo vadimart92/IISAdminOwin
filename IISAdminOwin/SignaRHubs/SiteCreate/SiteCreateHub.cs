@@ -10,7 +10,6 @@ namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 		private readonly IReleaseRepository _releaseRepository;
 		private readonly ISqlServerInstanceRepository _serverInstanceRepository;
 		private readonly ISiteDeployProvider _siteDeployProvider;
-	    private readonly IJobInfoRepository _jobInfoRepository;
 	    private readonly IBackgroundWorker _backgroundWorker;
 
 		public SiteCreateHub(IReleaseRepository releaseRepository, ISqlServerInstanceRepository serverInstanceRepository, 
@@ -23,7 +22,6 @@ namespace IISAdmin.Owin.SignaRHubs.SiteCreate {
 			_releaseRepository = releaseRepository;
 			_serverInstanceRepository = serverInstanceRepository;
 			_siteDeployProvider = siteDeployProvider;
-		    _jobInfoRepository = jobInfoRepository;
 		    _backgroundWorker = backgroundWorker;
 		}
 

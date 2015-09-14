@@ -7,9 +7,5 @@ namespace IISAdmin.Interfaces
 		void InitDeployInfo(SiteCreateData siteCreateData);
 	    OperationInfoBase GetOperationsInfo();
 	}
-
-	public class DeployOperationIfo {
-		public string Info { get; set; }
-	}
     
 }

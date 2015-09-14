@@ -12,7 +12,6 @@ namespace IISAdmin.Owin.DAL.EF
 {
     public class JobInfo {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         public int JobId { get; set; }
         [ForeignKey("JobId")]

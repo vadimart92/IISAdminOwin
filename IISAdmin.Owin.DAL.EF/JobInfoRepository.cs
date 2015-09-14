@@ -26,7 +26,12 @@ namespace IISAdmin.Owin.DAL.EF
 
         public OperationInfoBase Get(Guid key) {
             var row = _conext.JobInfos.SingleOrDefault(r => r.Id == key);
-            return Mapper.Map<OperationInfoBase>(row);
+            return new OperationInfoBase {
+                Id = row.Id,
+                JobId = Convert.ToString(row.JobId),
+                SerializedInfo = row.SerializedInfo,
+                SignarRHubName = row.SignarRHubName
+            };
         }
 
         public IEnumerable<OperationInfoBase> GetTopThousand() {
@@ -38,11 +43,20 @@ namespace IISAdmin.Owin.DAL.EF
         }
 
         public void Update(Guid id, Action<OperationInfoBase> action) {
-            var row = Get(id);
+            var row = _conext.JobInfos.SingleOrDefault(r => r.Id == id);
             if (row == null) {
                 throw new ArgumentOutOfRangeException(nameof(id));
             }
-            action(row);
+            var opInfo = new OperationInfoBase
+            {
+                Id = row.Id,
+                JobId = Convert.ToString(row.JobId),
+                SerializedInfo = row.SerializedInfo,
+                SignarRHubName = row.SignarRHubName
+            };
+            action(opInfo);
+            row.SerializedInfo = opInfo.SerializedInfo;
+            row.SignarRHubName = opInfo.SignarRHubName;
             _conext.SaveChanges();
         }
 

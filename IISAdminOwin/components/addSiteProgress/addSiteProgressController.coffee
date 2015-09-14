@@ -20,7 +20,7 @@ define ["app", "hub", "jquery" , "common"], (app, Hub, $, common)->
 				useSharedConnection: off
 				logging: on
 				listeners: {
-					"refreshDeployStatus": this.bind this.refreshDeployStatus
+					"updateSiteState": this.bind this.updateSiteState
 				}
 				methods: [
 					"CancelDeploy"
@@ -40,7 +40,7 @@ define ["app", "hub", "jquery" , "common"], (app, Hub, $, common)->
 			AddSiteProgress.$superp.onStateChangeStart.call(this)
 			do this.hub.disconnect
 
-		refreshDeployStatus: (data)->
+		updateSiteState: (data)->
 			alert data
 
 	})

@@ -2,79 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9911e397-8e70-4a0b-a0d4-38c5a8b7adf2" name="Default" comment="">
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\Models\SiteCreateHubModels.cs" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\assets\ui-grid\ui-grid-stable.css" afterPath="" />
-      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\assets\ui-grid\ui-grid-stable.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.EF/Migrations/201507281708436_Current.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.EF/Migrations/201507281708436_Current.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.EF/Migrations/201507281708436_Current.resx" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.EF/Migrations/201507281708436_Current.resx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/App.config" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/App.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagementService/App.config" afterPath="$PROJECT_DIR$/../WebSiteManagementService/App.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagementWcfLib/App.config" afterPath="$PROJECT_DIR$/../WebSiteManagementWcfLib/App.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Interfaces/Data.cs" afterPath="$PROJECT_DIR$/../Interfaces/Data.cs" />
+      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\components\addSiteProgress\addSiteProgress.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\components\addSiteProgress\addSiteProgressController.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\components\addSite\addSite.progress.Controller.js" afterPath="" />
+      <change type="DELETED" beforePath="F:\DEV\CScharp\IISAdminOwin\IISAdminOwin\resources\app\components\addSite\addSiteProgress.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagment/WebSiteManagment/Common/DatabaseBackupManager.cs" afterPath="$PROJECT_DIR$/../WebSiteManagment/WebSiteManagment/Common/DatabaseBackupManager.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.WebSiteManagmentProvider/DeploySiteInfo.cs" afterPath="$PROJECT_DIR$/../IISAdmin.WebSiteManagmentProvider/DeploySiteInfo.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Hangfire/HangfireWorker.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Hangfire/HangfireWorker.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Interfaces/IBackgroundWorker.cs" afterPath="$PROJECT_DIR$/../Interfaces/IBackgroundWorker.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Hangfire/IISAdmin.BackgroundWorker.csproj" afterPath="$PROJECT_DIR$/../IISAdmin.Hangfire/IISAdmin.BackgroundWorker.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Interfaces/IISAdmin.Interfaces.csproj" afterPath="$PROJECT_DIR$/../Interfaces/IISAdmin.Interfaces.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/IISAdmin.Owin.DAL.Dapper.csproj" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/IISAdmin.Owin.DAL.Dapper.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.Mock/IISAdmin.Owin.Mock.csproj" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.Mock/IISAdmin.Owin.Mock.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.Test/IISAdmin.Owin.Test.csproj" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.Test/IISAdmin.Owin.Test.csproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IISAdmin.Owin.csproj" afterPath="$PROJECT_DIR$/IISAdmin.Owin.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteIISRepository/IISAdmin.WCFWebSiteRepository.csproj" afterPath="$PROJECT_DIR$/../WebSiteIISRepository/IISAdmin.WCFWebSiteRepository.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Interfaces/IJobInfoProvider.cs" afterPath="$PROJECT_DIR$/../Interfaces/IJobInfoProvider.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Interfaces/ISiteDeployProvider.cs" afterPath="$PROJECT_DIR$/../Interfaces/ISiteDeployProvider.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.EF/JobInfoRepository.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.EF/JobInfoRepository.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/LocalSqlServerInstanceRepository.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/LocalSqlServerInstanceRepository.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.EF/Models.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.EF/Models.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Interfaces/OperationInfoBase.cs" afterPath="$PROJECT_DIR$/../Interfaces/OperationInfoBase.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Interfaces/Repositories.cs" afterPath="$PROJECT_DIR$/../Interfaces/Repositories.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.Test/Select_Test.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.Test/Select_Test.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SignaRHubs/SiteCreate/SiteCreateData.cs" afterPath="$PROJECT_DIR$/SignaRHubs/SiteCreate/SiteCreateData.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SignaRHubs/SiteCreate/SiteCreateHub.cs" afterPath="$PROJECT_DIR$/SignaRHubs/SiteCreate/SiteCreateHub.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SignaRHubs/SiteCreate/SiteCreationInfo.cs" afterPath="$PROJECT_DIR$/SignaRHubs/SiteCreate/SiteCreationInfo.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.Test/SiteCreateHub_Test.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.Test/SiteCreateHub_Test.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.WebSiteManagmentProvider/SiteDeployNamesHelper.cs" afterPath="$PROJECT_DIR$/../IISAdmin.WebSiteManagmentProvider/SiteDeployNamesHelper.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.WebSiteManagmentProvider/SiteDeployProvider.cs" afterPath="$PROJECT_DIR$/../IISAdmin.WebSiteManagmentProvider/SiteDeployProvider.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.Mock/SiteDeployProviderMock.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.Mock/SiteDeployProviderMock.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/WorkDbReleaseRepository/Models/Vw_Release.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/WorkDbReleaseRepository/Models/Vw_Release.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteIISRepository/WcfClientWebSiteRepository.cs" afterPath="$PROJECT_DIR$/../WebSiteIISRepository/WcfClientWebSiteRepository.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web.config" afterPath="$PROJECT_DIR$/Web.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagementService/WebSiteManagement.Service.csproj" afterPath="$PROJECT_DIR$/../WebSiteManagementService/WebSiteManagement.Service.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagementWcfLib/WebSiteManagementService.cs" afterPath="$PROJECT_DIR$/../WebSiteManagementWcfLib/WebSiteManagementService.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagment/WebSiteManagment/WebSiteManagment.Core.csproj" afterPath="$PROJECT_DIR$/../WebSiteManagment/WebSiteManagment/WebSiteManagment.Core.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagementWcfLib/WebSiteManagment.Wcf.csproj" afterPath="$PROJECT_DIR$/../WebSiteManagementWcfLib/WebSiteManagment.Wcf.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/WorkDbReleaseRepository/WorkDbReleaseRepository.cs" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/WorkDbReleaseRepository/WorkDbReleaseRepository.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/addSite/addSiteController.coffee" afterPath="$PROJECT_DIR$/components/addSite/addSiteController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/addSite/addSiteController.js" afterPath="$PROJECT_DIR$/resources/app/components/addSite/addSiteController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/app-bootstrap.coffee" afterPath="$PROJECT_DIR$/components/app-bootstrap.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/app-bootstrap.js" afterPath="$PROJECT_DIR$/resources/app/components/app-bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Hangfire/app.config" afterPath="$PROJECT_DIR$/../IISAdmin.Hangfire/app.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.Test/app.config" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.Test/app.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.Mock/app.config" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.Mock/app.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.WebSiteManagmentProvider/app.config" afterPath="$PROJECT_DIR$/../IISAdmin.WebSiteManagmentProvider/app.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.WebSiteManagmentProvider.Test/app.config" afterPath="$PROJECT_DIR$/../IISAdmin.WebSiteManagmentProvider.Test/app.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteIISRepository/app.config" afterPath="$PROJECT_DIR$/../WebSiteIISRepository/app.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagment.Core.Test/app.config" afterPath="$PROJECT_DIR$/../WebSiteManagment.Core.Test/app.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagment/WebSiteManagment/app.config" afterPath="$PROJECT_DIR$/../WebSiteManagment/WebSiteManagment/app.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html" afterPath="$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/addSiteProgress/addSiteProgressController.coffee" afterPath="$PROJECT_DIR$/components/addSiteProgress/addSiteProgressController.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/index.html" afterPath="$PROJECT_DIR$/resources/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init.log.txt" afterPath="$PROJECT_DIR$/init.log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/boilerplate/modernizr-2.6.2.min.js" afterPath="$PROJECT_DIR$/resources/assets/boilerplate/modernizr-2.6.2.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Hangfire/packages.config" afterPath="$PROJECT_DIR$/../IISAdmin.Hangfire/packages.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/packages.config" afterPath="$PROJECT_DIR$/../IISAdmin.Owin.DAL.WorkDb/packages.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages.config" afterPath="$PROJECT_DIR$/packages.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteIISRepository/packages.config" afterPath="$PROJECT_DIR$/../WebSiteIISRepository/packages.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagementService/packages.config" afterPath="$PROJECT_DIR$/../WebSiteManagementService/packages.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagementWcfLib/packages.config" afterPath="$PROJECT_DIR$/../WebSiteManagementWcfLib/packages.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebSiteManagment/WebSiteManagment/packages.config" afterPath="$PROJECT_DIR$/../WebSiteManagment/WebSiteManagment/packages.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/ui-select/select.css" afterPath="$PROJECT_DIR$/resources/assets/ui-select/select.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/ui-select/select.js" afterPath="$PROJECT_DIR$/resources/assets/ui-select/select.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/views/siteList/siteList.html" afterPath="$PROJECT_DIR$/resources/app/views/siteList/siteList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/siteList/siteListController.coffee" afterPath="$PROJECT_DIR$/components/siteList/siteListController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/siteList/siteListController.js" afterPath="$PROJECT_DIR$/resources/app/components/siteList/siteListController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/routes.coffee" afterPath="$PROJECT_DIR$/components/routes.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/app/components/routes.js" afterPath="$PROJECT_DIR$/resources/app/components/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transports.log.txt" afterPath="$PROJECT_DIR$/transports.log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap.js" afterPath="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.css" afterPath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.js" afterPath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.min.css" afterPath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.min.js" afterPath="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IISAdminOwin.iws" />
@@ -96,11 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="custom-formly-fields-ui-select.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html">
+      <file leaf-file-name="addSiteProgressController.coffee" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/addSiteProgress/addSiteProgressController.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40699816">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6296296">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -131,7 +80,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/components/app.services.index.coffee" />
         <option value="$PROJECT_DIR$/components/addSite/index.coffee" />
         <option value="$PROJECT_DIR$/components/common/common.coffee" />
         <option value="$PROJECT_DIR$/components/common/baseController" />
@@ -173,15 +121,16 @@
         <option value="$PROJECT_DIR$/resources/app/views/home.html" />
         <option value="$PROJECT_DIR$/components/siteList/siteList.less" />
         <option value="$PROJECT_DIR$/components/addSiteProgress/addSiteProgress.coffee" />
-        <option value="$PROJECT_DIR$/components/routes.coffee" />
         <option value="$PROJECT_DIR$/resources/assets/angular/ui-bootstrap.js" />
         <option value="$PROJECT_DIR$/components/app-bootstrap.coffee" />
         <option value="$PROJECT_DIR$/resources/assets/ui-grid/ui-grid.js" />
-        <option value="$PROJECT_DIR$/resources/index.html" />
         <option value="$PROJECT_DIR$/resources/app/views/siteList/siteList.html" />
         <option value="$PROJECT_DIR$/components/siteList/siteListController.coffee" />
         <option value="$PROJECT_DIR$/components/addSite/addSiteController.coffee" />
         <option value="$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html" />
+        <option value="$PROJECT_DIR$/components/addSiteProgress/addSiteProgressController.coffee" />
+        <option value="$PROJECT_DIR$/components/routes.coffee" />
+        <option value="$PROJECT_DIR$/resources/index.html" />
       </list>
     </option>
   </component>
@@ -261,6 +210,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,6 +282,36 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IISAdminOwin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IISAdminOwin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addSiteProgress" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -361,14 +341,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="addSite" />
+              <option name="myItemId" value="addSiteProgress" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -514,16 +493,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18057021" sideWeight="0.5498392" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18057021" sideWeight="0.45016077" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18057021" sideWeight="0.5535135" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18057021" sideWeight="0.44648647" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -557,21 +536,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/components/app.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IISAdmin.Owin.csproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33277026">
-          <caret line="221" column="49" selection-start-line="221" selection-start-column="49" selection-end-line="221" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/dataService/siteDataService.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45945945">
@@ -761,13 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/app/views/addSiteProgress/addSiteProgress.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/common/signalRHub.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.44256756">
@@ -775,24 +732,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/addSiteProgress/addSiteProgressController.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="76" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/home/homeController.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="20" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/routes.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -852,7 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.028716216">
           <caret line="1" column="5" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,17 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.574074">
           <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62852114">
-          <caret line="21" column="67" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -878,7 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65824914">
           <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17957747">
           <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,7 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68686867">
           <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -910,7 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9615384">
           <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -918,14 +845,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/app/views/custom-formly-fields-ui-select.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40699816">
+        <state vertical-scroll-proportion="0.25373134">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/app/views/addSiteProgress/addSiteProgress.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/app/components/addSiteProgress/addSiteProgressController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/routes.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.664825">
+          <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/addSiteProgress/addSiteProgressController.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6296296">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>

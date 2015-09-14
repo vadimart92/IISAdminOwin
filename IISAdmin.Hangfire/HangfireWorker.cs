@@ -23,7 +23,7 @@ namespace IISAdmin.BackgroundWorker
         }
 
         public void AddJob<T>(Expression<Action<T>> expreissonJob, OperationInfoBase operationInfo) {
-            var jobId = BackgroundJob.Enqueue(expreissonJob);
+            var jobId = BackgroundJob.Schedule(expreissonJob, TimeSpan.FromSeconds(5));
             operationInfo.JobId = jobId;
             operationInfo.Save();
         }
