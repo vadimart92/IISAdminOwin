@@ -12,19 +12,17 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
 using IISAdmin.Owin.Common;
-using IISAdmin.Owin.DAL.WorkDbReleaseRepository;
-using IISAdmin.Owin.DAL.WorkDbReleaseRepository.Models;
+using IISAdmin.Owin.DAL.Dapper.WorkDbReleaseRepository.Models;
 using IISAdmin.Owin.SignaRHubs.SiteManagement;
-using IISAdminOwin;
 using IISAdminOwin.Common;
 using IISAdminOwin.DI;
 
 namespace IISAdmin.Owin
 {
-	public class Startup
+    public class Startup
 	{
 		public void Configuration(IAppBuilder appBuilder) {
-			var container = ContainerConfig.GetContainer();
+			var container = (new ContainerConfig()).GetContainer();
 
 			appBuilder.UseErrorPage();
 			appBuilder.UseCors(CorsOptions.AllowAll);

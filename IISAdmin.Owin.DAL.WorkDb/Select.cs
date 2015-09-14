@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
 
-namespace IISAdmin.Owin.DAL {
+namespace IISAdmin.Owin.DAL.Dapper {
 
 	public interface ICloneable<T> : ICloneable where T : class {
 		T TypedClone();

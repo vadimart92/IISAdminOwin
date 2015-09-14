@@ -1947,7 +1947,7 @@
                     // We don't use the EventSource's native reconnect function as it
                     // doesn't allow us to change the URL when reconnecting. We need
                     // to change the URL to not include the /connect suffix, and pass
-                    // the last message id we received.
+                    // the last message key we received.
                     connection.log("EventSource reconnecting due to the server connection ending.");
                     that.reconnect(connection);
                 } else {
@@ -2076,7 +2076,7 @@
                 return;
             }
 
-            frame.setAttribute("data-signalr-connection-id", connection.id);
+            frame.setAttribute("data-signalr-connection-key", connection.id);
 
             // Start preventing loading icon
             // This will only perform work if the loadPreventer is not attached to another connection.
@@ -2771,7 +2771,7 @@
                     callback.method.call(callback.scope, minData);
                 }
             } else if (typeof (minData.I) !== "undefined") {
-                // We received the return value from a server method invocation, look up callback by id and call it
+                // We received the return value from a server method invocation, look up callback by key and call it
                 dataCallbackId = minData.I.toString();
                 callback = connection._.invocationCallbacks[dataCallbackId];
                 if (callback) {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IISAdmin.Owin.DAL.Dapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace IISAdmin.Owin.DAL.Test {
@@ -14,7 +15,7 @@ namespace IISAdmin.Owin.DAL.Test {
 				.Columns(@"vr.ID, 
 						vr.Name, 
 						tb.Name as [Version], 
-						vr.IsPublished as Release, 
+						vr.IsPublished as IsRelease, 
 						vr.CreatedOn as CreatedOn, 
 						vr.BuildFolderLink as ZipFilePath")
 				.From(@"vw_Release vr
@@ -24,7 +25,7 @@ namespace IISAdmin.Owin.DAL.Test {
 vr.ID, 
 	vr.Name, 
 	tb.Name as [Version], 
-	vr.IsPublished as Release, 
+	vr.IsPublished as IsRelease, 
 	vr.CreatedOn as CreatedOn, 
 	vr.BuildFolderLink as ZipFilePath
 FROM vw_Release vr
@@ -37,7 +38,7 @@ WHERE vr.ID = @releaseId", select);
 				.Columns(@"vr.ID, 
 						vr.Name, 
 						tb.Name as [Version], 
-						vr.IsPublished as Release, 
+						vr.IsPublished as IsRelease, 
 						vr.CreatedOn as CreatedOn, 
 						vr.BuildFolderLink as ZipFilePath")
 				.From(@"vw_Release vr
@@ -47,7 +48,7 @@ WHERE vr.ID = @releaseId", select);
 vr.ID, 
 	vr.Name, 
 	tb.Name as [Version], 
-	vr.IsPublished as Release, 
+	vr.IsPublished as IsRelease, 
 	vr.CreatedOn as CreatedOn, 
 	vr.BuildFolderLink as ZipFilePath
 FROM vw_Release vr

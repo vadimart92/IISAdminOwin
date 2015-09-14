@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using IISAdmin.Interfaces;
 
 namespace IISAdmin.WebSiteManagmentProvider {
+
 	public static class SiteDeployNamesHelper {
 
 		public class DeployNamesInfo {
@@ -28,26 +29,26 @@ namespace IISAdmin.WebSiteManagmentProvider {
 
 		}
 
-		public static DeployNamesInfo GetDeployNamesInfo(ISiteCreateData inputData, string webAppRoot) {
+		public static DeployNamesInfo GetDeployNamesInfo(SiteCreateData inputData, string webAppRoot) {
 			var res = new DeployNamesInfo();
 			Version version;
 			var vstr = GetShortVersion(inputData, out version);
 			res.Version = version;
 			res.ShortVersion = vstr;
-			var nameTags = inputData.ReleaseInfo.Name.Split('_');
+			var nameTags = inputData?.ReleaseInfo?.Name.Split('_') ?? new string[0];
 			if (nameTags.Length == 6) {
 				res.ProductName = GetShortName(nameTags[1]);
 				res.Type = nameTags[2];
 				res.Locale = nameTags[3];
 				var db = nameTags[4];
 				res.DbType = (db == "MSSQL" ? String.Empty : db + "_");
-				res.UserInitials = GetUserInitials(inputData.UserName);
+				res.UserInitials = GetUserInitials(inputData?.UserName);
 			}
 			return res;
 		}
 
-		public static string GetShortVersion(ISiteCreateData inputData, out  Version version) {
-			var vstr = inputData.ReleaseInfo.Version ?? "0.0.0.0";
+		public static string GetShortVersion(SiteCreateData inputData, out  Version version) {
+			var vstr = inputData?.ReleaseInfo?.Version ?? "0.0.0.0";
 			Version.TryParse(vstr, out version);
 			if (version == null) {
 				version = new Version("0.0.0.0");
@@ -64,6 +65,9 @@ namespace IISAdmin.WebSiteManagmentProvider {
 		}
 
 		public static string GetUserInitials(string name) {
+		    if (string.IsNullOrWhiteSpace(name)) {
+		        return name;
+		    }
 			var indexOfPoint = name.IndexOf(".", StringComparison.OrdinalIgnoreCase);
 			if (indexOfPoint > -1) {
 				name = name.Substring(indexOfPoint - 1, 1) + name.Substring(indexOfPoint + 1, 1);

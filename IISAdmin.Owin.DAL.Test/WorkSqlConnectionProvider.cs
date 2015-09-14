@@ -3,11 +3,10 @@ using System.Data;
 using System.Data.SqlClient;
 using DeclarativeSql;
 using IISAdmin.Interfaces;
-using IISAdmin.Owin.DAL.WorkDbReleaseRepository;
-using IISAdmin.Owin.DAL.WorkDbReleaseRepository.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Dapper;
 using DeclarativeSql.Dapper;
+using IISAdmin.Owin.DAL.Dapper.WorkDbReleaseRepository;
 
 namespace IISAdmin.Owin.DAL.Test {
 	[TestClass]

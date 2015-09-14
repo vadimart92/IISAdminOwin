@@ -5,11 +5,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using Dapper;
-using DeclarativeSql;
 using IISAdmin.Interfaces;
-using IISAdmin.Owin.DAL.WorkDbReleaseRepository.Models;
+using IISAdmin.Owin.DAL.Dapper.WorkDbReleaseRepository.Models;
 
-namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository {
+namespace IISAdmin.Owin.DAL.Dapper.WorkDbReleaseRepository {
 	public class WorkDbReleaseRepository : IReleaseRepository {
 		#region Fields: Private
 
@@ -33,11 +32,11 @@ namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository {
 						LEFT JOIN dbo.tbl_Build tb ON tb.ID = vr.BuildID");
 		}
 
-		public void Create(IRelease entity) {
+		public void Create(Release entity) {
 			throw new InvalidOperationException();
 		}
 
-		public IRelease Get(Guid key) {
+		public Release Get(Guid key) {
 			var query = GetMainSelect()
 				.Where("vr.ID = @releaseId");
 			return _connectionProvider.ExecuteAction((connection) => {
@@ -45,29 +44,29 @@ namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository {
 			});
 		}
 
-		public IEnumerable<IRelease> GetTopThousand() {
+		public IEnumerable<Release> GetTopThousand() {
 			var query = GetMainSelect().Top(1000);
 			return _connectionProvider.ExecuteAction((connection) => connection.Query<WorkDbRelease>(query));
 		}
 
-		public IEnumerable<IRelease> GetTopThousand(string nameLike) {
+		public IEnumerable<Release> GetTopThousand(string nameLike) {
 			var query = GetMainSelect().Top(1000).Where(@"vr.Name LIKE @releaseName");
 			return _connectionProvider.ExecuteAction((connection) => connection.Query<WorkDbRelease>(query, new {releaseName = nameLike}));
 		}
 
-		public IEnumerable<IRelease> GetTopThousand(Expression<Func<IRelease, bool>> expression) {
+		public IEnumerable<Release> Get(Expression<Func<Release, bool>> expression) {
 			throw new InvalidOperationException();
 		}
 
-		public void Update(IRelease entity) {
+	    public void Update(Guid key, Action<Release> action) {
+	        throw new NotImplementedException();
+	    }
+        
+		public void Delete(Guid key) {
 			throw new InvalidOperationException();
 		}
 
-		public void Delete(Guid id) {
-			throw new InvalidOperationException();
-		}
-
-		public IRelease GetByUri(string uri) {
+		public Release GetByUri(string uri) {
 			var id = GetIdByUri(uri);
 			return Get(id);
 		}

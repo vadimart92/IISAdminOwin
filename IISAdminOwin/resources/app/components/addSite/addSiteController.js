@@ -11,10 +11,12 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
     }
   });
   AddSite = Class(common["class"].StateFullController, {
+    $state: null,
     $timeout: null,
     site: new Site(),
     hub: null,
-    constructor: function($rootScope, $scope, $timeout) {
+    constructor: function($rootScope, $scope, $timeout, $state) {
+      this.$state = $state;
       AddSite.$super.call(this, $scope, $rootScope);
       return this.initHub();
     },
@@ -42,7 +44,8 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
       AddSite.$superp.defineScope.call(this);
       this.initSiteFields();
       this.initReleaseInfoFields();
-      return this.$scope.site = this.site;
+      this.$scope.site = this.site;
+      return this.$scope.addSite = this.bind(this.addSite);
     },
     onStateChangeStart: function() {
       AddSite.$superp.onStateChangeStart.call(this);
@@ -51,6 +54,7 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
     },
     setSqlInstances: function(sqlInstances) {
       this.site.msSqlInstances = sqlInstances;
+      this.site.db = sqlInstances.pop();
     },
     getSiteCreateInfo: function() {
       var me;
@@ -70,7 +74,11 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
       }));
     },
     addSite: function() {
-      this.hub.AddSite(this.site);
+      this.hub.AddSite(this.site).then((function(_this) {
+        return function() {
+          return _this.$state.go("addSiteProgress");
+        };
+      })(this));
     },
     initSiteFields: function() {
       this.$scope.siteFields = [
@@ -109,7 +117,8 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
           key: "db",
           type: "uiSelect",
           templateOptions: {
-            label: "MSSQL Instance"
+            label: "MSSQL Instance",
+            placeholder: "Select or search instance"
           }
         }
       ];
@@ -156,8 +165,8 @@ define(["app", "hub", "jquery", "common"], function(app, Hub, $, common) {
     }
   });
   return [
-    "$rootScope", "$scope", "$timeout", function($rootScope, $scope, $timeout) {
-      return new AddSite($rootScope, $scope, $timeout);
+    "$rootScope", "$scope", "$timeout", "$state", function($rootScope, $scope, $timeout, $state) {
+      return new AddSite($rootScope, $scope, $timeout, $state);
     }
   ];
 });

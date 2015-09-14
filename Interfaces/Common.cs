@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace IISAdmin.Interfaces
@@ -21,12 +22,16 @@ namespace IISAdmin.Interfaces
 
 		IEnumerable<TEntity> GetTopThousand();
 
-		IEnumerable<TEntity> GetTopThousand(Expression<Func<TEntity, bool>> expression);
+		IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> expression);
 
-		void Update(TEntity entity);
+		void Update(TKey key, Action<TEntity> action);
 
-		void Delete(TKey id);
+		void Delete(TKey key);
 	}
+
+    public interface IQueryableRepository<TEntity, in TKey> where TEntity : IEntity<TKey> {
+        IQueryable Get();
+    }
 
 	public interface ISqlConnectionProvider {
 		SqlConnection GetOpenSqlConnection();

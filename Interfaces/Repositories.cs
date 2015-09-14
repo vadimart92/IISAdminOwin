@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace IISAdmin.Interfaces
 {
@@ -25,7 +26,7 @@ namespace IISAdmin.Interfaces
 
 		void ClearSiteCache();
 
-		long CreateSite(ISiteCreateData data, int appCount);
+		long CreateSite(SiteCreateData data, int appCount);
 
 		void ModifyConnectionStrings(long siteId, Dictionary<string, string> config);
 
@@ -37,60 +38,60 @@ namespace IISAdmin.Interfaces
 
 	#region IReleaseRepository
 
-	public interface IRelease : IEntity<Guid>
+    [Serializable]
+    public class Release : IEntity<Guid> {
+        public virtual string Name { get; set; }
+        public virtual string Version { get; set; }
+        public virtual bool IsRelease { get; set; }
+        public virtual DateTime CreatedOn { get; set; }
+        public virtual string ZipFilePath { get; set; }
+        public virtual Guid Id { get; set; }
+    }
+
+    public interface IReleaseRepository : IRepository<Release, Guid>
 	{
-		string Name { get; set; }
-
-		string Version { get; set; }
-
-		bool Release { get; set; }
-				
-		DateTime CreatedOn { get; set; }
-
-		string ZipFilePath { get; }
+		Release GetByUri(string uri);
+		IEnumerable<Release> GetTopThousand(string nameLike);
 	}
 
-	public interface IReleaseRepository : IRepository<IRelease, Guid>
+    #endregion IReleaseRepository
+
+    #region ISqlServerInstanceRepository
+
+    [Serializable]
+    public class SqlServerInstance {
+        public string ServerName { get; set; }
+        public string InstanceName { get; set; }
+        public string Version { get; set; }
+        public string Name
+        {
+            get
+            {
+                return (new List<string> { ServerName, InstanceName }).Where(s => !string.IsNullOrWhiteSpace(s)).Aggregate((a, b) => a + "/" + b);
+            }
+        }
+    }
+
+    public interface ISqlServerInstanceRepository
 	{
-		IRelease GetByUri(string uri);
-		IEnumerable<IRelease> GetTopThousand(string nameLike);
+		IList<SqlServerInstance> GetAllInstances(IList<string> serverNameFilter = null);
 	}
 
-	#endregion IReleaseRepository
-
-	#region ISqlServerInstanceRepository
-
-	public interface ISqlServerInstance
-	{
-		string ServerName { get; set; }
-
-		string InstanceName { get; set; }
-
-		string Name { get; }
-
-		string Version { get; set; }
-	}
-
-	public interface ISqlServerInstanceRepository
-	{
-		IList<ISqlServerInstance> GetAllInstances(IList<string> serverNameFilter = null);
-	}
-
-	public class SqlServerInstanceComparer:IEqualityComparer<ISqlServerInstance> {
+	public class SqlServerInstanceComparer:IEqualityComparer<SqlServerInstance> {
 
 		public static readonly SqlServerInstanceComparer Instance = new SqlServerInstanceComparer();
 
-		public bool Equals(ISqlServerInstance x, ISqlServerInstance y) {
+		public bool Equals(SqlServerInstance x, SqlServerInstance y) {
 			return CompareNames (x,y) == 0;
 		}
 
-		private int CompareNames(ISqlServerInstance x, ISqlServerInstance y) {
+		private int CompareNames(SqlServerInstance x, SqlServerInstance y) {
 			return string.Compare(x.ServerName, y.ServerName, StringComparison.OrdinalIgnoreCase)
 				+ string.Compare(x.InstanceName, y.InstanceName, StringComparison.OrdinalIgnoreCase)
 				+ string.Compare(x.Version, y.Version, StringComparison.OrdinalIgnoreCase);
 		}
 
-		public int GetHashCode(ISqlServerInstance obj) {
+		public int GetHashCode(SqlServerInstance obj) {
 			return obj.ServerName.GetHashCode() + obj.InstanceName.GetHashCode() + obj.Version.GetHashCode();
 		}
 	}

@@ -7,22 +7,8 @@ using IISAdmin.Interfaces;
 using Microsoft.SqlServer.Management.Smo;
 using Newtonsoft.Json;
 
-namespace IISAdmin.Owin.DAL
+namespace IISAdmin.Owin.DAL.Dapper
 {
-	public class SqlServerInstance : ISqlServerInstance {
-		public string ServerName { get; set; }
-
-		public string InstanceName { get; set; }
-
-		public string Version { get; set; }
-
-		public string Name {
-			get {
-				return (new List<string> { ServerName, InstanceName }).Where(s => !string.IsNullOrWhiteSpace(s)).Aggregate((a, b) => a + "/" + b);
-			}
-		}
-	}
-
 	public class LocalSqlServerInstanceRepository : ISqlServerInstanceRepository
 	{
 		private static readonly Lazy<DataTable> _instanceDataTable = new Lazy<DataTable>(() => SqlDataSourceEnumerator.Instance.GetDataSources());
@@ -33,8 +19,8 @@ namespace IISAdmin.Owin.DAL
 
 		#region Члены ISqlServerInstanceRepository
 
-		public IList<ISqlServerInstance> GetAllInstances(IList<string> servernameFilter = null) {
-			return GetServerInstances(servernameFilter).ConvertAll(i => (ISqlServerInstance)i);
+		public IList<SqlServerInstance> GetAllInstances(IList<string> servernameFilter = null) {
+			return GetServerInstances(servernameFilter).ConvertAll(i => i);
 		}
 
 		private List<SqlServerInstance> GetFromDataTable(DataTable table, string snColumnName, string inColumnName, string vColumnName) {
@@ -50,9 +36,9 @@ namespace IISAdmin.Owin.DAL
 			return res;
 		}
 
-		#endregion Члены ISqlServerInstanceRepository
+		#endregion Члены SqlServerInstanceRepository
 
-		private List<ISqlServerInstance> GetServerInstances(IList<string> serverNames) {
+		private List<SqlServerInstance> GetServerInstances(IList<string> serverNames) {
 			var table = InstanceDataTable.Copy();
 			var list = GetFromDataTable(table, "ServerName", "InstanceName", "Version");
 			var smoList = GetFromDataTable(SmoApplication.EnumAvailableSqlServers(), "Server", "Instance", "Version");

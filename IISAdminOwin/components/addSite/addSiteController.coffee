@@ -10,13 +10,15 @@ define ["app", "hub", "jquery" , "common"], (app, Hub, $, common)->
 	)
 	AddSite = Class(common.class.StateFullController, {
 
+		$state: null
 		$timeout: null
 
 		site: new Site()
 
 		hub: null
 
-		constructor: ($rootScope, $scope, $timeout)->
+		constructor: ($rootScope, $scope, $timeout, $state)->
+			this.$state = $state
 			AddSite.$super.call(this, $scope, $rootScope)
 			do this.initHub
 
@@ -50,6 +52,7 @@ define ["app", "hub", "jquery" , "common"], (app, Hub, $, common)->
 			do this.initSiteFields
 			do this.initReleaseInfoFields
 			this.$scope.site = this.site
+			this.$scope.addSite = this.bind this.addSite
 
 		onStateChangeStart: ()->
 			AddSite.$superp.onStateChangeStart.call(this)
@@ -58,6 +61,7 @@ define ["app", "hub", "jquery" , "common"], (app, Hub, $, common)->
 
 		setSqlInstances: (sqlInstances)->
 			this.site.msSqlInstances = sqlInstances
+			this.site.db = do sqlInstances.pop
 			return
 
 		getSiteCreateInfo: ()->
@@ -78,7 +82,7 @@ define ["app", "hub", "jquery" , "common"], (app, Hub, $, common)->
 			return
 
 		addSite: ->
-			this.hub.AddSite this.site
+			this.hub.AddSite(this.site).then(=>this.$state.go("addSiteProgress"))
 			return
 
 		initSiteFields: ->
@@ -98,7 +102,7 @@ define ["app", "hub", "jquery" , "common"], (app, Hub, $, common)->
 				},
 				{ key: "name", type: "input", templateOptions: {label: "Name" }}
 				{ key: "webAppDir", type: "input", templateOptions: {label: "Web app directory" }}
-				{ key: "db",  type: "uiSelect", templateOptions: { label: "MSSQL Instance" } }
+				{ key: "db",  type: "uiSelect", templateOptions: { label: "MSSQL Instance", placeholder: "Select or search instance" } }
 			]
 			return
 
@@ -111,4 +115,4 @@ define ["app", "hub", "jquery" , "common"], (app, Hub, $, common)->
 				{ key: "release", type: "checkbox", templateOptions: {label: "Release", disabled: on }}
 			]
 	})
-	["$rootScope", "$scope", "$timeout", ($rootScope, $scope, $timeout)-> return new AddSite($rootScope, $scope, $timeout)]
+	["$rootScope", "$scope", "$timeout", "$state", ($rootScope, $scope, $timeout,$state)-> return new AddSite($rootScope, $scope, $timeout, $state)]

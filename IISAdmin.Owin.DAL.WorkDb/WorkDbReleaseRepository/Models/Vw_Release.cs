@@ -3,43 +3,43 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using IISAdmin.Interfaces;
 
-namespace IISAdmin.Owin.DAL.WorkDbReleaseRepository.Models
+namespace IISAdmin.Owin.DAL.Dapper.WorkDbReleaseRepository.Models
 {
 	[Table("Vw_Release", Schema = "dbo")]
-	public class WorkDbRelease : IRelease {
+	public class WorkDbRelease : Release {
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public Guid Id {
+		public override Guid Id {
 			get;
 			set;
 		}
 
 		[Column("Name")]
-		public string Name {
+		public override string Name {
 			get;
 			set;
 		}
 
 		[Column("Version")]
-		public string Version {
+		public override string Version {
 			get;
 			set;
 		}
 
 		[Column("Release")]
-		public bool Release {
+		public override bool IsRelease {
 			get;
 			set;
 		}
 
 		[Column("CreatedOn")]
-		public DateTime CreatedOn {
+		public override DateTime CreatedOn {
 			get;
 			set;
 		}
 
 		[Column("BuildFolderLink")]
-		public string ZipFilePath {
+		public override string ZipFilePath {
 			get;
 			set;
 		}

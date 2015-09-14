@@ -38,6 +38,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <ExcludeFoldersFromDeployment>components</ExcludeFoldersFromDeployment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -46,6 +48,17 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="mainDb-Deployment" Order="2">
+          <Destination Path="Data Source=TSCDistr-MS\MSSQL2012%3bInitial Catalog=IISAdmin%3bIntegrated Security=True" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=localhost%3bInitial Catalog=IISAdmin%3bIntegrated Security=True" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\mainDb-Deployment_SchemaAndData.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Breeze.ContextProvider">
@@ -104,8 +117,8 @@
     <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
       <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Owin">
@@ -160,37 +173,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="components\main.css">
-      <DependentUpon>main.less</DependentUpon>
-    </Content>
-    <Content Include="components\main.min.css">
-      <DependentUpon>main.css</DependentUpon>
-    </Content>
     <Content Include="packages.config" />
-    <Content Include="components\main.css.map">
-      <DependentUpon>main.css</DependentUpon>
-    </Content>
-    <Content Include="components\siteList\siteListController.coffee" />
-    <Content Include="components\addSite\addSite.less" />
-    <Content Include="components\addSite\addSiteController.coffee" />
-    <None Include="components\main.less" />
     <Content Include="package.json" />
-    <Content Include="components\app.coffee" />
-    <Content Include="components\home\homeController.coffee" />
     <Content Include="gulpfile.coffee" />
-    <Content Include="components\siteList\siteController.coffee" />
-    <Content Include="resources\app\components\addSite\addSite.css" />
-    <Content Include="resources\app\components\addSite\addSiteController.js" />
-    <Content Include="resources\app\components\common\enums.js" />
-    <Content Include="resources\app\components\common\infoProvider.js" />
-    <Content Include="resources\app\components\common\logger.js" />
-    <Content Include="resources\app\components\common\signalRHub.js" />
-    <Content Include="resources\app\components\common\webSiteHub.js" />
-    <Content Include="resources\app\components\siteList\siteList.css" />
-    <Content Include="resources\app\views\addSite.html" />
-    <Content Include="resources\app\views\custom-formly-fields-ui-select.html" />
-    <Content Include="resources\app\views\siteList.site.html" />
-    <Content Include="components\siteList\siteList.less" />
+    <None Include="Properties\PublishProfiles\zip.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -199,43 +185,178 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="resources\app\components\addSiteProgress\addSiteProgress.js" />
+    <Content Include="resources\app\components\addSiteProgress\addSiteProgressController.js" />
+    <Content Include="resources\app\components\addSite\addSite.css" />
+    <Content Include="resources\app\components\addSite\addSite.progress.Controller.js" />
+    <Content Include="resources\app\components\addSite\addSiteController.js" />
+    <Content Include="resources\app\components\addSite\addSiteProgress.js" />
+    <Content Include="resources\app\components\addSite\index.js" />
+    <Content Include="resources\app\components\app-bootstrap.js" />
+    <Content Include="resources\app\components\app.controllers.index.js" />
+    <Content Include="resources\app\components\app.controllers.js" />
+    <Content Include="resources\app\components\app.factories.index.js" />
+    <Content Include="resources\app\components\app.factories.js" />
     <Content Include="resources\app\components\app.js" />
-    <Content Include="resources\app\components\home\controller.js" />
+    <Content Include="resources\app\components\app.services.index.js" />
+    <Content Include="resources\app\components\app.services.js" />
+    <Content Include="resources\app\components\bootstrap.js" />
+    <Content Include="resources\app\components\common.js" />
+    <Content Include="resources\app\components\common\baseClass.js" />
+    <Content Include="resources\app\components\common\baseController.js" />
+    <Content Include="resources\app\components\common\breezeDataService.js" />
+    <Content Include="resources\app\components\common\common.js" />
+    <Content Include="resources\app\components\common\enums.js" />
+    <Content Include="resources\app\components\common\infoProvider.js" />
+    <Content Include="resources\app\components\common\informationHub.js" />
+    <Content Include="resources\app\components\common\logger.js" />
+    <Content Include="resources\app\components\common\signalRHub.js" />
+    <Content Include="resources\app\components\common\statefullController.js" />
+    <Content Include="resources\app\components\common\utils.js" />
+    <Content Include="resources\app\components\common\webSiteHub.js" />
+    <Content Include="resources\app\components\css.js" />
+    <Content Include="resources\app\components\dataservice\siteDataService.js" />
+    <Content Include="resources\app\components\domReady.js" />
+    <Content Include="resources\app\components\home\home.css" />
     <Content Include="resources\app\components\home\homeController.js" />
     <Content Include="resources\app\components\main.css" />
-    <Content Include="resources\app\components\siteList\controller.js" />
-    <Content Include="resources\app\components\siteList\siteController.js" />
+    <Content Include="resources\app\components\require.js" />
+    <Content Include="resources\app\components\routes.js" />
+    <Content Include="resources\app\components\siteList\site.js" />
+    <Content Include="resources\app\components\siteList\siteList.css" />
     <Content Include="resources\app\components\siteList\siteListController.js" />
+    <Content Include="resources\app\components\siteList\siteUtils.js" />
+    <Content Include="resources\app\components\text.js" />
+    <Content Include="resources\app\components\toastr\toastrService.js" />
+    <Content Include="resources\app\views\addSite.html" />
+    <Content Include="resources\app\views\addSiteProgress\addSiteProgress.html" />
+    <Content Include="resources\app\views\custom-formly-fields-ui-select.html" />
     <Content Include="resources\app\views\home.html" />
-    <Content Include="resources\app\views\siteList.html" />
+    <Content Include="resources\app\views\siteList\siteList.columns.bindings.html" />
+    <Content Include="resources\app\views\siteList\siteList.columns.pool.html" />
+    <Content Include="resources\app\views\siteList\siteList.columns.redis.html" />
+    <Content Include="resources\app\views\siteList\siteList.columns.siteState.html" />
+    <Content Include="resources\app\views\siteList\siteList.html" />
+    <Content Include="resources\app\views\siteList\siteList.site.html" />
     <Content Include="resources\assets\angular\angular-animate.js" />
+    <Content Include="resources\assets\angular\angular-formly-templates-bootstrap.js" />
     <Content Include="resources\assets\angular\angular-resource.js" />
+    <Content Include="resources\assets\angular\angular-sanitize.js" />
     <Content Include="resources\assets\angular\angular-ui-router.js" />
+    <Content Include="resources\assets\angular\angular.1.4.3.js" />
     <Content Include="resources\assets\angular\angular.js" />
+    <Content Include="resources\assets\angular\angularAMD.js" />
+    <Content Include="resources\assets\angular\loading-bar.css" />
+    <Content Include="resources\assets\angular\loading-bar.js" />
+    <Content Include="resources\assets\angular\ngload.js" />
+    <Content Include="resources\assets\angular\ui-bootstrap-0.13.1-csp.css" />
     <Content Include="resources\assets\angular\ui-bootstrap-tpls.js" />
     <Content Include="resources\assets\angular\ui-bootstrap.js" />
+    <Content Include="resources\assets\angular\ui-formly.js" />
+    <Content Include="resources\assets\angular\ui-router-styles.js" />
+    <Content Include="resources\assets\angular\ui-select.css" />
+    <Content Include="resources\assets\angular\ui-select.js" />
     <Content Include="resources\assets\boilerplate\modernizr-2.6.2.min.js" />
     <Content Include="resources\assets\boilerplate\normalize.css" />
+    <Content Include="resources\assets\bootstrap\bootstrap-theme.css" />
+    <Content Include="resources\assets\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="resources\assets\bootstrap\bootstrap-theme.min.css" />
     <Content Include="resources\assets\bootstrap\bootstrap.css" />
+    <Content Include="resources\assets\bootstrap\bootstrap.css.map" />
     <Content Include="resources\assets\bootstrap\bootstrap.js" />
     <Content Include="resources\assets\bootstrap\bootstrap.less" />
+    <Content Include="resources\assets\bootstrap\bootstrap.min.css" />
     <Content Include="resources\assets\bootstrap\bootstrap_min.css" />
-    <Content Include="resources\assets\bootstrap\glyphicons-halflings-regular.eot" />
-    <Content Include="resources\assets\bootstrap\glyphicons-halflings-regular.svg" />
-    <Content Include="resources\assets\bootstrap\glyphicons-halflings-regular.ttf" />
-    <Content Include="resources\assets\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="resources\assets\bootstrap\template\accordion\accordion-group.html" />
+    <Content Include="resources\assets\bootstrap\template\accordion\accordion.html" />
+    <Content Include="resources\assets\bootstrap\template\alert\alert.html" />
+    <Content Include="resources\assets\bootstrap\template\carousel\carousel.html" />
+    <Content Include="resources\assets\bootstrap\template\carousel\slide.html" />
+    <Content Include="resources\assets\bootstrap\template\datepicker\datepicker.html" />
+    <Content Include="resources\assets\bootstrap\template\datepicker\day.html" />
+    <Content Include="resources\assets\bootstrap\template\datepicker\month.html" />
+    <Content Include="resources\assets\bootstrap\template\datepicker\popup.html" />
+    <Content Include="resources\assets\bootstrap\template\datepicker\year.html" />
+    <Content Include="resources\assets\bootstrap\template\modal\backdrop.html" />
+    <Content Include="resources\assets\bootstrap\template\modal\window.html" />
+    <Content Include="resources\assets\bootstrap\template\pagination\pager.html" />
+    <Content Include="resources\assets\bootstrap\template\pagination\pagination.html" />
+    <Content Include="resources\assets\bootstrap\template\popover\popover-template.html" />
+    <Content Include="resources\assets\bootstrap\template\popover\popover.html" />
+    <Content Include="resources\assets\bootstrap\template\progressbar\bar.html" />
+    <Content Include="resources\assets\bootstrap\template\progressbar\progress.html" />
+    <Content Include="resources\assets\bootstrap\template\progressbar\progressbar.html" />
+    <Content Include="resources\assets\bootstrap\template\rating\rating.html" />
+    <Content Include="resources\assets\bootstrap\template\tabs\tab.html" />
+    <Content Include="resources\assets\bootstrap\template\tabs\tabset.html" />
+    <Content Include="resources\assets\bootstrap\template\timepicker\timepicker.html" />
+    <Content Include="resources\assets\bootstrap\template\tooltip\tooltip-html-popup.html" />
+    <Content Include="resources\assets\bootstrap\template\tooltip\tooltip-html-unsafe-popup.html" />
+    <Content Include="resources\assets\bootstrap\template\tooltip\tooltip-popup.html" />
+    <Content Include="resources\assets\bootstrap\template\tooltip\tooltip-template-popup.html" />
+    <Content Include="resources\assets\bootstrap\template\typeahead\typeahead-match.html" />
+    <Content Include="resources\assets\bootstrap\template\typeahead\typeahead-popup.html" />
+    <Content Include="resources\assets\breeze\breeze.ajax.angular.js" />
+    <Content Include="resources\assets\breeze\breeze.bridge.angular.js" />
+    <Content Include="resources\assets\breeze\breeze.dataService.webApi.js" />
+    <Content Include="resources\assets\breeze\breeze.debug.js" />
+    <Content Include="resources\assets\breeze\breeze.savequeuing.js" />
+    <Content Include="resources\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="resources\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="resources\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="resources\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="resources\assets\jquery\jquery.js" />
+    <Content Include="resources\assets\jsface\jsface.js" />
+    <Content Include="resources\assets\jsface\props.plugin.js" />
     <Content Include="resources\assets\mProgress\mprogress.css" />
     <Content Include="resources\assets\mProgress\mprogress.js" />
+    <Content Include="resources\assets\q\q.js" />
+    <Content Include="resources\assets\signalR\jquery.signalR-2.2.0.js" />
     <Content Include="resources\assets\toaster\toastr.css" />
     <Content Include="resources\assets\toaster\toastr.js" />
-    <Content Include="resources\assets\ui-grid\ui-grid-stable.css" />
-    <Content Include="resources\assets\ui-grid\ui-grid-stable.js" />
+    <Content Include="resources\assets\ui-grid\less\animation.less" />
+    <Content Include="resources\assets\ui-grid\less\body.less" />
+    <Content Include="resources\assets\ui-grid\less\bootstrap\bootstrap.less" />
+    <Content Include="resources\assets\ui-grid\less\cell.less" />
+    <Content Include="resources\assets\ui-grid\less\cellnav\less\cellNav.less" />
+    <Content Include="resources\assets\ui-grid\less\edit\less\edit.less" />
+    <Content Include="resources\assets\ui-grid\less\elements.less" />
+    <Content Include="resources\assets\ui-grid\less\expandable\less\expandable.less" />
+    <Content Include="resources\assets\ui-grid\less\exporter\less\exporter.less" />
+    <Content Include="resources\assets\ui-grid\less\footer.less" />
+    <Content Include="resources\assets\ui-grid\less\goups.less" />
+    <Content Include="resources\assets\ui-grid\less\grid.less" />
+    <Content Include="resources\assets\ui-grid\less\grouping\less\grouping.less" />
+    <Content Include="resources\assets\ui-grid\less\header.less" />
+    <Content Include="resources\assets\ui-grid\less\icons.less" />
+    <Content Include="resources\assets\ui-grid\less\importer\less\importer.less" />
+    <Content Include="resources\assets\ui-grid\less\main.less" />
+    <Content Include="resources\assets\ui-grid\less\menu.less" />
+    <Content Include="resources\assets\ui-grid\less\move-columns\less\colMovable.less" />
+    <Content Include="resources\assets\ui-grid\less\pagination\less\pagination.less" />
+    <Content Include="resources\assets\ui-grid\less\pinning\less\pinning.less" />
+    <Content Include="resources\assets\ui-grid\less\resize-columns\less\column-resizer.less" />
+    <Content Include="resources\assets\ui-grid\less\row-edit\less\rowEdit.less" />
+    <Content Include="resources\assets\ui-grid\less\rtl.less" />
+    <Content Include="resources\assets\ui-grid\less\selection\less\selection.less" />
+    <Content Include="resources\assets\ui-grid\less\sorting.less" />
+    <Content Include="resources\assets\ui-grid\less\tree-base\less\tree-base.less" />
+    <Content Include="resources\assets\ui-grid\less\tree-view\less\tree-view.less" />
+    <Content Include="resources\assets\ui-grid\less\variables.less" />
+    <Content Include="resources\assets\ui-grid\ui-grid.css" />
+    <Content Include="resources\assets\ui-grid\ui-grid.eot" />
+    <Content Include="resources\assets\ui-grid\ui-grid.js" />
+    <Content Include="resources\assets\ui-grid\ui-grid.min.css" />
+    <Content Include="resources\assets\ui-grid\ui-grid.min.js" />
+    <Content Include="resources\assets\ui-grid\ui-grid.svg" />
+    <Content Include="resources\assets\ui-grid\ui-grid.ttf" />
+    <Content Include="resources\assets\ui-grid\ui-grid.woff" />
+    <Content Include="resources\assets\ui-select\select.css" />
+    <Content Include="resources\assets\ui-select\select.js" />
     <Content Include="resources\assets\underscore\underscore.js" />
     <Content Include="resources\img\bg.png" />
     <Content Include="resources\img\diamond_upholstery.png" />
     <Content Include="resources\index.html" />
-    <Content Include="resources\assets\signalR\jquery.signalR-2.2.0.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -244,10 +365,10 @@
     <Compile Include="Common\ContainerConfig.cs" />
     <Compile Include="Common\FilteredCamelCasePropertyNamesContractResolver.cs" />
     <Compile Include="Common\UnityHubActivator.cs" />
-    <Compile Include="Models\SiteCreateHubModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignaRHubs\BaseHub.cs" />
     <Compile Include="SignaRHubs\Information.cs" />
+    <Compile Include="SignaRHubs\SingnalRHubContextProvider.cs" />
     <Compile Include="SignaRHubs\SiteManagement\SiteOperationState.cs" />
     <Compile Include="SignaRHubs\SiteCreate\SiteCreateData.cs" />
     <Compile Include="SignaRHubs\SiteCreate\SiteCreateHub.cs" />
@@ -260,16 +381,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="resources\app\components\toastr\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IISAdmin.Hangfire\IISAdmin.Hangfire.csproj">
+    <ProjectReference Include="..\IISAdmin.Hangfire\IISAdmin.BackgroundWorker.csproj">
       <Project>{650a9a9e-96d6-44be-a300-79b1e2079318}</Project>
-      <Name>IISAdmin.Hangfire</Name>
+      <Name>IISAdmin.BackgroundWorker</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IISAdmin.Owin.DAL.WorkDb\IISAdmin.Owin.DAL.csproj">
+    <ProjectReference Include="..\IISAdmin.Owin.DAL.EF\IISAdmin.Owin.DAL.EF.csproj">
+      <Project>{71853546-aca9-48cd-a10a-3e784fd4ecaf}</Project>
+      <Name>IISAdmin.Owin.DAL.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IISAdmin.Owin.DAL.WorkDb\IISAdmin.Owin.DAL.Dapper.csproj">
       <Project>{b69f3e12-0081-4ea3-a8cc-dd3890b01ea6}</Project>
-      <Name>IISAdmin.Owin.DAL</Name>
+      <Name>IISAdmin.Owin.DAL.Dapper</Name>
     </ProjectReference>
     <ProjectReference Include="..\IISAdmin.Owin.Mock\IISAdmin.Owin.Mock.csproj">
       <Project>{e8ebd329-720b-4456-a0de-9699f57cc42e}</Project>

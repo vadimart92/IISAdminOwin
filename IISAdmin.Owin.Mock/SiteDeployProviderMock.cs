@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using IISAdmin.Interfaces;
 using IISAdmin.WebSiteManagmentProvider;
@@ -9,28 +10,37 @@ namespace IISAdmin.Owin.Mock
 {
 	public class SiteDeployProviderMock:ISiteDeployProvider
     {
-		private ISiteDeployProvider _realDeployProvider;
+		private readonly ISiteDeployProvider _realDeployProvider;
+		private readonly IJobInfoRepository _jobInfoRepository;
+		private readonly IHubContextProvider _hubContextProvider;
 
-		public SiteDeployProviderMock(ISiteDeployProviderWebConfig config) {
+		public SiteDeployProviderMock(ISiteDeployProviderWebConfig config, IJobInfoRepository jobInfoRepository, IHubContextProvider hubContextProvider) {
+		    _jobInfoRepository = jobInfoRepository;
 			var repoMock = new Mock<IWebSiteRepository>();
-			_realDeployProvider = new SiteDeployProvider(config, repoMock.Object);
+			_realDeployProvider = new SiteDeployProvider(config, repoMock.Object, jobInfoRepository, hubContextProvider);
+		    _hubContextProvider = hubContextProvider;
 		}
-		public void DeployWebApp(ISiteCreateData siteCreateData, ISiteDeployProgress progressInfo) {
-			progressInfo.SetNextOperation();
-			InitDeployInfo(siteCreateData);
-			var wait = 10;
+		public void DeployWebApp(SiteCreateData siteCreateData, Guid jobInfoId) {
+            var deployInfo = new DeploySiteInfo(_jobInfoRepository, _hubContextProvider, jobInfoId);
+            InitDeployInfo(siteCreateData);
+			var wait = 3;
 			Thread.Sleep(TimeSpan.FromSeconds(wait));
-			//ExtractBinaries(siteCreateData);
-			progressInfo.SetNextOperation();
-			//ModifyConnectionStrings
-		}
-
-		public ISiteDeployProgress GetInitDeployProgress(IEnumerable<DeployOperationIfo> extraOperations) {
-			return _realDeployProvider.GetInitDeployProgress(extraOperations);
-		}
-
-		public void InitDeployInfo(ISiteCreateData siteCreateData) {
+            deployInfo.RestoreDbCopyFiles = OperationStageState.Completed;
+            Thread.Sleep(TimeSpan.FromSeconds(wait));
+            //ExtractBinaries(siteCreateData);
+            deployInfo.CreateWebApp = OperationStageState.Completed;
+            Thread.Sleep(TimeSpan.FromSeconds(wait));
+            //ModifyConnectionStrings
+            deployInfo.ModifyConfigs = OperationStageState.Completed;
+        }
+        
+	    public void InitDeployInfo(SiteCreateData siteCreateData) {
 			_realDeployProvider.InitDeployInfo(siteCreateData);
 		}
+
+	    public OperationInfoBase GetOperationsInfo() {
+           return _realDeployProvider.GetOperationsInfo();
+        }
+        
 	}
 }
