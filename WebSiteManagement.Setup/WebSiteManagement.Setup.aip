@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="12.4.1" version="12.4.1" Modules="professional" RootPath="." Language="en" Id="{57FF36FB-3EB9-4558-B3C7-FA88955556FB}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="DigCertStoreComponent;UpdaterComponent;SerValComponent;MsiExtComponent;MsiAssemblyComponent;MsiOrgComponent;ActSyncAppComponent;PreReqComponent;MsiThemeComponent;BackgroundImagesComponent;DictionaryComponent;CPLAppletComponent;MsiClassComponent;WebApplicationsComponent;MsiOdbcDataSrcComponent;MsiAppSearchComponent;MsiInstExSeqComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_DOTNET_VERSION"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_LinqBridge.dll" Value="..\packages\LinqBridge.1.3.0\lib\net20"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.CSharp.dll" Value="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Data.Edm.dll" Value="..\packages\Microsoft.Data.Edm.5.6.4\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Data.OData.dll" Value="..\packages\Microsoft.Data.OData.5.6.4\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.Cors.dll" Value="..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.Diagnostics.dll" Value="..\packages\Microsoft.Owin.Diagnostics.3.0.1\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.FileSystems.dll" Value="..\packages\Microsoft.Owin.FileSystems.3.0.1\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.Host.SystemWeb.dll" Value="..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.Security.dll" Value="..\packages\Microsoft.Owin.Security.3.0.1\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.StaticFiles.dll" Value="..\packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.dll" Value="..\packages\Microsoft.Owin.3.0.1\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Nancy.Owin.dll" Value="..\packages\Nancy.Owin.1.2.0\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Nancy.dll" Value="..\packages\Nancy.1.2.0\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Newtonsoft.Json.dll" Value="..\packages\Newtonsoft.Json.7.0.1\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Owin.dll" Value="..\packages\Owin.1.0\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_SharpCompress.dll" Value="..\packages\sharpcompress.0.11.0\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Core.dll" Value="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Data.DataSetExtensions.dll" Value="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Data.dll" Value="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Net.Http.Formatting.dll" Value="..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Net.Http.dll" Value="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Spatial.dll" Value="..\packages\System.Spatial.5.6.4\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Web.Cors.dll" Value="..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Web.Http.WebHost.dll" Value="..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Web.Http.dll" Value="..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Xml.Linq.dll" Value="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Xml.dll" Value="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.dll" Value="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebSiteManagement.Service.exe" Value="..\WebSiteManagementService\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebSiteManagement.Service.exe.config" Value="..\WebSiteManagementService\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebSiteManagment.Wcf.dll" Value="..\WebSiteManagementWcfLib\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_mscorlib.dll" Value="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_LinqBridge.dll" Value="LinqBridge.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.CSharp.dll" Value="Microsoft.CSharp.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Data.Edm.dll" Value="Microsoft.Data.Edm.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Data.OData.dll" Value="Microsoft.Data.OData.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.Cors.dll" Value="Microsoft.Owin.Cors.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.Diagnostics.dll" Value="Microsoft.Owin.Diagnostics.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.FileSystems.dll" Value="Microsoft.Owin.FileSystems.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.Host.SystemWeb.dll" Value="Microsoft.Owin.Host.SystemWeb.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.Security.dll" Value="Microsoft.Owin.Security.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.StaticFiles.dll" Value="Microsoft.Owin.StaticFiles.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.dll" Value="Microsoft.Owin.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Nancy.Owin.dll" Value="Nancy.Owin.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Nancy.dll" Value="Nancy.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll" Value="Newtonsoft.Json.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Owin.dll" Value="Owin.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_SharpCompress.dll" Value="SharpCompress.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Core.dll" Value="System.Core.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Data.DataSetExtensions.dll" Value="System.Data.DataSetExtensions.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Data.dll" Value="System.Data.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Net.Http.Formatting.dll" Value="System.Net.Http.Formatting.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Net.Http.dll" Value="System.Net.Http.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Spatial.dll" Value="System.Spatial.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Web.Cors.dll" Value="System.Web.Cors.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Web.Http.WebHost.dll" Value="System.Web.Http.WebHost.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Web.Http.dll" Value="System.Web.Http.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Xml.Linq.dll" Value="System.Xml.Linq.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Xml.dll" Value="System.Xml.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.dll" Value="System.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_WebSiteManagement.Service.exe" Value="WebSiteManagement.Service.exe"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_WebSiteManagement.Service.exe.config" Value="WebSiteManagement.Service.exe.config"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_WebSiteManagment.Wcf.dll" Value="WebSiteManagment.Wcf.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_mscorlib.dll" Value="mscorlib.dll"/>
+    <ROW Property="AI_REQUIRED_DOTNET_DISPLAY" MultiBuildValue="DefaultBuild:4.5.2" ValueLocId="-"/>
+    <ROW Property="AI_REQUIRED_DOTNET_VERSION" MultiBuildValue="DefaultBuild:4.5.2" ValueLocId="-"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="Manufacturer" Value="Your Company"/>
+    <ROW Property="ProductCode" Value="1033:{531F6DC2-C335-48D9-82F1-67C0416E4829} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Your Application"/>
+    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{BF109E84-FE63-4160-B03A-5041172DA7BA}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="WebSiteManagement.Service_Dir" Directory_Parent="APPDIR" DefaultDir="WEBSIT~1.SER|WebSiteManagement.Service"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="ProductInformation" ComponentId="{47B2E07F-395A-4B1B-B47A-8428B86F2416}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="WebSiteManagement.Service_PrimaryOutput" ComponentId="{D101FD60-812E-4C47-88AA-74525309C0DF}" Directory_="WebSiteManagement.Service_Dir" Attributes="0" KeyPath="WebSiteManagement.Service.exe"/>
+    <ROW Component="WebSiteManagement.Service_References" ComponentId="{91A41C1E-7F2F-4C48-84FE-D34564208156}" Directory_="WebSiteManagement.Service_Dir" Attributes="0" KeyPath="mscorlib.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="ProductInformation WebSiteManagement.Service_PrimaryOutput WebSiteManagement.Service_References"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="LinqBridge.dll" Component_="WebSiteManagement.Service_References" FileName="LINQBR~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_LinqBridge.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_LinqBridge.dll&gt;" SelfReg="false" NextFile="Microsoft.Data.Edm.dll"/>
+    <ROW File="Microsoft.CSharp.dll" Component_="WebSiteManagement.Service_References" FileName="MICRO~11.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.CSharp.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.CSharp.dll&gt;" SelfReg="false" NextFile="System.Data.dll"/>
+    <ROW File="Microsoft.Data.Edm.dll" Component_="WebSiteManagement.Service_References" FileName="MICROS~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Data.Edm.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Data.Edm.dll&gt;" SelfReg="false" NextFile="Microsoft.Data.OData.dll"/>
+    <ROW File="Microsoft.Data.OData.dll" Component_="WebSiteManagement.Service_References" FileName="MICROS~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Data.OData.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Data.OData.dll&gt;" SelfReg="false" NextFile="Microsoft.Owin.dll"/>
+    <ROW File="Microsoft.Owin.Cors.dll" Component_="WebSiteManagement.Service_References" FileName="MICROS~5.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.Cors.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Owin.Cors.dll&gt;" SelfReg="false" NextFile="Microsoft.Owin.Diagnostics.dll"/>
+    <ROW File="Microsoft.Owin.Diagnostics.dll" Component_="WebSiteManagement.Service_References" FileName="MICROS~6.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.Diagnostics.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Owin.Diagnostics.dll&gt;" SelfReg="false" NextFile="Microsoft.Owin.FileSystems.dll"/>
+    <ROW File="Microsoft.Owin.FileSystems.dll" Component_="WebSiteManagement.Service_References" FileName="MICROS~7.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.FileSystems.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Owin.FileSystems.dll&gt;" SelfReg="false" NextFile="Microsoft.Owin.Host.SystemWeb.dll"/>
+    <ROW File="Microsoft.Owin.Host.SystemWeb.dll" Component_="WebSiteManagement.Service_References" FileName="MICROS~8.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.Host.SystemWeb.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Owin.Host.SystemWeb.dll&gt;" SelfReg="false" NextFile="Microsoft.Owin.Security.dll"/>
+    <ROW File="Microsoft.Owin.Security.dll" Component_="WebSiteManagement.Service_References" FileName="MICROS~9.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.Security.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Owin.Security.dll&gt;" SelfReg="false" NextFile="Microsoft.Owin.StaticFiles.dll"/>
+    <ROW File="Microsoft.Owin.StaticFiles.dll" Component_="WebSiteManagement.Service_References" FileName="MICRO~10.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.StaticFiles.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Owin.StaticFiles.dll&gt;" SelfReg="false" NextFile="Nancy.dll"/>
+    <ROW File="Microsoft.Owin.dll" Component_="WebSiteManagement.Service_References" FileName="MICROS~4.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Owin.dll&gt;" SelfReg="false" NextFile="Microsoft.Owin.Cors.dll"/>
+    <ROW File="Nancy.Owin.dll" Component_="WebSiteManagement.Service_References" FileName="NANCYO~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Nancy.Owin.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Nancy.Owin.dll&gt;" SelfReg="false" NextFile="Newtonsoft.Json.dll"/>
+    <ROW File="Nancy.dll" Component_="WebSiteManagement.Service_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_Nancy.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Nancy.dll&gt;" SelfReg="false" NextFile="Nancy.Owin.dll"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="WebSiteManagement.Service_References" FileName="NEWTON~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Newtonsoft.Json.dll&gt;" SelfReg="false" NextFile="Owin.dll"/>
+    <ROW File="Owin.dll" Component_="WebSiteManagement.Service_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_Owin.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Owin.dll&gt;" SelfReg="false" NextFile="SharpCompress.dll"/>
+    <ROW File="SharpCompress.dll" Component_="WebSiteManagement.Service_References" FileName="SHARPC~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_SharpCompress.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_SharpCompress.dll&gt;" SelfReg="false" NextFile="System.dll"/>
+    <ROW File="System.Core.dll" Component_="WebSiteManagement.Service_References" FileName="SYSTEM~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Core.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Core.dll&gt;" SelfReg="false" NextFile="System.Net.Http.dll"/>
+    <ROW File="System.Data.DataSetExtensions.dll" Component_="WebSiteManagement.Service_References" FileName="SYSTE~10.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Data.DataSetExtensions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Data.DataSetExtensions.dll&gt;" SelfReg="false" NextFile="Microsoft.CSharp.dll"/>
+    <ROW File="System.Data.dll" Component_="WebSiteManagement.Service_References" FileName="SYSTE~11.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Data.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Data.dll&gt;" SelfReg="false" NextFile="System.Xml.dll"/>
+    <ROW File="System.Net.Http.Formatting.dll" Component_="WebSiteManagement.Service_References" FileName="SYSTEM~4.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.Http.Formatting.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Net.Http.Formatting.dll&gt;" SelfReg="false" NextFile="System.Spatial.dll"/>
+    <ROW File="System.Net.Http.dll" Component_="WebSiteManagement.Service_References" FileName="SYSTEM~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.Http.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Net.Http.dll&gt;" SelfReg="false" NextFile="System.Net.Http.Formatting.dll"/>
+    <ROW File="System.Spatial.dll" Component_="WebSiteManagement.Service_References" FileName="SYSTEM~5.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Spatial.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Spatial.dll&gt;" SelfReg="false" NextFile="System.Web.Cors.dll"/>
+    <ROW File="System.Web.Cors.dll" Component_="WebSiteManagement.Service_References" FileName="SYSTEM~6.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Web.Cors.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Web.Cors.dll&gt;" SelfReg="false" NextFile="System.Web.Http.dll"/>
+    <ROW File="System.Web.Http.WebHost.dll" Component_="WebSiteManagement.Service_References" FileName="SYSTEM~8.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Web.Http.WebHost.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Web.Http.WebHost.dll&gt;" SelfReg="false" NextFile="System.Xml.Linq.dll"/>
+    <ROW File="System.Web.Http.dll" Component_="WebSiteManagement.Service_References" FileName="SYSTEM~7.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Web.Http.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Web.Http.dll&gt;" SelfReg="false" NextFile="System.Web.Http.WebHost.dll"/>
+    <ROW File="System.Xml.Linq.dll" Component_="WebSiteManagement.Service_References" FileName="SYSTEM~9.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Xml.Linq.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Xml.Linq.dll&gt;" SelfReg="false" NextFile="System.Data.DataSetExtensions.dll"/>
+    <ROW File="System.Xml.dll" Component_="WebSiteManagement.Service_References" FileName="SYSTE~12.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Xml.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Xml.dll&gt;" SelfReg="false" NextFile="WebSiteManagment.Wcf.dll"/>
+    <ROW File="System.dll" Component_="WebSiteManagement.Service_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_System.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.dll&gt;" SelfReg="false" NextFile="System.Core.dll"/>
+    <ROW File="WebSiteManagement.Service.exe" Component_="WebSiteManagement.Service_PrimaryOutput" FileName="WEBSIT~2.EXE|[|AI_PROPPATH_FILENAME_PERBUILD_WebSiteManagement.Service.exe]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_WebSiteManagement.Service.exe&gt;" SelfReg="false" NextFile="WebSiteManagement.Service.exe.config" DigSign="true"/>
+    <ROW File="WebSiteManagement.Service.exe.config" Component_="WebSiteManagement.Service_PrimaryOutput" FileName="WEBSIT~2.CON|[|AI_PROPPATH_FILENAME_PERBUILD_WebSiteManagement.Service.exe.config]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_WebSiteManagement.Service.exe.config&gt;" SelfReg="false" NextFile="LinqBridge.dll"/>
+    <ROW File="WebSiteManagment.Wcf.dll" Component_="WebSiteManagement.Service_References" FileName="WEBSIT~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_WebSiteManagment.Wcf.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_WebSiteManagment.Wcf.dll&gt;" SelfReg="false" NextFile="mscorlib.dll"/>
+    <ROW File="mscorlib.dll" Component_="WebSiteManagement.Service_References" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_mscorlib.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_mscorlib.dll&gt;" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
+    <ROW Name="AI_APPPATH_PERBUILD_LinqBridge.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_LinqBridge.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_LinqBridge.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.CSharp.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.CSharp.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.CSharp.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Data.Edm.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Data.Edm.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Data.Edm.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Data.OData.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Data.OData.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Data.OData.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Owin.Cors.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.Cors.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.Cors.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Owin.Diagnostics.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.Diagnostics.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.Diagnostics.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Owin.FileSystems.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.FileSystems.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.FileSystems.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Owin.Host.SystemWeb.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.Host.SystemWeb.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.Host.SystemWeb.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Owin.Security.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.Security.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.Security.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Owin.StaticFiles.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.StaticFiles.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.StaticFiles.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Owin.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Owin.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Owin.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Nancy.Owin.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Nancy.Owin.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Nancy.Owin.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Nancy.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Nancy.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Nancy.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Newtonsoft.Json.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Newtonsoft.Json.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Owin.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Owin.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Owin.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_SharpCompress.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_SharpCompress.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_SharpCompress.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Core.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Core.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Core.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Data.DataSetExtensions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Data.DataSetExtensions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Data.DataSetExtensions.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Data.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Data.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Data.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Net.Http.Formatting.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Net.Http.Formatting.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.Http.Formatting.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Net.Http.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Net.Http.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Net.Http.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Spatial.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Spatial.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Spatial.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Web.Cors.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Web.Cors.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Web.Cors.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Web.Http.WebHost.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Web.Http.WebHost.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Web.Http.WebHost.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Web.Http.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Web.Http.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Web.Http.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Xml.Linq.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Xml.Linq.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Xml.Linq.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Xml.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Xml.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Xml.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_WebSiteManagement.Service.exe" Path="[|AI_PROPPATH_DIR_PERBUILD_WebSiteManagement.Service.exe]\[|AI_PROPPATH_FILENAME_PERBUILD_WebSiteManagement.Service.exe]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_WebSiteManagement.Service.exe.config" Path="[|AI_PROPPATH_DIR_PERBUILD_WebSiteManagement.Service.exe.config]\[|AI_PROPPATH_FILENAME_PERBUILD_WebSiteManagement.Service.exe.config]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_WebSiteManagment.Wcf.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_WebSiteManagment.Wcf.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_WebSiteManagment.Wcf.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_mscorlib.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_mscorlib.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_mscorlib.dll]" Type="2" Content="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+    <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DetectSoftware" Type="257" Source="SoftwareDetector.dll" Target="OnDetectSoftware"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="51"/>
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_DpiContentScale" Sequence="51"/>
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on the following Windows versions: [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="AI_DETECTED_DOTNET_VERSION &gt;= AI_REQUIRED_DOTNET_VERSION" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_REQUIRED_DOTNET_DISPLAY]." DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.VsProjectComponent">
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="PrimaryOutput" OutputFile="WebSiteManagement.Service.exe"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="PrimaryOutput" OutputFile="WebSiteManagement.Service.exe.config"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="LinqBridge.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Microsoft.Data.Edm.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Microsoft.Data.OData.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Microsoft.Owin.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Microsoft.Owin.Cors.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Microsoft.Owin.Diagnostics.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Microsoft.Owin.FileSystems.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Microsoft.Owin.Host.SystemWeb.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Microsoft.Owin.Security.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Microsoft.Owin.StaticFiles.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Nancy.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Nancy.Owin.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Newtonsoft.Json.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Owin.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="SharpCompress.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="System.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="System.Core.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="System.Net.Http.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="System.Net.Http.Formatting.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="System.Spatial.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="System.Web.Cors.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="System.Web.Http.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="System.Web.Http.WebHost.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="System.Xml.Linq.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="System.Data.DataSetExtensions.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="Microsoft.CSharp.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="System.Data.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="System.Xml.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="WebSiteManagment.Wcf.dll"/>
+    <ROW Solution="IISAdminOwin.sln" ProjectId="{d0c2b0b0-3208-4142-9125-5ea36ddc41fb}" ProjectName="WebSiteManagement.Service" OutputGroup="References" OutputFile="mscorlib.dll"/>
+  </COMPONENT>
+</DOCUMENT>

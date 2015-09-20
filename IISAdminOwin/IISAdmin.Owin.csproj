@@ -185,12 +185,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="resources\app\components\addSiteProgress\addSiteProgress.js" />
     <Content Include="resources\app\components\addSiteProgress\addSiteProgressController.js" />
     <Content Include="resources\app\components\addSite\addSite.css" />
-    <Content Include="resources\app\components\addSite\addSite.progress.Controller.js" />
     <Content Include="resources\app\components\addSite\addSiteController.js" />
-    <Content Include="resources\app\components\addSite\addSiteProgress.js" />
     <Content Include="resources\app\components\addSite\index.js" />
     <Content Include="resources\app\components\app-bootstrap.js" />
     <Content Include="resources\app\components\app.controllers.index.js" />

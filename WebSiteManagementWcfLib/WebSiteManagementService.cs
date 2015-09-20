@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
 using WebSiteManagment.Core;
 using WebSiteManagment.Core.Common;
@@ -8,7 +7,7 @@ using WebSiteManagment.Core.Models;
 
 namespace WebSiteManagment.Wcf
 {
-	[ServiceBehavior(IncludeExceptionDetailInFaults = true)]
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true, UseSynchronizationContext = false)]
 	public class WebSiteManagementService : IWebSiteRepositoryService
 	{
 		private readonly WebSiteManager _siteManager = new WebSiteManager();

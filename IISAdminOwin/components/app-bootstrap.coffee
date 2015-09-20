@@ -32,6 +32,8 @@ require.config
 		hub: "common/signalRHub"
 		templates: "../../app/views"
 	shim:
+		toaster:
+			exports: "toast"
 		jsFace:
 			exports: "jsFace"
 		jsFaceProps: deps:["jsFace"]
