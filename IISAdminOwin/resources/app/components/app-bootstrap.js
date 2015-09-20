@@ -33,6 +33,9 @@ require.config({
     templates: "../../app/views"
   },
   shim: {
+    toaster: {
+      exports: "toast"
+    },
     jsFace: {
       exports: "jsFace"
     },
