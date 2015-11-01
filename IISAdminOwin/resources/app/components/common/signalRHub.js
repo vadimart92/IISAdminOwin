@@ -1,4 +1,4 @@
-define(["jquery", "app", "common", "underscore", "signalR"], function($, app, common) {
+define(["jquery", "common", "underscore", "signalR"], function($, common) {
   var Hub;
   Hub = Class({
     $static: {

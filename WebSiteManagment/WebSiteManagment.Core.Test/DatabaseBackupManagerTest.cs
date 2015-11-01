@@ -1,13 +1,13 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using Dapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WebSiteManagment.Core.Common;
 
-namespace WebSiteManagment.Core.Test {
-	[TestClass]
+namespace WebSiteManagment.Core.Test
+{
+    [TestClass]
 	public class DatabaseBackupManagerTest {
 		[TestMethod]
 		public void RestoreDbBackup_if_dbExists() {

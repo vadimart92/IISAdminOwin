@@ -11,22 +11,24 @@ namespace IISAdmin.Interfaces
 		string Name { get; set; }
 
 		string State { get; set; }
-
-		Redis Redis { get; set; }
-
-		string DbConnectionString { get; set; }
-
+        
 		List<string> Bindings { get; set; }
 
 		List<IApplication> Applications { get; set; }
-	}
+    }
 
-	public interface IApplication
-	{
-		string Name { get; set; }
+	public interface IApplication {
+
+	    string SiteName { get; set; }
+
+        string Name { get; set; }
 
 		IAppPool Pool { get; set; }
-	}
+
+        Redis Redis { get; set; }
+
+        string DbConnectionString { get; set; }
+    }
 
 	public interface IAppPool
 	{

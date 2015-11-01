@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using IISAdmin.Interfaces;
-using IISAdmin.WCFWebSiteRepository.WebSiteRepositoryService;
 using Redis = IISAdmin.Interfaces.Redis;
 
 namespace IISAdmin.WCFWebSiteRepository
@@ -23,7 +22,7 @@ namespace IISAdmin.WCFWebSiteRepository
 			Bindings = site.Bindings;
 			Redis = new RedisInfo(site.Redis);
 			DbConnectionString = site.DbConnectionString;
-			Applications.AddRange(site.Applications.ConvertAll(a => new WebApplication(a)));
+			Applications.AddRange(site.Applications.ConvertAll(a => new WebApplication(a, site)));
 		}
 
 		public override string ToString() {
@@ -59,30 +58,38 @@ namespace IISAdmin.WCFWebSiteRepository
 	}
 
 	[DataContract]
-	public class WebApplication : IApplication
-	{
-		#region Members
+	public class WebApplication : IApplication {
 
-		public WebApplication(WebSiteManagment.Core.Models.Application application) {
+	    public WebApplication(WebSiteManagment.Core.Models.Application application, WebSiteManagment.Core.Models.Site site) {
 			Name = application.Path;
 			Pool = new IisAppPool(application.Pool);
-		}
+            SiteName = site.Name;
+	        Redis = new RedisInfo(site.Redis);
+	        DbConnectionString = site.DbConnectionString;
+	    }
 
 		public override string ToString() {
 			return string.Format("Name: {0}, Pool: {1}", Name, Pool.Name);
 		}
 
-		#endregion Members
+        #region IApplication Members
 
-		#region IApplication Members
+        [DataMember]
+        public string SiteName { get; set; }
 
-		[DataMember]
+	    [DataMember]
 		public string Name { get; set; }
 
 		[DataMember]
 		public IAppPool Pool { get; set; }
 
-		#endregion IApplication Members
+        [DataMember]
+        public Redis Redis { get; set; }
+
+        [DataMember]
+        public string DbConnectionString { get; set; }
+
+	    #endregion IApplication Members
 	}
 
 	[DataContract]

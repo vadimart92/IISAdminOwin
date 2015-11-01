@@ -15,7 +15,6 @@ define ["require"
 				"ui_formly"
 				"angular_formly_templates"
 				"./common/informationHub"
-				"./toastr/toastrService"
 ], (require, angular, routes, angularAMD)->
 	#require [ "domReady!" ], (document) ->
 	app = angular.module("IISAdmin", [
@@ -33,7 +32,6 @@ define ["require"
 		"ngSanitize"
 		"formly"
 		"formlyBootstrap"
-		"toasterService"
 	])
 	routes.config(app);
 	app.run (formlyConfig)->

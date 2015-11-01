@@ -17,7 +17,7 @@ namespace Wcf.Test
                 Console.WriteLine($"{DateTime.Now.ToLongTimeString()}");
                 var sites = repo.GetAllSites();
                 foreach (var site in sites) {
-                    Console.WriteLine($"Name: {site.Name} State: {site.State} [Redis: {site.Redis.Db}]");
+                    Console.WriteLine($"Name: {site.Name} State: {site.State} [Redis: {site.Applications.First().Redis.Db}]");
                 }
                 Console.Write("Press any key to refresh, esc to exit");
             }

@@ -41,7 +41,7 @@ namespace IISAdmin.WCFWebSiteRepository
 				var res = _repositoryService.GetAllSites().ConvertAll(s => (ISite)new IisSite(s));
 				return res;
 			} catch (FaultException ex) {
-				if (ex.Reason.GetMatchingTranslation(CultureInfo.CurrentCulture).Text == "AccessDenied") {
+				if (ex.Reason.GetMatchingTranslation(CultureInfo.GetCultureInfo("en-US")).Text == "AccessDenied") {
 					throw new UnauthorizedAccessException(ex.Message, ex);
 				}
 				throw;
@@ -50,7 +50,11 @@ namespace IISAdmin.WCFWebSiteRepository
 			}
 		}
 
-		public void StopSite(long siteId) {
+	    public List<IApplication> GetAllApplications() {
+	        throw new NotImplementedException();
+	    }
+
+	    public void StopSite(long siteId) {
 			OpenChannel();
 			_repositoryService.StopSite(siteId);
 			CloseChannel();

@@ -10,6 +10,14 @@ define(["angularAMD", "ui_router", "ui_router_styles"], function(angularAMD) {
             css: "app/components/siteList/siteList.css"
           }
         }));
+        $stateProvider.state("appList", angularAMD.route({
+          url: "/appList",
+          templateUrl: "/app/views/appList/appList.html",
+          controllerUrl: 'appList/appListController',
+          data: {
+            css: "app/components/appList/appList.css"
+          }
+        }));
         $stateProvider.state("addSite", angularAMD.route({
           url: "/addSite",
           templateUrl: "/app/views/addSite.html",

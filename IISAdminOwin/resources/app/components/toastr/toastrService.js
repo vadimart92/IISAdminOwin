@@ -1,7 +1,38 @@
-define(["app", "toaster"], function(app, toaster) {
-  return app.service("toasterService", [
-    'toaster', 'Hub', '$', function(toaster, Hub, $) {
-      var hub, hubOptions;
+define(["toaster", "hub", "jquery"], function(toaster, Hub, $) {
+  var Toaster;
+  Toaster = Class({
+    constructor: function() {
+      Toaster.$super.constructor.call(this);
+      return this.init();
+    },
+    getInfoHub: function() {
+      return hub;
+    },
+    showInfo: function(text, title) {
+      return toaster.info(text, title);
+    },
+    hub: new Hub('Information', {
+      useSharedConnection: false,
+      listeners: {
+        'info': function(msgData) {
+          toaster.info(msgData.msg, msgData.title, this.hubOptions);
+        },
+        'success': function(data) {
+          toaster.success(data.msg, data.title, this.hubOptions);
+        },
+        'warning': function(data) {
+          toaster.warning(data.msg, data.title, $.extend(this.hubOptions, {
+            timeOut: 10000
+          }));
+        },
+        'error': function(data) {
+          toaster.error(data.msg, data.title, $.extend(this.hubOptions, {
+            timeOut: 15000
+          }));
+        }
+      }
+    }),
+    init: function() {
       toaster.options = {
         "closeButton": true,
         "debug": false,
@@ -19,39 +50,8 @@ define(["app", "toaster"], function(app, toaster) {
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
       };
-      hubOptions = {
-        "positionClass": "toast-bottom-right",
-        "timeOut": 5000,
-        "preventDuplicates": false
-      };
-      hub = new Hub('Information', {
-        useSharedConnection: false,
-        listeners: {
-          'info': function(msgData) {
-            toaster.info(msgData.msg, msgData.title, hubOptions);
-          },
-          'success': function(msgData) {
-            toaster.success(msgData.msg, msgData.title, hubOptions);
-          },
-          'warning': function(msgData) {
-            toaster.warning(msgData.msg, msgData.title, $.extend(hubOptions, {
-              timeOut: 10000
-            }));
-          },
-          'error': function(msgData) {
-            toaster.error(msgData.msg, msgData.title, $.extend(hubOptions, {
-              timeOut: 15000
-            }));
-          }
-        }
-      });
-      hub.connect();
-      this.getInfoHub = function() {
-        return hub;
-      };
-      this.showInfo = function(text, title) {
-        return toaster.info(text, title);
-      };
+      return this.hub.connect();
     }
-  ]);
+  });
+  return new Toaster();
 });

@@ -10,6 +10,8 @@ namespace IISAdmin.Interfaces
 	{
 		List<ISite> GetAllSites();
 
+		List<IApplication> GetAllApplications();
+
 		ISite GetSite(long id);
 
 		ISite FindSite(long id);

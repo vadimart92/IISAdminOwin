@@ -1,0 +1,7 @@
+<div ng-show="row.entity.redisFound"
+	 class="btn btn-primary btn-xs glyphicon glyphicon-refresh"
+	 ng-click="row.entity.flushRedis()"
+	 ng-class="{'hide': row.redisFlushInProgress}"></div>
+<span tooltip-placement="left"
+	  tooltip="{{row.entity.redisName}}"
+		>{{row.entity.redisName}}</span>
