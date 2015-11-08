@@ -1,4 +1,4 @@
-define ["jquery", "app", "common", "underscore", "signalR"], ($, app, common)->
+define ["jquery", "common", "underscore", "signalR"], ($, common)->
 	Hub = Class({
 		$static:
 			globalConnections: {}

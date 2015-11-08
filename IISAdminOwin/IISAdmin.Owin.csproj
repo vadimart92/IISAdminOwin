@@ -374,11 +374,11 @@
     <Compile Include="SignaRHubs\SiteManagement\SiteManagementHub.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Common\UnityResolver.cs" />
+    <Compile Include="WebApiControllers\AppController.cs" />
     <Compile Include="WebApiControllers\SiteController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IISAdmin.Hangfire\IISAdmin.BackgroundWorker.csproj">

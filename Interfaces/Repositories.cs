@@ -8,11 +8,13 @@ namespace IISAdmin.Interfaces
 
 	public interface IWebSiteRepository
 	{
-		List<ISite> GetAllSites();
+		List<Site> GetAllSites();
 
-		ISite GetSite(long id);
+		List<Application> GetAllApplications();
 
-		ISite FindSite(long id);
+		Site GetSite(long id);
+
+		Site FindSite(long id);
 
 		void StopSite(long siteId);
 

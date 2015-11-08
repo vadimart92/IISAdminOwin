@@ -10,7 +10,7 @@ define ["common"], (common)->
 				siteListsObservable data.results
 				return
 			getFailed = (error) ->
-				errorObservable 'Error retrieving todo lists: ' + error.message
+				errorObservable 'Error retrieving site lists: ' + error.message
 				return
 			this.breeze.EntityQuery.from("SiteList").using(this.manager).execute().then getSucceeded, getFailed
 	)

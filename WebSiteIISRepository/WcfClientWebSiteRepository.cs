@@ -6,6 +6,8 @@ using System.ServiceModel.Channels;
 using IISAdmin.Interfaces;
 using IISAdmin.WCFWebSiteRepository.WebSiteRepositoryService;
 using WebSiteManagment.Core.Models;
+using Application = IISAdmin.Interfaces.Application;
+using Site = IISAdmin.Interfaces.Site;
 
 namespace IISAdmin.WCFWebSiteRepository
 {
@@ -35,13 +37,13 @@ namespace IISAdmin.WCFWebSiteRepository
 
 		#region Члены IWebSiteRepository
 
-		public List<ISite> GetAllSites() {
+		public List<Site> GetAllSites() {
 			OpenChannel();
 			try {
-				var res = _repositoryService.GetAllSites().ConvertAll(s => (ISite)new IisSite(s));
+				var res = _repositoryService.GetAllSites().ConvertAll(Common.Site);
 				return res;
 			} catch (FaultException ex) {
-				if (ex.Reason.GetMatchingTranslation(CultureInfo.CurrentCulture).Text == "AccessDenied") {
+				if (ex.Reason.GetMatchingTranslation(CultureInfo.GetCultureInfo("en-US")).Text == "AccessDenied") {
 					throw new UnauthorizedAccessException(ex.Message, ex);
 				}
 				throw;
@@ -50,7 +52,11 @@ namespace IISAdmin.WCFWebSiteRepository
 			}
 		}
 
-		public void StopSite(long siteId) {
+	    public List<Application> GetAllApplications() {
+	        throw new NotImplementedException();
+	    }
+
+	    public void StopSite(long siteId) {
 			OpenChannel();
 			_repositoryService.StopSite(siteId);
 			CloseChannel();
@@ -62,19 +68,19 @@ namespace IISAdmin.WCFWebSiteRepository
 			CloseChannel();
 		}
 
-		public ISite GetSite(long id) {
+		public Site GetSite(long id) {
 			OpenChannel();
 			var site = _repositoryService.GetSite(id);
 			CloseChannel();
-			return new IisSite(site);
+		    return Common.Site(site);
 		}
 
-		public ISite FindSite(long id) {
+		public Site FindSite(long id) {
 			OpenChannel();
 			var site = _repositoryService.FindSite(id);
 			CloseChannel();
-			return new IisSite(site);
-		}
+			return Common.Site(site);
+        }
 
 		public void RestartSitePool(long siteId) {
 			OpenChannel();

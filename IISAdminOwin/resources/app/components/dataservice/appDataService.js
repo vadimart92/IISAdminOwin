@@ -1,14 +1,14 @@
 define(["common"], function(common) {
-  var SiteDataService;
-  SiteDataService = Class(common["class"].BreezeDataService, {
+  var AppDataService;
+  AppDataService = Class(common["class"].BreezeDataService, {
     constructor: function() {
       this.dataServiceConfig = {
-        serviceName: "breeze/Site",
+        serviceName: "breeze/App",
         hasServerMetadata: false
       };
-      return SiteDataService.$super.call(this);
+      return AppDataService.$super.call(this);
     },
-    getSites: function(siteListsObservable, errorObservable) {
+    getApplications: function(siteListsObservable, errorObservable) {
       var getFailed, getSucceeded;
       getSucceeded = function(data) {
         siteListsObservable(data.results);
@@ -16,8 +16,8 @@ define(["common"], function(common) {
       getFailed = function(error) {
         errorObservable('Error retrieving site lists: ' + error.message);
       };
-      return this.breeze.EntityQuery.from("SiteList").using(this.manager).execute().then(getSucceeded, getFailed);
+      return this.breeze.EntityQuery.from("AppList").using(this.manager).execute().then(getSucceeded, getFailed);
     }
   });
-  return SiteDataService;
+  return AppDataService;
 });

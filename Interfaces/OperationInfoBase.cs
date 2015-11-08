@@ -4,7 +4,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using IISAdmin.Interfaces.Common;
 using Microsoft.AspNet.SignalR;
-using Microsoft.AspNet.SignalR.Hubs;
 using Newtonsoft.Json;
 
 namespace IISAdmin.Interfaces

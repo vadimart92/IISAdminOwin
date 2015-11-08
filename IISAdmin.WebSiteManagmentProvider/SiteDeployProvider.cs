@@ -57,7 +57,7 @@ namespace IISAdmin.WebSiteManagmentProvider
 			InitRedisInfo(siteCreateData, site);
 			_siteRepository.ModifyConnectionStrings(siteId, new Dictionary<string, string> {
 				{"redis", siteCreateData.RedisInfo.ConnectionString},
-				{"db", GetDbConnectionString(siteCreateData, site.DbConnectionString)}
+				{"db", GetDbConnectionString(siteCreateData, site.Applications.First().DbConnectionString)}
 			});
             deployInfo.ModifyConfigs = OperationStageState.Completed;
         }
@@ -81,9 +81,9 @@ namespace IISAdmin.WebSiteManagmentProvider
 			siteCreateData.DestinationWebAppRoot = siteCreateData.SeparateFolder? Path.Combine(_config.WebAppRoot, info.ShortVersion, info.ProductName) : _config.WebAppRoot + "\\" + info.WebAppName;
 		}
         
-        public void InitRedisInfo(SiteCreateData siteCreateData, ISite siteData) {
+        public void InitRedisInfo(SiteCreateData siteCreateData, Site siteData) {
 		    siteCreateData.RedisInfo = string.IsNullOrWhiteSpace(_config.RedisTypicalConnectionString)
-			    ? new Redis(siteData.Redis.ConnectionString)
+			    ? new Redis(siteData.Applications.First().Redis.ConnectionString)
 			    : new Redis(_config.RedisTypicalConnectionString);
 			siteCreateData.RedisInfo.Db = GetFreeRedisDb(siteCreateData.RedisInfo.Host);
 	    }
@@ -109,8 +109,8 @@ namespace IISAdmin.WebSiteManagmentProvider
 			var number = -1;
 			do {
 				number++;
-				var siteExists = sites.Where(s => s.Redis.Host == host && (port == null || s.Redis.Port == port))
-					.Any(s => s.Redis.Db == number);
+				var siteExists = sites.Where(s => s.Applications.First().Redis.Host == host && (port == null || s.Applications.First().Redis.Port == port))
+					.Any(s => s.Applications.First().Redis.Db == number);
 				if (siteExists) {
 					continue;
 				}

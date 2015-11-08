@@ -128,9 +128,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common.cs" />
+    <Compile Include="IEntity.cs" />
     <Compile Include="Common\SerializeDelegate.cs" />
-    <Compile Include="Data.cs" />
+    <Compile Include="ISqlConnectionProvider.cs" />
+    <Compile Include="SiteCreateData.cs" />
     <Compile Include="IBackgroundWorker.cs" />
     <Compile Include="IHubContextProvider.cs" />
     <Compile Include="IJobInfoProvider.cs" />

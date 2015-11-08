@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -32,11 +31,4 @@ namespace IISAdmin.Interfaces
     public interface IQueryableRepository<TEntity, in TKey> where TEntity : IEntity<TKey> {
         IQueryable Get();
     }
-
-	public interface ISqlConnectionProvider {
-		SqlConnection GetOpenSqlConnection();
-		SqlConnection GetOpenSqlConnection(SqlCredential credential);
-		T ExecuteAction<T>(Func<SqlConnection, T> action, SqlCredential credential = null);
-		void ExecuteAction(Action<SqlConnection> action, SqlCredential credential = null);
-	}
 }

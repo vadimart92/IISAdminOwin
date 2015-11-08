@@ -10,24 +10,24 @@ using IISAdmin.Owin.SignaRHubs;
 namespace IISAdmin.Owin.WebApiControllers
 {
 	[BreezeController]
-	public class SiteController : ApiController
+	public class AppController : ApiController
 	{
 		private readonly IWebSiteRepository _webSiteRepository;
 
-		public SiteController(IWebSiteRepository webSiteRepository) {
+		public AppController(IWebSiteRepository webSiteRepository) {
 			if (webSiteRepository == null) {
 				throw new ArgumentNullException(nameof(webSiteRepository));
 			}
 			_webSiteRepository = webSiteRepository;
 		}
 
-		// GET ~/breeze/Site/SiteList
+		// GET ~/breeze/App/AppList
 		[HttpGet]
-		public IEnumerable<Site> SiteList() {
+		public IEnumerable<Application> AppList() {
 			try {
-				var sites = _webSiteRepository.GetAllSites()
-					.OrderBy(s => s.Name, StringComparer.OrdinalIgnoreCase);
-				return sites;
+			    var apps = _webSiteRepository.GetAllApplications();
+                var result = apps.OrderBy(app => app.Name, StringComparer.OrdinalIgnoreCase).ToList();
+			    return result;
 			} catch (UnauthorizedAccessException) {
 				Information.ErrorFormat(HttpContext.Current.User, "Error", "Site management service must run in admin mode");
 			} catch (Exception exception) {
