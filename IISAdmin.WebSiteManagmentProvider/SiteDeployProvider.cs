@@ -81,7 +81,7 @@ namespace IISAdmin.WebSiteManagmentProvider
 			siteCreateData.DestinationWebAppRoot = siteCreateData.SeparateFolder? Path.Combine(_config.WebAppRoot, info.ShortVersion, info.ProductName) : _config.WebAppRoot + "\\" + info.WebAppName;
 		}
         
-        public void InitRedisInfo(SiteCreateData siteCreateData, ISite siteData) {
+        public void InitRedisInfo(SiteCreateData siteCreateData, Site siteData) {
 		    siteCreateData.RedisInfo = string.IsNullOrWhiteSpace(_config.RedisTypicalConnectionString)
 			    ? new Redis(siteData.Applications.First().Redis.ConnectionString)
 			    : new Redis(_config.RedisTypicalConnectionString);

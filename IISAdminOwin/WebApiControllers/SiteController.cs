@@ -23,7 +23,7 @@ namespace IISAdmin.Owin.WebApiControllers
 
 		// GET ~/breeze/Site/SiteList
 		[HttpGet]
-		public IEnumerable<ISite> SiteList() {
+		public IEnumerable<Site> SiteList() {
 			try {
 				var sites = _webSiteRepository.GetAllSites()
 					.OrderBy(s => s.Name, StringComparer.OrdinalIgnoreCase);

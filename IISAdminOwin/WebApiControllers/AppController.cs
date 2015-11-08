@@ -23,7 +23,7 @@ namespace IISAdmin.Owin.WebApiControllers
 
 		// GET ~/breeze/App/AppList
 		[HttpGet]
-		public IEnumerable<IApplication> AppList() {
+		public IEnumerable<Application> AppList() {
 			try {
 			    var apps = _webSiteRepository.GetAllApplications();
                 var result = apps.OrderBy(app => app.Name, StringComparer.OrdinalIgnoreCase).ToList();

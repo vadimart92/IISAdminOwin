@@ -21432,3 +21432,15 @@ SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(bd8bd7da-3e1a-4caf-
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(60bac57d-ec47-4303-88ea-19e16516e6f7)
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(bd8bd7da-3e1a-4caf-96b8-05ad754b04d7)
 SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(60bac57d-ec47-4303-88ea-19e16516e6f7)
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 6ace99f9-a64c-44a3-b3e7-b691744d69b4 is New.
+SignalR.Transports.TransportHeartBeat Information: 0 : Connection 789e6e0b-d66b-462c-af72-74fc6cc0cdac is New.
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6ace99f9-a64c-44a3-b3e7-b691744d69b4)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(789e6e0b-d66b-462c-af72-74fc6cc0cdac)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6ace99f9-a64c-44a3-b3e7-b691744d69b4)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(789e6e0b-d66b-462c-af72-74fc6cc0cdac)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6ace99f9-a64c-44a3-b3e7-b691744d69b4)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(789e6e0b-d66b-462c-af72-74fc6cc0cdac)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6ace99f9-a64c-44a3-b3e7-b691744d69b4)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(789e6e0b-d66b-462c-af72-74fc6cc0cdac)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(6ace99f9-a64c-44a3-b3e7-b691744d69b4)
+SignalR.Transports.TransportHeartBeat Verbose: 0 : KeepAlive(789e6e0b-d66b-462c-af72-74fc6cc0cdac)

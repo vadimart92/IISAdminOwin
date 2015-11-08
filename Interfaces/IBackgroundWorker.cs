@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
-using Microsoft.Practices.Unity;
 using Owin;
 
 namespace IISAdmin.Interfaces
